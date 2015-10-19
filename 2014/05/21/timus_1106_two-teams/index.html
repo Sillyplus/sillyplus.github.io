@@ -1,13 +1,13 @@
 
 <!DOCTYPE html>
-<html lang="null">
+<html lang="en">
     
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="supernova">
-    <title>Timus_1106_Two Teams - supernova</title>
-    <meta name="author" content="YuanJie Chen">
+    <meta name="generator" content="Kepp It Simple &amp;&amp; Stupid">
+    <title>Timus_1106_Two Teams - Kepp It Simple &amp;&amp; Stupid</title>
+    <meta name="author" content="sillyplus">
     
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
@@ -17,7 +17,7 @@
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Timus_1106_Two Teams">
 <meta property="og:url" content="http://github.com/sillyplus/2014/05/21/timus_1106_two-teams/index.html">
-<meta property="og:site_name" content="supernova">
+<meta property="og:site_name" content="Kepp It Simple && Stupid">
 <meta property="og:description" content="题目大意：给一个无向图，N个顶点(n&amp;lt;=100,好小的样子。。)，要求把这N个顶点分成两组，使得对任一个组中的每个顶点，都至少存在一条边连接到另一组中的某个顶点，要求给出任一满足条件的分组，输出其中一个组的顶点编号。
 话说一开始看完题目我想到的是二分图，应该是可以做的，不过本题似乎不必那么麻烦。因为题目给的条件相当宽松，我们可以对每个顶点进行染色，从某个为染色的顶点出发，把跟它相邻同时还没有">
 <meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
@@ -63,10 +63,10 @@
         
     
 
-<header id="header" data-behavior="4">
+<header id="header" data-behavior="3">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
-        <a class="header-title-link" href="/ ">supernova</a>
+        <a class="header-title-link" href="/ ">Kepp It Simple &amp;&amp; Stupid</a>
     </h1>
     
         
@@ -85,13 +85,13 @@
 
     
 
-<nav id="sidebar" data-behavior="4">
+<nav id="sidebar" data-behavior="3">
     
         <div class="sidebar-profile">
             <a href="/#about">
                     <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/b9c024fee19cd6eabae007b57eaf7e17?s=110"/>
             </a>
-            <span class="sidebar-profile-name">YuanJie Chen</span>
+            <span class="sidebar-profile-name">sillyplus</span>
         </div>
     
     
@@ -105,7 +105,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                    <span class="sidebar-button-desc">首页</span>
+                    <span class="sidebar-button-desc">Home</span>
                 </a>
         </li>
         
@@ -117,7 +117,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                    <span class="sidebar-button-desc">分类</span>
+                    <span class="sidebar-button-desc">Categories</span>
                 </a>
         </li>
         
@@ -129,7 +129,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                    <span class="sidebar-button-desc">标签</span>
+                    <span class="sidebar-button-desc">Tags</span>
                 </a>
         </li>
         
@@ -141,19 +141,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">归档</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link st-search-show-outputs"
-                         href="/#search"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                    <span class="sidebar-button-desc">搜索</span>
+                    <span class="sidebar-button-desc">Archives</span>
                 </a>
         </li>
         
@@ -165,7 +153,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                    <span class="sidebar-button-desc">关于</span>
+                    <span class="sidebar-button-desc">About</span>
                 </a>
         </li>
         
@@ -184,28 +172,10 @@
         
             <li class="sidebar-button">
                 
-                    <a  class="sidebar-button-link " href="https://facebook.com/" target="_blank">
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
-                    <span class="sidebar-button-desc">Facebook</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link " href="https://plus.google.com/" target="_blank">
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-google-plus"></i>
-                    <span class="sidebar-button-desc">Google Plus</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
                     <a  class="sidebar-button-link " href="mailto:oi_boy@sina.cn" target="_blank">
                 
                     <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
-                    <span class="sidebar-button-desc">邮箱</span>
+                    <span class="sidebar-button-desc">Mail</span>
                 </a>
         </li>
         
@@ -230,7 +200,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="4"
+            <div id="main" data-behavior="3"
                  class="
                         hasCoverMetaIn
                         ">
@@ -251,7 +221,7 @@
     	
     </time>
     
-        <span>发布在 </span>
+        <span>in </span>
         
     <a class="category-link" href="/categories/题解/">题解</a>
 
@@ -319,7 +289,7 @@
     <div id="post-footer" class="post-footer main-content-wrap">
         
             <div class="post-footer-tags">
-                <span class="text-color-light text-small">标签</span><br/>
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
     <a class="tag tag--primary tag--small t-link" href="/tags/DFS/">DFS</a> <a class="tag tag--primary tag--small t-link" href="/tags/Graph/">Graph</a> <a class="tag tag--primary tag--small t-link" href="/tags/Timus/">Timus</a>
 
@@ -333,14 +303,14 @@
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2014/07/01/timus_1028_1318/"  data-tooltip="Timus 1028 1318 [树状数组]">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2014/05/15/timus_1024_permutations/" data-tooltip="Timus_1024_Permutations">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -397,13 +367,13 @@
 
                 <footer id="footer" class="main-content-wrap">
     <span class="copyrights">
-        Copyrights &copy; 2015 YuanJie Chen. All Rights Reserved.
+        Copyrights &copy; 2015 sillyplus. All Rights Reserved.
     </span>
 </footer>
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -412,14 +382,14 @@
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2014/07/01/timus_1028_1318/"  data-tooltip="Timus 1028 1318 [树状数组]">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2014/05/15/timus_1024_permutations/" data-tooltip="Timus_1024_Permutations">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -465,21 +435,21 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/05/21/timus_1106_two-teams/">
-                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/05/21/timus_1106_two-teams/">
-                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/05/21/timus_1106_two-teams/">
-                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
     </ul>
@@ -500,7 +470,7 @@
         
             <img id="about-card-picture" src="http://www.gravatar.com/avatar/b9c024fee19cd6eabae007b57eaf7e17?s=110"/>
         
-            <h4 id="about-card-name">YuanJie Chen</h4>
+            <h4 id="about-card-name">sillyplus</h4>
         
             <h5 id="about-card-bio"><p>author.bio</p>
 </h5>

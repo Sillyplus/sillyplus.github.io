@@ -1,13 +1,13 @@
 
 <!DOCTYPE html>
-<html lang="null">
+<html lang="en">
     
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="supernova">
-    <title>Timus 1028 1318 [树状数组] - supernova</title>
-    <meta name="author" content="YuanJie Chen">
+    <meta name="generator" content="Kepp It Simple &amp;&amp; Stupid">
+    <title>Timus 1028 1318 [树状数组] - Kepp It Simple &amp;&amp; Stupid</title>
+    <meta name="author" content="sillyplus">
     
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
@@ -17,7 +17,7 @@
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Timus 1028 1318 [树状数组]">
 <meta property="og:url" content="http://github.com/sillyplus/2014/07/01/timus_1028_1318/index.html">
-<meta property="og:site_name" content="supernova">
+<meta property="og:site_name" content="Kepp It Simple && Stupid">
 <meta property="og:description" content="除草向博客好久没有更新了，自从打完补选赛之后就一直一副颓废状态，外加要期末考，得预习课内知识(虽然我到最后还是。。。)，不管怎么样，现在以及放假了，所以我打算兑现之前对自己的承诺，暑假好好做题，所以这段时间应该会比较经常更新一些水题的题解啦( ´ ▽ ` )ﾉ。昨天选拔赛第一场就爆零滚粗，作为一名候补选手，我只剩下今天这个最后一次机会了，好伤感的说T^T，希望写一写题解涨张RP。。。
 吐槽完毕，接">
 <meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
@@ -63,10 +63,10 @@
         
     
 
-<header id="header" data-behavior="4">
+<header id="header" data-behavior="3">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
-        <a class="header-title-link" href="/ ">supernova</a>
+        <a class="header-title-link" href="/ ">Kepp It Simple &amp;&amp; Stupid</a>
     </h1>
     
         
@@ -85,13 +85,13 @@
 
     
 
-<nav id="sidebar" data-behavior="4">
+<nav id="sidebar" data-behavior="3">
     
         <div class="sidebar-profile">
             <a href="/#about">
                     <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/b9c024fee19cd6eabae007b57eaf7e17?s=110"/>
             </a>
-            <span class="sidebar-profile-name">YuanJie Chen</span>
+            <span class="sidebar-profile-name">sillyplus</span>
         </div>
     
     
@@ -105,7 +105,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                    <span class="sidebar-button-desc">首页</span>
+                    <span class="sidebar-button-desc">Home</span>
                 </a>
         </li>
         
@@ -117,7 +117,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                    <span class="sidebar-button-desc">分类</span>
+                    <span class="sidebar-button-desc">Categories</span>
                 </a>
         </li>
         
@@ -129,7 +129,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                    <span class="sidebar-button-desc">标签</span>
+                    <span class="sidebar-button-desc">Tags</span>
                 </a>
         </li>
         
@@ -141,19 +141,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">归档</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link st-search-show-outputs"
-                         href="/#search"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                    <span class="sidebar-button-desc">搜索</span>
+                    <span class="sidebar-button-desc">Archives</span>
                 </a>
         </li>
         
@@ -165,7 +153,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                    <span class="sidebar-button-desc">关于</span>
+                    <span class="sidebar-button-desc">About</span>
                 </a>
         </li>
         
@@ -184,28 +172,10 @@
         
             <li class="sidebar-button">
                 
-                    <a  class="sidebar-button-link " href="https://facebook.com/" target="_blank">
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
-                    <span class="sidebar-button-desc">Facebook</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link " href="https://plus.google.com/" target="_blank">
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-google-plus"></i>
-                    <span class="sidebar-button-desc">Google Plus</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
                     <a  class="sidebar-button-link " href="mailto:oi_boy@sina.cn" target="_blank">
                 
                     <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
-                    <span class="sidebar-button-desc">邮箱</span>
+                    <span class="sidebar-button-desc">Mail</span>
                 </a>
         </li>
         
@@ -230,7 +200,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="4"
+            <div id="main" data-behavior="3"
                  class="
                         hasCoverMetaIn
                         ">
@@ -251,7 +221,7 @@
     	
     </time>
     
-        <span>发布在 </span>
+        <span>in </span>
         
     <a class="category-link" href="/categories/题解/">题解</a>
 
@@ -405,7 +375,7 @@ pt a[MN/<span class="number">2</span>];
     <div id="post-footer" class="post-footer main-content-wrap">
         
             <div class="post-footer-tags">
-                <span class="text-color-light text-small">标签</span><br/>
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
     <a class="tag tag--primary tag--small t-link" href="/tags/Timus/">Timus</a> <a class="tag tag--primary tag--small t-link" href="/tags/树状数组/">树状数组</a>
 
@@ -419,14 +389,14 @@ pt a[MN/<span class="number">2</span>];
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2014/07/02/timus_1727_znaikas-magic-numbers/"  data-tooltip="Timus_1727_Znaika&#39;s Magic Numbers">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2014/05/21/timus_1106_two-teams/" data-tooltip="Timus_1106_Two Teams">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -483,13 +453,13 @@ pt a[MN/<span class="number">2</span>];
 
                 <footer id="footer" class="main-content-wrap">
     <span class="copyrights">
-        Copyrights &copy; 2015 YuanJie Chen. All Rights Reserved.
+        Copyrights &copy; 2015 sillyplus. All Rights Reserved.
     </span>
 </footer>
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -498,14 +468,14 @@ pt a[MN/<span class="number">2</span>];
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2014/07/02/timus_1727_znaikas-magic-numbers/"  data-tooltip="Timus_1727_Znaika&#39;s Magic Numbers">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2014/05/21/timus_1106_two-teams/" data-tooltip="Timus_1106_Two Teams">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -551,21 +521,21 @@ pt a[MN/<span class="number">2</span>];
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/07/01/timus_1028_1318/">
-                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/07/01/timus_1028_1318/">
-                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/07/01/timus_1028_1318/">
-                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
     </ul>
@@ -586,7 +556,7 @@ pt a[MN/<span class="number">2</span>];
         
             <img id="about-card-picture" src="http://www.gravatar.com/avatar/b9c024fee19cd6eabae007b57eaf7e17?s=110"/>
         
-            <h4 id="about-card-name">YuanJie Chen</h4>
+            <h4 id="about-card-name">sillyplus</h4>
         
             <h5 id="about-card-bio"><p>author.bio</p>
 </h5>
