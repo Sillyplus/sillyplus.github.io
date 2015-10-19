@@ -10,6 +10,8 @@
     <meta name="author" content="YuanJie Chen">
     
     
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
     <meta name="description" content="占位扯淡折腾了几天，终于可以坐下来写点总结了。不过现在是早上三点多快四点，还在想六七点的时候要去踢球，所以只是占个位置而已，熟悉一下。毕竟还有很多东西不会，不过光是搭好现在这个样子就用了挺多时间的(其实也不是很多啦。。。)
 博客搭建(ｰ ｰ;)从搭好这个blog到现在已经好几天了，然后今天发现已经没有来写这样一篇介绍的热情了。。。原因是，介绍这个方面的内容在网上很容易就能找到许多，所以似乎没有必要">
 <meta property="og:type" content="blog">
@@ -25,6 +27,12 @@
 博客搭建(ｰ ｰ;)从搭好这个blog到现在已经好几天了，然后今天发现已经没有来写这样一篇介绍的热情了。。。原因是，介绍这个方面的内容在网上很容易就能找到许多，所以似乎没有必要">
     
     
+        
+            <meta property="fb:admins" content="100005974902908" />
+        
+    
+    
+        <meta property="og:image" content="http://www.gravatar.com/avatar/b9c024fee19cd6eabae007b57eaf7e17?s=640"/>
     
     
     
@@ -33,6 +41,17 @@
     <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
     <!--STYLES END-->
     
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-49870038-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
 </head>
 
     <body>
@@ -40,6 +59,8 @@
             <!-- Define author's picture -->
 
 
+    
+        
     
 
 <header id="header" data-behavior="4">
@@ -53,6 +74,8 @@
                 href="/#about">
         
         
+            <img class="header-picture" src="http://www.gravatar.com/avatar/b9c024fee19cd6eabae007b57eaf7e17?s=90"/>
+        
         </a>
     
 </header>
@@ -60,7 +83,16 @@
             <!-- Define author's picture -->
 
 
+    
+
 <nav id="sidebar" data-behavior="4">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/b9c024fee19cd6eabae007b57eaf7e17?s=110"/>
+            </a>
+            <span class="sidebar-profile-name">YuanJie Chen</span>
+        </div>
     
     
         <ul class="sidebar-buttons">
@@ -140,6 +172,42 @@
     </ul>
     
         <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/sillyplus" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://facebook.com/" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+                    <span class="sidebar-button-desc">Facebook</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://plus.google.com/" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-google-plus"></i>
+                    <span class="sidebar-button-desc">Google Plus</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="mailto:oi_boy@sina.cn" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+                    <span class="sidebar-button-desc">邮箱</span>
+                </a>
+        </li>
         
     </ul>
     
@@ -317,6 +385,10 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
 
 
         
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
     </div>
 </article>
 
@@ -417,11 +489,15 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
         <!-- Define author's picture -->
 
 
+    
+
 <div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
+        
+            <img id="about-card-picture" src="http://www.gravatar.com/avatar/b9c024fee19cd6eabae007b57eaf7e17?s=110"/>
         
             <h4 id="about-card-name">YuanJie Chen</h4>
         
@@ -437,6 +513,12 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
             </h5>
         
         
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                China
+            </h5>
+        
     </div>
 </div>
 
@@ -446,6 +528,17 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     <!--SCRIPTS-->
 <script src="/assets/js/script.min.js" type="text/javascript"></script>
 <!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'sillyplus';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
 
 
 
