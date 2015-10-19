@@ -10,12 +10,12 @@
     <meta name="author" content="sillyplus">
     
     
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
     <meta name="description" content="本来说好的每日一题解，因为下午睡了一觉醒来发现已经快十点了，然后才开始做题。。然后发现现在已经过了十二点了。。。
 题目可以在这里看：传送门
 然后这可以说是一道陈年老题了，我从高中的时候就打算要写，然后一直拖到现在-_-#，根据题意很容易想到可以用并查集来解决，我们可以添加一个节点0，然后有毒的水果都合并到0，然后最后统计一下有多少水果是有毒的就行了。
-#include &amp;lt;iostream&amp;g">
+12345678910111213141516">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Tyvj_P1323 - 识别水果">
 <meta property="og:url" content="http://github.com/sillyplus/2014/07/03/tyvj_p1323/index.html">
@@ -23,14 +23,17 @@
 <meta property="og:description" content="本来说好的每日一题解，因为下午睡了一觉醒来发现已经快十点了，然后才开始做题。。然后发现现在已经过了十二点了。。。
 题目可以在这里看：传送门
 然后这可以说是一道陈年老题了，我从高中的时候就打算要写，然后一直拖到现在-_-#，根据题意很容易想到可以用并查集来解决，我们可以添加一个节点0，然后有毒的水果都合并到0，然后最后统计一下有多少水果是有毒的就行了。
-#include &amp;lt;iostream&amp;g">
-<meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
+12345678910111213141516">
+<meta property="og:updated_time" content="2015-10-19T11:05:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tyvj_P1323 - 识别水果">
 <meta name="twitter:description" content="本来说好的每日一题解，因为下午睡了一觉醒来发现已经快十点了，然后才开始做题。。然后发现现在已经过了十二点了。。。
 题目可以在这里看：传送门
 然后这可以说是一道陈年老题了，我从高中的时候就打算要写，然后一直拖到现在-_-#，根据题意很容易想到可以用并查集来解决，我们可以添加一个节点0，然后有毒的水果都合并到0，然后最后统计一下有多少水果是有毒的就行了。
-#include &amp;lt;iostream&amp;g">
+12345678910111213141516">
+<meta name="twitter:creator" content="@sillycross">
+    
+        <meta rel="publisher" content="https://plus.google.com/dlxtxlb"/>
     
     
         
@@ -192,7 +195,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/atom.xml"
+                         href="/rss2.xml"
                         
                     >
                 
@@ -241,70 +244,8 @@
             <p>本来说好的每日一题解，因为下午睡了一觉醒来发现已经快十点了，然后才开始做题。。然后发现现在已经过了十二点了。。。</p>
 <p>题目可以在这里看：<a href="http://www.tyvj.cn/Problem_Show.aspx?id=1323" target="_blank" rel="external">传送门</a></p>
 <p>然后这可以说是一道陈年老题了，我从高中的时候就打算要写，然后一直拖到现在-_-#，根据题意很容易想到可以用并查集来解决，我们可以添加一个节点0，然后有毒的水果都合并到0，然后最后统计一下有多少水果是有毒的就行了。</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span>
-
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">10010</span>;
-
-<span class="keyword">char</span> a[<span class="number">30</span>], b[<span class="number">30</span>];
-<span class="keyword">int</span> n, m, k, p;
-<span class="keyword">int</span> f[MN];
-
-<span class="function"><span class="built_in">string</span> <span class="title">cv</span><span class="params">(<span class="built_in">string</span> s)</span> </span>{
-    <span class="built_in">string</span> ret = <span class="string">""</span>;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) {
-        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">26</span>; j++)
-            <span class="keyword">if</span> (s[i] == a[j]) {
-                ret += b[j];
-                <span class="keyword">break</span>;
-            }
-    }
-    <span class="keyword">return</span> ret;
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> v)</span> </span>{
-    <span class="keyword">return</span> f[v] = f[v] == v ? v : find(f[v]);
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
-    <span class="built_in">cin</span> &gt;&gt; a;
-    <span class="built_in">cin</span> &gt;&gt; b;
-    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++)
-        f[i] = i;
-    <span class="built_in">string</span> s;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) {
-        <span class="built_in">cin</span> &gt;&gt; k &gt;&gt; s;
-        s = cv(s);
-        <span class="keyword">int</span> t = s.find(<span class="string">"poison"</span>);
-        <span class="keyword">if</span> (t &lt; s.length())
-            f[k] = <span class="number">0</span>;
-    }
-    <span class="built_in">cin</span> &gt;&gt; p;
-    <span class="keyword">int</span> x, y;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; p; i++) {
-        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;
-        <span class="keyword">int</span> fx = find(x), fy = find(y);
-        <span class="keyword">if</span> (fx == <span class="number">0</span> || fy == <span class="number">0</span>) {
-            f[fx] = <span class="number">0</span>;
-            f[fy] = <span class="number">0</span>;
-        } <span class="keyword">else</span> {
-            f[fx] = fy;
-        }
-    }
-    <span class="keyword">int</span> ans = <span class="number">0</span>;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) {
-        f[i] = find(i);
-        <span class="keyword">if</span> (f[i] == <span class="number">0</span>) ans++;
-    }
-    <span class="built_in">cout</span> &lt;&lt; n-ans &lt;&lt; endl;
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre><p>ps：我这哪还是在写题解。。。这样下去真的可以吗T^T</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">10010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> a[<span class="number">30</span>], b[<span class="number">30</span>];</span><br><span class="line"><span class="keyword">int</span> n, m, k, p;</span><br><span class="line"><span class="keyword">int</span> f[MN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">cv</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">string</span> ret = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">26</span>; j++)</span><br><span class="line">            <span class="keyword">if</span> (s[i] == a[j]) &#123;</span><br><span class="line">                ret += b[j];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> f[v] = f[v] == v ? v : find(f[v]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; b;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++)</span><br><span class="line">        f[i] = i;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; k &gt;&gt; s;</span><br><span class="line">        s = cv(s);</span><br><span class="line">        <span class="keyword">int</span> t = s.find(<span class="string">"poison"</span>);</span><br><span class="line">        <span class="keyword">if</span> (t &lt; s.length())</span><br><span class="line">            f[k] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; p;</span><br><span class="line">    <span class="keyword">int</span> x, y;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; p; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="keyword">int</span> fx = find(x), fy = find(y);</span><br><span class="line">        <span class="keyword">if</span> (fx == <span class="number">0</span> || fy == <span class="number">0</span>) &#123;</span><br><span class="line">            f[fx] = <span class="number">0</span>;</span><br><span class="line">            f[fy] = <span class="number">0</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            f[fx] = fy;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        f[i] = find(i);</span><br><span class="line">        <span class="keyword">if</span> (f[i] == <span class="number">0</span>) ans++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; n-ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ps：我这哪还是在写题解。。。这样下去真的可以吗T^T</p>
 
             
                 
@@ -498,14 +439,14 @@
         
             <h4 id="about-card-name">sillyplus</h4>
         
-            <h5 id="about-card-bio"><p>author.bio</p>
+            <h5 id="about-card-bio"><p>Write the code and change the world</p>
 </h5>
         
         
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p>Student</p>
 
             </h5>
         

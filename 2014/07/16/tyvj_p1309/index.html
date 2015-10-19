@@ -10,7 +10,7 @@
     <meta name="author" content="sillyplus">
     
     
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
     <meta name="description" content="描述 Description
 某一天在网上闲逛的玖君不小心发现了TYVJ，就立刻被TYVJ吸引住了，果断驻扎下来。玖君决定按照顺序来切题，因为离复赛越来越近了，所以他希望能够用最短时间AC掉前面N道题目，完成第i道题目玖君需要花费t[i]个单位的代价。玖君做题有个特点，他喜欢看完几道题后，一次把几道题的代码写完。如果玖君决定一次写完从编号L到编号R的题目，那么他完成这些题目的总代价等于编号L到R题">
@@ -20,11 +20,14 @@
 <meta property="og:site_name" content="Kepp It Simple && Stupid">
 <meta property="og:description" content="描述 Description
 某一天在网上闲逛的玖君不小心发现了TYVJ，就立刻被TYVJ吸引住了，果断驻扎下来。玖君决定按照顺序来切题，因为离复赛越来越近了，所以他希望能够用最短时间AC掉前面N道题目，完成第i道题目玖君需要花费t[i]个单位的代价。玖君做题有个特点，他喜欢看完几道题后，一次把几道题的代码写完。如果玖君决定一次写完从编号L到编号R的题目，那么他完成这些题目的总代价等于编号L到R题">
-<meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
+<meta property="og:updated_time" content="2015-10-19T11:09:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tyvj_P1309_刷题的玖君">
 <meta name="twitter:description" content="描述 Description
 某一天在网上闲逛的玖君不小心发现了TYVJ，就立刻被TYVJ吸引住了，果断驻扎下来。玖君决定按照顺序来切题，因为离复赛越来越近了，所以他希望能够用最短时间AC掉前面N道题目，完成第i道题目玖君需要花费t[i]个单位的代价。玖君做题有个特点，他喜欢看完几道题后，一次把几道题的代码写完。如果玖君决定一次写完从编号L到编号R的题目，那么他完成这些题目的总代价等于编号L到R题">
+<meta name="twitter:creator" content="@sillycross">
+    
+        <meta rel="publisher" content="https://plus.google.com/dlxtxlb"/>
     
     
         
@@ -186,7 +189,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/atom.xml"
+                         href="/rss2.xml"
                         
                     >
                 
@@ -252,43 +255,8 @@
 <li>(f[k]-f[j])/(sum[k]-sum[j])&lt;=i</li>
 </ul>
 <p>当满足这个条件时，k优于j ，然后就维护一个队列就行了，这个是所谓的斜率优化？还是得好好消化啊，dp水平太次了我。。。</p>
-<pre><code><span class="comment">#include &lt;iostream&gt;</span>
-<span class="comment">#include &lt;cstdio&gt;</span>
-<span class="comment">#include &lt;cmath&gt;</span>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include &lt;cstdio&gt;</span></span><br><span class="line"><span class="comment">#include &lt;cmath&gt;</span></span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">typedef long long LL;</span><br><span class="line"></span><br><span class="line">const <span class="keyword">int</span> MN = <span class="number">30010</span>;</span><br><span class="line"></span><br><span class="line">LL n, <span class="keyword">s</span>;</span><br><span class="line">LL f[MN];</span><br><span class="line">LL sum[MN];</span><br><span class="line"><span class="keyword">int</span> <span class="string">q[MN]</span>;</span><br><span class="line"></span><br><span class="line">double grad(<span class="keyword">int</span> j, <span class="keyword">int</span> k) &#123;</span><br><span class="line">    <span class="keyword">return</span> ((f[k]-f[j])*<span class="number">1.0</span> / (sum[k]-sum[j]));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> main() &#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; <span class="keyword">s</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        scanf(<span class="string">"<span class="variable">%lld</span>"</span>, &amp;sum[i]);</span><br><span class="line">        sum[i] += sum[i-<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> h = <span class="number">1</span>, t = <span class="number">1</span>;</span><br><span class="line">    f[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">while</span> ((h &lt; t) &amp;&amp; (grad(<span class="string">q[h]</span>, <span class="string">q[h+1]</span>) &lt;= i)) ++h;</span><br><span class="line">        f[i] = f[<span class="string">q[h]</span>] + (sum[i]-sum[<span class="string">q[h]</span>])*i + (n-i)*<span class="keyword">s</span>;</span><br><span class="line">        <span class="keyword">while</span> ((h &lt; t) &amp;&amp; (grad(<span class="string">q[t-1]</span>, <span class="string">q[t]</span>) &gt;= grad(<span class="string">q[t]</span>, i))) --t;</span><br><span class="line">        <span class="string">q[++t]</span> = i;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; f[n] &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-using namespace std;
-
-typedef long long LL;
-
-const <span class="keyword">int</span> MN = <span class="number">30010</span>;
-
-LL n, <span class="keyword">s</span>;
-LL f[MN];
-LL sum[MN];
-<span class="keyword">int</span> <span class="string">q[MN]</span>;
-
-double grad(<span class="keyword">int</span> j, <span class="keyword">int</span> k) {
-    <span class="keyword">return</span> ((f[k]-f[j])*<span class="number">1.0</span> / (sum[k]-sum[j]));
-}
-
-<span class="keyword">int</span> main() {
-    cin &gt;&gt; n &gt;&gt; <span class="keyword">s</span>;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) {
-        scanf(<span class="string">"<span class="variable">%lld</span>"</span>, &amp;sum[i]);
-        sum[i] += sum[i-<span class="number">1</span>];
-    }
-    <span class="keyword">int</span> h = <span class="number">1</span>, t = <span class="number">1</span>;
-    f[<span class="number">0</span>] = <span class="number">0</span>;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) {
-        <span class="keyword">while</span> ((h &lt; t) &amp;&amp; (grad(<span class="string">q[h]</span>, <span class="string">q[h+1]</span>) &lt;= i)) ++h;
-        f[i] = f[<span class="string">q[h]</span>] + (sum[i]-sum[<span class="string">q[h]</span>])*i + (n-i)*<span class="keyword">s</span>;
-        <span class="keyword">while</span> ((h &lt; t) &amp;&amp; (grad(<span class="string">q[t-1]</span>, <span class="string">q[t]</span>) &gt;= grad(<span class="string">q[t]</span>, i))) --t;
-        <span class="string">q[++t]</span> = i;
-    }
-    cout &lt;&lt; f[n] &lt;&lt; endl;
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>
             
                 
 
@@ -481,14 +449,14 @@ double grad(<span class="keyword">int</span> j, <span class="keyword">int</span>
         
             <h4 id="about-card-name">sillyplus</h4>
         
-            <h5 id="about-card-bio"><p>author.bio</p>
+            <h5 id="about-card-bio"><p>Write the code and change the world</p>
 </h5>
         
         
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p>Student</p>
 
             </h5>
         

@@ -10,7 +10,7 @@
     <meta name="author" content="sillyplus">
     
     
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
     <meta name="description" content="我应该怎么说这道题好呢，只能怪自己英语没有学好吧T^T，为什么造福小众，我决定不翻译题意了，大家自己看吧。。。。
 There are several ways to encode an image. In this problem we will consider two representations of an image. We assume that the image consists">
@@ -20,11 +20,14 @@ There are several ways to encode an image. In this problem we will consider two 
 <meta property="og:site_name" content="Kepp It Simple && Stupid">
 <meta property="og:description" content="我应该怎么说这道题好呢，只能怪自己英语没有学好吧T^T，为什么造福小众，我决定不翻译题意了，大家自己看吧。。。。
 There are several ways to encode an image. In this problem we will consider two representations of an image. We assume that the image consists">
-<meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
+<meta property="og:updated_time" content="2015-10-19T11:08:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Timus_1008_Image Encoding">
 <meta name="twitter:description" content="我应该怎么说这道题好呢，只能怪自己英语没有学好吧T^T，为什么造福小众，我决定不翻译题意了，大家自己看吧。。。。
 There are several ways to encode an image. In this problem we will consider two representations of an image. We assume that the image consists">
+<meta name="twitter:creator" content="@sillycross">
+    
+        <meta rel="publisher" content="https://plus.google.com/dlxtxlb"/>
     
     
         
@@ -186,7 +189,7 @@ There are several ways to encode an image. In this problem we will consider two 
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/atom.xml"
+                         href="/rss2.xml"
                         
                     >
                 
@@ -252,117 +255,8 @@ There are several ways to encode an image. In this problem we will consider two 
 <p>我只想说重点在最后几句话。。可能只有我没看清楚吧。。。。</p>
 <p>看懂题意之后就会发现整个转换的过程其实就是bfs吧，然后就硬上了。一开始我由于没看清楚题意只写了一个转换，wa了几次，后来经过谷哥翻译才发现有这么个坑。</p>
 <p>然后读入数据有点麻烦，总之就是我最不擅长的东西，还有要记得是逆时针方向，搜的时候。然后我就因为不明原因一直爆内存。。。。后来的后来，把原本读入字符数组的部分改成读字符串后不知道为什么就过了。。。。白白D了那么久的bug了。。。。</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> pt&#123;</span><br><span class="line">    <span class="keyword">int</span> x, y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, ans, vx, vy;</span><br><span class="line"><span class="keyword">bool</span> vis[MN][MN];</span><br><span class="line"><span class="keyword">int</span> dx[] = &#123;<span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> dy[] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">pt a[MN*MN];</span><br><span class="line"><span class="keyword">char</span> c[] = &#123;<span class="string">'R'</span>, <span class="string">'T'</span>, <span class="string">'L'</span>, <span class="string">'B'</span>&#125;, b[MN];</span><br><span class="line"><span class="built_in">queue</span>&lt;pt&gt; q;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">comp</span><span class="params">(<span class="keyword">const</span> pt &amp;pa, <span class="keyword">const</span> pt &amp;pb)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (pa.x != pb.x) <span class="keyword">return</span> pa.x &lt; pb.x;</span><br><span class="line">    <span class="keyword">return</span> pa.y &lt; pb.y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfsa</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    pt now, next;</span><br><span class="line">    <span class="built_in">string</span> dir;</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        now = q.front();</span><br><span class="line">        a[ans] = now;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; dir;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dir.length() - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">char</span> tc = dir[i];</span><br><span class="line">            <span class="keyword">int</span> j;</span><br><span class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (c[j] == tc) <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            next.x = now.x + dx[j];</span><br><span class="line">            next.y = now.y + dy[j];</span><br><span class="line">            q.push(next);</span><br><span class="line">        &#125;</span><br><span class="line">        q.pop();</span><br><span class="line">        ans++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfsb</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    pt now, next;</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        now = q.front();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> tx = now.x + dx[i];</span><br><span class="line">            <span class="keyword">int</span> ty = now.y + dy[i];</span><br><span class="line">            <span class="keyword">if</span> (vis[tx][ty] == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; c[i];</span><br><span class="line">                vis[tx][ty] = <span class="number">0</span>;</span><br><span class="line">                next.x = tx;</span><br><span class="line">                next.y = ty;</span><br><span class="line">                q.push(next);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ans++;</span><br><span class="line">        <span class="keyword">if</span> (ans != n)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">",\n"</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">".\n"</span>;</span><br><span class="line">        q.pop();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    getline(<span class="built_in">cin</span>, s);</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">    pt k;</span><br><span class="line">    <span class="keyword">if</span> (s.find(<span class="string">' '</span>) != <span class="built_in">string</span>::npos) &#123;</span><br><span class="line">        s.copy(b, s.find(<span class="string">' '</span>), <span class="number">0</span>);</span><br><span class="line">        vx = atoi(b);</span><br><span class="line">        s.copy(b, <span class="number">100</span>, s.find(<span class="string">' '</span>) + <span class="number">1</span>);</span><br><span class="line">        vy = atoi(b);</span><br><span class="line">        pt k;</span><br><span class="line">        k.x = vx;</span><br><span class="line">        k.y = vy;</span><br><span class="line">        q.push(k);</span><br><span class="line">        bfsa();</span><br><span class="line">        sort(a, a+ans, comp);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ans; i++)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; a[i].x &lt;&lt; <span class="string">' '</span> &lt;&lt; a[i].y &lt;&lt; endl;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        n = atoi(s.c_str());</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; k.x &gt;&gt; k.y;</span><br><span class="line">            vis[k.x][k.y] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">                q.push(k);</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; k.x &lt;&lt; <span class="string">' '</span> &lt;&lt; k.y &lt;&lt; endl;</span><br><span class="line">                vis[k.x][k.y] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ans = <span class="number">0</span>;</span><br><span class="line">        bfsb();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">20</span>;
-
-<span class="keyword">struct</span> pt{
-    <span class="keyword">int</span> x, y;
-};
-
-<span class="keyword">int</span> n, ans, vx, vy;
-<span class="keyword">bool</span> vis[MN][MN];
-<span class="keyword">int</span> dx[] = {<span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>};
-<span class="keyword">int</span> dy[] = {<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>};
-pt a[MN*MN];
-<span class="keyword">char</span> c[] = {<span class="string">'R'</span>, <span class="string">'T'</span>, <span class="string">'L'</span>, <span class="string">'B'</span>}, b[MN];
-<span class="built_in">queue</span>&lt;pt&gt; q;
-
-<span class="function"><span class="keyword">bool</span> <span class="title">comp</span><span class="params">(<span class="keyword">const</span> pt &amp;pa, <span class="keyword">const</span> pt &amp;pb)</span> </span>{
-    <span class="keyword">if</span> (pa.x != pb.x) <span class="keyword">return</span> pa.x &lt; pb.x;
-    <span class="keyword">return</span> pa.y &lt; pb.y;
-}
-
-<span class="function"><span class="keyword">void</span> <span class="title">bfsa</span><span class="params">()</span> </span>{
-    pt now, next;
-    <span class="built_in">string</span> dir;
-    <span class="keyword">while</span> (!q.empty()) {
-        now = q.front();
-        a[ans] = now;
-        <span class="built_in">cin</span> &gt;&gt; dir;
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dir.length() - <span class="number">1</span>; i++) {
-            <span class="keyword">char</span> tc = dir[i];
-            <span class="keyword">int</span> j;
-            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++) {
-                <span class="keyword">if</span> (c[j] == tc) <span class="keyword">break</span>;
-            }
-            next.x = now.x + dx[j];
-            next.y = now.y + dy[j];
-            q.push(next);
-        }
-        q.pop();
-        ans++;
-    }
-}
-
-<span class="function"><span class="keyword">void</span> <span class="title">bfsb</span><span class="params">()</span> </span>{
-    pt now, next;
-    <span class="keyword">while</span> (!q.empty()) {
-        now = q.front();
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) {
-            <span class="keyword">int</span> tx = now.x + dx[i];
-            <span class="keyword">int</span> ty = now.y + dy[i];
-            <span class="keyword">if</span> (vis[tx][ty] == <span class="number">1</span>) {
-                <span class="built_in">cout</span> &lt;&lt; c[i];
-                vis[tx][ty] = <span class="number">0</span>;
-                next.x = tx;
-                next.y = ty;
-                q.push(next);
-            }
-        }
-        ans++;
-        <span class="keyword">if</span> (ans != n)
-            <span class="built_in">cout</span> &lt;&lt; <span class="string">",\n"</span>;
-        <span class="keyword">else</span>
-            <span class="built_in">cout</span> &lt;&lt; <span class="string">".\n"</span>;
-        q.pop();
-    }
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
-    <span class="built_in">string</span> s;
-    getline(<span class="built_in">cin</span>, s);
-    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));
-    pt k;
-    <span class="keyword">if</span> (s.find(<span class="string">' '</span>) != <span class="built_in">string</span>::npos) {
-        s.copy(b, s.find(<span class="string">' '</span>), <span class="number">0</span>);
-        vx = atoi(b);
-        s.copy(b, <span class="number">100</span>, s.find(<span class="string">' '</span>) + <span class="number">1</span>);
-        vy = atoi(b);
-        pt k;
-        k.x = vx;
-        k.y = vy;
-        q.push(k);
-        bfsa();
-        sort(a, a+ans, comp);
-        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ans; i++)
-            <span class="built_in">cout</span> &lt;&lt; a[i].x &lt;&lt; <span class="string">' '</span> &lt;&lt; a[i].y &lt;&lt; endl;
-    } <span class="keyword">else</span> {
-        n = atoi(s.c_str());
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) {
-            <span class="built_in">cin</span> &gt;&gt; k.x &gt;&gt; k.y;
-            vis[k.x][k.y] = <span class="number">1</span>;
-            <span class="keyword">if</span> (i == <span class="number">0</span>) {
-                q.push(k);
-                <span class="built_in">cout</span> &lt;&lt; k.x &lt;&lt; <span class="string">' '</span> &lt;&lt; k.y &lt;&lt; endl;
-                vis[k.x][k.y] = <span class="number">0</span>;
-            }
-        }
-        ans = <span class="number">0</span>;
-        bfsb();
-    }
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>
             
                 
 
@@ -555,14 +449,14 @@ pt a[MN*MN];
         
             <h4 id="about-card-name">sillyplus</h4>
         
-            <h5 id="about-card-bio"><p>author.bio</p>
+            <h5 id="about-card-bio"><p>Write the code and change the world</p>
 </h5>
         
         
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p>Student</p>
 
             </h5>
         

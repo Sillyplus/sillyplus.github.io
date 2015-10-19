@@ -10,7 +10,7 @@
     <meta name="author" content="sillyplus">
     
     
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
     <meta name="description" content="sillyplus&apos; blog">
 <meta property="og:type" content="blog">
@@ -21,6 +21,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kepp It Simple && Stupid">
 <meta name="twitter:description" content="sillyplus&apos; blog">
+<meta name="twitter:creator" content="@sillycross">
+    
+        <meta rel="publisher" content="https://plus.google.com/dlxtxlb"/>
     
     
         
@@ -182,7 +185,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/atom.xml"
+                         href="/rss2.xml"
                         
                     >
                 
@@ -232,67 +235,8 @@
                 
                     <div class="postShorten-content" itemprop="articleBody">
                         <p>☆打鼹鼠<br>SuperBrother在机房里闲着没事干(再对比一下他的NOIP,真是讽刺啊……),于是便无聊地开始玩“打鼹鼠”……<br>描述 Description<br>在这个“打鼹鼠”的游戏中，鼹鼠会不时地从洞中钻出来，不过不会从洞口钻进去（鼹鼠真胆大……）。洞口都在一个大小为n(n&lt;=1024)的正 方形中。这个正方形在一个平面直角坐标系中，左下角为(0,0)，右上角为(n-1,n-1)。洞口所在的位置都是整点，就是横纵坐标都为整数的点。而 SuperBrother也不时地会想知道某一个范围的鼹鼠总数。这就是你的任务。<br>输入格式 Input Format<br>每个输入文件有多行。<br>第一行，一个数n，表示鼹鼠的范围。<br>以后每一行开头都有一个数m，表示不同的操作：<br>m=1，那么后面跟着3个数x,y,k(0&lt;=x,y&lt;n)，表示在点(x,y)处新出现了k只鼹鼠；<br>m=2，那么后面跟着4个数x1,y1,x2,y2(0&lt;=x1&lt;=x2&lt;n,0&lt;=y1&lt;=y2&lt;n)，表示询问矩形(x1,y1)-(x2,y2)内的鼹鼠数量；<br>m=3，表示老师来了，不能玩了。保证这个数会在输入的最后一行。<br>询问数不会超过10000，鼹鼠数不会超过maxlongint。<br>对于每个m=2，输出一行数，这行数只有一个数，即所询问的区域内鼹鼠的个数。</p>
-<pre><code><span class="keyword">var</span>
-  n,m,x1,y1,x2,y2,x,y,k,s:longint;
-  t:<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">1024</span>,-<span class="number">1</span>..<span class="number">1024</span>] <span class="keyword">of</span> longint;
-<span class="function"><span class="keyword">function</span> <span class="title">lowbit</span><span class="params">(i:longint)</span>:</span>longint;
-<span class="keyword">begin</span>
-  lowbit:=i <span class="keyword">and</span> (i <span class="keyword">xor</span> (i-<span class="number">1</span>));
-<span class="keyword">end</span>;
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span></span><br><span class="line">  n,m,x1,y1,x2,y2,x,y,k,s:longint;</span><br><span class="line">  t:<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">1024</span>,-<span class="number">1</span>..<span class="number">1024</span>] <span class="keyword">of</span> longint;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">lowbit</span><span class="params">(i:longint)</span>:</span>longint;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">  lowbit:=i <span class="keyword">and</span> (i <span class="keyword">xor</span> (i-<span class="number">1</span>));</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">change</span><span class="params">(i,jj,k:longint)</span>;</span></span><br><span class="line"><span class="keyword">var</span> j:longint;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">  <span class="keyword">while</span> i&lt;=n <span class="keyword">do</span></span><br><span class="line">   <span class="keyword">begin</span></span><br><span class="line">     j:=jj;   <span class="comment">//就是这里啊  少了这一句</span></span><br><span class="line">     <span class="keyword">while</span> j&lt;=n <span class="keyword">do</span></span><br><span class="line">      <span class="keyword">begin</span></span><br><span class="line">        t[i,j]:=t[i,j]+k;</span><br><span class="line">        j:=j+lowbit(j);</span><br><span class="line">      <span class="keyword">end</span>;</span><br><span class="line">     i:=i+lowbit(i)</span><br><span class="line">   <span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">find</span><span class="params">(i,jj:longint)</span>:</span>longint;</span><br><span class="line"><span class="keyword">var</span> sum,j:longint;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">  sum:=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> i&gt;<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">   <span class="keyword">begin</span></span><br><span class="line">     j:=jj;</span><br><span class="line">     <span class="keyword">while</span> j&gt;<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">      <span class="keyword">begin</span></span><br><span class="line">        sum:=sum+t[i,j];</span><br><span class="line">        j:=j-lowbit(j);</span><br><span class="line">      <span class="keyword">end</span>;</span><br><span class="line">     i:=i-lowbit(i)</span><br><span class="line">   <span class="keyword">end</span>;</span><br><span class="line">  <span class="keyword">exit</span>(sum);</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">  readln(n);</span><br><span class="line">  fillchar(t,sizeof(t),<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">while</span> <span class="keyword">true</span> <span class="keyword">do</span></span><br><span class="line">   <span class="keyword">begin</span></span><br><span class="line">     <span class="keyword">read</span>(m);</span><br><span class="line">     <span class="keyword">if</span> m=<span class="number">1</span> <span class="keyword">then</span></span><br><span class="line">      <span class="keyword">begin</span></span><br><span class="line">        readln(x,y,k);</span><br><span class="line">        change(x+<span class="number">1</span>,y+<span class="number">1</span>,k);</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">     <span class="keyword">else</span> <span class="keyword">if</span> m=<span class="number">2</span> <span class="keyword">then</span></span><br><span class="line">      <span class="keyword">begin</span></span><br><span class="line">        readln(x1,y1,x2,y2);</span><br><span class="line">        s:=find(x2+<span class="number">1</span>,y2+<span class="number">1</span>)+find(x1,y1)-find(x1,y2+<span class="number">1</span>)-find(x2+<span class="number">1</span>,y1);</span><br><span class="line">        writeln(s);</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">     <span class="keyword">else</span> halt;</span><br><span class="line">   <span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">end</span>.</span><br></pre></td></tr></table></figure>
 
-<span class="function"><span class="keyword">procedure</span> <span class="title">change</span><span class="params">(i,jj,k:longint)</span>;</span>
-<span class="keyword">var</span> j:longint;
-<span class="keyword">begin</span>
-  <span class="keyword">while</span> i&lt;=n <span class="keyword">do</span>
-   <span class="keyword">begin</span>
-     j:=jj;   <span class="comment">//就是这里啊  少了这一句</span>
-     <span class="keyword">while</span> j&lt;=n <span class="keyword">do</span>
-      <span class="keyword">begin</span>
-        t[i,j]:=t[i,j]+k;
-        j:=j+lowbit(j);
-      <span class="keyword">end</span>;
-     i:=i+lowbit(i)
-   <span class="keyword">end</span>;
-<span class="keyword">end</span>;
-
-<span class="function"><span class="keyword">function</span> <span class="title">find</span><span class="params">(i,jj:longint)</span>:</span>longint;
-<span class="keyword">var</span> sum,j:longint;
-<span class="keyword">begin</span>
-  sum:=<span class="number">0</span>;
-  <span class="keyword">while</span> i&gt;<span class="number">0</span> <span class="keyword">do</span>
-   <span class="keyword">begin</span>
-     j:=jj;
-     <span class="keyword">while</span> j&gt;<span class="number">0</span> <span class="keyword">do</span>
-      <span class="keyword">begin</span>
-        sum:=sum+t[i,j];
-        j:=j-lowbit(j);
-      <span class="keyword">end</span>;
-     i:=i-lowbit(i)
-   <span class="keyword">end</span>;
-  <span class="keyword">exit</span>(sum);
-<span class="keyword">end</span>;
-
-<span class="keyword">begin</span>
-  readln(n);
-  fillchar(t,sizeof(t),<span class="number">0</span>);
-  <span class="keyword">while</span> <span class="keyword">true</span> <span class="keyword">do</span>
-   <span class="keyword">begin</span>
-     <span class="keyword">read</span>(m);
-     <span class="keyword">if</span> m=<span class="number">1</span> <span class="keyword">then</span>
-      <span class="keyword">begin</span>
-        readln(x,y,k);
-        change(x+<span class="number">1</span>,y+<span class="number">1</span>,k);
-      <span class="keyword">end</span>
-     <span class="keyword">else</span> <span class="keyword">if</span> m=<span class="number">2</span> <span class="keyword">then</span>
-      <span class="keyword">begin</span>
-        readln(x1,y1,x2,y2);
-        s:=find(x2+<span class="number">1</span>,y2+<span class="number">1</span>)+find(x1,y1)-find(x1,y2+<span class="number">1</span>)-find(x2+<span class="number">1</span>,y1);
-        writeln(s);
-      <span class="keyword">end</span>
-     <span class="keyword">else</span> halt;
-   <span class="keyword">end</span>;
-<span class="keyword">end</span>.
-</code></pre>
                         
                             
 
@@ -340,68 +284,8 @@
                         <p>忠诚2<br>描述 Description<br>老管家是一个聪明能干的人。他为财主工作了整整10年，财主为了让自已账目更加清楚。要求管家每天记k次账，由于管家聪明能干，因而管家总是让财主十分满意。但是由于一些人的挑拨，财主还是对管家产生了怀疑。于是他决定用一种特别的方法来判断管家的忠诚，他把每次的账目按1，2，3…编号，然后不定时的问管家问题，问题是这样的：在a到b号账中最少的一笔是多少？为了让管家没时间作假他总是一次问多个问题。<br>在询问过程中账本的内容可能会被修改<br>输入格式 Input Format<br>输入中第一行有两个数m,n表示有m(m&lt;=100000)笔账,n表示有n个问题，n&lt;=100000。<br>接下来每行为3个数字，第一个p为数字1或数字2，第二个数为x，第三个数为y<br>当p=1 则查询x,y区间<br>当p=2 则改变第x个数为y</p>
 <p>输出格式 Output Format<br>输出文件中为每个问题的答案。具体查看样例。<br>典型的线段树。只能说我是蒟蒻，只能做做这种题。第一次写线段树，写的不好请多包涵。</p>
 <p>话说一开始时T数组只开到200000，结果就悲剧了，后来想着就算不过，也把忠诚1给提了，还是一样有两个点没过。<br>最后抱着试一试的态度，随便把数组改大，结果就过了。还是那个结论，蒟蒻啊，对数据范围的估计的能力都没有啊。<br>废话说完了。还是上代码吧。希望对一些有需要的同学有帮助。</p>
-<pre><code><span class="keyword">uses</span> math;
-<span class="keyword">type</span>
-tr=<span class="keyword">record</span>
-　　 a,b,mi:longint;
-　  <span class="keyword">end</span>;
-<span class="keyword">var</span>
-　　n,m,i,k,x,y,j:longint;
-　　t:<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">800000</span>] <span class="keyword">of</span> tr;
-　　a,s:<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">200000</span>] <span class="keyword">of</span> longint;
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">uses</span> math;</span><br><span class="line"><span class="keyword">type</span></span><br><span class="line">tr=<span class="keyword">record</span></span><br><span class="line">　　 a,b,mi:longint;</span><br><span class="line">　  <span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">　　n,m,i,k,x,y,j:longint;</span><br><span class="line">　　t:<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">800000</span>] <span class="keyword">of</span> tr;</span><br><span class="line">　　a,s:<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">200000</span>] <span class="keyword">of</span> longint;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">build</span><span class="params">(p,l,r:longint)</span>;</span></span><br><span class="line"><span class="keyword">var</span> mid:longint;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">　mid:=(l+r) <span class="keyword">div</span> <span class="number">2</span>;</span><br><span class="line">　t[p].a:=l; t[p].b:=r;</span><br><span class="line">　<span class="keyword">if</span> l&lt;&gt;r <span class="keyword">then</span></span><br><span class="line">　　<span class="keyword">begin</span></span><br><span class="line">　　　build(<span class="number">2</span>*p,l,mid);</span><br><span class="line">　　　build(<span class="number">2</span>*p+<span class="number">1</span>,mid+<span class="number">1</span>,r);</span><br><span class="line">　　　t[p].mi:=min(t[<span class="number">2</span>*p].mi,t[<span class="number">2</span>*p+<span class="number">1</span>].mi);</span><br><span class="line">　　<span class="keyword">end</span> <span class="keyword">else</span></span><br><span class="line">　　<span class="keyword">begin</span></span><br><span class="line">　　　t[p].mi:=a[l];</span><br><span class="line">　　　s[l]:=p;</span><br><span class="line">　　<span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">change</span><span class="params">(x,y:longint)</span>;</span><span class="comment">//把这个去掉，改一下输入就可以过忠诚1了</span></span><br><span class="line"><span class="keyword">var</span> ss:longint;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">　ss:=s[x];</span><br><span class="line">　t[ss].mi:=y;</span><br><span class="line">　<span class="keyword">while</span> ss&gt;<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">　　<span class="keyword">begin</span></span><br><span class="line">　　　ss:=ss <span class="keyword">div</span> <span class="number">2</span>;</span><br><span class="line">　　　t[ss].mi:=min(t[<span class="number">2</span>*ss].mi,t[<span class="number">2</span>*ss+<span class="number">1</span>].mi);</span><br><span class="line">　　<span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">find</span><span class="params">(p,l,r:longint)</span>:</span>longint;</span><br><span class="line"><span class="keyword">var</span> mid:longint;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">　mid:=(t[p].a+t[p].b) <span class="keyword">div</span> <span class="number">2</span>;</span><br><span class="line">　<span class="keyword">if</span> (t[p].a=l) <span class="keyword">and</span> (t[p].b=r) <span class="keyword">then</span> <span class="keyword">exit</span>(t[p].mi)</span><br><span class="line">　<span class="keyword">else</span> <span class="keyword">if</span> r&lt;=mid <span class="keyword">then</span> <span class="keyword">exit</span>(find(<span class="number">2</span>*p,l,r))</span><br><span class="line">　　<span class="keyword">else</span> <span class="keyword">if</span> l&gt;=mid+<span class="number">1</span> <span class="keyword">then</span> <span class="keyword">exit</span>(find(<span class="number">2</span>*p+<span class="number">1</span>,l,r))</span><br><span class="line">　　　<span class="keyword">else</span> <span class="keyword">exit</span>(min(find(<span class="number">2</span>*p,l,mid),find(<span class="number">2</span>*p+<span class="number">1</span>,mid+<span class="number">1</span>,r)));</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">　readln(m,n);</span><br><span class="line">　<span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> m <span class="keyword">do</span> <span class="keyword">read</span>(a[i]);</span><br><span class="line">　build(<span class="number">1</span>,<span class="number">1</span>,m);</span><br><span class="line">　<span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> n <span class="keyword">do</span></span><br><span class="line">　　<span class="keyword">begin</span></span><br><span class="line">　　　<span class="keyword">read</span>(k,x,y);</span><br><span class="line">　　　<span class="keyword">if</span> k=<span class="number">1</span> <span class="keyword">then</span> <span class="keyword">write</span>(find(<span class="number">1</span>,x,y),<span class="string">' '</span>)</span><br><span class="line">　　　<span class="keyword">else</span></span><br><span class="line">　　　change(x,y);</span><br><span class="line">　　<span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">end</span>.</span><br></pre></td></tr></table></figure>
 
-<span class="function"><span class="keyword">procedure</span> <span class="title">build</span><span class="params">(p,l,r:longint)</span>;</span>
-<span class="keyword">var</span> mid:longint;
-<span class="keyword">begin</span>
-　mid:=(l+r) <span class="keyword">div</span> <span class="number">2</span>;
-　t[p].a:=l; t[p].b:=r;
-　<span class="keyword">if</span> l&lt;&gt;r <span class="keyword">then</span>
-　　<span class="keyword">begin</span>
-　　　build(<span class="number">2</span>*p,l,mid);
-　　　build(<span class="number">2</span>*p+<span class="number">1</span>,mid+<span class="number">1</span>,r);
-　　　t[p].mi:=min(t[<span class="number">2</span>*p].mi,t[<span class="number">2</span>*p+<span class="number">1</span>].mi);
-　　<span class="keyword">end</span> <span class="keyword">else</span>
-　　<span class="keyword">begin</span>
-　　　t[p].mi:=a[l];
-　　　s[l]:=p;
-　　<span class="keyword">end</span>;
-<span class="keyword">end</span>;
-
-<span class="function"><span class="keyword">procedure</span> <span class="title">change</span><span class="params">(x,y:longint)</span>;</span><span class="comment">//把这个去掉，改一下输入就可以过忠诚1了</span>
-<span class="keyword">var</span> ss:longint;
-<span class="keyword">begin</span>
-　ss:=s[x];
-　t[ss].mi:=y;
-　<span class="keyword">while</span> ss&gt;<span class="number">0</span> <span class="keyword">do</span>
-　　<span class="keyword">begin</span>
-　　　ss:=ss <span class="keyword">div</span> <span class="number">2</span>;
-　　　t[ss].mi:=min(t[<span class="number">2</span>*ss].mi,t[<span class="number">2</span>*ss+<span class="number">1</span>].mi);
-　　<span class="keyword">end</span>;
-<span class="keyword">end</span>;
-
-<span class="function"><span class="keyword">function</span> <span class="title">find</span><span class="params">(p,l,r:longint)</span>:</span>longint;
-<span class="keyword">var</span> mid:longint;
-<span class="keyword">begin</span>
-　mid:=(t[p].a+t[p].b) <span class="keyword">div</span> <span class="number">2</span>;
-　<span class="keyword">if</span> (t[p].a=l) <span class="keyword">and</span> (t[p].b=r) <span class="keyword">then</span> <span class="keyword">exit</span>(t[p].mi)
-　<span class="keyword">else</span> <span class="keyword">if</span> r&lt;=mid <span class="keyword">then</span> <span class="keyword">exit</span>(find(<span class="number">2</span>*p,l,r))
-　　<span class="keyword">else</span> <span class="keyword">if</span> l&gt;=mid+<span class="number">1</span> <span class="keyword">then</span> <span class="keyword">exit</span>(find(<span class="number">2</span>*p+<span class="number">1</span>,l,r))
-　　　<span class="keyword">else</span> <span class="keyword">exit</span>(min(find(<span class="number">2</span>*p,l,mid),find(<span class="number">2</span>*p+<span class="number">1</span>,mid+<span class="number">1</span>,r)));
-<span class="keyword">end</span>;
-
-<span class="keyword">begin</span>
-　readln(m,n);
-　<span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> m <span class="keyword">do</span> <span class="keyword">read</span>(a[i]);
-　build(<span class="number">1</span>,<span class="number">1</span>,m);
-　<span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> n <span class="keyword">do</span>
-　　<span class="keyword">begin</span>
-　　　<span class="keyword">read</span>(k,x,y);
-　　　<span class="keyword">if</span> k=<span class="number">1</span> <span class="keyword">then</span> <span class="keyword">write</span>(find(<span class="number">1</span>,x,y),<span class="string">' '</span>)
-　　　<span class="keyword">else</span>
-　　　change(x,y);
-　　<span class="keyword">end</span>;
-<span class="keyword">end</span>.
-</code></pre>
                         
                             
 
@@ -463,14 +347,14 @@ tr=<span class="keyword">record</span>
         
             <h4 id="about-card-name">sillyplus</h4>
         
-            <h5 id="about-card-bio"><p>author.bio</p>
+            <h5 id="about-card-bio"><p>Write the code and change the world</p>
 </h5>
         
         
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p>Student</p>
 
             </h5>
         

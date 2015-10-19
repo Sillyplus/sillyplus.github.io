@@ -10,7 +10,7 @@
     <meta name="author" content="sillyplus">
     
     
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
     <meta name="description" content="题目大意：Dima送给他女友N只兔子，编号1-n（n&amp;lt;=3000）,当给兔子喂食时，它们会产生joy值，joy的取值有三种状态：1.当前兔子左右两边都没有已经喂过的兔子；2.当前兔子左右两边有且仅有一边有已经喂过的兔子；3.当前兔子左右两边的兔子均已喂过。（编号1，n的兔子显然无法满足）现给出每只兔子三种状态下的joy值，希望你帮助Dima的女友有Inna选择某种喂食顺序，使得总的joy值最">
 <meta property="og:type" content="blog">
@@ -18,10 +18,13 @@
 <meta property="og:url" content="http://github.com/sillyplus/2013/10/26/codeforces-358d-dima-and-hares/index.html">
 <meta property="og:site_name" content="Kepp It Simple && Stupid">
 <meta property="og:description" content="题目大意：Dima送给他女友N只兔子，编号1-n（n&amp;lt;=3000）,当给兔子喂食时，它们会产生joy值，joy的取值有三种状态：1.当前兔子左右两边都没有已经喂过的兔子；2.当前兔子左右两边有且仅有一边有已经喂过的兔子；3.当前兔子左右两边的兔子均已喂过。（编号1，n的兔子显然无法满足）现给出每只兔子三种状态下的joy值，希望你帮助Dima的女友有Inna选择某种喂食顺序，使得总的joy值最">
-<meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
+<meta property="og:updated_time" content="2015-10-19T10:59:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces 358D Dima and Hares">
 <meta name="twitter:description" content="题目大意：Dima送给他女友N只兔子，编号1-n（n&amp;lt;=3000）,当给兔子喂食时，它们会产生joy值，joy的取值有三种状态：1.当前兔子左右两边都没有已经喂过的兔子；2.当前兔子左右两边有且仅有一边有已经喂过的兔子；3.当前兔子左右两边的兔子均已喂过。（编号1，n的兔子显然无法满足）现给出每只兔子三种状态下的joy值，希望你帮助Dima的女友有Inna选择某种喂食顺序，使得总的joy值最">
+<meta name="twitter:creator" content="@sillycross">
+    
+        <meta rel="publisher" content="https://plus.google.com/dlxtxlb"/>
     
     
         
@@ -183,7 +186,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/atom.xml"
+                         href="/rss2.xml"
                         
                     >
                 
@@ -234,38 +237,8 @@
 <p>状态转移：<br>f[i][0] = max(f[i-1][0]+a[i][1], f[i-1][1]+a[i][0])<br>f[i][1] = max(f[i-1][0]+a[i][2], f[i-1][1]+a[i][1])</p>
 <p>显然最后的答案就是f[n][0]<br>复杂度应该是O(N)吧</p>
 <p>总结：感觉这道题目还是很有趣的（对我这种傻×来说）。可说到底这还是一道水题，虽然比赛的时候我看到题目就想到了DP，但显然DP能力太弱了（真的是跪到不行T^T），没有想出来给怎么表示状态，然后我选择了放弃思考。。。（提醒自己：可以放弃治疗，决不能放弃思考。说不定就想出来了）果然是智商问题，外加做过的题太少。。。最后是看了liympanda大神的代码,然后理解出来上面那堆东西，能力有限，写得不好望见谅。</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span></span>
-<span class="preprocessor">#<span class="keyword">include</span></span>
-<span class="preprocessor">#<span class="keyword">include</span></span>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">3200</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[MN][<span class="number">3</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> f[MN][<span class="number">2</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> n, ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][<span class="number">2</span>]);</span><br><span class="line">    f[<span class="number">0</span>][<span class="number">0</span>] = a[<span class="number">0</span>][<span class="number">0</span>]; f[<span class="number">0</span>][<span class="number">1</span>] = a[<span class="number">0</span>][<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span>; j++) &#123;</span><br><span class="line">            f[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">2</span>; k++) &#123;</span><br><span class="line">                 <span class="keyword">if</span> (f[i - <span class="number">1</span>][k] + a[i][<span class="number">1</span> - k + j] &gt; f[i][j])</span><br><span class="line">                    f[i][j] = f[i - <span class="number">1</span>][k] + a[i][<span class="number">1</span> - k + j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ans = f[n - <span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">3200</span>;
-
-<span class="keyword">int</span> a[MN][<span class="number">3</span>] = {<span class="number">0</span>};
-<span class="keyword">int</span> f[MN][<span class="number">2</span>] = {<span class="number">0</span>};
-<span class="keyword">int</span> n, ans;
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
-    <span class="built_in">cin</span> &gt;&gt; n;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][<span class="number">0</span>]);
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][<span class="number">1</span>]);
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][<span class="number">2</span>]);
-    f[<span class="number">0</span>][<span class="number">0</span>] = a[<span class="number">0</span>][<span class="number">0</span>]; f[<span class="number">0</span>][<span class="number">1</span>] = a[<span class="number">0</span>][<span class="number">1</span>];
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) {
-        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span>; j++) {
-            f[i][j] = <span class="number">0</span>;
-            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">2</span>; k++) {
-                 <span class="keyword">if</span> (f[i - <span class="number">1</span>][k] + a[i][<span class="number">1</span> - k + j] &gt; f[i][j])
-                    f[i][j] = f[i - <span class="number">1</span>][k] + a[i][<span class="number">1</span> - k + j];
-            }
-        }
-    }
-    ans = f[n - <span class="number">1</span>][<span class="number">0</span>];
-    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>
             
                 
 
@@ -458,14 +431,14 @@
         
             <h4 id="about-card-name">sillyplus</h4>
         
-            <h5 id="about-card-bio"><p>author.bio</p>
+            <h5 id="about-card-bio"><p>Write the code and change the world</p>
 </h5>
         
         
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p>Student</p>
 
             </h5>
         

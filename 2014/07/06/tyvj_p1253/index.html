@@ -10,7 +10,7 @@
     <meta name="author" content="sillyplus">
     
     
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
     <meta name="description" content="描述 Description
 ForeverBell不仅精通破译密码,更是我军的重要代码编写者(至于什么代码,自己想吧).战争的日子是无聊的,有一天,ForeverBell找到了treeboy,出了一个极其简单的问题:给定一段序列,找出这段数列中第k小的数.为了照顾treeboy的超弱语文水平,ForeverBell极其耐心地解释了这个问题:给定一个整数数列num[1…n],序列中的每个数字都不相">
@@ -20,11 +20,14 @@ ForeverBell不仅精通破译密码,更是我军的重要代码编写者(至于�
 <meta property="og:site_name" content="Kepp It Simple && Stupid">
 <meta property="og:description" content="描述 Description
 ForeverBell不仅精通破译密码,更是我军的重要代码编写者(至于什么代码,自己想吧).战争的日子是无聊的,有一天,ForeverBell找到了treeboy,出了一个极其简单的问题:给定一段序列,找出这段数列中第k小的数.为了照顾treeboy的超弱语文水平,ForeverBell极其耐心地解释了这个问题:给定一个整数数列num[1…n],序列中的每个数字都不相">
-<meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
+<meta property="og:updated_time" content="2015-10-19T11:08:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tyvj_P1253 - 无聊的战争">
 <meta name="twitter:description" content="描述 Description
 ForeverBell不仅精通破译密码,更是我军的重要代码编写者(至于什么代码,自己想吧).战争的日子是无聊的,有一天,ForeverBell找到了treeboy,出了一个极其简单的问题:给定一段序列,找出这段数列中第k小的数.为了照顾treeboy的超弱语文水平,ForeverBell极其耐心地解释了这个问题:给定一个整数数列num[1…n],序列中的每个数字都不相">
+<meta name="twitter:creator" content="@sillycross">
+    
+        <meta rel="publisher" content="https://plus.google.com/dlxtxlb"/>
     
     
         
@@ -186,7 +189,7 @@ ForeverBell不仅精通破译密码,更是我军的重要代码编写者(至于�
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/atom.xml"
+                         href="/rss2.xml"
                         
                     >
                 
@@ -246,80 +249,8 @@ ForeverBell不仅精通破译密码,更是我军的重要代码编写者(至于�
 <h4 id="3查找"><strong>3查找</strong></h4><p>查找的过程中主要问题就是确定将要查找的区间。这个问题有些麻烦。</p>
 <p>先看一下查找过程tree_find.他的定义如下：</p>
 <p>查找深度为h，在大区间[st,ed]中找小区间[s,e]中的第k元素。<br>再看看他是如何工作的。我们的想法是，先判断[s,e]中第k元素在[st,ed]的哪个子树中，然后找出对应的小区间和k，递归的进行查找，直到小区间的s=e为止。<br>那如何解决这个问题呢？这时候前面记录的进入左子树的元素个数就派上用场了。通过之前的记录可以知道，在区间[st,s-1]中有el[h,s-1]进入左子树，记它为l。同理区间[st,e]中有el[h,e]个数进去左子树，记它为r。所以，我们知道区间小区间[s,e]中有(r-l)个数进入左子树。那么如果(r-l)&gt;=k，那么就在左子树中继续查找，否则就在右子树中继续查找。<br>接着解决查找的小区间的问题。<br>如果接下来要查找的是左子树，那么小区间应该是[st+([st,s-1]区间进入左子树的个数),st+([st,e]区间内进入左子树的个数)-1]，即区间[st+l,st+r-1]。显然，这里k不用变。<br>如果接下来要查找的是右子树，那么小区间应该是[mid+([st,s-1]区间中进入右子树的个数),mid+([st,e]区间进入右子树的个数)-1]。即区间[mid+(s-st-l),mid+(e-st-r)]。显然，这里k要减去区间里已经进入左子树的个数，即k变为k-(r-l)。<br>于是递归继续查找直到s=e即可。</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> N <span class="number">100500</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MID ((l+r)&gt;&gt;<span class="number">1</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[N], s[N], t[<span class="number">20</span>][N], num[<span class="number">20</span>][N], n, m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Build</span><span class="params">(<span class="keyword">int</span> c, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> lm = MID-l+<span class="number">1</span>, lp = l, rp = MID+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt;= MID; i++)</span><br><span class="line">        lm -= s[i] &lt; s[MID];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt;= r; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i == l)</span><br><span class="line">            num[c][i] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            num[c][i] = num[c][i-<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (t[c][i] == s[MID]) &#123;</span><br><span class="line">            <span class="keyword">if</span> (lm) &#123;</span><br><span class="line">                lm--;</span><br><span class="line">                num[c][i]++;</span><br><span class="line">                t[c+<span class="number">1</span>][lp++] = t[c][i];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                t[c+<span class="number">1</span>][rp++] = t[c][i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (t[c][i] &lt; s[MID]) &#123;</span><br><span class="line">            num[c][i]++;</span><br><span class="line">            t[c+<span class="number">1</span>][lp++] = t[c][i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            t[c+<span class="number">1</span>][rp++] = t[c][i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (l &lt; r) &#123;</span><br><span class="line">        Build(c+<span class="number">1</span>, l, MID);</span><br><span class="line">        Build(c+<span class="number">1</span>, MID+<span class="number">1</span>, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Query</span><span class="params">(<span class="keyword">int</span> c, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l == r)</span><br><span class="line">        <span class="keyword">return</span> t[c][l];</span><br><span class="line">    <span class="keyword">int</span> s, ss;</span><br><span class="line">    <span class="keyword">if</span> (l == ql) &#123;</span><br><span class="line">        s = <span class="number">0</span>;</span><br><span class="line">        ss = num[c][qr];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        s = num[c][ql-<span class="number">1</span>];</span><br><span class="line">        ss = num[c][qr] - num[c][ql-<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (k &lt;= ss)</span><br><span class="line">        <span class="keyword">return</span> Query(c+<span class="number">1</span>, l, MID, l+s, l+s+ss-<span class="number">1</span>, k);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> Query(c+<span class="number">1</span>, MID+<span class="number">1</span>, r, MID+<span class="number">1</span>+ql-l-s, MID+<span class="number">1</span>+qr-l-s-ss, k-ss);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">        s[i] = t[<span class="number">0</span>][i] = a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    sort(s+<span class="number">1</span>, s+<span class="number">1</span>+n);</span><br><span class="line">    Build(<span class="number">0</span>, <span class="number">1</span>, n);</span><br><span class="line">    <span class="keyword">while</span> (m--) &#123;</span><br><span class="line">        <span class="keyword">int</span> l, r, k;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;l, &amp;r, &amp;k);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, Query(<span class="number">0</span>, <span class="number">1</span>, n, l, r, k));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="preprocessor">#<span class="keyword">define</span> N <span class="number">100500</span></span>
-<span class="preprocessor">#<span class="keyword">define</span> MID ((l+r)&gt;&gt;<span class="number">1</span>)</span>
-
-<span class="keyword">int</span> a[N], s[N], t[<span class="number">20</span>][N], num[<span class="number">20</span>][N], n, m;
-
-<span class="function"><span class="keyword">void</span> <span class="title">Build</span><span class="params">(<span class="keyword">int</span> c, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>{
-    <span class="keyword">int</span> lm = MID-l+<span class="number">1</span>, lp = l, rp = MID+<span class="number">1</span>;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt;= MID; i++)
-        lm -= s[i] &lt; s[MID];
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt;= r; i++) {
-        <span class="keyword">if</span> (i == l)
-            num[c][i] = <span class="number">0</span>;
-        <span class="keyword">else</span>
-            num[c][i] = num[c][i-<span class="number">1</span>];
-        <span class="keyword">if</span> (t[c][i] == s[MID]) {
-            <span class="keyword">if</span> (lm) {
-                lm--;
-                num[c][i]++;
-                t[c+<span class="number">1</span>][lp++] = t[c][i];
-            } <span class="keyword">else</span> {
-                t[c+<span class="number">1</span>][rp++] = t[c][i];
-            }
-        } <span class="keyword">else</span> <span class="keyword">if</span> (t[c][i] &lt; s[MID]) {
-            num[c][i]++;
-            t[c+<span class="number">1</span>][lp++] = t[c][i];
-        } <span class="keyword">else</span> {
-            t[c+<span class="number">1</span>][rp++] = t[c][i];
-        }
-    }
-    <span class="keyword">if</span> (l &lt; r) {
-        Build(c+<span class="number">1</span>, l, MID);
-        Build(c+<span class="number">1</span>, MID+<span class="number">1</span>, r);
-    }
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">Query</span><span class="params">(<span class="keyword">int</span> c, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, <span class="keyword">int</span> k)</span> </span>{
-    <span class="keyword">if</span> (l == r)
-        <span class="keyword">return</span> t[c][l];
-    <span class="keyword">int</span> s, ss;
-    <span class="keyword">if</span> (l == ql) {
-        s = <span class="number">0</span>;
-        ss = num[c][qr];
-    } <span class="keyword">else</span> {
-        s = num[c][ql-<span class="number">1</span>];
-        ss = num[c][qr] - num[c][ql-<span class="number">1</span>];
-    }
-    <span class="keyword">if</span> (k &lt;= ss)
-        <span class="keyword">return</span> Query(c+<span class="number">1</span>, l, MID, l+s, l+s+ss-<span class="number">1</span>, k);
-    <span class="keyword">else</span>
-        <span class="keyword">return</span> Query(c+<span class="number">1</span>, MID+<span class="number">1</span>, r, MID+<span class="number">1</span>+ql-l-s, MID+<span class="number">1</span>+qr-l-s-ss, k-ss);
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
-    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) {
-        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);
-        s[i] = t[<span class="number">0</span>][i] = a[i];
-    }
-    sort(s+<span class="number">1</span>, s+<span class="number">1</span>+n);
-    Build(<span class="number">0</span>, <span class="number">1</span>, n);
-    <span class="keyword">while</span> (m--) {
-        <span class="keyword">int</span> l, r, k;
-        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;l, &amp;r, &amp;k);
-        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, Query(<span class="number">0</span>, <span class="number">1</span>, n, l, r, k));
-    }
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>
             
                 
 
@@ -512,14 +443,14 @@ ForeverBell不仅精通破译密码,更是我军的重要代码编写者(至于�
         
             <h4 id="about-card-name">sillyplus</h4>
         
-            <h5 id="about-card-bio"><p>author.bio</p>
+            <h5 id="about-card-bio"><p>Write the code and change the world</p>
 </h5>
         
         
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p>Student</p>
 
             </h5>
         

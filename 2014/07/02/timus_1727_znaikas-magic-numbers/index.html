@@ -10,7 +10,7 @@
     <meta name="author" content="sillyplus">
     
     
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
     <meta name="description" content="题目大意：给你一个N (0 &amp;lt; N &amp;lt; 10^5)，把N分解成若干个不相同且值不超过10^5的整数的各个位数的和，例如：N＝17时有，17 ＝ 7 ＋ 1 ＋ 2 ＋ 4 ＋ 3，所以17可以分解成7， 12， 43，这三个不同的整数。
 题目其实是比较简单的，解法也有很多种，我就说一个我认为比较有趣的解法。我们可以每次把N加到所求的整数集合里面，然后再把N减去自身各位数字的和得到新的N">
@@ -20,11 +20,14 @@
 <meta property="og:site_name" content="Kepp It Simple && Stupid">
 <meta property="og:description" content="题目大意：给你一个N (0 &amp;lt; N &amp;lt; 10^5)，把N分解成若干个不相同且值不超过10^5的整数的各个位数的和，例如：N＝17时有，17 ＝ 7 ＋ 1 ＋ 2 ＋ 4 ＋ 3，所以17可以分解成7， 12， 43，这三个不同的整数。
 题目其实是比较简单的，解法也有很多种，我就说一个我认为比较有趣的解法。我们可以每次把N加到所求的整数集合里面，然后再把N减去自身各位数字的和得到新的N">
-<meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
+<meta property="og:updated_time" content="2015-10-19T11:05:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Timus_1727_Znaika's Magic Numbers">
 <meta name="twitter:description" content="题目大意：给你一个N (0 &amp;lt; N &amp;lt; 10^5)，把N分解成若干个不相同且值不超过10^5的整数的各个位数的和，例如：N＝17时有，17 ＝ 7 ＋ 1 ＋ 2 ＋ 4 ＋ 3，所以17可以分解成7， 12， 43，这三个不同的整数。
 题目其实是比较简单的，解法也有很多种，我就说一个我认为比较有趣的解法。我们可以每次把N加到所求的整数集合里面，然后再把N减去自身各位数字的和得到新的N">
+<meta name="twitter:creator" content="@sillycross">
+    
+        <meta rel="publisher" content="https://plus.google.com/dlxtxlb"/>
     
     
         
@@ -186,7 +189,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/atom.xml"
+                         href="/rss2.xml"
                         
                     >
                 
@@ -236,37 +239,8 @@
 <p>题目其实是比较简单的，解法也有很多种，我就说一个我认为比较有趣的解法。我们可以每次把N加到所求的整数集合里面，然后再把N减去自身各位数字的和得到新的N’，直到N等于零。正确性也很容易验证，注意到我们每次往集合里添加的数必然都是递减的，这就保证了无重复数字的出现，然后按照生成的规则可知，减到N为0的时候自然集合里的所有数的各位数字之和就为最初的N了。</p>
 <p>其他解法：比如说先把1～99999，每个数的位数和算出来，然后排个序，然后就由大到小减等等。。。</p>
 <p>烂烂的还是贴下代码。。。。。</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator its;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ds</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        ret += (x % <span class="number">10</span>);</span><br><span class="line">        x /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">while</span> (n) &#123;</span><br><span class="line">        v.push_back(n);</span><br><span class="line">        n -= ds(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; v.size() &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (its = v.begin(); its != v.end(); its++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; *its &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;
-<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator its;
-
-<span class="function"><span class="keyword">int</span> <span class="title">ds</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{
-    <span class="keyword">int</span> ret = <span class="number">0</span>;
-    <span class="keyword">while</span> (x) {
-        ret += (x % <span class="number">10</span>);
-        x /= <span class="number">10</span>;
-    }
-    <span class="keyword">return</span> ret;
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
-    <span class="keyword">int</span> n;
-    <span class="built_in">cin</span> &gt;&gt; n;
-    <span class="keyword">while</span> (n) {
-        v.push_back(n);
-        n -= ds(n);
-    }
-    <span class="built_in">cout</span> &lt;&lt; v.size() &lt;&lt; endl;
-    <span class="keyword">for</span> (its = v.begin(); its != v.end(); its++)
-        <span class="built_in">cout</span> &lt;&lt; *its &lt;&lt; <span class="string">' '</span>;
-    <span class="built_in">cout</span> &lt;&lt; endl;
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>
             
                 
 
@@ -459,14 +433,14 @@
         
             <h4 id="about-card-name">sillyplus</h4>
         
-            <h5 id="about-card-bio"><p>author.bio</p>
+            <h5 id="about-card-bio"><p>Write the code and change the world</p>
 </h5>
         
         
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p>Student</p>
 
             </h5>
         

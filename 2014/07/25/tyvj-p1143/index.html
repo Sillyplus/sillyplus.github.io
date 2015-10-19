@@ -10,7 +10,7 @@
     <meta name="author" content="sillyplus">
     
     
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
     <meta name="description" content="背景 Background
 一阵狂风吹过只听“pong”的一声，飘飘乎居士降落了！！！描述 Description
@@ -22,12 +22,15 @@
 <meta property="og:description" content="背景 Background
 一阵狂风吹过只听“pong”的一声，飘飘乎居士降落了！！！描述 Description
 又是美妙的一天，这天飘飘乎居士要和MM约会，因此他打扮的格外帅气。但是，因为打扮的时间花了太久，离约会的时间已经所剩无几。幸运的是，现在飘飘乎居士得到了一张nm的地图，图中左上角是飘飘乎居士的位置，右下角是约会的地点。‘.’代表马路，‘’代表房屋。飘飘乎居士只能沿着‘.’行走（也就是">
-<meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
+<meta property="og:updated_time" content="2015-10-19T11:09:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tyvj_P1143 - 飘飘乎居士的约会">
 <meta name="twitter:description" content="背景 Background
 一阵狂风吹过只听“pong”的一声，飘飘乎居士降落了！！！描述 Description
 又是美妙的一天，这天飘飘乎居士要和MM约会，因此他打扮的格外帅气。但是，因为打扮的时间花了太久，离约会的时间已经所剩无几。幸运的是，现在飘飘乎居士得到了一张nm的地图，图中左上角是飘飘乎居士的位置，右下角是约会的地点。‘.’代表马路，‘’代表房屋。飘飘乎居士只能沿着‘.’行走（也就是">
+<meta name="twitter:creator" content="@sillycross">
+    
+        <meta rel="publisher" content="https://plus.google.com/dlxtxlb"/>
     
     
         
@@ -189,7 +192,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/atom.xml"
+                         href="/rss2.xml"
                         
                     >
                 
@@ -250,95 +253,8 @@
 <p>飘飘乎居士——violet hill</p>
 <p>//————————————————————–</p>
 <p>这道我的做法是分别由起点和终点开始，做两遍bfs，求出各自到其它点的最短距离，然后枚举使用飘飘神功的点，如果起点和终点都可以到达与该点相连并且相异的点就更新一下答案</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">1010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> pos&#123;</span><br><span class="line">    <span class="keyword">int</span> x, y, deep;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">queue</span>&lt;pos&gt; q;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> vis[MN][MN];</span><br><span class="line"><span class="keyword">int</span> a[MN][MN], b[MN][MN];</span><br><span class="line"><span class="keyword">char</span> c[MN][MN];</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">int</span> dx[] = &#123;<span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> dy[] = &#123;-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(pos t)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">bool</span> ret = (t.x &gt;= <span class="number">0</span> &amp;&amp; t.y &gt;= <span class="number">0</span> &amp;&amp; t.x &lt; n &amp;&amp; t.y &lt; m);</span><br><span class="line">    <span class="keyword">if</span> (ret) &#123;</span><br><span class="line">        <span class="keyword">if</span> (vis[t.x][t.y] || (c[t.x][t.y] == <span class="string">'*'</span>)) ret = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(pos sr, <span class="keyword">int</span> d[][MN])</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) q.pop();</span><br><span class="line">    q.push(sr);</span><br><span class="line">    vis[sr.x][sr.y] = <span class="literal">true</span>;</span><br><span class="line">    d[sr.x][sr.y] = sr.deep;</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        pos now, next;</span><br><span class="line">        now = q.front();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">            next.x = now.x + dx[i];</span><br><span class="line">            next.y = now.y + dy[i];</span><br><span class="line">            <span class="keyword">if</span> (check(next)) &#123;</span><br><span class="line">                next.deep = now.deep+<span class="number">1</span>;</span><br><span class="line">                d[next.x][next.y] = next.deep;</span><br><span class="line">                q.push(next);</span><br><span class="line">                vis[next.x][next.y] = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        q.pop();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; c[i];</span><br><span class="line">    <span class="built_in">memset</span>(a, <span class="number">63</span>, <span class="keyword">sizeof</span>(a));</span><br><span class="line">    <span class="built_in">memset</span>(b, <span class="number">63</span>, <span class="keyword">sizeof</span>(b));</span><br><span class="line">    <span class="keyword">int</span> INF = a[<span class="number">0</span>][<span class="number">0</span>]; <span class="comment">//!!!!!!</span></span><br><span class="line">    pos sro, orz, l, r;</span><br><span class="line">    sro.x = sro.y = sro.deep = <span class="number">0</span>;</span><br><span class="line">    orz.x = n-<span class="number">1</span>, orz.y = m-<span class="number">1</span>, orz.deep = <span class="number">0</span>;</span><br><span class="line">    bfs(sro, a);</span><br><span class="line">    bfs(orz, b);</span><br><span class="line">    <span class="keyword">int</span> ans = INF;</span><br><span class="line">    ans = min(ans, a[n-<span class="number">1</span>][m-<span class="number">1</span>]);</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j++) <span class="keyword">if</span> (c[i][j] == <span class="string">'*'</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> p = <span class="number">0</span>; p &lt; <span class="number">4</span>; p++) &#123;</span><br><span class="line">                l.x = i+dx[p], l.y = j+dy[p];</span><br><span class="line">                <span class="keyword">if</span> (check(l))</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> q = <span class="number">0</span>; q &lt; <span class="number">4</span>; q++) <span class="keyword">if</span> (p != q) &#123;</span><br><span class="line">                        r.x = i+dx[q], r.y = j+dy[q];</span><br><span class="line">                        <span class="keyword">if</span> (check(r)) &#123;</span><br><span class="line">                            ans = min(ans, a[l.x][l.y]+b[r.x][r.y]+<span class="number">2</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (ans != INF)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"no"</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">1010</span>;
-
-<span class="keyword">struct</span> pos{
-    <span class="keyword">int</span> x, y, deep;
-};
-
-<span class="built_in">queue</span>&lt;pos&gt; q;
-
-<span class="keyword">bool</span> vis[MN][MN];
-<span class="keyword">int</span> a[MN][MN], b[MN][MN];
-<span class="keyword">char</span> c[MN][MN];
-<span class="keyword">int</span> n, m;
-<span class="keyword">int</span> dx[] = {<span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>};
-<span class="keyword">int</span> dy[] = {-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>};
-
-<span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(pos t)</span> </span>{
-    <span class="keyword">bool</span> ret = (t.x &gt;= <span class="number">0</span> &amp;&amp; t.y &gt;= <span class="number">0</span> &amp;&amp; t.x &lt; n &amp;&amp; t.y &lt; m);
-    <span class="keyword">if</span> (ret) {
-        <span class="keyword">if</span> (vis[t.x][t.y] || (c[t.x][t.y] == <span class="string">'*'</span>)) ret = <span class="literal">false</span>;
-    }
-    <span class="keyword">return</span> ret;
-}
-
-<span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(pos sr, <span class="keyword">int</span> d[][MN])</span> </span>{
-    <span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis));
-    <span class="keyword">while</span> (!q.empty()) q.pop();
-    q.push(sr);
-    vis[sr.x][sr.y] = <span class="literal">true</span>;
-    d[sr.x][sr.y] = sr.deep;
-    <span class="keyword">while</span> (!q.empty()) {
-        pos now, next;
-        now = q.front();
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) {
-            next.x = now.x + dx[i];
-            next.y = now.y + dy[i];
-            <span class="keyword">if</span> (check(next)) {
-                next.deep = now.deep+<span class="number">1</span>;
-                d[next.x][next.y] = next.deep;
-                q.push(next);
-                vis[next.x][next.y] = <span class="literal">true</span>;
-            }
-        }
-        q.pop();
-    }
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
-    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)
-        <span class="built_in">cin</span> &gt;&gt; c[i];
-    <span class="built_in">memset</span>(a, <span class="number">63</span>, <span class="keyword">sizeof</span>(a));
-    <span class="built_in">memset</span>(b, <span class="number">63</span>, <span class="keyword">sizeof</span>(b));
-    <span class="keyword">int</span> INF = a[<span class="number">0</span>][<span class="number">0</span>]; <span class="comment">//!!!!!!</span>
-    pos sro, orz, l, r;
-    sro.x = sro.y = sro.deep = <span class="number">0</span>;
-    orz.x = n-<span class="number">1</span>, orz.y = m-<span class="number">1</span>, orz.deep = <span class="number">0</span>;
-    bfs(sro, a);
-    bfs(orz, b);
-    <span class="keyword">int</span> ans = INF;
-    ans = min(ans, a[n-<span class="number">1</span>][m-<span class="number">1</span>]);
-    <span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis));
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) {
-        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j++) <span class="keyword">if</span> (c[i][j] == <span class="string">'*'</span>) {
-            <span class="keyword">for</span> (<span class="keyword">int</span> p = <span class="number">0</span>; p &lt; <span class="number">4</span>; p++) {
-                l.x = i+dx[p], l.y = j+dy[p];
-                <span class="keyword">if</span> (check(l))
-                    <span class="keyword">for</span> (<span class="keyword">int</span> q = <span class="number">0</span>; q &lt; <span class="number">4</span>; q++) <span class="keyword">if</span> (p != q) {
-                        r.x = i+dx[q], r.y = j+dy[q];
-                        <span class="keyword">if</span> (check(r)) {
-                            ans = min(ans, a[l.x][l.y]+b[r.x][r.y]+<span class="number">2</span>);
-                        }
-                    }
-            }
-        }
-    }
-    <span class="keyword">if</span> (ans != INF)
-        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;
-    <span class="keyword">else</span>
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"no"</span> &lt;&lt; endl;
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>
             
                 
 
@@ -531,14 +447,14 @@
         
             <h4 id="about-card-name">sillyplus</h4>
         
-            <h5 id="about-card-bio"><p>author.bio</p>
+            <h5 id="about-card-bio"><p>Write the code and change the world</p>
 </h5>
         
         
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p>Student</p>
 
             </h5>
         

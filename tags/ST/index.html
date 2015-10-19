@@ -10,7 +10,7 @@
     <meta name="author" content="sillyplus">
     
     
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
     <meta name="description" content="sillyplus&apos; blog">
 <meta property="og:type" content="blog">
@@ -21,6 +21,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kepp It Simple && Stupid">
 <meta name="twitter:description" content="sillyplus&apos; blog">
+<meta name="twitter:creator" content="@sillycross">
+    
+        <meta rel="publisher" content="https://plus.google.com/dlxtxlb"/>
     
     
         
@@ -182,7 +185,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/atom.xml"
+                         href="/rss2.xml"
                         
                     >
                 
@@ -247,56 +250,8 @@
 <p>数据范围和注释 Hint</p>
 <p>【数据范围】<br>保证果子大小不超过maxlongint<br>40%的数据：  1&lt;=n,p&lt;=1,000<br>100%的数据：1&lt;=n&lt;=50,000<br>1&lt;=p&lt;=20,000</p>
 <p>有很多种解法啦，线段树也可以，之前我还写过一篇<a href="http://sillyplus.com/2013/06/98/" target="_blank" rel="external">块状数组</a>的也能解决这个问题，然后就是今天复习了一下st算法，所以就用st写了，关于st算法的话可以看看Archive里面的模版。</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">50010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> st[MN][<span class="number">32</span>][<span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> a[MN], pl[MN];</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">stp</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    pl[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        pl[i] = pl[i-<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> ((<span class="number">1</span> &lt;&lt; (pl[i]+<span class="number">1</span>)) == i) &#123;</span><br><span class="line">            pl[i]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n-<span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        st[i][<span class="number">0</span>][<span class="number">0</span>] = st[i][<span class="number">0</span>][<span class="number">1</span>] = a[i];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; (i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span>) &lt; n; j++) &#123;</span><br><span class="line">            st[i][j][<span class="number">0</span>] = max(st[i][j-<span class="number">1</span>][<span class="number">0</span>], st[i + (<span class="number">1</span> &lt;&lt; (j-<span class="number">1</span>))][j-<span class="number">1</span>][<span class="number">0</span>]);</span><br><span class="line">            st[i][j][<span class="number">1</span>] = min(st[i][j-<span class="number">1</span>][<span class="number">1</span>], st[i + (<span class="number">1</span> &lt;&lt; (j-<span class="number">1</span>))][j-<span class="number">1</span>][<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    stp(n);</span><br><span class="line">    <span class="keyword">int</span> l, r, len, k, mx, mi;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;l, &amp;r);</span><br><span class="line">        l--;</span><br><span class="line">        r--;</span><br><span class="line">        len = r-l+<span class="number">1</span>;</span><br><span class="line">        k = pl[len];</span><br><span class="line">        mx = max(st[l][k][<span class="number">0</span>], st[r-(<span class="number">1</span>&lt;&lt;k)+<span class="number">1</span>][k][<span class="number">0</span>]);</span><br><span class="line">        mi = min(st[l][k][<span class="number">1</span>], st[r-(<span class="number">1</span>&lt;&lt;k)+<span class="number">1</span>][k][<span class="number">1</span>]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>, mx, mi);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">50010</span>;
-
-<span class="keyword">int</span> st[MN][<span class="number">32</span>][<span class="number">2</span>];
-<span class="keyword">int</span> a[MN], pl[MN];
-<span class="keyword">int</span> n, m;
-
-<span class="function"><span class="keyword">void</span> <span class="title">stp</span><span class="params">(<span class="keyword">int</span> n)</span> </span>{
-    pl[<span class="number">1</span>] = <span class="number">0</span>;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) {
-        pl[i] = pl[i-<span class="number">1</span>];
-        <span class="keyword">if</span> ((<span class="number">1</span> &lt;&lt; (pl[i]+<span class="number">1</span>)) == i) {
-            pl[i]++;
-        }
-    }
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = n-<span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) {
-        st[i][<span class="number">0</span>][<span class="number">0</span>] = st[i][<span class="number">0</span>][<span class="number">1</span>] = a[i];
-        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; (i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span>) &lt; n; j++) {
-            st[i][j][<span class="number">0</span>] = max(st[i][j-<span class="number">1</span>][<span class="number">0</span>], st[i + (<span class="number">1</span> &lt;&lt; (j-<span class="number">1</span>))][j-<span class="number">1</span>][<span class="number">0</span>]);
-            st[i][j][<span class="number">1</span>] = min(st[i][j-<span class="number">1</span>][<span class="number">1</span>], st[i + (<span class="number">1</span> &lt;&lt; (j-<span class="number">1</span>))][j-<span class="number">1</span>][<span class="number">1</span>]);
-        }
-    }
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
-    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) {
-        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);
-    }
-    stp(n);
-    <span class="keyword">int</span> l, r, len, k, mx, mi;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) {
-        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;l, &amp;r);
-        l--;
-        r--;
-        len = r-l+<span class="number">1</span>;
-        k = pl[len];
-        mx = max(st[l][k][<span class="number">0</span>], st[r-(<span class="number">1</span>&lt;&lt;k)+<span class="number">1</span>][k][<span class="number">0</span>]);
-        mi = min(st[l][k][<span class="number">1</span>], st[r-(<span class="number">1</span>&lt;&lt;k)+<span class="number">1</span>][k][<span class="number">1</span>]);
-        <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>, mx, mi);
-    }
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>
                         
                             
 
@@ -349,14 +304,14 @@
         
             <h4 id="about-card-name">sillyplus</h4>
         
-            <h5 id="about-card-bio"><p>author.bio</p>
+            <h5 id="about-card-bio"><p>Write the code and change the world</p>
 </h5>
         
         
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p>Student</p>
 
             </h5>
         

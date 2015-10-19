@@ -10,7 +10,7 @@
     <meta name="author" content="sillyplus">
     
     
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
     <meta name="description" content="除草向博客好久没有更新了，自从打完补选赛之后就一直一副颓废状态，外加要期末考，得预习课内知识(虽然我到最后还是。。。)，不管怎么样，现在以及放假了，所以我打算兑现之前对自己的承诺，暑假好好做题，所以这段时间应该会比较经常更新一些水题的题解啦( ´ ▽ ` )ﾉ。昨天选拔赛第一场就爆零滚粗，作为一名候补选手，我只剩下今天这个最后一次机会了，好伤感的说T^T，希望写一写题解涨张RP。。。
 吐槽完毕，接">
@@ -20,11 +20,14 @@
 <meta property="og:site_name" content="Kepp It Simple && Stupid">
 <meta property="og:description" content="除草向博客好久没有更新了，自从打完补选赛之后就一直一副颓废状态，外加要期末考，得预习课内知识(虽然我到最后还是。。。)，不管怎么样，现在以及放假了，所以我打算兑现之前对自己的承诺，暑假好好做题，所以这段时间应该会比较经常更新一些水题的题解啦( ´ ▽ ` )ﾉ。昨天选拔赛第一场就爆零滚粗，作为一名候补选手，我只剩下今天这个最后一次机会了，好伤感的说T^T，希望写一写题解涨张RP。。。
 吐槽完毕，接">
-<meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
+<meta property="og:updated_time" content="2015-10-19T11:05:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Timus 1028 1318 [树状数组]">
 <meta name="twitter:description" content="除草向博客好久没有更新了，自从打完补选赛之后就一直一副颓废状态，外加要期末考，得预习课内知识(虽然我到最后还是。。。)，不管怎么样，现在以及放假了，所以我打算兑现之前对自己的承诺，暑假好好做题，所以这段时间应该会比较经常更新一些水题的题解啦( ´ ▽ ` )ﾉ。昨天选拔赛第一场就爆零滚粗，作为一名候补选手，我只剩下今天这个最后一次机会了，好伤感的说T^T，希望写一写题解涨张RP。。。
 吐槽完毕，接">
+<meta name="twitter:creator" content="@sillycross">
+    
+        <meta rel="publisher" content="https://plus.google.com/dlxtxlb"/>
     
     
         
@@ -186,7 +189,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/atom.xml"
+                         href="/rss2.xml"
                         
                     >
                 
@@ -239,62 +242,8 @@
 </ol>
 <p>题目大衣：一个二维平面上又N (1 ≤ <em>N</em> ≤ 15000)个点(0 ≤ <em>X</em>,<em>Y</em> ≤ 32000)，然后定义每个点的level，对于点i，它的level为横纵坐标均不大于点i的点的个数。要求输出0～N-1的各个level的的点数。</p>
 <p>这道题的只要求出每个点的level，统计一下就行了。然后就是求level的办法了，我们首先可以把每个点先按x递增，然后y递增的顺序排序。这样x就有序了，然后我们顺序处理每个点，对一个点Pi，已知点Pj(j&lt;i)的x不大于Pi的x，然后要做的就是统计一下Pj中y小于等于Pi的y的个数。我们用c[i]表示y为i的点的个数，Pi的level值就为sum＝ c[0] + c[1] + .. + c[y-1], 然后再更新一下c数组，c[y]+1,以上都可以用树状数组来解决。</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
-
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">32001</span>;
-
-<span class="keyword">struct</span> pt{
-    <span class="keyword">int</span> x, y;
-};
-
-pt a[MN/<span class="number">2</span>];
-<span class="keyword">int</span> level[MN/<span class="number">2</span>];
-<span class="keyword">int</span> t[MN+<span class="number">10</span>];
-
-<span class="function"><span class="keyword">bool</span> <span class="title">comp</span><span class="params">(<span class="keyword">const</span> pt &amp;a, <span class="keyword">const</span> pt &amp;b)</span> </span>{
-    <span class="keyword">if</span> (a.x != b.x) <span class="keyword">return</span> a.x &lt; b.x;
-    <span class="keyword">return</span> a.y &lt; b.y;
-}
-
-<span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{
-    <span class="keyword">return</span> (x &amp; -x);
-}
-
-<span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> value)</span> </span>{
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &lt;= MN; i += lowbit(i))
-        t[i] += value;
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{
-    <span class="keyword">int</span> sum = <span class="number">0</span>;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i; i -= lowbit(i))
-        sum += t[i];
-    <span class="keyword">return</span> sum;
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
-    <span class="keyword">int</span> n;
-    <span class="built_in">cin</span> &gt;&gt; n;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) {
-        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a[i].x, &amp;a[i].y);
-    }
-    sort(a, a+n, comp);
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) {
-        <span class="keyword">int</span> k = a[i].y+<span class="number">1</span>;
-        level[get(k)]++;
-        add(k, <span class="number">1</span>);
-    }
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)
-        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, level[i]);
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre><ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">32001</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> pt&#123;</span><br><span class="line">    <span class="keyword">int</span> x, y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">pt a[MN/<span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> level[MN/<span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> t[MN+<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">comp</span><span class="params">(<span class="keyword">const</span> pt &amp;a, <span class="keyword">const</span> pt &amp;b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a.x != b.x) <span class="keyword">return</span> a.x &lt; b.x;</span><br><span class="line">    <span class="keyword">return</span> a.y &lt; b.y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (x &amp; -x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &lt;= MN; i += lowbit(i))</span><br><span class="line">        t[i] += value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i; i -= lowbit(i))</span><br><span class="line">        sum += t[i];</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a[i].x, &amp;a[i].y);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(a, a+n, comp);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> k = a[i].y+<span class="number">1</span>;</span><br><span class="line">        level[get(k)]++;</span><br><span class="line">        add(k, <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, level[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
 <li>Electronic Auction</li>
 </ol>
 <p>题目大衣：好像是拍卖铁猪来着，价格0.01～10000.00，最多两位小数。然后有几个操作：</p>
@@ -312,59 +261,8 @@ pt a[MN/<span class="number">2</span>];
 </ul>
 <p>对于每一个SALE，前K个出价不小于X的客户可以得到一头猪，如果不够K个客户满足条件，自然是能买出多少就多少了，每卖出一头获利0.01，求最大获利好像差不多就是这样了把。</p>
 <p>然后其实我们可以把每个数乘上100，就变成整数，不过直接这样好像会有精度问题，我因此WA了几次，后来看了讨论区，弄了个修正的办法。数组a[i]表示出价X的客户数，然后就直接套树状数组了吧，SALE的时候就是求a[i]~a[maxn],这个一个除法也就出来了。</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
-
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">1000000</span>;
-
-<span class="keyword">char</span> str[<span class="number">5</span>];
-<span class="keyword">double</span> d;
-<span class="keyword">int</span> f[MN+<span class="number">10</span>] = {<span class="number">0</span>};
-
-<span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{
-    <span class="keyword">return</span> (x &amp; -x);
-}
-
-<span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> value)</span> </span>{
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &lt;= MN; i += lowbit(i))
-        f[i] += value;
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{
-    <span class="keyword">int</span> sum = <span class="number">0</span>;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i; i -= lowbit(i))
-        sum += f[i];
-    <span class="keyword">return</span> sum;
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
-    <span class="built_in">cin</span> &gt;&gt; str;
-    <span class="keyword">double</span> ans = <span class="number">0</span>;
-    <span class="keyword">int</span> k;
-    <span class="keyword">while</span> (str[<span class="number">0</span>] != <span class="string">'Q'</span>) {
-        <span class="keyword">if</span> (str[<span class="number">0</span>] == <span class="string">'B'</span>) {
-            <span class="built_in">scanf</span>(<span class="string">"%lf"</span>, &amp;d);
-            add(<span class="keyword">int</span>(d*<span class="number">100</span> + <span class="number">0.5</span>), <span class="number">1</span>);
-        } <span class="keyword">else</span> <span class="keyword">if</span> (str[<span class="number">0</span>] == <span class="string">'D'</span>) {
-            <span class="built_in">scanf</span>(<span class="string">"%lf"</span>, &amp;d);
-            add(<span class="keyword">int</span>(d*<span class="number">100</span> + <span class="number">0.5</span>), -<span class="number">1</span>);
-        } <span class="keyword">else</span> <span class="keyword">if</span> (str[<span class="number">0</span>] == <span class="string">'S'</span>) {
-            <span class="built_in">scanf</span>(<span class="string">"%lf%d"</span>, &amp;d, &amp;k);
-            <span class="keyword">int</span> t = <span class="keyword">int</span>(d*<span class="number">100</span> + <span class="number">0.5</span>);
-            <span class="keyword">int</span> ts = get(MN) - get(t-<span class="number">1</span>);
-            ans += min(k, ts);
-        }
-        <span class="built_in">scanf</span>(<span class="string">"%s"</span>, str);
-    }
-    ans /= <span class="number">100.0</span>;
-    <span class="built_in">printf</span>(<span class="string">"%.2f\n"</span>, ans);
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre><p>因为赶着要去吃饭然后打选拔赛去了，所以后面没怎么想好表达就乱写了，实在想在比赛前写完。故事不会就这样终结的，</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">1000000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str[<span class="number">5</span>];</span><br><span class="line"><span class="keyword">double</span> d;</span><br><span class="line"><span class="keyword">int</span> f[MN+<span class="number">10</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (x &amp; -x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &lt;= MN; i += lowbit(i))</span><br><span class="line">        f[i] += value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i; i -= lowbit(i))</span><br><span class="line">        sum += f[i];</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; str;</span><br><span class="line">    <span class="keyword">double</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> k;</span><br><span class="line">    <span class="keyword">while</span> (str[<span class="number">0</span>] != <span class="string">'Q'</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (str[<span class="number">0</span>] == <span class="string">'B'</span>) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lf"</span>, &amp;d);</span><br><span class="line">            add(<span class="keyword">int</span>(d*<span class="number">100</span> + <span class="number">0.5</span>), <span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (str[<span class="number">0</span>] == <span class="string">'D'</span>) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lf"</span>, &amp;d);</span><br><span class="line">            add(<span class="keyword">int</span>(d*<span class="number">100</span> + <span class="number">0.5</span>), -<span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (str[<span class="number">0</span>] == <span class="string">'S'</span>) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lf%d"</span>, &amp;d, &amp;k);</span><br><span class="line">            <span class="keyword">int</span> t = <span class="keyword">int</span>(d*<span class="number">100</span> + <span class="number">0.5</span>);</span><br><span class="line">            <span class="keyword">int</span> ts = get(MN) - get(t-<span class="number">1</span>);</span><br><span class="line">            ans += min(k, ts);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>, str);</span><br><span class="line">    &#125;</span><br><span class="line">    ans /= <span class="number">100.0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.2f\n"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为赶着要去吃饭然后打选拔赛去了，所以后面没怎么想好表达就乱写了，实在想在比赛前写完。故事不会就这样终结的，</p>
 
             
                 
@@ -558,14 +456,14 @@ pt a[MN/<span class="number">2</span>];
         
             <h4 id="about-card-name">sillyplus</h4>
         
-            <h5 id="about-card-bio"><p>author.bio</p>
+            <h5 id="about-card-bio"><p>Write the code and change the world</p>
 </h5>
         
         
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p>Student</p>
 
             </h5>
         
