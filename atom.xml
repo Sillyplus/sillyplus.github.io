@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://github.com/sillyplus/"/>
-  <updated>2015-10-19T09:42:58.000Z</updated>
+  <updated>2015-10-19T10:06:42.000Z</updated>
   <id>http://github.com/sillyplus/</id>
   
   <author>
@@ -19,30 +19,12 @@
     <link href="http://github.com/sillyplus/2014/12/28/usingchineseinTeX/"/>
     <id>http://github.com/sillyplus/2014/12/28/usingchineseinTeX/</id>
     <published>2014-12-27T16:00:00.000Z</published>
-    <updated>2015-10-19T09:42:58.000Z</updated>
-    <content type="html"><![CDATA[<p>在使用TeX的时候不免会遇到显示中文的问题，本文介绍了一种简单的方法。<br><!-- excerpt  --></p>
-<pre><code><span class="comment">%!TEX TS-program = xelatex</span>
-<span class="comment">%!TEX encoding = UTF-8 Unicode</span>
-
-<span class="command">\documentclass</span><span class="special">[</span>12pt, a4paper<span class="special">]</span><span class="special">{</span>book<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>extsizes<span class="special">}</span>                           <span class="comment">%使用自定义字号</span>
-<span class="command">\usepackage</span><span class="special">{</span>fontspec<span class="special">}</span>                           <span class="comment">%字体控制包</span>
-<span class="command">\usepackage</span><span class="special">{</span>xltxtra<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>xunicode<span class="special">}</span>                           <span class="comment">%Unicode</span>
-<span class="command">\usepackage</span><span class="special">{</span>indentfirst<span class="special">}</span>                        <span class="comment">%中文行首缩进</span>
-<span class="command">\defaultfontfeatures</span><span class="special">{</span>Mapping=tex-text<span class="special">}</span>
-<span class="command">\setromanfont</span><span class="special">{</span>Yuanti SC<span class="special">}</span>                        <span class="comment">%设置中文字体</span>
-<span class="command">\XeTeXlinebreaklocale</span> “zh”
-<span class="command">\XeTeXlinebreakskip</span> =<span class="number"> 0pt</span> plus 1pt minus 0.1pt  <span class="comment">%文章内中文自动换行</span>
-
-<span class="command">\newfontfamily</span><span class="special">{</span><span class="command">\H</span><span class="special">}</span><span class="special">{</span>STSong<span class="special">}</span>
-<span class="command">\newfontfamily</span><span class="special">{</span><span class="command">\E</span><span class="special">}</span><span class="special">{</span>Zapfino<span class="special">}</span>
+    <updated>2015-10-19T10:06:42.000Z</updated>
+    <content type="html"><![CDATA[<pre><code><span class="comment"><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%!TEX TS-program = xelatex</span></span><br><span class="line"><span class="comment">%!TEX encoding = UTF-8 Unicode</span></span><br><span class="line"></span><br><span class="line"><span class="command">\documentclass</span><span class="special">[</span>12pt, a4paper<span class="special">]</span><span class="special">&#123;</span>book<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>extsizes<span class="special">&#125;</span>                           <span class="comment">%使用自定义字号</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>fontspec<span class="special">&#125;</span>                           <span class="comment">%字体控制包</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>xltxtra<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>xunicode<span class="special">&#125;</span>                           <span class="comment">%Unicode</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>indentfirst<span class="special">&#125;</span>                        <span class="comment">%中文行首缩进</span></span><br><span class="line"><span class="command">\defaultfontfeatures</span><span class="special">&#123;</span>Mapping=tex-text<span class="special">&#125;</span></span><br><span class="line"><span class="command">\setromanfont</span><span class="special">&#123;</span>Yuanti SC<span class="special">&#125;</span>                        <span class="comment">%设置中文字体</span></span><br><span class="line"><span class="command">\XeTeXlinebreaklocale</span> “zh”</span><br><span class="line"><span class="command">\XeTeXlinebreakskip</span> =<span class="number"> 0pt</span> plus 1pt minus 0.1pt  <span class="comment">%文章内中文自动换行</span></span><br><span class="line"></span><br><span class="line"><span class="command">\newfontfamily</span><span class="special">&#123;</span><span class="command">\H</span><span class="special">&#125;</span><span class="special">&#123;</span>STSong<span class="special">&#125;</span></span><br><span class="line"><span class="command">\newfontfamily</span><span class="special">&#123;</span><span class="command">\E</span><span class="special">&#125;</span><span class="special">&#123;</span>Zapfino<span class="special">&#125;</span></span><br></pre></td></tr></table></figure></span>
 </code></pre><p>TeX可以使用的字体大小默认为10pt|11pt|13pt，可以通过使用extsizes这个package来使<br>用其它大小的字体，可选的类型有8～12, 14, 17 和 20pt。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>在使用TeX的时候不免会遇到显示中文的问题，本文介绍了一种简单的方法。<br><!-- excerpt  --></p>
-<pre><code><span class="comment">%!TEX TS-program = xelatex</span>
-<span cla]]>
+    <![CDATA[<pre><code><span class="comment"><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class]]>
     </summary>
     
       <category term="MacTeX" scheme="http://github.com/sillyplus/tags/MacTeX/"/>
@@ -56,87 +38,15 @@
     <link href="http://github.com/sillyplus/2014/11/04/floyd-and-mincircle/"/>
     <id>http://github.com/sillyplus/2014/11/04/floyd-and-mincircle/</id>
     <published>2014-11-03T16:00:00.000Z</published>
-    <updated>2015-05-19T03:23:37.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="Floyd算法求最小环">Floyd算法求最小环</h1><h2 id="算法思想">算法思想</h2><p>对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由<br> <code>dis[i][j]+m[j][xk]+m[xk][i]</code>来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。<br>因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大<br>枚举一下xk就行了。</p>
-<p>我们知道，floyd算法最外层每循环一次，就是由一个中间节点k更新点i到j的最短路径。k从小到大枚举，<br>就保证了循环到k的时候，当前i到j的最短路经过的最大节点只可能是k，这刚好满足上面提到的dis[i][j]的定义。<br>所以我们就可以愉快的使用floyd来求最小环了。</p>
+    <updated>2015-10-19T10:10:52.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="算法思想">算法思想</h2><p>对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由<code>dis[i][j]+m[j][xk]+m[xk][i]</code>来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。<br>因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大枚举一下xk就行了。<br>我们知道，floyd算法最外层每循环一次，就是由一个中间节点k更新点i到j的最短路径。k从小到大枚举，就保证了循环到k的时候，当前i到j的最短路经过的最大节点只可能是k，这刚好满足上面提到的dis[i][j]的定义。所以我们就可以愉快的使用floyd来求最小环了。</p>
+<a id="more"></a>
 <h2 id="例题">例题</h2><h3 id="vijos_P1046_观光旅游">vijos P1046 观光旅游</h3><p>很裸的描述了，直接求最小环就好了。</p>
-<h3 id="Timus_1004-_Sightseeing_Trip">Timus 1004. Sightseeing Trip</h3><p>同上，不过要注意的就是，这个题目要求最小环的路径。</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
-
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">110</span>;
-<span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e8</span>;
-
-<span class="keyword">int</span> n, m, num, ans;
-<span class="keyword">int</span> mp[MN][MN], dis[MN][MN], pre[MN][MN];
-<span class="keyword">int</span> path[MN];
-
-<span class="function"><span class="keyword">void</span> <span class="title">get_path</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>{
-    <span class="keyword">if</span> (pre[a][b]) {
-        get_path(a, pre[a][b]);
-        get_path(pre[a][b], b);
-    } <span class="keyword">else</span> {
-        path[num++] = a;
-    }
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
-    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n) &amp;&amp; (n != -<span class="number">1</span>)) {
-        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m);
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++) {
-            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= n; j++) {
-                mp[i][j] = INF;
-                dis[i][j] = INF;
-                pre[i][j] = <span class="number">0</span>;
-            }
-        }
-        <span class="keyword">int</span> a, b, l;
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) {
-            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;a, &amp;b, &amp;l);
-            mp[a][b] = min(mp[a][b], l);
-            mp[b][a] = dis[a][b] = dis[b][a] = mp[a][b];
-        }
-        ans = INF;
-        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; k++) {
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; k; i++)
-                <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; k; j++) {
-                    <span class="keyword">int</span> tmp = dis[i][j] + mp[j][k] + mp[k][i];
-                    <span class="keyword">if</span> (tmp &lt; ans) {
-                        ans = tmp;
-                        num = <span class="number">0</span>;
-                        get_path(i, j);
-                        path[num++] = j;
-                        path[num++] = k;
-                    }
-                }
-
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)
-                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) {
-                    <span class="keyword">int</span> tmp = dis[i][k] + dis[k][j];
-                    <span class="keyword">if</span> (dis[i][j] &gt; tmp) {
-                        dis[i][j] = tmp;
-                        pre[i][j] = k;
-                    }
-                }
-        }
-        <span class="keyword">if</span> (ans == INF) {
-            <span class="built_in">cout</span> &lt;&lt; <span class="string">"No solution."</span> &lt;&lt; endl;
-        } <span class="keyword">else</span> {
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; i++)
-                <span class="built_in">printf</span>(<span class="string">"%d "</span>, path[i]);
-            <span class="built_in">cout</span> &lt;&lt; endl;
-        }
-    }
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>]]></content>
+<h3 id="Timus_1004-_Sightseeing_Trip">Timus 1004. Sightseeing Trip</h3><p>同上，不过要注意的就是，这个题目要求最小环的路径。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">110</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e8</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, num, ans;</span><br><span class="line"><span class="keyword">int</span> mp[MN][MN], dis[MN][MN], pre[MN][MN];</span><br><span class="line"><span class="keyword">int</span> path[MN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_path</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (pre[a][b]) &#123;</span><br><span class="line">        get_path(a, pre[a][b]);</span><br><span class="line">        get_path(pre[a][b], b);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        path[num++] = a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n) &amp;&amp; (n != -<span class="number">1</span>)) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= n; j++) &#123;</span><br><span class="line">                mp[i][j] = INF;</span><br><span class="line">                dis[i][j] = INF;</span><br><span class="line">                pre[i][j] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> a, b, l;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;a, &amp;b, &amp;l);</span><br><span class="line">            mp[a][b] = min(mp[a][b], l);</span><br><span class="line">            mp[b][a] = dis[a][b] = dis[b][a] = mp[a][b];</span><br><span class="line">        &#125;</span><br><span class="line">        ans = INF;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; k++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; k; i++)</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; k; j++) &#123;</span><br><span class="line">                    <span class="keyword">int</span> tmp = dis[i][j] + mp[j][k] + mp[k][i];</span><br><span class="line">                    <span class="keyword">if</span> (tmp &lt; ans) &#123;</span><br><span class="line">                        ans = tmp;</span><br><span class="line">                        num = <span class="number">0</span>;</span><br><span class="line">                        get_path(i, j);</span><br><span class="line">                        path[num++] = j;</span><br><span class="line">                        path[num++] = k;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">                    <span class="keyword">int</span> tmp = dis[i][k] + dis[k][j];</span><br><span class="line">                    <span class="keyword">if</span> (dis[i][j] &gt; tmp) &#123;</span><br><span class="line">                        dis[i][j] = tmp;</span><br><span class="line">                        pre[i][j] = k;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ans == INF) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"No solution."</span> &lt;&lt; endl;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; i++)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d "</span>, path[i]);</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="Floyd算法求最小环">Floyd算法求最小环</h1><h2 id="算法思想">算法思想</h2><p>对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由<br> <code>dis[i][j]+m[j][xk]+]]>
+    <![CDATA[<h2 id="算法思想">算法思想</h2><p>对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由<code>dis[i][j]+m[j][xk]+m[xk][i]</code>来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。<br>因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大枚举一下xk就行了。<br>我们知道，floyd算法最外层每循环一次，就是由一个中间节点k更新点i到j的最短路径。k从小到大枚举，就保证了循环到k的时候，当前i到j的最短路经过的最大节点只可能是k，这刚好满足上面提到的dis[i][j]的定义。所以我们就可以愉快的使用floyd来求最小环了。</p>]]>
+    
     </summary>
     
       <category term="Timus" scheme="http://github.com/sillyplus/tags/Timus/"/>
@@ -150,8 +60,9 @@
     <link href="http://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/"/>
     <id>http://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/</id>
     <published>2014-10-11T16:00:00.000Z</published>
-    <updated>2015-05-19T03:23:37.000Z</updated>
+    <updated>2015-10-19T10:12:12.000Z</updated>
     <content type="html"><![CDATA[<h3 id="占位扯淡"><del>占位扯淡</del></h3><p><del>折腾了几天，终于可以坐下来写点总结了。不过现在是早上三点多快四点，还在想六七点的时候要去踢球，所以只是<br>占个位置而已，熟悉一下。毕竟还有很多东西不会，不过光是搭好现在这个样子就用了挺多时间的(其实也不是很多啦。。。)</del></p>
+<a id="more"></a>
 <h3 id="博客搭建">博客搭建</h3><h4 id="(ｰ_ｰ;)">(ｰ ｰ;)</h4><p>从搭好这个blog到现在已经好几天了，然后今天发现已经没有来写这样一篇介绍的热情了。。。原因是，介绍这个方面的内容在网上很容易就能找到许多，<br>所以似乎没有必要重复说明，但是每个人的搭建过程都多少还是会遇到各种不同的问题。这里我打算来记录一下我遇到的一些问题吧。</p>
 <p>以下这些我都是Mac下做的，因为OS X是类UNIX系统，所以很多都是基本跟Linux下一样的，如果你在搭建过程中遇到什么问题没办法解决，<br>可以尝试在搜索的时候添加跟Linux相关的关键字。</p>
 <h4 id="Github_Page的设置">Github Page的设置</h4><p>首先你要有一个Github的账号<del>，这不废话嘛</del>，然后进入这个页面：<a href="https://pages.github.com" target="_blank" rel="external">Github Page</a>,<br>Github Page有两种类型，一种是个人或者组织的站点，一种是作为项目的主页，因为我们是要搭建个人博客，<br>所以选择创建一个User site就好了，然后就是按照引导就能十分轻松的成功创建了。最后把repo存到本地来，<br>另外说一下我用的是Mac的客户端来管理repo的，不是用的命令行，所以对于git的那些命令就不是很清楚了，<br>如果你想了解更多请自行Google。Github Page使用的是Jekyll模版系统，相当于是静态页面发布。</p>
@@ -199,7 +110,8 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
 </code></pre><p>然后就能成功运行了，这样就导出成功了。如果你对python比较熟悉，你也可以自己修改exitwp.py，使它特定导出你想要的内容。<br>如果你想要从其它博客系统迁移博客过来的话，jekyll的官网上貌似也有相关的教程说明。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="占位扯淡"><del>占位扯淡</del></h3><p><del>折腾了几天，终于可以坐下来写点总结了。不过现在是早上三点多快四点，还在想六七点的时候要去踢球，所以只是<br>占个位置而已，熟悉一下。毕竟还有很多东西不会，不过光是搭好现在这个样子就用了挺多时间的]]>
+    <![CDATA[<h3 id="占位扯淡"><del>占位扯淡</h3><p><del>折腾了几天，终于可以坐下来写点总结了。不过现在是早上三点多快四点，还在想六七点的时候要去踢球，所以只是<br>占个位置而已，熟悉一下。毕竟还有很多东西不会，不过光是搭好现在这个样子就用了挺多时间的(其实也不是很多啦。。。)</p>]]>
+    
     </summary>
     
       <category term="Github" scheme="http://github.com/sillyplus/tags/Github/"/>

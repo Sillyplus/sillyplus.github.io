@@ -232,23 +232,7 @@
                 
                 
                     <div class="postShorten-content" itemprop="articleBody">
-                        <p>在使用TeX的时候不免会遇到显示中文的问题，本文介绍了一种简单的方法。<br><!-- excerpt  --></p>
-<pre><code><span class="comment">%!TEX TS-program = xelatex</span>
-<span class="comment">%!TEX encoding = UTF-8 Unicode</span>
-
-<span class="command">\documentclass</span><span class="special">[</span>12pt, a4paper<span class="special">]</span><span class="special">{</span>book<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>extsizes<span class="special">}</span>                           <span class="comment">%使用自定义字号</span>
-<span class="command">\usepackage</span><span class="special">{</span>fontspec<span class="special">}</span>                           <span class="comment">%字体控制包</span>
-<span class="command">\usepackage</span><span class="special">{</span>xltxtra<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>xunicode<span class="special">}</span>                           <span class="comment">%Unicode</span>
-<span class="command">\usepackage</span><span class="special">{</span>indentfirst<span class="special">}</span>                        <span class="comment">%中文行首缩进</span>
-<span class="command">\defaultfontfeatures</span><span class="special">{</span>Mapping=tex-text<span class="special">}</span>
-<span class="command">\setromanfont</span><span class="special">{</span>Yuanti SC<span class="special">}</span>                        <span class="comment">%设置中文字体</span>
-<span class="command">\XeTeXlinebreaklocale</span> “zh”
-<span class="command">\XeTeXlinebreakskip</span> =<span class="number"> 0pt</span> plus 1pt minus 0.1pt  <span class="comment">%文章内中文自动换行</span>
-
-<span class="command">\newfontfamily</span><span class="special">{</span><span class="command">\H</span><span class="special">}</span><span class="special">{</span>STSong<span class="special">}</span>
-<span class="command">\newfontfamily</span><span class="special">{</span><span class="command">\E</span><span class="special">}</span><span class="special">{</span>Zapfino<span class="special">}</span>
+                        <pre><code><span class="comment"><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%!TEX TS-program = xelatex</span></span><br><span class="line"><span class="comment">%!TEX encoding = UTF-8 Unicode</span></span><br><span class="line"></span><br><span class="line"><span class="command">\documentclass</span><span class="special">[</span>12pt, a4paper<span class="special">]</span><span class="special">&#123;</span>book<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>extsizes<span class="special">&#125;</span>                           <span class="comment">%使用自定义字号</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>fontspec<span class="special">&#125;</span>                           <span class="comment">%字体控制包</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>xltxtra<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>xunicode<span class="special">&#125;</span>                           <span class="comment">%Unicode</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>indentfirst<span class="special">&#125;</span>                        <span class="comment">%中文行首缩进</span></span><br><span class="line"><span class="command">\defaultfontfeatures</span><span class="special">&#123;</span>Mapping=tex-text<span class="special">&#125;</span></span><br><span class="line"><span class="command">\setromanfont</span><span class="special">&#123;</span>Yuanti SC<span class="special">&#125;</span>                        <span class="comment">%设置中文字体</span></span><br><span class="line"><span class="command">\XeTeXlinebreaklocale</span> “zh”</span><br><span class="line"><span class="command">\XeTeXlinebreakskip</span> =<span class="number"> 0pt</span> plus 1pt minus 0.1pt  <span class="comment">%文章内中文自动换行</span></span><br><span class="line"></span><br><span class="line"><span class="command">\newfontfamily</span><span class="special">&#123;</span><span class="command">\H</span><span class="special">&#125;</span><span class="special">&#123;</span>STSong<span class="special">&#125;</span></span><br><span class="line"><span class="command">\newfontfamily</span><span class="special">&#123;</span><span class="command">\E</span><span class="special">&#125;</span><span class="special">&#123;</span>Zapfino<span class="special">&#125;</span></span><br></pre></td></tr></table></figure></span>
 </code></pre><p>TeX可以使用的字体大小默认为10pt|11pt|13pt，可以通过使用extsizes这个package来使<br>用其它大小的字体，可选的类型有8～12, 14, 17 和 20pt。</p>
 
                         
@@ -269,7 +253,7 @@
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -294,95 +278,13 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <h1 id="Floyd算法求最小环">Floyd算法求最小环</h1><h2 id="算法思想">算法思想</h2><p>对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由<br> <code>dis[i][j]+m[j][xk]+m[xk][i]</code>来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。<br>因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大<br>枚举一下xk就行了。</p>
-<p>我们知道，floyd算法最外层每循环一次，就是由一个中间节点k更新点i到j的最短路径。k从小到大枚举，<br>就保证了循环到k的时候，当前i到j的最短路经过的最大节点只可能是k，这刚好满足上面提到的dis[i][j]的定义。<br>所以我们就可以愉快的使用floyd来求最小环了。</p>
-<h2 id="例题">例题</h2><h3 id="vijos_P1046_观光旅游">vijos P1046 观光旅游</h3><p>很裸的描述了，直接求最小环就好了。</p>
-<h3 id="Timus_1004-_Sightseeing_Trip">Timus 1004. Sightseeing Trip</h3><p>同上，不过要注意的就是，这个题目要求最小环的路径。</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
-
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">110</span>;
-<span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e8</span>;
-
-<span class="keyword">int</span> n, m, num, ans;
-<span class="keyword">int</span> mp[MN][MN], dis[MN][MN], pre[MN][MN];
-<span class="keyword">int</span> path[MN];
-
-<span class="function"><span class="keyword">void</span> <span class="title">get_path</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>{
-    <span class="keyword">if</span> (pre[a][b]) {
-        get_path(a, pre[a][b]);
-        get_path(pre[a][b], b);
-    } <span class="keyword">else</span> {
-        path[num++] = a;
-    }
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
-    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n) &amp;&amp; (n != -<span class="number">1</span>)) {
-        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m);
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++) {
-            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= n; j++) {
-                mp[i][j] = INF;
-                dis[i][j] = INF;
-                pre[i][j] = <span class="number">0</span>;
-            }
-        }
-        <span class="keyword">int</span> a, b, l;
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) {
-            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;a, &amp;b, &amp;l);
-            mp[a][b] = min(mp[a][b], l);
-            mp[b][a] = dis[a][b] = dis[b][a] = mp[a][b];
-        }
-        ans = INF;
-        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; k++) {
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; k; i++)
-                <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; k; j++) {
-                    <span class="keyword">int</span> tmp = dis[i][j] + mp[j][k] + mp[k][i];
-                    <span class="keyword">if</span> (tmp &lt; ans) {
-                        ans = tmp;
-                        num = <span class="number">0</span>;
-                        get_path(i, j);
-                        path[num++] = j;
-                        path[num++] = k;
-                    }
-                }
-
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)
-                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) {
-                    <span class="keyword">int</span> tmp = dis[i][k] + dis[k][j];
-                    <span class="keyword">if</span> (dis[i][j] &gt; tmp) {
-                        dis[i][j] = tmp;
-                        pre[i][j] = k;
-                    }
-                }
-        }
-        <span class="keyword">if</span> (ans == INF) {
-            <span class="built_in">cout</span> &lt;&lt; <span class="string">"No solution."</span> &lt;&lt; endl;
-        } <span class="keyword">else</span> {
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; i++)
-                <span class="built_in">printf</span>(<span class="string">"%d "</span>, path[i]);
-            <span class="built_in">cout</span> &lt;&lt; endl;
-        }
-    }
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <h2 id="算法思想">算法思想</h2><p>对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由<code>dis[i][j]+m[j][xk]+m[xk][i]</code>来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。<br>因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大枚举一下xk就行了。<br>我们知道，floyd算法最外层每循环一次，就是由一个中间节点k更新点i到j的最短路径。k从小到大枚举，就保证了循环到k的时候，当前i到j的最短路经过的最大节点只可能是k，这刚好满足上面提到的dis[i][j]的定义。所以我们就可以愉快的使用floyd来求最小环了。</p>
                         
+                            <a href="/2014/11/04/floyd-and-mincircle/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2014/11/04/floyd-and-mincircle/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -391,7 +293,7 @@
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -416,64 +318,13 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <h3 id="占位扯淡"><del>占位扯淡</del></h3><p><del>折腾了几天，终于可以坐下来写点总结了。不过现在是早上三点多快四点，还在想六七点的时候要去踢球，所以只是<br>占个位置而已，熟悉一下。毕竟还有很多东西不会，不过光是搭好现在这个样子就用了挺多时间的(其实也不是很多啦。。。)</del></p>
-<h3 id="博客搭建">博客搭建</h3><h4 id="(ｰ_ｰ;)">(ｰ ｰ;)</h4><p>从搭好这个blog到现在已经好几天了，然后今天发现已经没有来写这样一篇介绍的热情了。。。原因是，介绍这个方面的内容在网上很容易就能找到许多，<br>所以似乎没有必要重复说明，但是每个人的搭建过程都多少还是会遇到各种不同的问题。这里我打算来记录一下我遇到的一些问题吧。</p>
-<p>以下这些我都是Mac下做的，因为OS X是类UNIX系统，所以很多都是基本跟Linux下一样的，如果你在搭建过程中遇到什么问题没办法解决，<br>可以尝试在搜索的时候添加跟Linux相关的关键字。</p>
-<h4 id="Github_Page的设置">Github Page的设置</h4><p>首先你要有一个Github的账号<del>，这不废话嘛</del>，然后进入这个页面：<a href="https://pages.github.com" target="_blank" rel="external">Github Page</a>,<br>Github Page有两种类型，一种是个人或者组织的站点，一种是作为项目的主页，因为我们是要搭建个人博客，<br>所以选择创建一个User site就好了，然后就是按照引导就能十分轻松的成功创建了。最后把repo存到本地来，<br>另外说一下我用的是Mac的客户端来管理repo的，不是用的命令行，所以对于git的那些命令就不是很清楚了，<br>如果你想了解更多请自行Google。Github Page使用的是Jekyll模版系统，相当于是静态页面发布。</p>
-<h4 id="Jekyll的设置">Jekyll的设置</h4><p>这个也是很简单的啊，还是直接看<a href="http://jekyllrb.com/docs/quickstart/" target="_blank" rel="external">官网</a>。我貌似是用brew安装的，<br>不过没差啦。至于怎么使用还是看官网的说明好了(感觉会被喷：什么都说去看官方文档，她喵的我还看你博客干嘛。。。)</p>
-<p>在terminal中，进入到你自己本地那个Github Page的repo，然后执行下面的命令创建</p>
-<pre><code><span class="title">jekyll</span> build
-</code></pre><p>创建成功的话，会得到类似如下的目录结构</p>
-<pre><code>.
-├── _config.yml
-├── _drafts
-<span class="string">|   ├── begin-with-the-crazy-ideas.textile</span>
-<span class="string">|   └── on-simplicity-in-technology.markdown</span>
-├── _includes
-<span class="string">|   ├── footer.html</span>
-<span class="string">|   └── header.html</span>
-├── _layouts
-<span class="string">|   ├── default.html</span>
-<span class="string">|   └── post.html</span>
-├── _posts
-<span class="string">|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile</span>
-<span class="string">|   └── 2009-04-26-barcamp-boston-4-roundup.textile</span>
-├── _data
-<span class="string">|   └── members.yml</span>
-├── _site
-└── index.html
-</code></pre><p>然后启用本地服务器只需进入到上面的目录中，执行</p>
-<pre><code><span class="title">jekyll</span> serve
-</code></pre><p>就能在浏览器打开</p>
-<pre><code><span class="string">http:</span><span class="comment">//localhost:4000</span>
-</code></pre><p>jekyll更多的使用方法可以查看官方说明或者在终端中输入</p>
-<pre><code>jekyll <span class="comment">--help</span>
-</code></pre><p>在Github上你可以找到许多Jekyll博客的模版，而且其中绝大部分都是你能直接使用的，我也是使用的别人的模版进行简单的修改，<br>如果对这个模版有兴趣，可以进入的我的<a href="https://github.com/Sillyplus">Github主页</a>查看。</p>
-<p>现在你就可以愉快的写作啦～＼(^o^)／</p>
-<h3 id="wordpress博客迁移">wordpress博客迁移</h3><p>接下来的内容多半是我的吐槽，如果你赶时间去写博客的话可以忽略，如果你实在闲得发慌，不介意的话可以看一看，<br>说不定能发现一点有用的内容。</p>
-<p>本来打算顺便说一下域名绑定的，但我在这方面花费的时间比较长主要是自己的问题，绑定之后居然要一整天才能生效，<br>不清楚这个的我也被纠结了很久啦。既然是这样的话，我们就直接进入主题啦～</p>
-<p>我之前使用的是wordpress，虽然我已经尽可能的选择一些简单的工具来使用，但是我发现，一堆要维护的东西搞得自己都没办法只是专注于内容了。<br>这也是我为什么决定转到这边来啦，现在直接使用Atom编辑markdown文档，用这种方式来写博文体验真的很好(￣▽￣)。<br>虽然原本的博客内容不多，但还是想要把它们搬到这边来，所以在wordpress里导出了所有博文。导出的是xml的文件，<br>然后使用<a href="https://github.com/thomasf/exitwp">exitwp</a>来从xml文件中提取出内容，并转换成markdown的文档。<br>使用方法看作者的说明就好了，另外，我在运行exitwp.py的时候提示出错</p>
-<pre><code>Traceback (most recent <span class="operator"><span class="keyword">call</span> <span class="keyword">last</span>):
-  <span class="keyword">File</span> <span class="string">"exitwp.py"</span>, line <span class="number">11</span>, <span class="keyword">in</span> &lt;<span class="keyword">module</span>&gt;
-    <span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup
-ImportError: <span class="keyword">No</span> <span class="keyword">module</span> named bs4</span>
-</code></pre><p>然后我在pip list中发现我装的直接是BeautifulSoup，并没有bs4，所以我exitwp.py中的</p>
-<pre><code><span class="label">from</span> <span class="keyword">bs4 </span><span class="preprocessor">import</span> <span class="keyword">BeautifulSoup</span>
-</code></pre><p>直接改为</p>
-<pre><code><span class="preprocessor"><span class="keyword">import</span> BeautifulSoup</span>
-</code></pre><p>然后就能成功运行了，这样就导出成功了。如果你对python比较熟悉，你也可以自己修改exitwp.py，使它特定导出你想要的内容。<br>如果你想要从其它博客系统迁移博客过来的话，jekyll的官网上貌似也有相关的教程说明。</p>
-
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <h3 id="占位扯淡"><del>占位扯淡</h3><p><del>折腾了几天，终于可以坐下来写点总结了。不过现在是早上三点多快四点，还在想六七点的时候要去踢球，所以只是<br>占个位置而已，熟悉一下。毕竟还有很多东西不会，不过光是搭好现在这个样子就用了挺多时间的(其实也不是很多啦。。。)</p>
                         
+                            <a href="/2014/10/12/github-jekyll-build-a-blog/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2014/10/12/github-jekyll-build-a-blog/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 

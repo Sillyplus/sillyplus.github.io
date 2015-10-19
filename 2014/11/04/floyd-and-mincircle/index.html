@@ -12,19 +12,16 @@
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="Floyd算法求最小环算法思想对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由 dis[i][j]+m[j][xk]+m[xk][i]来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大枚举一下xk就行了。
-我们知道">
+    <meta name="description" content="算法思想对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由dis[i][j]+m[j][xk]+m[xk][i]来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大枚举一下xk就行了。我们知道，floyd算法最外层每循">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Floyd算法求最小环">
 <meta property="og:url" content="http://github.com/sillyplus/2014/11/04/floyd-and-mincircle/index.html">
 <meta property="og:site_name" content="Kepp It Simple && Stupid">
-<meta property="og:description" content="Floyd算法求最小环算法思想对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由 dis[i][j]+m[j][xk]+m[xk][i]来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大枚举一下xk就行了。
-我们知道">
-<meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
+<meta property="og:description" content="算法思想对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由dis[i][j]+m[j][xk]+m[xk][i]来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大枚举一下xk就行了。我们知道，floyd算法最外层每循">
+<meta property="og:updated_time" content="2015-10-19T10:10:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Floyd算法求最小环">
-<meta name="twitter:description" content="Floyd算法求最小环算法思想对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由 dis[i][j]+m[j][xk]+m[xk][i]来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大枚举一下xk就行了。
-我们知道">
+<meta name="twitter:description" content="算法思想对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由dis[i][j]+m[j][xk]+m[xk][i]来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大枚举一下xk就行了。我们知道，floyd算法最外层每循">
     
     
         
@@ -232,84 +229,11 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h1 id="Floyd算法求最小环">Floyd算法求最小环</h1><h2 id="算法思想">算法思想</h2><p>对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由<br> <code>dis[i][j]+m[j][xk]+m[xk][i]</code>来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。<br>因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大<br>枚举一下xk就行了。</p>
-<p>我们知道，floyd算法最外层每循环一次，就是由一个中间节点k更新点i到j的最短路径。k从小到大枚举，<br>就保证了循环到k的时候，当前i到j的最短路经过的最大节点只可能是k，这刚好满足上面提到的dis[i][j]的定义。<br>所以我们就可以愉快的使用floyd来求最小环了。</p>
+            <h2 id="算法思想">算法思想</h2><p>对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由<code>dis[i][j]+m[j][xk]+m[xk][i]</code>来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。<br>因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大枚举一下xk就行了。<br>我们知道，floyd算法最外层每循环一次，就是由一个中间节点k更新点i到j的最短路径。k从小到大枚举，就保证了循环到k的时候，当前i到j的最短路经过的最大节点只可能是k，这刚好满足上面提到的dis[i][j]的定义。所以我们就可以愉快的使用floyd来求最小环了。</p>
+<a id="more"></a>
 <h2 id="例题">例题</h2><h3 id="vijos_P1046_观光旅游">vijos P1046 观光旅游</h3><p>很裸的描述了，直接求最小环就好了。</p>
-<h3 id="Timus_1004-_Sightseeing_Trip">Timus 1004. Sightseeing Trip</h3><p>同上，不过要注意的就是，这个题目要求最小环的路径。</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
+<h3 id="Timus_1004-_Sightseeing_Trip">Timus 1004. Sightseeing Trip</h3><p>同上，不过要注意的就是，这个题目要求最小环的路径。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">110</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e8</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, num, ans;</span><br><span class="line"><span class="keyword">int</span> mp[MN][MN], dis[MN][MN], pre[MN][MN];</span><br><span class="line"><span class="keyword">int</span> path[MN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_path</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (pre[a][b]) &#123;</span><br><span class="line">        get_path(a, pre[a][b]);</span><br><span class="line">        get_path(pre[a][b], b);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        path[num++] = a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n) &amp;&amp; (n != -<span class="number">1</span>)) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= n; j++) &#123;</span><br><span class="line">                mp[i][j] = INF;</span><br><span class="line">                dis[i][j] = INF;</span><br><span class="line">                pre[i][j] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> a, b, l;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;a, &amp;b, &amp;l);</span><br><span class="line">            mp[a][b] = min(mp[a][b], l);</span><br><span class="line">            mp[b][a] = dis[a][b] = dis[b][a] = mp[a][b];</span><br><span class="line">        &#125;</span><br><span class="line">        ans = INF;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; k++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; k; i++)</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; k; j++) &#123;</span><br><span class="line">                    <span class="keyword">int</span> tmp = dis[i][j] + mp[j][k] + mp[k][i];</span><br><span class="line">                    <span class="keyword">if</span> (tmp &lt; ans) &#123;</span><br><span class="line">                        ans = tmp;</span><br><span class="line">                        num = <span class="number">0</span>;</span><br><span class="line">                        get_path(i, j);</span><br><span class="line">                        path[num++] = j;</span><br><span class="line">                        path[num++] = k;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">                    <span class="keyword">int</span> tmp = dis[i][k] + dis[k][j];</span><br><span class="line">                    <span class="keyword">if</span> (dis[i][j] &gt; tmp) &#123;</span><br><span class="line">                        dis[i][j] = tmp;</span><br><span class="line">                        pre[i][j] = k;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ans == INF) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"No solution."</span> &lt;&lt; endl;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; i++)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d "</span>, path[i]);</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">110</span>;
-<span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e8</span>;
-
-<span class="keyword">int</span> n, m, num, ans;
-<span class="keyword">int</span> mp[MN][MN], dis[MN][MN], pre[MN][MN];
-<span class="keyword">int</span> path[MN];
-
-<span class="function"><span class="keyword">void</span> <span class="title">get_path</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>{
-    <span class="keyword">if</span> (pre[a][b]) {
-        get_path(a, pre[a][b]);
-        get_path(pre[a][b], b);
-    } <span class="keyword">else</span> {
-        path[num++] = a;
-    }
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
-    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n) &amp;&amp; (n != -<span class="number">1</span>)) {
-        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m);
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++) {
-            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= n; j++) {
-                mp[i][j] = INF;
-                dis[i][j] = INF;
-                pre[i][j] = <span class="number">0</span>;
-            }
-        }
-        <span class="keyword">int</span> a, b, l;
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) {
-            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;a, &amp;b, &amp;l);
-            mp[a][b] = min(mp[a][b], l);
-            mp[b][a] = dis[a][b] = dis[b][a] = mp[a][b];
-        }
-        ans = INF;
-        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; k++) {
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; k; i++)
-                <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; k; j++) {
-                    <span class="keyword">int</span> tmp = dis[i][j] + mp[j][k] + mp[k][i];
-                    <span class="keyword">if</span> (tmp &lt; ans) {
-                        ans = tmp;
-                        num = <span class="number">0</span>;
-                        get_path(i, j);
-                        path[num++] = j;
-                        path[num++] = k;
-                    }
-                }
-
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)
-                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) {
-                    <span class="keyword">int</span> tmp = dis[i][k] + dis[k][j];
-                    <span class="keyword">if</span> (dis[i][j] &gt; tmp) {
-                        dis[i][j] = tmp;
-                        pre[i][j] = k;
-                    }
-                }
-        }
-        <span class="keyword">if</span> (ans == INF) {
-            <span class="built_in">cout</span> &lt;&lt; <span class="string">"No solution."</span> &lt;&lt; endl;
-        } <span class="keyword">else</span> {
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; i++)
-                <span class="built_in">printf</span>(<span class="string">"%d "</span>, path[i]);
-            <span class="built_in">cout</span> &lt;&lt; endl;
-        }
-    }
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>
             
                 
 
