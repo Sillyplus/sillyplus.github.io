@@ -14,23 +14,20 @@
     
     <meta name="description" content="摘自Matrix67 C语言速成手册
 四种动态内存分配函数，使用它们前需要在程序最前面包含头文件stdlib.h（C++应该是cstdlib）。四种函数的格式分别为：
-void malloc ( size );void calloc ( n, size );void free ( pointer );void *realloc( pointer, size );
-函数malloc 将在内存里寻找一">
+void malloc ( size );void calloc ( n, size );void free ( pointer );void *realloc( pointer, size );">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="动态内存分配">
 <meta property="og:url" content="http://github.com/sillyplus/2013/06/29/dynamic-memory-allocation/index.html">
 <meta property="og:site_name" content="Kepp It Simple && Stupid">
 <meta property="og:description" content="摘自Matrix67 C语言速成手册
 四种动态内存分配函数，使用它们前需要在程序最前面包含头文件stdlib.h（C++应该是cstdlib）。四种函数的格式分别为：
-void malloc ( size );void calloc ( n, size );void free ( pointer );void *realloc( pointer, size );
-函数malloc 将在内存里寻找一">
-<meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
+void malloc ( size );void calloc ( n, size );void free ( pointer );void *realloc( pointer, size );">
+<meta property="og:updated_time" content="2015-10-19T11:26:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态内存分配">
 <meta name="twitter:description" content="摘自Matrix67 C语言速成手册
 四种动态内存分配函数，使用它们前需要在程序最前面包含头文件stdlib.h（C++应该是cstdlib）。四种函数的格式分别为：
-void malloc ( size );void calloc ( n, size );void free ( pointer );void *realloc( pointer, size );
-函数malloc 将在内存里寻找一">
+void malloc ( size );void calloc ( n, size );void free ( pointer );void *realloc( pointer, size );">
 <meta name="twitter:creator" content="@sillycross">
     
         <meta rel="publisher" content="https://plus.google.com/dlxtxlb"/>
@@ -243,8 +240,7 @@ void malloc ( size );void calloc ( n, size );void free ( pointer );void *realloc
         <div class="main-content-wrap">
             <p>摘自Matrix67 C语言速成手册</p>
 <p>四种动态内存分配函数，使用它们前需要在程序最前面包含头文件stdlib.h（C++应该是cstdlib）。四种函数的格式分别为：</p>
-<p>void <em>malloc ( size );<br>void </em>calloc ( n, size );<br>void free ( pointer );<br>void *realloc( pointer, size );</p>
-<p>函数malloc 将在内存里寻找一个大小为size 的连续空间，把分配到的内存地址作为一个指向void 类型的指针（默认的无类型指针）返回。如果空间分配失败，函数返回NULL。</p>
+<p>void <em>malloc ( size );<br>void </em>calloc ( n, size );<br>void free ( pointer );<br>void *realloc( pointer, size );<br><a id="more"></a><br>函数malloc 将在内存里寻找一个大小为size 的连续空间，把分配到的内存地址作为一个指向void 类型的指针（默认的无类型指针）返回。如果空间分配失败，函数返回NULL。</p>
 <p>函数calloc 将在内存里寻找一个大小为n * size 的连续空间，并且把这段内存的数据全部清0，返回数据和malloc 一样。如果空间分配失败，函数返回NULL。</p>
 <p>函数free 用于释放内存空间，释放后的空间被回收，可以用于以后的malloc 或calloc 操作。</p>
 <p>函数realloc 在保证已有数据不变的情况下改变已有指针的空间大小，返回重新分得的空间的内存地址（有可能和原来不同）。如果空间重新分配失败，函数返回NULL。</p>

@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Kepp It Simple && Stupid">
 <meta property="og:description" content="描述 Description
 某一天在网上闲逛的玖君不小心发现了TYVJ，就立刻被TYVJ吸引住了，果断驻扎下来。玖君决定按照顺序来切题，因为离复赛越来越近了，所以他希望能够用最短时间AC掉前面N道题目，完成第i道题目玖君需要花费t[i]个单位的代价。玖君做题有个特点，他喜欢看完几道题后，一次把几道题的代码写完。如果玖君决定一次写完从编号L到编号R的题目，那么他完成这些题目的总代价等于编号L到R题">
-<meta property="og:updated_time" content="2015-10-19T11:09:31.000Z">
+<meta property="og:updated_time" content="2015-10-19T11:47:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tyvj_P1309_刷题的玖君">
 <meta name="twitter:description" content="描述 Description
@@ -236,7 +236,7 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p>描述 Description</p>
-<p>某一天在网上闲逛的玖君不小心发现了TYVJ，就立刻被TYVJ吸引住了，果断驻扎下来。玖君决定按照顺序来切题，因为离复赛越来越近了，所以他希望能够用最短时间AC掉前面N道题目，完成第i道题目玖君需要花费t[i]个单位的代价。玖君做题有个特点，他喜欢看完几道题后，一次把几道题的代码写完。如果玖君决定一次写完从编号L到编号R的题目，那么他完成这些题目的总代价等于编号L到R题目的代价之和与R之积，即SUM{t[L..R]} <em>R。此外每道题在被切之前都会等待被切，等待的时间，也被算在代价里面，对于每个第k次被切的题，在它被切之前的等待代价为(k-1)</em>S。综上，切完N道题的总代价=第1次切题的代价+第2次切题的代价+…+第k次切题的代价+每道题的等待代价。现在我们想知道玖君切完这N道题目的最小代价。<br>输入格式 InputFormat</p>
+<p>某一天在网上闲逛的玖君不小心发现了TYVJ，就立刻被TYVJ吸引住了，果断驻扎下来。玖君决定按照顺序来切题，因为离复赛越来越近了，所以他希望能够用最短时间AC掉前面N道题目，完成第i道题目玖君需要花费t[i]个单位的代价。玖君做题有个特点，他喜欢看完几道题后，一次把几道题的代码写完。如果玖君决定一次写完从编号L到编号R的题目，那么他完成这些题目的总代价等于编号L到R题目的代价之和与R之积，即SUM{t[L..R]} <em>R。此外每道题在被切之前都会等待被切，等待的时间，也被算在代价里面，对于每个第k次被切的题，在它被切之前的等待代价为(k-1)</em>S。综上，切完N道题的总代价=第1次切题的代价+第2次切题的代价+…+第k次切题的代价+每道题的等待代价。现在我们想知道玖君切完这N道题目的最小代价。<br><a id="more"></a><br>输入格式 InputFormat</p>
 <p>第1行：2个用空格分开的整数N, S<br>第2行：N个用空格分开的整数，分别表示t[1]到t[N]<br>输出格式 OutputFormat</p>
 <p>第1行：1个整数，表示玖君完成N道题的最小代价<br>样例输入 SampleInput [复制数据]</p>
 <p>4 7<br>8 1 7 6<br>样例输出 SampleOutput [复制数据]</p>

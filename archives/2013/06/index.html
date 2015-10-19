@@ -261,7 +261,7 @@
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -286,30 +286,15 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
+                    <div class="postShorten-excerpt" itemprop="articleBody">
                         <p>摘自Matrix67 C语言速成手册</p>
 <p>四种动态内存分配函数，使用它们前需要在程序最前面包含头文件stdlib.h（C++应该是cstdlib）。四种函数的格式分别为：</p>
-<p>void <em>malloc ( size );<br>void </em>calloc ( n, size );<br>void free ( pointer );<br>void *realloc( pointer, size );</p>
-<p>函数malloc 将在内存里寻找一个大小为size 的连续空间，把分配到的内存地址作为一个指向void 类型的指针（默认的无类型指针）返回。如果空间分配失败，函数返回NULL。</p>
-<p>函数calloc 将在内存里寻找一个大小为n * size 的连续空间，并且把这段内存的数据全部清0，返回数据和malloc 一样。如果空间分配失败，函数返回NULL。</p>
-<p>函数free 用于释放内存空间，释放后的空间被回收，可以用于以后的malloc 或calloc 操作。</p>
-<p>函数realloc 在保证已有数据不变的情况下改变已有指针的空间大小，返回重新分得的空间的内存地址（有可能和原来不同）。如果空间重新分配失败，函数返回NULL。</p>
-<p>Pascal 中的new 语句可以用前两个函数代替，free 语句则相当于Pascal 中的dispose。</p>
-<p>注意，malloc 和calloc 函数所返回的指针还没确定类型，理论上需要用类型转换。下面的程序合法地为p指针分配空间：</p>
-<p>int<em>p;<br>p = (int </em>) malloc( sizeof(int) );<br>*p = 520;</p>
-<p>事实上，由于赋值时C 语言自动转换类型，因此那个类型转换是没有必要的（去掉(int *)没有影响）。</p>
-<p>本人在用codeblocks时，发现去掉（int*）编译不过，maybe是版本问题吧……</p>
-
+<p>void <em>malloc ( size );<br>void </em>calloc ( n, size );<br>void free ( pointer );<br>void *realloc( pointer, size );<br>
                         
+                            <a href="/2013/06/29/dynamic-memory-allocation/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/06/29/dynamic-memory-allocation/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -318,7 +303,7 @@
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -343,23 +328,16 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
+                    <div class="postShorten-excerpt" itemprop="articleBody">
                         <p>早上看了一下七中王迪大神写的一篇论文，学习了一下分块思想，只看了一点点，基本上是看着代码，再自己脑补的。</p>
 <p>所谓分块就是把规模为n的问题分割成k块，每块规模为s，为了使对块内和整个范围的操作的复杂度平均些，令k = s = √n。利用这个思想就能把O(n)的复杂度降到O(√n),从而达到优化算法的目的。论文中如是说。</p>
 <p>只看了一个简单的问题，如有一长度为n的正整数数列，完成m次操作（1≤n，m≤10 ˆ5<em>），M x y:把第x个数字修改为y；Q x y：询问区间 [x,y] 中的最大值Max。</em></p>
-<p>这个问题相当经典，有多种算法可解，因为在学分块，自然采用块状解决之。</p>
-<p>我补充完整的代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">maintain</span><span class="params">(<span class="keyword">int</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100100</span>]=&#123;<span class="number">0</span>&#125;,b[<span class="number">100100</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> n,m,t,s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    s = <span class="built_in">sqrt</span>(n);</span><br><span class="line">    t = (n + s - <span class="number">1</span>) / s;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> x,y,k;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; k;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">         <span class="keyword">if</span> (k == <span class="number">1</span>) &#123;</span><br><span class="line">            modify(x-<span class="number">1</span>,y);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; query(x-<span class="number">1</span>,y-<span class="number">1</span>) &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">maintain</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> lb = (x / s) * s, rb = min(n, lb + s) - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (x == rb) b[x] = a[x], x--;</span><br><span class="line">    <span class="keyword">for</span> (;x &gt;= lb; x--) b[x] = max(b[x+<span class="number">1</span>], a[x]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t; i++)</span><br><span class="line">        maintain(min(n, i * s) - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    a[x] = y;</span><br><span class="line">    maintain(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x_pos = x / s, y_pos = y / s;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (x_pos == y_pos) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = x;i &lt;= y; i++)</span><br><span class="line">            ret = max(ret, a[i]);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        ret = b[x];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = x_pos + <span class="number">1</span>; i &lt; y_pos; i++)</span><br><span class="line">            ret = max(ret,b[i * s]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = y_pos * s; i &lt;= y; i++)</span><br><span class="line">            ret = max(ret, a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+<p>这个问题相当经典，有多种算法可解，因为在学分块，自然采用块状解决之。<br>
                         
+                            <a href="/2013/06/17/think-with-piece/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/06/17/think-with-piece/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -368,7 +346,7 @@
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -393,29 +371,21 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
+                    <div class="postShorten-excerpt" itemprop="articleBody">
                         <p>这道题显然有，矩阵乘法可解（由数据范围可得）</p>
-<p>显然有题目要求: f[n]=∑f[i] (n-k&lt;i&lt;n-1),矩阵乘法相关知识自行google，推荐阅读<a href="http://www.matrix67.com/" target="_blank" rel="external">Matrix67</a>写的一篇文章。</p>
+<p>显然有题目要求: f[n]=∑f[i] (n-k&lt;i&lt;n-1),矩阵乘法相关知识自行google，推荐阅读<a href="http://www.matrix67.com/">Matrix67</a>写的一篇文章。</p>
 <p>所以构造有数组A(k*k):</p>
 <p>000…1</p>
 <p>100…1</p>
 <p>010…1</p>
 <p>001…1</p>
 <p>因为看k&lt;10,我们可以先计算出f[1]~f[k],然后用矩阵乘法加速，计算出A^(n-k),最后再f*A^(n-k)乘一下就得出了。</p>
-<p>我用的是递归式的矩阵二分取幂，后来才知道这样写会显得你很弱智……我也不知道为什么，然后就顺便再复习了一下，快速幂的非递归写法。</p>
-<p>果断C++没学好，还是用pascal写的，这是这道题的代码：</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> arr=<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">12</span>,-<span class="number">1</span>..<span class="number">12</span>] <span class="keyword">of</span> int64;</span><br><span class="line"><span class="keyword">const</span> md=<span class="number">7777777</span>;</span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">  k,i,j:longint;</span><br><span class="line">  n,ans:int64;</span><br><span class="line">  t,q:arr;</span><br><span class="line">  f:<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">12</span>] <span class="keyword">of</span> int64;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mul</span><span class="params">(a,b:arr)</span>:</span>arr;</span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">  c:arr;</span><br><span class="line">  i,j,p:longint;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">  fillchar(c,sizeof(c),<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">for</span> j:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span></span><br><span class="line">      <span class="keyword">for</span> p:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span></span><br><span class="line">        c[i,j]:=(c[i,j]+(a[i,p]*b[p,j] <span class="keyword">mod</span> md)) <span class="keyword">mod</span> md;</span><br><span class="line">  <span class="keyword">exit</span>(c);</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dv</span><span class="params">(x:int64)</span>:</span>arr;</span><br><span class="line"><span class="keyword">var</span> tp:arr;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">  <span class="keyword">if</span> x=<span class="number">1</span> <span class="keyword">then</span> <span class="keyword">exit</span>(t);</span><br><span class="line">  tp:=dv(x <span class="keyword">div</span> <span class="number">2</span>);</span><br><span class="line">  tp:=mul(tp,tp);</span><br><span class="line">  <span class="keyword">if</span> (x <span class="keyword">mod</span> <span class="number">2</span>)&lt;&gt;<span class="number">0</span> <span class="keyword">then</span> tp:=mul(tp,t);</span><br><span class="line">  <span class="keyword">exit</span>(tp);</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">  readln(k); readln(n);</span><br><span class="line">  fillchar(t,sizeof(t),<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k-<span class="number">1</span> <span class="keyword">do</span> t[i+<span class="number">1</span>,i]:=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span> t[i,k]:=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span> f[i]:=<span class="number">0</span>; f[<span class="number">0</span>]:=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">for</span> j:=<span class="number">0</span> <span class="keyword">to</span> i-<span class="number">1</span> <span class="keyword">do</span></span><br><span class="line">      f[i]:=f[i]+f[j];</span><br><span class="line">  <span class="keyword">if</span> n&lt;=k <span class="keyword">then</span> <span class="keyword">begin</span> writeln(f[n]); halt; <span class="keyword">end</span>;</span><br><span class="line">  q:=dv(n-k); ans:=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span></span><br><span class="line">    ans:=(ans+(f[i]*q[i,k] <span class="keyword">mod</span> md)) <span class="keyword">mod</span> md;</span><br><span class="line">  writeln(ans);</span><br><span class="line"><span class="keyword">end</span>.</span><br></pre></td></tr></table></figure>
-
+<p>我用的是递归式的矩阵二分取幂，后来才知道这样写会显得你很弱智……我也不知道为什么，然后就顺便再复习了一下，快速幂的非递归写法。<br>
                         
+                            <a href="/2013/06/12/tyvj-p1565-warcraft-III/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/06/12/tyvj-p1565-warcraft-III/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -450,13 +420,7 @@
                 
                 
                     <div class="postShorten-content" itemprop="articleBody">
-                        <p>保送生的颓废生活……就快完结，可惜这并不是我想要的生活。</p>
-<p>本来回家是为了学习，可如今C++还没学好，日子就快结束了。整天被传召回学校，一个早上就轻松地没了……</p>
-<p>因为承诺过会去高考，所以剩下这两天是否要复习呢，本来决定要的，可又彷徨了</p>
-<p>踏进六月，终于能上网了，可还是没能认真学习，感觉还是先过完高考这关再说吧，虽然现在对高考没什么感觉，我总是太在乎别人的感受了吗。</p>
-<p>混乱的语言，也正表明我现在的心境。也许是最近没有好好感受算法的魅力了吧，在题库闲逛，想code时却才发现自己的语言还没学好……，pascal又在本能上抑制去使用它。</p>
-<p>算了，明后两天复习下，再考两天试，就不用管了。</p>
-<p>还有我的足球赛啊，好想参加啊……我应该去写份计划表吗，感觉自制力不行写了也没用对吧。</p>
+                        <p>保送生的颓废生活……就快完结，可惜这并不是我想要的生活。<br>本来回家是为了学习，可如今C++还没学好，日子就快结束了。整天被传召回学校，一个早上就轻松地没了……<br>因为承诺过会去高考，所以剩下这两天是否要复习呢，本来决定要的，可又彷徨了<br>踏进六月，终于能上网了，可还是没能认真学习，感觉还是先过完高考这关再说吧，虽然现在对高考没什么感觉，我总是太在乎别人的感受了吗。<br>混乱的语言，也正表明我现在的心境。也许是最近没有好好感受算法的魅力了吧，在题库闲逛，想code时却才发现自己的语言还没学好……，pascal又在本能上抑制去使用它。<br>算了，明后两天复习下，再考两天试，就不用管了。<br>还有我的足球赛啊，好想参加啊……我应该去写份计划表吗，感觉自制力不行写了也没用对吧。</p>
 
                         
                             

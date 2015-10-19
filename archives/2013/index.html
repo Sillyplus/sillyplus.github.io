@@ -209,7 +209,7 @@
 <section class="postShorten-group main-content-wrap">
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -234,107 +234,18 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
+                    <div class="postShorten-excerpt" itemprop="articleBody">
                         <p>题目大意是一个3<em>N的棋盘，用1</em>2的骨牌覆盖的方案数</p>
 <p>使用一个三位的二进制数表示状态，则可以有：</p>
 <p>n行：000  ……………………………………. 000</p>
 <p>n-1行：000  001  010   011…………………  111</p>
 <p>为避免状态重复，我们不允许在n-1行上平放骨牌（因为等会由n-1行转移的第n行时，我们可以在n行上平放），所以我们可以构造一个矩阵来表示这些转移（具体自己画一画就知道了），即可以得到以下矩阵A：</p>
-<p>0000000100000010000001000000100100010000001000000100000110010010然后求A的n次幂，A^n[7][7]就是我们要的答案啦～</p>
-<p>至于矩阵方面的一些知识，可以看一下Matrix67的这篇文章：<a href="http://www.matrix67.com/blog/archives/276" target="_blank" rel="external">十个利用矩阵乘法解决的经典题目</a></p>
-<pre><code><span class="comment">//</span>
-<span class="comment">//  main.cpp</span>
-<span class="comment">//  p2663</span>
-<span class="comment">//</span>
-<span class="comment">//  Created by Silly on 13-12-26.</span>
-<span class="comment">//  Copyright (c) 2013年 Silly. All rights reserved.</span>
-<span class="comment">//</span>
-
-<span class="preprocessor">#<span class="keyword">include</span></span>
-<span class="preprocessor">#<span class="keyword">include</span></span>
-<span class="preprocessor">#<span class="keyword">include</span></span>
-
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span>  ll;
-
-<span class="keyword">const</span> ll  mat[<span class="number">8</span>][<span class="number">8</span>] = {
-    {<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>},
-    {<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>},
-    {<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>},
-    {<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>},
-    {<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>},
-    {<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>},
-    {<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>},
-    {<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>},
-};
-
-<span class="keyword">struct</span> ma {
-    ll a[<span class="number">8</span>][<span class="number">8</span>];
-};
-
-ma res, tmp;
-
-<span class="function">ma <span class="title">mm</span><span class="params">(ma x, ma y)</span> </span>{
-    ma z;
-    <span class="built_in">memset</span>(z.a ,<span class="number">0</span> , <span class="keyword">sizeof</span>(z.a));
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) {
-        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">8</span>; j++) {
-            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">8</span>; k++) {
-                z.a[i][j] += x.a[i][k] * y.a[k][j];
-            }
-        }
-    }
-    <span class="keyword">return</span> z;
-}
-
-<span class="function">ma <span class="title">mp</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{
-    ma z;
-    <span class="keyword">if</span> (x == <span class="number">1</span>) {
-        <span class="keyword">return</span> res;
-    }
-    z = mp(x / <span class="number">2</span>);
-    z = mm(z, z);
-    <span class="keyword">if</span> (x % <span class="number">2</span> != <span class="number">0</span>) {
-        z = mm(res, z);
-    }
-    <span class="keyword">return</span> z;
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span>
-</span>{
-    <span class="keyword">int</span> n;
-    <span class="built_in">cin</span> &gt;&gt; n;
-    <span class="keyword">while</span> (n != -<span class="number">1</span>) {
-        <span class="keyword">if</span> (n == <span class="number">0</span>) {
-            <span class="built_in">cout</span> &lt;&lt; <span class="number">1</span> &lt;&lt; endl;
-            <span class="built_in">cin</span> &gt;&gt; n;
-            <span class="keyword">continue</span>;
-        }
-        <span class="built_in">memset</span>(res.a, <span class="number">0</span>, <span class="keyword">sizeof</span>(res.a));
-        <span class="built_in">memset</span>(tmp.a, <span class="number">0</span>, <span class="keyword">sizeof</span>(tmp.a));
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) {
-            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">8</span>; j++) {
-                res.a[i][j] = mat[i][j];
-            }
-        }
-        tmp = mp(n);
-        <span class="built_in">printf</span>(<span class="string">"%lldn"</span>, tmp.a[<span class="number">7</span>][<span class="number">7</span>]);
-        <span class="built_in">cin</span> &gt;&gt; n;
-    }
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>
+<p>0000000100000010000001000000100100010000001000000100000110010010然后求A的n次幂，A^n[7][7]就是我们要的答案啦～<br>
                         
+                            <a href="/2013/12/26/poj-2663-tri-tiling/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/12/26/poj-2663-tri-tiling/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -343,7 +254,7 @@ ma res, tmp;
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -368,27 +279,13 @@ ma res, tmp;
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>这份列表当然不是我原创的，从文库里下载了一份，放到这里便于自己浏览和查找题目。（ps：这句话也不是我写的，转自lyd）</p>
-<p><strong>※**</strong>最近更新：<strong><strong>Poj</strong></strong>斜率优化题目**</p>
-<p>1180，2018，3709</p>
-<p><strong>列表一：经典题目题号：**</strong><br>**容易：<br>1018, 1050, 1083, 1088, 1125, 1143, 1157, 1163, 1178, 1179, 1189, 1191,1208, 1276, 1322, 1414, 1456, 1458,</p>
-<p>1609, 1644, 1664, 1690, 1699, 1740, 1742, 1887, 1926, 1936, 1952, 1953, 1958, 1959, 1962, 1975, 1989, 2018,</p>
-<p>2029, 2039, 2063, 2081, 2082, 2181, 2184, 2192, 2231, 2279, 2329, 2336, 2346, 2353, 2355, 2356, 2385, 2392, 2424,<br>不易：<br>1019, 1037, 1080, 1112, 1141, 1170, 1192, 1239, 1655, 1695, 1707, 1733(区间减法加并查集),</p>
-<p>1737, 1837, 1850, 1920(加强版汉罗塔), 1934(全部最长公共子序列), 1964(最大矩形面积，O(n*m)算法), 2138, 2151, 2161, 2178,<br>推荐：<br>1015, 1635, 1636(挺好的), 1671, 1682, 1692(优化), 1704, 1717, 1722, 1726, 1732, 1770,</p>
-<p>1821, 1853, 1949, 2019, 2127, 2176, 2228, 2287, 2342, 2374, 2378, 2384, 2411<br><strong>列表二：完整**</strong>DP<strong>**题目列表</strong></p>
-<p>1015 Jury Compromise<br>1029 False coin<br>1036 Gangsters<br>1037 A decorative fence<br>1038 Bugs Integrated, Inc.<br>1042 Gone Fishing<br>1050 To the Max<br>1062 昂贵的聘礼<br>1074 Parallel Expectations<br>1080 Human Gene Functions<br>1088 滑雪<br>1093 Formatting Text<br>1112 Team Them Up!<br>1141 Brackets Sequence<br>1143 Number Game<br>1157 LITTLE SHOP OF FLOWERS<br>1159 Palindrome<br>1160 Post Office<br>1163 The Triangle<br>1170 Shopping Offers<br>1178 Camelot<br>1179 Polygon<br>1180 Batch Scheduling<br>1185 炮兵阵地<br>1187 陨石的秘密<br>1189 钉子和小球<br>1191 棋盘分割<br>1192 最优连通子集<br>1208 The Blocks Problem<br>1239 Increasing Sequences<br>1240 Pre-Post-erous!<br>1276 Cash Machine<br>1293 Duty Free Shop<br>1322 Chocolate<br>1323 Game Prediction<br>1338 Ugly Numbers<br>1390 Blocks<br>1414 Life Line<br>1432 Decoding Morse Sequences<br>1456 Supermarket<br>1458 Common Subsequence<br>1475 Pushing Boxes<br>1485 Fast Food<br>1505 Copying Books<br>1513 Scheduling Lectures<br>1579 Function Run Fun<br>1609 Tiling Up Blocks<br>1631 Bridging signals 2分+DP NLOGN<br>1633 Gladiators<br>1635 Subway tree systems<br>1636 Prison rearrangement<br>1644 To Bet or Not To Bet<br>1649 Market Place<br>1651 Multiplication Puzzle<br>1655 Balancing Act<br>1661 Help Jimmy<br>1664 放苹果<br>1671 Rhyme Schemes<br>1682 Clans on the Three Gorges<br>1690 (Your)((Term)((Project)))<br>1691 Painting A Board<br>1692 Crossed Matchings<br>1695 Magazine Delivery<br>1699 Best Sequence<br>1704 Georgia and Bob<br>1707 Sum of powers<br>1712 Flying Stars<br>1714 The Cave<br>1717 Dominoes<br>1718 River Crossing<br>1722 SUBTRACT<br>1726 Tango Tango Insurrection<br>1732 Phone numbers<br>1733 Parity game<br>1737 Connected Graph<br>1740 A New Stone Game<br>1742 Coins P<br>1745 Divisibility<br>1770 Special Experiment<br>1771 Elevator Stopping Plan<br>1776 Task Sequences<br>1821 Fence<br>1837 Balance<br>1848 Tree<br>1850 Code<br>1853 Cat<br>1874 Trade on Verweggistan<br>1887 Testing the CATCHER<br>1889 Package Pricing<br>1920 Towers of Hanoi<br>1926 Pollution<br>1934 Trip<br>1936 All in All<br>1937 Balanced Food<br>1946 Cow Cycling<br>1947 Rebuilding Roads<br>1949 Chores<br>1952 BUY LOW, BUY LOWER<br>1953 World Cup Noise<br>1958 Strange Towers of Hanoi<br>1959 Darts<br>1962 Corporative Network<br>1964 City Game<br>1975 Median Weight Bead<br>1989 The Cow Lineup<br>2018 Best Cow Fences<br>2019 Cornfields<br>2029 Get Many Persimmon Trees<br>2033 Alphacode<br>2039 To and Fro<br>2047 Concert Hall Scheduling<br>2063 Investment<br>2081 Recaman’s Sequence<br>2082 Terrible Sets<br>2084 Game of Connections<br>2127 Greatest Common Increasing Subsequence<br>2138 Travel Games<br>2151 Check the difficulty of problems<br>2152 Fire<br>2161 Chandelier<br>2176 Folding<br>2178 Heroes Of Might And Magic<br>2181 Jumping Cows<br>2184 Cow Exhibition<br>2192 Zipper<br>2193 Lenny’s Lucky Lotto Lists<br>2228 Naptime<br>2231 Moo Volume<br>2279 Mr. Young’s Picture Permutations<br>2287 Tian Ji – The Horse Racing<br>2288 Islands and Bridges<br>2292 Optimal Keypad<br>2329 Nearest number - 2<br>2336 Ferry Loading II<br>2342 Anniversary party<br>2346 Lucky tickets<br>2353 Ministry<br>2355 Railway tickets<br>2356 Find a multiple<br>2374 Fence Obstacle Course<br>2378 Tree Cutting<br>2384 Harder Sokoban Problem<br>2385 Apple Catching<br>2386 Lake Counting<br>2392 Space Elevator<br>2397 Spiderman<br>2411 Mondriaan’s Dream<br>2414 Phylogenetic Trees Inherited<br>2424 Flo’s Restaurant<br>2430 Lazy Cows<br>2915 Zuma<br>3017 Cut the Sequence<br>3028 Shoot-out<br>3124 The Bookcase<br>3133 Manhattan Wiring<br>3345 Bribing FIPA<br>3375 Network Connection<br>3420 Quad Tiling ?</p>
-
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>这份列表当然不是我原创的，从文库里下载了一份，放到这里便于自己浏览和查找题目。（ps：这句话也不是我写的，转自lyd）<br>
                         
+                            <a href="/2013/12/23/poj-dp-list/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/12/23/poj-dp-list/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -397,7 +294,7 @@ ma res, tmp;
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -422,21 +319,13 @@ ma res, tmp;
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>转自别的地方，先放着，激励自己去刷题</p>
-<p>1062<em> 昂贵的聘礼 枚举等级限制+dijkstra<br>1087</em> A Plug for UNIX 2分匹配<br>1094 Sorting It All Out floyd 或 拓扑<br>1112<em> Team Them Up! 2分图染色+DP<br>1122 FDNY to the Rescue! 最短路<br>1125 Stockbroker Grapevine FLOYD<br>1128 Frame Stacking 拓扑排序<br>1135 Domino Effect 最短路<br>1149</em> PIGS 网络流<br>1161<em> Walls Floyd<br>1192 最优连通子集<br>1201 Intervals 差分约束<br>1236</em> Network of Schools 强联通<br>1251 Jungle Roads MST<br>1258 Agri-Net MST<br>1270 Following Orders 拓扑排序<br>1273 Drainage Ditches 最大流<br>1274 The Perfect Stall 2分匹配<br>1275<em> Cashier Employment 差分约束<br>1287 Networking MST<br>1300 Door Man 欧拉路<br>1324 Holedox Moving BFS<br>1325 Machine Schedule 2分匹配(最小点覆盖)<br>1364 King 差分约束<br>1386 Play on Words 欧拉路<br>1422 Air Raid 2分匹配<br>1459 Power Network 网络流<br>1466 Girls and Boys 2分图(最大独立团)<br>1469 COURSES 2分匹配<br>1502 MPI Maelstrom floyd<br>1511</em> Invitation Cards 最短路<br>1556 The Doors 最短路<br>1562 Oil Deposits DFS<br>1603 Risk 最短路<br>1613 Cave Raider 最短路<br>1637<em> Sightseeing tour 混合图欧拉回路-网络流<br>1659 Frogs’ Neighborhood Havel-Hakimi定理<br>1679 The Unique MST MST唯一性<br>1716 Integer Intervals 差分约束<br>1724</em> ROADS 最短路-拆点<br>1751 Highways MST<br>1780<em> Code 欧拉回路<br>1789 Truck History MST<br>1797 Heavy Transportation 最小生成树<br>1847 Tram 最短路<br>1861 Network MST<br>1904</em> King’s Quest 强联通<br>1949 Chores 最短路<br>1979 Red and Black DFS<br>2031 Building a Space Station MST<br>2060 Taxi Cab Scheme 2分匹配<br>2075 Tangled in Cables 最小生成树<br>2112 Optimal Milking 网络流<br>2125 Destroying The Graph 最小割<br>2135 Farm Tour 费用流<br>2139 Six Degrees of Cowvin Bacon floyd<br>2226 Muddy Fields 2分匹配<br>2230 Watchcow 欧拉回路<br>2239 Selecting Courses 2分匹配<br>2240 Arbitrage 最短路<br>2253 Frogger 最短路<br>2263 Heavy Cargo 最短路<br>2267<em> From Dusk till Dawn or: Vladimir the Vampire 最短路<br>2289 Jamie’s Contact Groups 网络流<br>2337 Catenyms 欧拉通路<br>2349 Arctic Network 最小生成树<br>2367 Genealogical tree 拓扑排序<br>2387 Til the Cows Come Home 最短路<br>2391</em> Ombrophobic Bovines 最大流<br>2394 Checking an Alibi 最短路<br>2396<em> Budget 网络流<br>2421</em> Constructing Roads 最小生成树<br>2446 Chessboard 2分匹配<br>2455 Secret Milking Machine 网络流<br>2457 Part Acquisition 最短路<br>2472 106 miles to Chicago 最短路<br>2485 Highways 最小生成树<br>2513 Colored Sticks 欧拉路<br>2516 Minimum Cost 费用流<br>2536 Gopher II 2分匹配<br>2553<em> The Bottom of a Graph 强联通<br>2570 Fiber Network 最短路<br>2584 T-Shirt Gumbo 网络流<br>2585 Window Pains 拓扑排序<br>2594</em> Treasure Exploration 2分匹配<br>2607 FireStation 最短路<br>2723 Get Luffy Out 2-sat<br>2724 Purifying Machine 2分匹配<br>2728 Desert King 最优比例生成树<br>2749<em> Building roads 2-sat<br>2762 Going from u to v or from v to u? 强联通<br>2935 Basic Wall Maze BFS<br>2942 Knights of the Round Table 点双连通分量+二分图判定<br>2949</em> Word Rings 差分约束<br>2983 Is the Information Reliable? 差分约束<br>2987 Firing 最小割(求解正确性??)<br>3020 Antenna Placement 2分匹配<br>3026 Borg Maze MST<br>3041 Asteroids 2分匹配<br>3072<em> Robot 最短路<br>3159 Steady Cow Assignment差分约束<br>3160 Father Christmas flymouse 强联通<br>3164 Command Network 最小树形图<br>3169 Layout 差分约束<br>3177 Redundant Paths 双联通分量<br>3189 Steady Cow Assignment 网络流<br>3204 Ikki’s Story I - Road Reconstruction 最大流<br>3207 Ikki’s Story IV - Panda’s Trick 2sat<br>3216 Repairing Company 2分匹配<br>3228 Gold Transportation 网络流<br>3255 Roadblocks 最短路<br>3259 Wormholes 最短路<br>3268 Silver Cow Party 最短路<br>3275 Ranking the Cows floyd<br>3281 Dining 最大流<br>3308 Paratroopers 最小割<br>3310 Caterpillar<br>3311 Hie with the Pie floyd<br>3328 Cliff Climbing 最短路<br>3343 Against Mammoths 2分匹配<br>3352 Road Construction 桥<br>3439 Server Relocation 最短路<br>3463 Sightseeing 最短路<br>3469 Dual Core CPU 最小割<br>3487 The Stable Marriage Problem 稳定婚姻<br>3522 Slim Span 最小生成树<br>3594 Escort of Dr. Who How 最短路<br>3615 Cow Hurdles 最短路<br>3621 Sightseeing Cows 二分枚举+判负环<br>3648 Wedding 2-sat<br>3653 Here We Go(relians) Again 最短路<br>3659</em> Cell Phone Network 最小支配集<br>3660 Cow Contest 拓扑排序<br>3662<em> Telephone Lines 最短路<br>3678 Katu Puzzle 2-sat<br>3683</em> Priest John’s Busiest Day 2-sat求解<br>3687 Labeling Balls 差分约束 或 拓扑排序<br>3692 Kindergarten 2分匹配<br>3694 Network 无向图缩点</p>
-<p>POJ 2449 Remmarguts’ Date(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2449" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2449</a><br>题意：经典问题：K短路<br>解法：dijkstra+A<em>(rec)，方法很多<br>相关：<a href="http://acm.pku.edu.cn/JudgeOnline/showcontest?contest_id=1144" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/showcontest?contest_id=1144</a><br>该题亦放在搜索推荐题中<br>POJ 3013 – Big Christmas Tree(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3013" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3013</a><br>题意：最简单最短路，但此题要过，需要较好的程序速度和，还要注意精度<br>解法：Dijkstra<br>POJ 3463 – Sightseeing(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3463" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3463</a><br>题意：最短路和比最短路大1的路的数量<br>解法：需要真正理解dijkstra<br>POJ 3613 – Cow Relays(较难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3613" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3613</a><br>题意：求经过N条边的最短路<br>解法：floyd + 倍增，贪心<br>POJ 3621 – Sightseeing Cows(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3621" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3621</a><br>题意：求一个环路，欢乐值 / 总路径最大<br>解法：参数搜索 + 最短路(ms 原始的bellman tle, 用spfa才过)<br>POJ 3635 – full tank?(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3635" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3635</a><br>题意：最短路变形<br>解法：广搜<br>相关：<a href="http://hi.baidu.com/hnu_reason/blog/item/086e3dccfc8cb21600e9286b.html" target="_blank" rel="external">http://hi.baidu.com/hnu_reason/blog/item/086e3dccfc8cb21600e9286b.html</a><br>生成树问题<br>基本的生成树就不放上来了<br>POJ 1639 – Picnic Planning(较难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1639" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1639</a><br>题意：顶点度数有限制的最小生成树<br>解法：贪心 + prim/kruskal<br>POJ 1679 – The Unique MST(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1679" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1679</a><br>题意：判断MST是否唯一<br>解法：prim就行，不过还是易错的题<br>POJ 2728 – Desert King(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2728" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2728</a><br>题意：所谓最优比率生成树<br>解法：参数搜索 + prim<br>POJ 3164 – Command Network(难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3164" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3164</a><br>题意：最小树形图<br>解法：刘朱算法，这个考到的可能性比较小吧？<br>POJ 3522 – Slim Span(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3522" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3522</a><br>题意：求一颗生成树，让最大边最小边差值最小<br>解法：kruskal活用<br>连通性，度数，拓扑问题<br>此类问题主要牵扯到DFS，缩点等技巧<br>POJ 1236 – Network of Schools(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1236" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1236</a><br>题意：问添加多少边可成为完全连通图<br>解法：缩点，看度数<br>POJ 1659 – Frogs’ Neighborhood(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1659" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1659</a><br>题意：根据度序列构造图<br>解法：贪心，详细证明参见havel定理<br>POJ 2553 – The Bottom of a Graph(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2553" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2553</a><br>POJ 2186 – Popular Cows(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2186" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2186</a><br>题意：强连通分量缩点图出度为0的点<br>POJ 2762 – Going from u to v or from v to u?(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2762" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2762</a><br>题意：单向连通图判定<br>解法：缩点 + dp找最长链<br>POJ 2914 – Minimum Cut(难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2914" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2914</a><br>题意：无向图最小割<br>解法：Stoer-Wagner算法，用网络流加枚举判定会挂<br>POJ 2942 – Knights of the Round Table(难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2942" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2942</a><br>题意：求双联通分量(或称块)中是否含奇圈<br>解法：求出双连通分量后做黑白染色进行二分图图判定<br>相关：<a href="http://hi.baidu.com/zfy0701/blog/item/57ada7ed104ce9d2b31cb104.html" target="_blank" rel="external">http://hi.baidu.com/zfy0701/blog/item/57ada7ed104ce9d2b31cb104.html</a><br>POJ 3177 – Redundant Paths(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3177" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3177</a><br>POJ 3352 – Road Construction(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3352" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3352</a><br>题意：添加多少条边可成为双向连通图<br>解法：把割边分开的不同分量缩点构树，看入度<br>建议对比下1236，有向图添加多少条边变成强连通图<br>POJ 3249 – Test for Job(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3249" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3249</a><br>解法：bfs / dfs + dp<br>POJ 3592 – Instantaneous Transference(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3592" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3592</a><br>解法：缩点，最长路，少人做的水题，注意细节<br>POJ 3687 – Labeling Balls(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3687" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3687</a><br>解法：拓扑排序<br>POJ 3694 – Network(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3694" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3694</a><br>解法：双连通分量+并查集<br>2-SAT问题<br>此类问题理解合取式的含义就不难<br>POJ 2723 – Get Luffy Out(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2723" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2723</a><br>POJ 2749 – Building roads(较难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2749" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2749</a><br>解法：二分 + 2-SAT判定<br>POJ 3207 – Ikki’s Story IV – Panda’s Trick(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3207" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3207</a><br>解法：简单的2-sat，不过其他方法更快<br>POJ 3648- Wedding(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3648" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3648</a><br>解法：用2-sat做会比较有意思，但是暴搜照样0ms<br>POJ 3678 – Katu Puzzle(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3678" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3678</a><br>解法：直接按合取式构图验证就行了<br>POJ 3683 – Priest John’s Busiest Day(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3683" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3683</a><br>解法：n^2枚举点之间的相容性构图，求解2-SAT<br>最大流问题<br>变形很多，最小割最大流定理的理解是关键<br>POJ 1149 – PIGS(较难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1149" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1149</a><br>绝对经典的构图题<br>POJ 1273 – Drainage Ditches(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1273" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1273</a><br>最大流入门<br>POJ 1459 – Power Network(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1459" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1459</a><br>基本构图<br>POJ 1637 – Sightseeing tour(Crazy)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1637" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1637</a><br>题意：求混合图的欧拉迹是否存在<br>解法：无向边任意定向，构图，详建黑书P324<br>POJ 1815 – Friendship(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1815" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1815</a><br>题意：求最小点割<br>解法：拆点转换为边割<br>相关：<a href="http://hi.baidu.com/zfy0701/blog/item/a521f230b06dea9fa9018e0e.html" target="_blank" rel="external">http://hi.baidu.com/zfy0701/blog/item/a521f230b06dea9fa9018e0e.html</a><br>POJ 1966 – Cable TV Network(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1966" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1966</a><br>题意：去掉多少点让图不连通<br>解法：任定一源点，枚举汇点求点割集(转换到求边割)，求其中最小的点割<br>POJ 2112 – Optimal Milking(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2112" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2112</a><br>二分枚举，最大流<br>POJ 2391 – Ombrophobic Bovines(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2391" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2391</a><br>题意：floyd, 拆点，二分枚举<br>相关：<a href="http://hi.baidu.com/zfy0701/blog/item/3e0006c4f73f0eaf8226acff.html" target="_blank" rel="external">http://hi.baidu.com/zfy0701/blog/item/3e0006c4f73f0eaf8226acff.html</a><br>POJ 2396 – Budget(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2396" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2396</a><br>题意：有源汇的上下界可行流<br>解法：用矩阵-网络流模型构图，然后拆边<br>相关：<a href="http://hi.baidu.com/zfy0701/blog/item/6449d82a64e15e3e5343c1ba.html" target="_blank" rel="external">http://hi.baidu.com/zfy0701/blog/item/6449d82a64e15e3e5343c1ba.html</a><br>，最小割模型在竞赛中的应用<br>POJ 2455 – Secret Milking Machine(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2455" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2455</a><br>二分枚举，一般来说需要写对边容量的更新操作而不是每次全部重新构图<br>POJ 2699 – The Maximum Number of Strong Kings(较难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2699" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2699</a><br>解法：枚举人数 + 最大流(感谢xpcnq_71大牛的建图的提示)<br>POJ 2987 – Firing(较难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2987" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2987</a><br>题意：最大权闭包<br>解法：先边权放大，第一问总量-最大流，第二问求最小割<br>相关：<a href="http://wywcgs.spaces.live.com/blog/cns!4D861A02A3382142!1109.entry?&amp;_c02_owner=1" target="_blank" rel="external">http://wywcgs.spaces.live.com/blog/cns!4D861A02A3382142!1109.entry?&amp;_c02_owner=1</a><br>Profit(中等)<br><a href="http://www.vijos.cn/Problem_Show.asp?id=1352" target="_blank" rel="external">http://www.vijos.cn/Problem_Show.asp?id=1352</a><br>最大权闭包图的特殊情况<br>ZOJ 2071 – Technology Trader 也是此类型，懒了没做<br><a href="http://acm.zju.edu.cn/show_problem.php?pid=2071" target="_blank" rel="external">http://acm.zju.edu.cn/show_problem.php?pid=2071</a><br>POJ 3084 – Panic Room(中等，好题)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3084" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3084</a><br>题意：略<br>解法：根据最小割建模<br>POJ 3155 – Hard Life(很挑战一题)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3155" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3155</a><br>题意：最大密度子图<br>解法：参数搜索 + 最大权闭合图，A.V.Goldberg的论文(nb解法)<br>最小割模型在信息学竞赛中的应用 一文中也有讲<br>POJ 3189 – Steady Cow Assignment(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3189" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3189</a><br>题意：寻找最小的区间完成匹配<br>解法：这题充分说明SAP的强大，纯暴力可过。更好的方法是在枚举区间的过程中不断删边和加边继续网络流过程<br>POJ 3204 – Ikki’s Story I – Road Reconstruction(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3204" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3204</a><br>ZOJ 2532 – Internship(基础)<br><a href="http://acm.zju.edu.cn/show_problem.php?pid=2532" target="_blank" rel="external">http://acm.zju.edu.cn/show_problem.php?pid=2532</a><br>题意：确定边是否是某个割中的边<br>解法：两边dfs求割, 或暴力枚举(需要写取消某条增广路的操作(但数据弱，也许不取消也能混过))<br>POJ 3308 – Paratroopers(较难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3308" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3308</a><br>POJ 2125 – Destroying The Graph(难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2125" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2125</a><br>题意：最小点权覆盖<br>POJ 3469 – Dual Core CPU(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3469" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3469</a><br>题意：最小割<br>POJ 3498 – March of the Penguins(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3498" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3498</a><br>题意：满足点容量限制的网络流<br>解法：拆点把点容量转换为边容量，枚举汇点<br>ZOJ 2587 – Unique Attack(较难)<br><a href="http://acm.zju.edu.cn/show_problem.php?pid=2587" target="_blank" rel="external">http://acm.zju.edu.cn/show_problem.php?pid=2587</a><br>题意：确定最小割是否是唯一的<br>解法：得理解dfs求最小割算法的本质<br>SPOJ 839 – Optimal Marks(难)<br><a href="http://www.spoj.pl/problems/OPTM/" target="_blank" rel="external">http://www.spoj.pl/problems/OPTM/</a><br>题意：略<br>解法：很经典哦，见amber的集训队论文，根据标号的每一位求最小割<br>SGU 326 – Perspective(中等)<br><a href="http://acm.sgu.ru/problem.php?c0&amp;problem=326" target="_blank" rel="external">http://acm.sgu.ru/problem.php?c0&amp;problem=326</a><br>比较经典的构图法<br>费用流问题<br>可以KM解的就不放在这里，另外，感觉除非很特殊的图，一般用连续增广路的算法就够了<br>POJ 2175 – Evacuation Plan(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2175" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2175</a><br>题意：判断是否给定解是最优解，比较阴的一题<br>解法：根据给出的计划构造流，然后消且只消一次负圈<br>POJ 3422 – Kaka’s Matrix Travels(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3422" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3422</a><br>题意：略<br>解法：拆点<br>POJ 3680 – Intervals(较难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3680" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3680</a><br>题意：略，这题还是蛮经典<br>解法：discuss中比较详细<br>SPOJ 371 – Boxes(简单)<br><a href="http://www.spoj.pl/problems/BOXES/" target="_blank" rel="external">http://www.spoj.pl/problems/BOXES/</a><br>题意：略<br>解法：费用流，但似乎有比网络流更好的做法<br>SGU 185 – Two shortest(中等)<br><a href="http://acm.sgu.ru/problem.php?c0&amp;problem=185" target="_blank" rel="external">http://acm.sgu.ru/problem.php?c0&amp;problem=185</a><br>题意：求两条不想交的最短路径<br>解法：费用流，也可以最短路 + 最大流。<br>匹配问题<br>正确理解KM算法是很重要的<br>这里我还要说几句：最正确解最小权匹配的办法是用一个很大的数-当前边权值，而不是直接对边权取反(这样只能处理左右点相等的完全二分图，即K(n, n)<br>以上有可能还是说的有点问题，以后补充<br>POJ 1486 – Sorting Slides(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1486" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1486</a><br>题意：二分图的必须边<br>解法：需正真理解最大匹配算法，详见<a href="http://hi.baidu.com/kevin0602/blog/item/1d5be63b5bec9bec14cecb44.html" target="_blank" rel="external">http://hi.baidu.com/kevin0602/blog/item/1d5be63b5bec9bec14cecb44.html</a><br>POJ 1904 – King’s Quest(中等，好题)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1904" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1904</a><br>题意：求二分图所有可能的匹配边<br>解法：虽然最终不是用匹配算法，但需要理解匹配的思想转换成强连通分量问题。<br>POJ 2060 -Taxi Cab Scheme(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2060" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2060</a><br>题意：最小路径覆盖<br>POJ 2594 -Treasure Exploration(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2594" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2594</a><br>题意：可相交最小路径覆盖<br>解法：先传递闭包转化下<br>POJ 3041 – Asteroids(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3041" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3041</a><br>POJ 2226 – Muddy Fields(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2226" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2226</a><br>题意：行列的覆盖<br>解法：最小点集覆盖 = 最大匹配<br>POJ 2195 – Going Home(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2195" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2195</a><br>题意：最小权值匹配<br>解法：KM算法<br>POJ 2400 – Supervisor, Supervisee(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2400" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2400</a><br>题意：输出所有最小权匹配<br>解法：KM, 然后回溯解，汗，输入的两个矩阵居然是反过来的<br>POJ 2516 -Minimum Cost(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2516" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2516</a><br>题意：最小权值匹配或最小费用流<br>解法：拆点 + KM算法(只有正确的才能过)，费用流(ms错的可能也能过)<br>POJ 3686 – The Windy’s(较难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3686" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3686</a><br>题意：最小权值匹配<br>解法：拆点,然后尽管用KM算法去水吧，数据其实弱得不得了 O(50 </em> 50 * 2500) -&gt; 16ms<br>相关：<a href="http://hi.baidu.com/kevin0602/blog/item/2829dc01d7143b087bec2c97.html" target="_blank" rel="external">http://hi.baidu.com/kevin0602/blog/item/2829dc01d7143b087bec2c97.html</a><br>SPOJ 412 – K-path cover(较难)<br><a href="https://www.spoj.pl/problems/COVER/" target="_blank" rel="external">https://www.spoj.pl/problems/COVER/</a><br>题意：略<br>解法：很牛叉的一道匹配<br>相关：<a href="http://hi.baidu.com/roba/blog/item/c842fdfac10d24dcb48f31d7.html" target="_blank" rel="external">http://hi.baidu.com/roba/blog/item/c842fdfac10d24dcb48f31d7.html</a><br>SGU 206. Roads(较难)<br><a href="http://acm.sgu.ru/problem.php?c0&amp;problem=206" target="_blank" rel="external">http://acm.sgu.ru/problem.php?c0&amp;problem=206</a><br>解法：经典题目，也可以使用spoj 412那题的优化<br>NP问题<br>一般是搜索或dp解的<br>POJ 1419 – Graph Coloring(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1419" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1419</a><br>题意：图的着色<br>解法：搜索，可惜题目的数据真是太弱了<br>POJ 2989 – All Friends(难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2989" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2989</a><br>题意：极大团数量<br>解法：开始狂tle, 后来找了论文：Finding All Cliques of an Undirected Graph（Coen Bron &amp; Joep Kerboscht）<br>ZOJ 1492 – Maximum Clique(基础)<br><a href="http://acm.zju.edu.cn/show_problem.php?pid=1492" target="_blank" rel="external">http://acm.zju.edu.cn/show_problem.php?pid=1492</a><br>题意：图的最大团<br>解法：搜索，如果要求速度，可参考下相应论文<br>其他<br>不能成大类的<br>POJ 1470 – Closest Common Ancestors(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1470" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1470</a><br>题意：LCA问题<br>解法：tarjan或RMQ，另外输入很恶心<br>POJ 1985 – Cow Marathon(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1985" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1985</a><br>题意：树上的最长路径<br>解法：dp<br>POJ 1986 – Distance Queries(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1986" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1986</a><br>题意：LCA<br>解法：tarjan或RMQ</p>
-
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>转自别的地方，先放着，激励自己去刷题<br>
                         
+                            <a href="/2013/12/23/poj-graph-theory-ist/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/12/23/poj-graph-theory-ist/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -445,7 +334,7 @@ ma res, tmp;
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -470,24 +359,13 @@ ma res, tmp;
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>题目大意：Dima送给他女友N只兔子，编号1-n（n&lt;=3000）,当给兔子喂食时，它们会产生joy值，joy的取值有三种状态：<br>1.当前兔子左右两边都没有已经喂过的兔子；<br>2.当前兔子左右两边有且仅有一边有已经喂过的兔子；<br>3.当前兔子左右两边的兔子均已喂过。（编号1，n的兔子显然无法满足）<br>现给出每只兔子三种状态下的joy值，希望你帮助Dima的女友有Inna选择某种喂食顺序，使得总的joy值最大，仅输出最大的joy值。</p>
-<p>这个问题可以采用动态规划的方法来解决，为什么呢？<br>注意到，每只兔子选取的joy值仅与它左右两边的兔子的状态有关，当前兔子的状态也仅影响到它左右两边的兔子（-.-||好吧，这是显然的)<br>我们用f[i]来表示前i只兔子喂完时的最大joy值，但是i的状态跟i+1有关，我们应该如何表示呢？这里有个我觉得很巧妙的办法，就是我们先假设出i+1的状态进行求解。因此，我们增加一维，用f[i][0]表示喂食第i只兔子时第i+1只兔子还没有喂过,f[i][1]表示喂食第i只兔子时第i+1只兔子已经喂过了，这样我们就能很容易从f[i][]跟f[i-1][]得出喂食i时 i-1, i+1,处于的状态了。自然的就得到状态转移方程。</p>
-<p>状态转移：<br>f[i][0] = max(f[i-1][0]+a[i][1], f[i-1][1]+a[i][0])<br>f[i][1] = max(f[i-1][0]+a[i][2], f[i-1][1]+a[i][1])</p>
-<p>显然最后的答案就是f[n][0]<br>复杂度应该是O(N)吧</p>
-<p>总结：感觉这道题目还是很有趣的（对我这种傻×来说）。可说到底这还是一道水题，虽然比赛的时候我看到题目就想到了DP，但显然DP能力太弱了（真的是跪到不行T^T），没有想出来给怎么表示状态，然后我选择了放弃思考。。。（提醒自己：可以放弃治疗，决不能放弃思考。说不定就想出来了）果然是智商问题，外加做过的题太少。。。最后是看了liympanda大神的代码,然后理解出来上面那堆东西，能力有限，写得不好望见谅。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">3200</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[MN][<span class="number">3</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> f[MN][<span class="number">2</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> n, ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][<span class="number">2</span>]);</span><br><span class="line">    f[<span class="number">0</span>][<span class="number">0</span>] = a[<span class="number">0</span>][<span class="number">0</span>]; f[<span class="number">0</span>][<span class="number">1</span>] = a[<span class="number">0</span>][<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span>; j++) &#123;</span><br><span class="line">            f[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">2</span>; k++) &#123;</span><br><span class="line">                 <span class="keyword">if</span> (f[i - <span class="number">1</span>][k] + a[i][<span class="number">1</span> - k + j] &gt; f[i][j])</span><br><span class="line">                    f[i][j] = f[i - <span class="number">1</span>][k] + a[i][<span class="number">1</span> - k + j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ans = f[n - <span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>题目大意：Dima送给他女友N只兔子，编号1-n（n&lt;=3000）,当给兔子喂食时，它们会产生joy值，joy的取值有三种状态：<br>1.当前兔子左右两边都没有已经喂过的兔子；<br>2.当前兔子左右两边有且仅有一边有已经喂过的兔子；<br>3.当前兔子左右两边的兔子均已喂过。（编号1，n的兔子显然无法满足）<br>现给出每只兔子三种状态下的joy值，希望你帮助Dima的女友有Inna选择某种喂食顺序，使得总的joy值最大，仅输出最大的joy值。<br>
                         
+                            <a href="/2013/10/26/codeforces-358d-dima-and-hares/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/10/26/codeforces-358d-dima-and-hares/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -496,7 +374,7 @@ ma res, tmp;
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -521,20 +399,13 @@ ma res, tmp;
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>传送门：<a href="https://www.tyvj.cn/Problem_Show.aspx?id=1405" target="_blank" rel="external">题目</a><br>怎么说呢，水题一道，直接用小根堆解决<br>主要是想通过这道题学习C++STL里面heap的用法<br>最后还是没有纠结出来，然后发现手写也不会了，就在网上找了一段，挺简洁的，以后就用这个做模板</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">100100</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> w[MN * <span class="number">2</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> f[MN] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> n, m, s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p;</span><br><span class="line">    <span class="keyword">for</span> (p = ++s; p &gt; <span class="number">1</span> &amp;&amp; f[p &gt;&gt; <span class="number">1</span>] &gt; x; f[p] = f[p &gt;&gt; <span class="number">1</span>], p &gt;&gt;= <span class="number">1</span>);</span><br><span class="line">    f[p] = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p, c, tp;</span><br><span class="line">    <span class="keyword">for</span> (tp=f[p=<span class="number">1</span>],c=<span class="number">2</span>;c&lt;s&amp;&amp;(f[c+=(c+<span class="number">1</span>&lt;s&amp;&amp;f[c + <span class="number">1</span>]&lt;f[c])?<span class="number">1</span>:<span class="number">0</span>]&lt;f[s]);f[p]=f[c],p=c,c&lt;&lt;=<span class="number">1</span>);</span><br><span class="line">    f[p] = f[s--];</span><br><span class="line">    <span class="keyword">return</span> tp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;w[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) push(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) push(w[i] + pop());</span><br><span class="line">    <span class="keyword">int</span> mx = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) mx = max(mx, pop());</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; mx &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>传送门：<a href="https://www.tyvj.cn/Problem_Show.aspx?id=1405">题目</a><br>怎么说呢，水题一道，直接用小根堆解决<br>主要是想通过这道题学习C++STL里面heap的用法<br>最后还是没有纠结出来，然后发现手写也不会了，就在网上找了一段，挺简洁的，以后就用这个做模板<br>
                         
+                            <a href="/2013/10/25/tyvj-p1405/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/10/25/tyvj-p1405/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -595,7 +466,7 @@ ma res, tmp;
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -620,30 +491,15 @@ ma res, tmp;
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
+                    <div class="postShorten-excerpt" itemprop="articleBody">
                         <p>摘自Matrix67 C语言速成手册</p>
 <p>四种动态内存分配函数，使用它们前需要在程序最前面包含头文件stdlib.h（C++应该是cstdlib）。四种函数的格式分别为：</p>
-<p>void <em>malloc ( size );<br>void </em>calloc ( n, size );<br>void free ( pointer );<br>void *realloc( pointer, size );</p>
-<p>函数malloc 将在内存里寻找一个大小为size 的连续空间，把分配到的内存地址作为一个指向void 类型的指针（默认的无类型指针）返回。如果空间分配失败，函数返回NULL。</p>
-<p>函数calloc 将在内存里寻找一个大小为n * size 的连续空间，并且把这段内存的数据全部清0，返回数据和malloc 一样。如果空间分配失败，函数返回NULL。</p>
-<p>函数free 用于释放内存空间，释放后的空间被回收，可以用于以后的malloc 或calloc 操作。</p>
-<p>函数realloc 在保证已有数据不变的情况下改变已有指针的空间大小，返回重新分得的空间的内存地址（有可能和原来不同）。如果空间重新分配失败，函数返回NULL。</p>
-<p>Pascal 中的new 语句可以用前两个函数代替，free 语句则相当于Pascal 中的dispose。</p>
-<p>注意，malloc 和calloc 函数所返回的指针还没确定类型，理论上需要用类型转换。下面的程序合法地为p指针分配空间：</p>
-<p>int<em>p;<br>p = (int </em>) malloc( sizeof(int) );<br>*p = 520;</p>
-<p>事实上，由于赋值时C 语言自动转换类型，因此那个类型转换是没有必要的（去掉(int *)没有影响）。</p>
-<p>本人在用codeblocks时，发现去掉（int*）编译不过，maybe是版本问题吧……</p>
-
+<p>void <em>malloc ( size );<br>void </em>calloc ( n, size );<br>void free ( pointer );<br>void *realloc( pointer, size );<br>
                         
+                            <a href="/2013/06/29/dynamic-memory-allocation/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/06/29/dynamic-memory-allocation/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -652,7 +508,7 @@ ma res, tmp;
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -677,23 +533,16 @@ ma res, tmp;
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
+                    <div class="postShorten-excerpt" itemprop="articleBody">
                         <p>早上看了一下七中王迪大神写的一篇论文，学习了一下分块思想，只看了一点点，基本上是看着代码，再自己脑补的。</p>
 <p>所谓分块就是把规模为n的问题分割成k块，每块规模为s，为了使对块内和整个范围的操作的复杂度平均些，令k = s = √n。利用这个思想就能把O(n)的复杂度降到O(√n),从而达到优化算法的目的。论文中如是说。</p>
 <p>只看了一个简单的问题，如有一长度为n的正整数数列，完成m次操作（1≤n，m≤10 ˆ5<em>），M x y:把第x个数字修改为y；Q x y：询问区间 [x,y] 中的最大值Max。</em></p>
-<p>这个问题相当经典，有多种算法可解，因为在学分块，自然采用块状解决之。</p>
-<p>我补充完整的代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">maintain</span><span class="params">(<span class="keyword">int</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100100</span>]=&#123;<span class="number">0</span>&#125;,b[<span class="number">100100</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> n,m,t,s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    s = <span class="built_in">sqrt</span>(n);</span><br><span class="line">    t = (n + s - <span class="number">1</span>) / s;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> x,y,k;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; k;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">         <span class="keyword">if</span> (k == <span class="number">1</span>) &#123;</span><br><span class="line">            modify(x-<span class="number">1</span>,y);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; query(x-<span class="number">1</span>,y-<span class="number">1</span>) &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">maintain</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> lb = (x / s) * s, rb = min(n, lb + s) - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (x == rb) b[x] = a[x], x--;</span><br><span class="line">    <span class="keyword">for</span> (;x &gt;= lb; x--) b[x] = max(b[x+<span class="number">1</span>], a[x]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t; i++)</span><br><span class="line">        maintain(min(n, i * s) - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    a[x] = y;</span><br><span class="line">    maintain(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x_pos = x / s, y_pos = y / s;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (x_pos == y_pos) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = x;i &lt;= y; i++)</span><br><span class="line">            ret = max(ret, a[i]);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        ret = b[x];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = x_pos + <span class="number">1</span>; i &lt; y_pos; i++)</span><br><span class="line">            ret = max(ret,b[i * s]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = y_pos * s; i &lt;= y; i++)</span><br><span class="line">            ret = max(ret, a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+<p>这个问题相当经典，有多种算法可解，因为在学分块，自然采用块状解决之。<br>
                         
+                            <a href="/2013/06/17/think-with-piece/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/06/17/think-with-piece/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -702,7 +551,7 @@ ma res, tmp;
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -727,29 +576,21 @@ ma res, tmp;
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
+                    <div class="postShorten-excerpt" itemprop="articleBody">
                         <p>这道题显然有，矩阵乘法可解（由数据范围可得）</p>
-<p>显然有题目要求: f[n]=∑f[i] (n-k&lt;i&lt;n-1),矩阵乘法相关知识自行google，推荐阅读<a href="http://www.matrix67.com/" target="_blank" rel="external">Matrix67</a>写的一篇文章。</p>
+<p>显然有题目要求: f[n]=∑f[i] (n-k&lt;i&lt;n-1),矩阵乘法相关知识自行google，推荐阅读<a href="http://www.matrix67.com/">Matrix67</a>写的一篇文章。</p>
 <p>所以构造有数组A(k*k):</p>
 <p>000…1</p>
 <p>100…1</p>
 <p>010…1</p>
 <p>001…1</p>
 <p>因为看k&lt;10,我们可以先计算出f[1]~f[k],然后用矩阵乘法加速，计算出A^(n-k),最后再f*A^(n-k)乘一下就得出了。</p>
-<p>我用的是递归式的矩阵二分取幂，后来才知道这样写会显得你很弱智……我也不知道为什么，然后就顺便再复习了一下，快速幂的非递归写法。</p>
-<p>果断C++没学好，还是用pascal写的，这是这道题的代码：</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> arr=<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">12</span>,-<span class="number">1</span>..<span class="number">12</span>] <span class="keyword">of</span> int64;</span><br><span class="line"><span class="keyword">const</span> md=<span class="number">7777777</span>;</span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">  k,i,j:longint;</span><br><span class="line">  n,ans:int64;</span><br><span class="line">  t,q:arr;</span><br><span class="line">  f:<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">12</span>] <span class="keyword">of</span> int64;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mul</span><span class="params">(a,b:arr)</span>:</span>arr;</span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">  c:arr;</span><br><span class="line">  i,j,p:longint;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">  fillchar(c,sizeof(c),<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">for</span> j:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span></span><br><span class="line">      <span class="keyword">for</span> p:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span></span><br><span class="line">        c[i,j]:=(c[i,j]+(a[i,p]*b[p,j] <span class="keyword">mod</span> md)) <span class="keyword">mod</span> md;</span><br><span class="line">  <span class="keyword">exit</span>(c);</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dv</span><span class="params">(x:int64)</span>:</span>arr;</span><br><span class="line"><span class="keyword">var</span> tp:arr;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">  <span class="keyword">if</span> x=<span class="number">1</span> <span class="keyword">then</span> <span class="keyword">exit</span>(t);</span><br><span class="line">  tp:=dv(x <span class="keyword">div</span> <span class="number">2</span>);</span><br><span class="line">  tp:=mul(tp,tp);</span><br><span class="line">  <span class="keyword">if</span> (x <span class="keyword">mod</span> <span class="number">2</span>)&lt;&gt;<span class="number">0</span> <span class="keyword">then</span> tp:=mul(tp,t);</span><br><span class="line">  <span class="keyword">exit</span>(tp);</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">  readln(k); readln(n);</span><br><span class="line">  fillchar(t,sizeof(t),<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k-<span class="number">1</span> <span class="keyword">do</span> t[i+<span class="number">1</span>,i]:=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span> t[i,k]:=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span> f[i]:=<span class="number">0</span>; f[<span class="number">0</span>]:=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">for</span> j:=<span class="number">0</span> <span class="keyword">to</span> i-<span class="number">1</span> <span class="keyword">do</span></span><br><span class="line">      f[i]:=f[i]+f[j];</span><br><span class="line">  <span class="keyword">if</span> n&lt;=k <span class="keyword">then</span> <span class="keyword">begin</span> writeln(f[n]); halt; <span class="keyword">end</span>;</span><br><span class="line">  q:=dv(n-k); ans:=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span></span><br><span class="line">    ans:=(ans+(f[i]*q[i,k] <span class="keyword">mod</span> md)) <span class="keyword">mod</span> md;</span><br><span class="line">  writeln(ans);</span><br><span class="line"><span class="keyword">end</span>.</span><br></pre></td></tr></table></figure>
-
+<p>我用的是递归式的矩阵二分取幂，后来才知道这样写会显得你很弱智……我也不知道为什么，然后就顺便再复习了一下，快速幂的非递归写法。<br>
                         
+                            <a href="/2013/06/12/tyvj-p1565-warcraft-III/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/06/12/tyvj-p1565-warcraft-III/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -784,13 +625,7 @@ ma res, tmp;
                 
                 
                     <div class="postShorten-content" itemprop="articleBody">
-                        <p>保送生的颓废生活……就快完结，可惜这并不是我想要的生活。</p>
-<p>本来回家是为了学习，可如今C++还没学好，日子就快结束了。整天被传召回学校，一个早上就轻松地没了……</p>
-<p>因为承诺过会去高考，所以剩下这两天是否要复习呢，本来决定要的，可又彷徨了</p>
-<p>踏进六月，终于能上网了，可还是没能认真学习，感觉还是先过完高考这关再说吧，虽然现在对高考没什么感觉，我总是太在乎别人的感受了吗。</p>
-<p>混乱的语言，也正表明我现在的心境。也许是最近没有好好感受算法的魅力了吧，在题库闲逛，想code时却才发现自己的语言还没学好……，pascal又在本能上抑制去使用它。</p>
-<p>算了，明后两天复习下，再考两天试，就不用管了。</p>
-<p>还有我的足球赛啊，好想参加啊……我应该去写份计划表吗，感觉自制力不行写了也没用对吧。</p>
+                        <p>保送生的颓废生活……就快完结，可惜这并不是我想要的生活。<br>本来回家是为了学习，可如今C++还没学好，日子就快结束了。整天被传召回学校，一个早上就轻松地没了……<br>因为承诺过会去高考，所以剩下这两天是否要复习呢，本来决定要的，可又彷徨了<br>踏进六月，终于能上网了，可还是没能认真学习，感觉还是先过完高考这关再说吧，虽然现在对高考没什么感觉，我总是太在乎别人的感受了吗。<br>混乱的语言，也正表明我现在的心境。也许是最近没有好好感受算法的魅力了吧，在题库闲逛，想code时却才发现自己的语言还没学好……，pascal又在本能上抑制去使用它。<br>算了，明后两天复习下，再考两天试，就不用管了。<br>还有我的足球赛啊，好想参加啊……我应该去写份计划表吗，感觉自制力不行写了也没用对吧。</p>
 
                         
                             

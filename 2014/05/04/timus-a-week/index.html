@@ -12,33 +12,18 @@
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
-    <meta name="description" content="虽然很多是水题，不过还是记录一下。。。。然后还有好多得做的题目都还没补TAT
-1209. 1, 10, 100, 1000…
-一个这样的串110100100010000……问第n位是什么。
-很明显第n*(n+1)/2位才会是1，其中n为正整数，所以判断一下就行了。
-1224. Spiral
-给定一个N＊M的矩阵，开始面向左侧，由右上角开始顺时针方向走，每个格子走过一次，为走完整个矩阵需要改变方向多">
+    <meta name="description" content="虽然很多是水题，不过还是记录一下。。。。然后还有好多得做的题目都还没补TAT">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Timus_一周做题记录">
 <meta property="og:url" content="http://github.com/sillyplus/2014/05/04/timus-a-week/index.html">
 <meta property="og:site_name" content="Kepp It Simple && Stupid">
-<meta property="og:description" content="虽然很多是水题，不过还是记录一下。。。。然后还有好多得做的题目都还没补TAT
-1209. 1, 10, 100, 1000…
-一个这样的串110100100010000……问第n位是什么。
-很明显第n*(n+1)/2位才会是1，其中n为正整数，所以判断一下就行了。
-1224. Spiral
-给定一个N＊M的矩阵，开始面向左侧，由右上角开始顺时针方向走，每个格子走过一次，为走完整个矩阵需要改变方向多">
+<meta property="og:description" content="虽然很多是水题，不过还是记录一下。。。。然后还有好多得做的题目都还没补TAT">
 <meta property="og:image" content="http://acm.timus.ru/image/get.aspx/fd5fa0a0-4cea-47b0-82a0-5ffb61f70b4e">
 <meta property="og:image" content="http://acm.timus.ru/image/get.aspx/a879b546-2258-4a58-9cf6-d6916cc441ef">
-<meta property="og:updated_time" content="2015-10-19T11:04:05.000Z">
+<meta property="og:updated_time" content="2015-10-19T11:44:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Timus_一周做题记录">
-<meta name="twitter:description" content="虽然很多是水题，不过还是记录一下。。。。然后还有好多得做的题目都还没补TAT
-1209. 1, 10, 100, 1000…
-一个这样的串110100100010000……问第n位是什么。
-很明显第n*(n+1)/2位才会是1，其中n为正整数，所以判断一下就行了。
-1224. Spiral
-给定一个N＊M的矩阵，开始面向左侧，由右上角开始顺时针方向走，每个格子走过一次，为走完整个矩阵需要改变方向多">
+<meta name="twitter:description" content="虽然很多是水题，不过还是记录一下。。。。然后还有好多得做的题目都还没补TAT">
 <meta name="twitter:creator" content="@sillycross">
     
         <meta rel="publisher" content="https://plus.google.com/dlxtxlb"/>
@@ -249,8 +234,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>虽然很多是水题，不过还是记录一下。。。。然后还有好多得做的题目都还没补TAT</p>
-<p><strong>1209. 1, 10, 100, 1000…</strong></p>
+            <p>虽然很多是水题，不过还是记录一下。。。。然后还有好多得做的题目都还没补TAT<br><a id="more"></a><br><strong>1209. 1, 10, 100, 1000…</strong></p>
 <p>一个这样的串110100100010000……问第n位是什么。</p>
 <p>很明显第n*(n+1)/2位才会是1，其中n为正整数，所以判断一下就行了。</p>
 <p><strong>1224. Spiral</strong></p>
@@ -260,17 +244,13 @@
 <p>用红、白、蓝三种颜色去染一排连续的格子，染色规则是</p>
 <ul>
 <li>相邻两个格子颜色不能一样</li>
-</ul>
-<ul>
 <li>蓝色必须夹在红色和白色的格子中间</li>
 </ul>
-<p>求给定格子数的染色方案</p>
-<p>显然，最后一个格子不能染蓝色，就是说，最后一个格子只能是红or白。那个我们就可以得到如下关系</p>
-<p>F[N] = F[N-1] + F[N-2]</p>
-<p>第N－1个，最后是红或者白，那么第N个只能选白或者红。第N－1个是蓝色，即N－2个为红或者白，就是F[N－2]，那么第N个只能是白或者红。然后就是F[1] = F[2] = 2。</p>
+<p>求给定格子数的染色方案<br>显然，最后一个格子不能染蓝色，就是说，最后一个格子只能是红or白。那个我们就可以得到如下关系</p>
+<pre><code>F<span class="string">[N]</span> = F<span class="string">[N-1]</span> + F<span class="string">[N-2]</span>
+</code></pre><p>第N－1个，最后是红或者白，那么第N个只能选白或者红。第N－1个是蓝色，即N－2个为红或者白，就是F[N－2]，那么第N个只能是白或者红。然后就是F[1] = F[2] = 2。</p>
 <p><strong>1226. esreveR redrO</strong></p>
-<p>给定一个文本，把每一段连续的字母翻转，其它字符保持不变。</p>
-<p>直接做咯，每次看到涉及字符串的题总是会有恐惧感。贴一下代码，安慰一下自己的心灵，有时候字符串的题没有想像中那么多坑。</p>
+<p>给定一个文本，把每一段连续的字母翻转，其它字符保持不变。<br>直接做咯，每次看到涉及字符串的题总是会有恐惧感。贴一下代码，安慰一下自己的心灵，有时候字符串的题没有想像中那么多坑。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> a[<span class="number">300</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">    <span class="keyword">int</span> t = -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        c = getchar();</span><br><span class="line">        <span class="keyword">if</span> (c == EOF) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">if</span> ((c &gt;= <span class="string">'a'</span> &amp;&amp; c &lt;= <span class="string">'z'</span>) || (c &gt;= <span class="string">'A'</span> &amp;&amp; c &lt;= <span class="string">'Z'</span>)) &#123;</span><br><span class="line">            a[++t] = c;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = t; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%c"</span>, a[i]);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%c"</span>, c);</span><br><span class="line">            t = -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = t; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%c"</span>, a[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong> 1227. Rally Championship</strong></p>
 <p><a href="http://sillyplus.com/2014/05/389/" target="_blank" rel="external">详情请戳</a></p>

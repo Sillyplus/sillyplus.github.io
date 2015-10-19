@@ -208,160 +208,7 @@
 <section class="postShorten-group main-content-wrap">
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2014/04/19/poj-geometry-list/">Poj 计算几何入门题目列表</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Apr 19 2014 15:30:20 GMT+0800">
-	
-		    Apr 19, 2014
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/资源/">资源</a>
-
-
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>转载自：<a href="http://hi.baidu.com/novosbirsk/item/16330d2b7be6910e42634a13" target="_blank" rel="external">PKKJ @ SCAU - A GISer</a></p>
-<p>计算几何题的特点与做题要领：</p>
-<p>1.大部分不会很难，少部分题目思路很巧妙<br>2.做计算几何题目，模板很重要，模板必须高度可靠。<br>3.要注意代码的组织，因为计算几何的题目很容易上两百行代码，里面大部分是模板。如果代码一片混乱，那么会严重影响做题正确率。<br>4.注意精度控制。<br>5.能用整数的地方尽量用整数，要想到扩大数据的方法（扩大一倍，或扩大sqrt2）。因为整数不用考虑浮点误差，而且运算比浮点快。  </p>
-<p>一。点，线，面，形基本关系，点积叉积的理解  </p>
-<p>POJ 2318 TOYS（推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2318" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2318</a><br>POJ 2398 Toy Storage（推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2398" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2398</a><br>一个矩形，有被若干直线分成N个格子，给出一个点的坐标，问你该点位于哪个点中。<br>知识点：其实就是点在凸四边形内的判断，若利用叉积的性质，可以二分求解。  </p>
-<p>POJ 3304 Segments<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3304" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3304</a><br>知识点：线段与直线相交，注意枚举时重合点的处理  </p>
-<p>POJ 1269 Intersecting Lines<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1269" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1269</a><br>知识点：直线相交判断，求相交交点  </p>
-<p>POJ 1556 The Doors （推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1556" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1556</a><br>知识点：简单图论＋简单计算几何，先求线段相交，然后再用Dij求最短路。  </p>
-<p>POJ 2653 Pick-up sticks<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2653" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2653</a><br>知识点：还是线段相交判断  </p>
-<p>POJ 1066 Treasure Hunt<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1066" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1066</a><br>知识点：线段相交判断，不过必须先理解“走最少的门”是怎么一回事。  </p>
-<p>POJ 1410 Intersection<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1410" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1410</a><br>知识点：线段与矩形相交。正确理解题意中相交的定义。<br>详见：<a href="http://hi.baidu.com/novosbirsk/blog/item/68c682c67e8d1f1d9d163df0.html" target="_blank" rel="external">http://hi.baidu.com/novosbirsk/blog/item/68c682c67e8d1f1d9d163df0.html
-</a><br>POJ 1696 Space Ant （推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1696" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1696</a><br>德黑兰赛区的好题目。需要理解点积叉积的性质  </p>
-<p>POJ 3347 Kadj Squares<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3347" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3347</a><br>本人的方法极度猥琐。复杂的线段相交问题。这个题目是计算几何的扩大数据运算的典型应用，扩大根号2倍之后就避免了小数。  </p>
-<p>POJ 2826 An Easy Problem?! （推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2826" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2826</a><br>问：两条直线组成一个图形，能容纳多少雨水。很不简单的Easy Problem，要考虑所有情况。你不看discuss看看能否AC。（本人基本不能）提示一下，水是从天空垂直落下的。  </p>
-<p>POJ 1039 Pipe<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1039" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1039</a><br>又是线段与直线相交的判断，再加上枚举的思想即可。  </p>
-<p>POJ 3449 Geometric Shapes<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3449" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3449</a><br>判断几何体是否相交，不过输入输出很恶心。<br>此外，还有一个知识点，就是给出一个正方形（边不与轴平行）的两个对角线上的顶点，需要你求出另外两个点。必须掌握其方法。  </p>
-<p>POJ 1584 A Round Peg in a Ground Hole<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1584" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1584</a><br>知识点：点到直线距离，圆与多边形相交，多边形是否为凸  </p>
-<p>POJ 2074 Line of Sight （推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2074" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2074</a><br>与视线问题的解法，关键是求过两点的直线方程，以及直线与线段的交点。数据有一个trick，要小心。  </p>
-<p>二。凸包问题  </p>
-<p>POJ 1113 Wall<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1113" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1113</a><br>知识点：赤裸裸的凸包问题，凸包周长加上圆周。  </p>
-<p>POJ 2007 Scrambled Polygon<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2007" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2007</a><br>知识点：凸包，按极角序输出方案  </p>
-<p>POJ 1873 The Fortified Forest （推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1873" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1873</a><br>World Final的水题，先求凸包，然后再搜索。由于规模不大，可以使用位运算枚举。<br>详见：<a href="http://hi.baidu.com/novosbirsk/blog/item/333abd54c7f22c52574e0067.html" target="_blank" rel="external">http://hi.baidu.com/novosbirsk/blog/item/333abd54c7f22c52574e0067.html</a>  </p>
-<p>POJ 1228 Grandpa’s Estate （推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1228" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1228</a><br>求凸包顶点数目，很多人求凸包的模板是会多出点的，虽然求面积时能得到正确答案，但是在这个题目就会出问题。此外，还要正确理解凸包的性质。  </p>
-<p>POJ 3348 Cows<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3348" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3348</a><br>凸包面积计算  </p>
-<p>三。面积问题，公式问题  </p>
-<p>POJ 1654 Area<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1654" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1654</a><br>知识点：利用有向面积（叉积）计算多边形面积  </p>
-<p>POJ 1265 Area<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1265" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1265</a><br>POJ 2954 Triangle<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2954" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2954</a><br>Pick公式的应用，多边形与整点的关系。（存在一个GCD的关系）  </p>
-<p>四。半平面交  </p>
-<p>半平面交的主要应用是判断多边形是否存在核，还可以解决一些与线性方程组可行区域相关的问题（就是高中时的那些）。  </p>
-<p>POJ 3335 Rotating Scoreboard<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3335" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3335</a><br>POJ 3130 How I Mathematician Wonder What You Are!<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3130" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3130</a><br>POJ 1474 Video Surveillance<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1474" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1474</a><br>知识点：半平面交求多边形的核，存在性判断  </p>
-<p>POJ 1279 Art Gallery<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1279" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1279</a><br>半平面交求多边形的核，求核的面积  </p>
-<p>POJ 3525 Most Distant Point from the Sea （推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3525" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3525</a><br>给出一个多边形，求里面的一个点，其距离离多边形的边界最远，也就是多边形中最大半径圆。<br>可以使用半平面交+二分法解。二分这个距离，边向内逼近，直到达到精度。  </p>
-<p>POJ 3384 Feng Shui （推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3384" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3384</a><br>半平面交实际应用，用两个圆覆盖一个多边形，问最多能覆盖多边形的面积。<br>解法：用半平面交将多边形的每条边一起向“内”推进R，得到新的多边形，然后求多边形的最远两点。  </p>
-<p>POJ 1755 Triathlon （推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1755" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1755</a><br>半平面交判断不等式是否有解。注意不等式在转化时正负号的选择，这直接影响到半平面交的方向。  </p>
-<p>POJ 2540 Hotter Colder<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2540" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2540</a><br>半平面交求线性规划可行区域的面积。  </p>
-<p>POJ 2451 Uyuw’s Concert<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2451" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2451</a><br>Zzy专为他那篇nlogn算法解决半平面交问题的论文而出的题目。  </p>
-<p>五。计算几何背景，实际上解题的关键是其他问题（数据结构、组合数学，或者是枚举思想）<br>若干道经典的离散化＋扫描线的题目，ACM选手必做题目  </p>
-<p>POJ 1151 Atlantis （推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1151" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1151</a><br>POJ 1389 Area of Simple Polygons<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1389" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1389</a><br>矩形离散化，线段树处理，矩形面积求交  </p>
-<p>POJ 1177 Picture （推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1177" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1177</a><br>矩形离散化，线段树处理，矩形交的周长，这个题目的数据比较强。线段树必须高效。   </p>
-<p>POJ 3565 Ants （推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3565" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3565</a><br>计算几何中的调整思想，有点像排序。要用到线段相交的判断。<br>详见：<a href="http://hi.baidu.com/novosbirsk/blog/item/fb668cf0f362bec47931aae2.html" target="_blank" rel="external">http://hi.baidu.com/novosbirsk/blog/item/fb668cf0f362bec47931aae2.html</a>  </p>
-<p>POJ 3695 Rectangles<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3695" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3695</a><br>又是矩形交的面积，但是由于是多次查询，而且矩形不多，使用组合数学中的容斥原理解决之最适合。线段树是通法，但是除了线段树，还有其他可行的方法。  </p>
-<p>POJ 2002 Squares<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2002" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2002</a><br>枚举思想，求平面上若干个点最多能组成多少个正方形，点的Hash  </p>
-<p>POJ 1434 Fill the Cisterns!（推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1434" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1434</a><br>一开始发昏了，准备弄个线段树。其实只是个简单的二分。  </p>
-<p>六。随机算法<br>POJ 2420 A Star not a Tree?<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2420" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2420</a><br>多边形的费马点。所谓费马点，就是多边形中一个点P，该点到其他点的距离之和最短。四边形以上的多边形没有公式求费马点，因此可以使用随机化变步长贪心法。<br>详见：<a href="http://hi.baidu.com/novosbirsk/blog/item/75983f138499f825dd54019b.html" target="_blank" rel="external">http://hi.baidu.com/novosbirsk/blog/item/75983f138499f825dd54019b.html</a>  </p>
-<p>七。解析几何<br>这种题目本人不擅长，所以做得不多，模板很重要。当然，熟练运用叉积、点积的性质还是很有用的。<br>POJ 1375 Intervals<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1375" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1375</a><br>知识点：过圆外一点求与圆的切线  </p>
-<p>POJ 1329 Circle Through Three Points<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1329" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1329</a><br>求三角形外接圆  </p>
-<p>POJ 2354 Titanic<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2354" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2354</a><br>求球面上两个点的距离，而且给的是地理经纬坐标。  </p>
-<p>POJ 1106 Transmitters<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1106" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1106</a><br>角度排序，知道斜率求角度，使用atan函数。  </p>
-<p>POJ 1673 EXOCENTER OF A TRIANGLE<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1673" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1673</a><br>可以转化为三角形的垂心问题。  </p>
-<p>八。旋转卡壳  </p>
-<p>POJ 2187 Beauty Contest<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2187" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2187</a><br>凸包求最远点对。可以暴力枚举，也可以使用旋转卡壳。  </p>
-<p>POJ 3608 Bridge Across Islands（难）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3608" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3608</a><br>两个凸包的最近距离。本人的卡壳始终WA。郁闷。  </p>
-<p>九。其他问题<br>POJ 1981 Circle and Points<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1981" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1981</a><br>求单位圆最多能覆盖平面上多少个点</p>
-
-                        
-                            
-
-                        
-                        
-                            <p>
-                                <a href="/2014/04/19/poj-geometry-list/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
-                        
-                    </div>
-                
-            </div>
-            
-        </article>
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2014/04/17/weekly-sumup/">一周总结</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Thu Apr 17 2014 07:26:35 GMT+0800">
-	
-		    Apr 17, 2014
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/杂记/">杂记</a>
-
-
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <h2 id="珍爱生命，远离动漫、实况{一个月(试行)}">珍爱生命，远离动漫、实况{一个月(试行)}</h2><p><img src="/picture/football.jpeg" alt=""></p>
-<p>2014/03/23</p>
-<p>好吧，开头就来个宣言，不管自己多么想还是会败给自己的样子，不过要是发出来，对自己的束缚力也会大些，不求监督，也没人会监督我，还是靠自己啊( ´ ▽ ` )ﾉ</p>
-<p>因为已经在空间上挂出了连接<del>(骗访问)</del>，就算我再怎么没RP，多少还是有人会点进来看看的吧，所以写点东西好了。</p>
-<p>既然标题是一周总结，那就随便说点什么吧。</p>
-<p>表示睡眠不足会严重影响大脑机能，所以我已经忘记这一周的大部分事情了。只记得星期四本来要补作业，但是实在无聊得DT，就在华夏上买了个虚拟主机，重新搭了这个blog(建设计划重高二得时候就开始了好像)。然后就各种折腾，一天不小心就过去了，上完体育饭都没去吃，就坐回电脑前继续折腾，然后还不小心搞到一两点。期间发现了Matrix67和他得MM的JQ，对这样一对极客couple表示相当羡(ji)慕(du)，我想起一句话就是秀恩爱，sidekuai。好吧，承认这样有点那个。</p>
-<p>周五的话就是我们班在学院组织的足球赛上打破了又上学期到这之前一直保持的不胜记录。开场我接到一个漂亮的中路传中，接球后来不及，我就左脚随便一戳，球就通了大小龙门，然后就进了-_-#，下半场就体力不支了，还好有可靠的队友。最后2-1取胜了。</p>
-<p>星期六是＊＊的一天，早上本来是要去参加五人足球赛的，不过由于主办方迟到，我们愤怒退赛(可惜了免费的一件球衣没拿到)。然后回宿舍就把《我的朋友很少next》给补完，然后就三点了TAT。睡了半小时就得爬起来去现充，某组织开展的活动，KTV什么的果然不适合我，还好那里有台XBOX，临走前打了四五记全垒打，把第二名远远甩在身后，就回宿舍Lu周赛了。自己弱不解释，只会写题解都懒得解释的题目，然后发现开个方向数组八连通，循环里面跑了九格，然后就一直WA，我是有多S+。校赛啊。。。。。。还有一件事就是这天晚上收到了Atom的邮件，可以试用了，感觉挺不错的，然后我就把emacs给删掉了，以后谢谢一篇关于Atom试用感受的吧</p>
-<p>今天就算了吧，早上想这要来补作业，结果到我现在在写这篇东西的时候还一点都没碰到……</p>
-<h2 id="后记：">后记：</h2><p>最近搭这货的时候还是学了一些东西，也还有好多没弄懂的，过段时间，要是能把问题解决了就写出来分享一下。然后就没然后了好像，写作业去了</p>
-
-                        
-                            
-
-                        
-                        
-                            <p>
-                                <a href="/2014/04/17/weekly-sumup/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
-                        
-                    </div>
-                
-            </div>
-            
-        </article>
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -386,41 +233,14 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
+                    <div class="postShorten-excerpt" itemprop="articleBody">
                         <p><strong>声明：</strong></p>
-<p>1.这不是我原创的，是从网上找到的，跟大家分享一下。(然后我在从lyd那里转来的)</p>
-<p>POJ 1069 -The Bermuda Triangle(难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1069" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1069</a><br>题意：用给定三角型填充六边形<br>解法：此题的思想上精华在于坐标化<br>ps:传说中比较bt，确实比较bt，主要很容易写错，我ac了，但程序没完全对….</p>
-<p>POJ 1077 - Eight(中等，此题不做人生不完整)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1077" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1077</a><br>题意：八数码问题，超经典题<br>解法：广搜，A*，双向广搜<br>相关：<a href="http://hi.baidu.com/lydrainbowcat/blog/item/d19758588b89fa95800a1804.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/d19758588b89fa95800a1804.html</a></p>
-<p>POJ 1084 - Square Destroyer(中等，经典题)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1084" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1084</a><br>题意：把每个正方型看做集合中的元素，每个木棒看做是一个子集，求最小的子集覆盖<br>解法：dfs，A*，广搜肯定爆空间<a href="http://hi.baidu.com/lydrainbowcat/blog/item/5759d80f6735133e6059f393.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/5759d80f6735133e6059f393.html</a></p>
-<p>POJ 1167 - The Buses(难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1167" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1167</a><br>题意：这道题综合了很多经典的深搜技巧，狂顶<br>解法：dfs<a href="http://hi.baidu.com/lydrainbowcat/blog/item/4231cba7965a0681d14358f7.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/4231cba7965a0681d14358f7.html</a></p>
-<p>POJ 1190 - 生日蛋糕(基础，好题)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1190" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1190</a><br>题意：略<br>解法：dfs，题偏简单，但做出来还是有些感觉的<a href="http://hi.baidu.com/lydrainbowcat/blog/item/41c21823e0748950ad34deb7.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/41c21823e0748950ad34deb7.html</a></p>
-<p>POJ 1324 - Holedox Moving(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1324" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1324</a><br>题意：略<br>解法：A*，dfs + 上界剪枝，广搜<br>相关：<a href="http://hi.baidu.com/zfy0701/blog/item/7fcaba2c3d5425e98a1399cf.html" target="_blank" rel="external">http://hi.baidu.com/zfy0701/blog/item/7fcaba2c3d5425e98a1399cf.html</a><br><a href="http://hi.baidu.com/zfy0701/blog/item/a3c44ecc049b1c1501e92806.html" target="_blank" rel="external">http://hi.baidu.com/zfy0701/blog/item/a3c44ecc049b1c1501e92806.html</a></p>
-<p>POJ 1376 - Robot(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1376" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1376</a><br>题意：略<br>解法：bfs，A*….</p>
-<p>POJ 1475 - Pushing Boxes(中等，很推荐)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1475" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1475</a><br>题意：推箱子游戏<br>解法：双重bfs(对箱子bfs 时 对人bfs)，A* <a href="http://hi.baidu.com/lydrainbowcat/blog/item/19f2bfd1d09f0e2c9b5027b8.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/19f2bfd1d09f0e2c9b5027b8.html</a></p>
-<p>POJ 1945 - Power Hungry Cows(??)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1945" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1945</a><br>题意：略<br>解法：在一份解题报告中被列为难题，不过好好像写了个很简单很暴力的bfs就过了…速度还是有些慢，暂时想不到好的启发函数</p>
-<p>POJ 2044 - Weather Forecast(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2044" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2044</a><br>题意：略<br>解法：广搜，dp，深搜<br>相关：<a href="http://hi.baidu.com/lydrainbowcat/blog/item/a8c86e11f1d52bd2a7ef3f00.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/a8c86e11f1d52bd2a7ef3f00.html</a><br>POJ 2286 - The Rotation Game(较难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2286" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2286</a><br>题意：略<br>解法：IDA*（迭代加深+上下界强剪<br>相关：<a href="http://hi.baidu.com/lydrainbowcat/blog/item/36e183d1e3782ac7572c84a8.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/36e183d1e3782ac7572c84a8.html</a><br>POJ 2308 - Dearboy’s Puzzle(中等，但做的人少?)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2308" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2308</a><br>题意：判断连连看是否有解<br>解法：DFS + BFS<br>相关：<a href="http://poj.org/showmessage?message_id=161113" target="_blank" rel="external">http://poj.org/showmessage?message_id=161113</a></p>
-<p>POJ 2426 Remainder(较难，=)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2426" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2426</a><br>题意：略，主要是数论部分比较容易让人抓狂<br>解法：bfs<br>相关：<a href="http://hi.baidu.com/zfy0701/blog/item/7fcaba2c3d5425e98a1399cf.html" target="_blank" rel="external">http://hi.baidu.com/zfy0701/blog/item/7fcaba2c3d5425e98a1399cf.html</a></p>
-<p>POJ 2449 Remmarguts’ Date(中等，强烈推荐)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2449" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2449</a><br>题意：经典问题：K短路<br>解法：dijkstra+A*，方法很多<br>相关：<a href="http://hi.baidu.com/lydrainbowcat/blog/item/df505f8841d1e980a5c2727c.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/df505f8841d1e980a5c2727c.html</a></p>
-<p>POJ1072 PuzzleOut（较难，强烈推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1072" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1072</a><br>题意：有关解密的       解法：Trie+DFS+剪枝<br>相关：本空间有题解<a href="http://hi.baidu.com/lydrainbowcat/blog/item/f12b38355913fb9fa71e1277.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/f12b38355913fb9fa71e1277.html</a></p>
-<p>POJ2222 DeeperBlue（中等）<br>题意：一个国际象棋盘上放着几个子，问最少去掉几个可以不互相攻击。主要考察细心，题目跟题号的性质相符（比较2）；<br>解法：dfs、暴力枚举<a href="http://hi.baidu.com/lydrainbowcat/blog/item/2194090a8975ec2ab1351db3.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/2194090a8975ec2ab1351db3.html</a></p>
-<p>POJ 2688 - Cleaning Robot(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2688" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2688</a><br>题意：bfs后转换为tsp问题<br>解法：状态压缩BFS。转化为TSP的话极易超时。<br>相关：本空间有题解<a href="http://hi.baidu.com/lydrainbowcat/blog/item/025fa9a48850a8e39052eefa.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/025fa9a48850a8e39052eefa.html</a></p>
-<p>POJ 2908 - Quantum(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2908" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2908</a><br>题意：其实就是找单源最短路径<br>解法：优先队列广搜(即dijkstra)，建议用位运算优化</p>
-<p>POJ 3074 - Sudoku(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3074" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3074</a><br>题意：数独游戏，数据比2676强很多，但比3076弱<br>解法：用dfs回溯基本可过，不过每次应选择可能填的数字最少的格子搜<br>更快的方法是先转换成exact cover问题，然后用经典dancing links解决，<br>本空间有关于DancingLinks和本题的介绍和题解。<a href="http://hi.baidu.com/lydrainbowcat/blog/item/2194090a2276192ab1351dbc.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/2194090a2276192ab1351dbc.html</a><br>POJ 3322 - Bloxorz I(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3322" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3322</a><br>题意：略，这个游戏本身很好玩（<a href="http://jandan.net/2008/01/24/bloxorz.html）" target="_blank" rel="external">http://jandan.net/2008/01/24/bloxorz.html）</a><br>解法：广搜，双向广搜。朴素的BFS就可以，非常简单，这是我除了A+B以外在poj第一道一次就AC的题目。<br>相关：<a href="http://hi.baidu.com/zfy0701/blog/item/d7b6490f847948e8ab6457c6.html" target="_blank" rel="external">http://hi.baidu.com/zfy0701/blog/item/d7b6490f847948e8ab6457c6.html</a></p>
-<p>POJ 3460 - Booksort(较难，很推荐)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3460" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3460</a><br>题意：略<br>解法：IDA<em>，A</em>，双向BFS<br>相关：<a href="http://hi.baidu.com/lydrainbowcat/blog/item/26767f24c8aed5278744f99d.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/26767f24c8aed5278744f99d.html</a></p>
-<p>POJ 3523 - The Morning after Halloween(较难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3523" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3523</a><br>题意：把所有机器人移到各自的位置，不能相撞或重合<br>解法：我的状态设计太暴力了：以所有机器人位置表示状态。然后用A*过，排倒数第几，郁闷。谁知道好的状态设计方法告诉我^_^</p>
-<p>POJ 3633 - Copying DNA(较难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3633" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3633</a><br>题意：一个填充字符串的搜索题<br>解法：各种搜法皆宜<br>相关：算法的实现较挑战，我是参考了 <a href="http://www.wiskey86.cn/wordpress/?p=54" target="_blank" rel="external">http://www.wiskey86.cn/wordpress/?p=54</a> 才搞定的</p>
-<p>POJ 3635 full tank?(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3635" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3635</a><br>题意：最短路变形<br>解法：广搜<br>相关：<a href="http://hi.baidu.com/lydrainbowcat/blog/item/0fb2503317caee57ad4b5fed.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/0fb2503317caee57ad4b5fed.html</a></p>
-
+<p>1.这不是我原创的，是从网上找到的，跟大家分享一下。(然后我在从lyd那里转来的)<br>
                         
+                            <a href="/2014/04/17/poj-search-list/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2014/04/17/poj-search-list/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -479,7 +299,7 @@
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -504,44 +324,15 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>Linux 终端不仅是一个键入命令的地方。如若你能熟谙这些基础技巧，那么你会在绝大多数 Linux 发行版的默认使用的 Bash shell中游刃有余。</p>
-<p>这是howtogeek.com 网站特供给初级用户升级打怪时不能忘记携带的七种武器——</p>
-<h3 id="1-Tab_补全">1.Tab 补全</h3><p>这样能节省时间，并且对于输入那些你不很确定其具体名称的文件和命令来说很方便。比如，当前目录下有一个名为“really long file name”的文件，你想要删除它。你可以输入完整的文件名，但是你必须确保正确地输入了空格和每个字母。若当前目录下还有许多以字母“r”开头的文件，(如果你没有正确地输入字符) Bash 将不知道你想要删除哪一个文件。</p>
-<p>如果在当前目录下存在着另一个名为“really very long file name”的文件，你敲击了Tab键。Bash 将为所有以“r”开头的文件自动补充“really ”部分。此时继续敲击Tab键，你将得到匹配所有文件名的列表。</p>
-<h3 id="2-管道机制">2.管道机制</h3><p>这种机制允许你把一条命令的输出传送到另一条命令。按照 UNIX 哲学，每个程序都足够小，只做一件事并将之做到最好。例如，ls命令列出当前目录下的所有文件，grep命令搜索输入其中的指定检索项。</p>
-<p>你可以通过管道机制（|字符）把二者结合起来，在当前目录下搜索文件。以下给出的命令（在当前文件夹下）搜索关键字为“word”的文件：</p>
-<pre><code><span class="keyword">ls</span> | grep <span class="literal">word</span>
-</code></pre><h3 id="3-通配符">3.通配符</h3><p>“*”（星号）字符是一种匹配任意长度字符的通配符。比如，你想删除当前文件夹下名为“really long file name”和“really very long file name”的两个文件，你可以运行以下命令：</p>
-<pre><code>rm really*<span class="property">name</span>
-</code></pre><p>这条命令会删除所有以“really”开头以“name”结尾的文件。但是，如果你运行的是 rm * 这条命令，你将会删除文件夹下的所有文件。（译注：使用通配符时要小心，尤其是你的rm没有-f确认时！）</p>
-<h3 id="4-输出重定向">4.输出重定向</h3><p>“&gt;”字符可以把一条命令的输出重定向到一个文件或另一条命令。比如，下面这行命令执行完 ls 后会列出当前文件夹下的所有文件，其结果不是在终端显示，而是输出到当前文件夹下一个名为“file1”的文件中去:</p>
-<pre><code><span class="keyword">ls</span> &gt; file1
-</code></pre><h3 id="5-历史记录">5.历史记录</h3><p>Bash 能记住你以前输入过的命令，上、下方向键可以逐行调出它们。使用 history 命令打印历史记录，以管道机制 grep 选择性地输出你想要的结果。</p>
-<pre><code>~
-.
-..
-</code></pre><p>“~”，也叫做波浪符，用来表示当前用户的主目录。相比通过 cd /home/name 到达你的主目录，你可以输入 cd ~ 来达到相同效果。这点也可以在相关路径上使用：比如 cd ~/Desktop 能够到达当前用户的 Desktop 目录。</p>
-<p>同样，“.”代表当前目录，“..”代表当前目录的父目录。使用 cd .. 可以返回上一级目录。它们也可以用在相关路径上，举例说明：你当前处在 Desktop 文件夹下，通过 cd ../Documents 命令，你可以转到与 Desktop 共有同一父文件夹的 Documents 文件夹去。</p>
-<p>（译注：“-”代表前一个目录，cd - 可以返回到前一个工作目录。）</p>
-<h3 id="6-后台命令">6.后台命令</h3><p>Bash 默认情况下会在当前终端下执行你键入的每条命令。通常这样是没有问题的，但是如果你想要在启动某个应用后继续使用终端呢？通过输入 firefox 启动火狐浏览器，你的终端将被错误提示等各种信息输出占据，直到你关闭火狐浏览器为止。在 Bash 中你可以通过在命令结尾添加“&amp;”操作符来后台执行程序。</p>
-<pre><code><span class="title">firefox</span> &amp;
-</code></pre><h3 id="7-条件执行">7.条件执行</h3><p>Bash 也可以连续执行两条命令。 第二条命令仅在第一条命令成功执行后才会开始执行。如要如此，你可以通过键入“&amp;&amp;”，也就是两个“&amp;”字符进行分隔，在同一行输入两条命令。下面给出的命令会在等待 5 秒后运行 gnome-screenshot 工具:</p>
-<pre><code><span class="built_in">sleep</span> <span class="number">5</span> &amp;&amp; gnome-screenshot
-</code></pre><p>via: <a href="http://www.efytimes.com/e1/fullnews.asp?edid=123564" target="_blank" rel="external">http://www.efytimes.com/e1/fullnews.asp?edid=123564</a></p>
-<p>译者：<a href="https://github.com/SteveArcher">SteveArcher</a> 校对：<a href="https://github.com/wxy">wxy</a></p>
-<p>本文由 <a href="https://github.com/LCTT/TranslateProject">LCTT</a> 原创翻译，<a href="http://linux.cn/" target="_blank" rel="external">Linux中国</a> 荣誉推出<br>原文及评论：<a href="http://linux.cn/article-2413-1-qqmail.html" target="_blank" rel="external">http://linux.cn/article-2413-1-qqmail.html</a></p>
-
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <!-- toc -->
+<p>Linux 终端不仅是一个键入命令的地方。如若你能熟谙这些基础技巧，那么你会在绝大多数 Linux 发行版的默认使用的 Bash shell中游刃有余。</p>
+<p>这是howtogeek.com 网站特供给初级用户升级打怪时不能忘记携带的七种武器——<br>
                         
+                            <a href="/2014/04/17/linux-weapon/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2014/04/17/linux-weapon/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -550,7 +341,7 @@
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -575,20 +366,13 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>可以理解为2663的加强版，多了些状态，代码基本参考了别人的，各种位运算。。。。因为N比较大，所以，矩阵乘法的优势就体现出来了，不过这个代码感觉速度还不是很快啊</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  main.cpp</span></span><br><span class="line"><span class="comment">//  p3420</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  Created by Silly on 13-12-26.</span></span><br><span class="line"><span class="comment">//  Copyright (c) 2013年 Silly. All rights reserved.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> mt &#123;</span><br><span class="line">    ll ma[<span class="number">16</span>][<span class="number">16</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">mt res, tmp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, M;</span><br><span class="line"><span class="keyword">int</span> bit[<span class="number">4</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(res.ma, <span class="number">0</span>, <span class="keyword">sizeof</span>(res.ma));</span><br><span class="line">    <span class="built_in">memset</span>(tmp.ma, <span class="number">0</span>, <span class="keyword">sizeof</span>(tmp.ma));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">16</span>; i++) &#123;</span><br><span class="line">        res.ma[i][i] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">        bit[i] = (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">set_mat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">16</span>; i++) &#123;</span><br><span class="line">        tmp.ma[i][(~i)&amp;<span class="number">0xF</span>]++;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> ( ((~i)&amp;bit[j]&amp;<span class="number">0xF</span>) == <span class="number">0</span> &amp;&amp; ((~i)&amp;bit[j+<span class="number">1</span>]&amp;<span class="number">0xF</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">                tmp.ma[i][((~i)|bit[j]|bit[j+<span class="number">1</span>]) &amp; <span class="number">0xF</span>]++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    tmp.ma[<span class="number">15</span>][<span class="number">15</span>]++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">mt <span class="title">mm</span><span class="params">(mt a, mt b)</span> </span>&#123;</span><br><span class="line">    mt c;</span><br><span class="line">    <span class="built_in">memset</span>(c.ma, <span class="number">0</span>, <span class="keyword">sizeof</span>(c.ma));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">16</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">16</span>; k++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a.ma[i][k]) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">16</span>; j++) &#123;</span><br><span class="line">                    c.ma[i][j] += a.ma[i][k] * b.ma[k][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">16</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; <span class="number">16</span>; j++) &#123;</span><br><span class="line">            c.ma[i][j] %= M;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mat_pw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">31</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (N &amp; (<span class="number">1</span> &lt;&lt; i))</span><br><span class="line">            res = mm(res, tmp);</span><br><span class="line">        tmp = mm(tmp, tmp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;N, &amp;M) &amp;&amp; N|M) &#123;</span><br><span class="line">        init();</span><br><span class="line">        set_mat();</span><br><span class="line">        mat_pw();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lldn"</span>, res.ma[<span class="number">15</span>][<span class="number">15</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>可以理解为2663的加强版，多了些状态，代码基本参考了别人的，各种位运算。。。。因为N比较大，所以，矩阵乘法的优势就体现出来了，不过这个代码感觉速度还不是很快啊<br>
                         
+                            <a href="/2014/04/17/poj-3420-quad-tiling/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2014/04/17/poj-3420-quad-tiling/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -597,7 +381,7 @@
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -622,44 +406,15 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>题目链接：<a href="http://acm.timus.ru/problemset.aspx?space=1&amp;page=1" target="_blank" rel="external">戳我</a>（1053－1059）</p>
-<p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1053" target="_blank" rel="external">Pinocchio</a></p>
-<p>题目还比较好理解，每次选两个数，大数减去小数，相等则合并，其实就是求出所有数的最大公约数，然后就是直接做了。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> y == <span class="number">0</span> ? x : gcd(y, x % y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, ans, k;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; ans;</span><br><span class="line">    n--;</span><br><span class="line">    <span class="keyword">while</span> (n--) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; k;</span><br><span class="line">        ans = gcd(ans, k);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1054" target="_blank" rel="external">Hanoi Tower</a></p>
-<p>汉诺塔是很经典的一个东西了，但这道题还是比较有意思的。给出当前各个圆盘所在的柱子的一个序列，问你当前状态是最优移动方案里面的第几步，有可能所给状态不是最优方案里的状态，N&lt;=31。如果对汉诺塔得递归性质理解得比较深的话应该很容易就能做出来，我是先打了一个表看看规律的。。。我们可以只考虑最大的圆盘k，如果还没有被移动过就无视，不然ans就加上2ˆ(k-1)，然后逆着递归回去，然后明显就是O(N)了。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> f[<span class="number">100</span>] = &#123;<span class="number">0</span>&#125;, n, ans = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sol</span><span class="params">(<span class="keyword">int</span> k, <span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (k == <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (f[k] == c) &#123;</span><br><span class="line">        ans = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (f[k] == b) &#123;</span><br><span class="line">        ans += <span class="number">1</span> &lt;&lt; (k-<span class="number">1</span>);</span><br><span class="line">        sol(k-<span class="number">1</span>, c, b, a);</span><br><span class="line">    &#125; <span class="keyword">else</span> sol(k-<span class="number">1</span>, a, c, b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; f[i];</span><br><span class="line">    sol(n, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1055" target="_blank" rel="external">Combinations</a></p>
-<p>很裸的数学题了，组合数的计算，对分式上下各个数进行质因数分解，最后统计一下，不过我好像写得比较矬，应该写得更简洁些才是啊。。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">50010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> valid[MN];</span><br><span class="line"><span class="keyword">int</span> ans[MN] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> f[MN] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getPrime</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> tot = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(valid, <span class="literal">true</span>, <span class="keyword">sizeof</span>(valid));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (valid[i]) ans[++tot] = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; ((j &lt;= tot) &amp;&amp; (i*ans[j] &lt;= n)); j++) &#123;</span><br><span class="line">            valid[i*ans[j]] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % ans[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">if</span> (m &gt; (n/<span class="number">2</span>)) m = n-m;</span><br><span class="line">    getPrime(n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> t = n-i;</span><br><span class="line">        <span class="keyword">if</span> (valid[t]) &#123;</span><br><span class="line">            f[t]++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (t != <span class="number">1</span>) &#123;</span><br><span class="line">                j++;</span><br><span class="line">                <span class="keyword">while</span> (t % ans[j] == <span class="number">0</span>) &#123;</span><br><span class="line">                    f[ans[j]]++;</span><br><span class="line">                    t /= ans[j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (valid[i]) &#123;</span><br><span class="line">            f[i]--;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> j = <span class="number">0</span>, t = i;</span><br><span class="line">            <span class="keyword">while</span> (t != <span class="number">1</span>) &#123;</span><br><span class="line">                j++;</span><br><span class="line">                <span class="keyword">while</span> (t % ans[j] == <span class="number">0</span>) &#123;</span><br><span class="line">                    f[ans[j]]--;</span><br><span class="line">                    t /= ans[j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">if</span> (f[i]) ans++;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1056" target="_blank" rel="external">Computer Net</a></p>
-<p>N(&lt;=10000)点构成一颗树，要求出树的中心。由树的性质可以知道，中心必定是1 or 2个。求树的中心还有树的直径都是很经典的问题，这道题也有很多做法。我用的是两边DFS，任意选则一个点v做一遍DFS，则离v最远的那个点必定是树的直径的一个端点，然后再由得到的端点做一遍DFS，就找到了另一个端点了，记录路径，然后再找到直径的中点就行了。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">10010</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; a[MN];</span><br><span class="line"><span class="keyword">bool</span> vt[MN];</span><br><span class="line"><span class="keyword">int</span> f[MN];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, k, l, v;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> pr, <span class="keyword">int</span> de)</span> </span>&#123;</span><br><span class="line">    vt[x] = <span class="literal">true</span>;</span><br><span class="line">    f[x] = pr;</span><br><span class="line">    <span class="keyword">if</span> (de &gt; l) &#123;</span><br><span class="line">        l = de;</span><br><span class="line">        v = x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a[x].size(); i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> ch = a[x][i];</span><br><span class="line">        <span class="keyword">if</span> (vt[ch]) <span class="keyword">continue</span>;</span><br><span class="line">        dfs(ch, x, de+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; k;</span><br><span class="line">        a[k].push_back(i);</span><br><span class="line">        a[i].push_back(k);</span><br><span class="line">    &#125;</span><br><span class="line">    v = l = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(vt, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vt));</span><br><span class="line">    dfs(<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">memset</span>(vt, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vt));</span><br><span class="line">    l = <span class="number">0</span>;</span><br><span class="line">    dfs(v, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; l/<span class="number">2</span>; i++)</span><br><span class="line">        v = f[v];</span><br><span class="line">    <span class="keyword">if</span> (l % <span class="number">2</span>)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; f[v] &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; min(v, f[v]) &lt;&lt; <span class="string">" "</span> &lt;&lt; max(v, f[v]) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1057" target="_blank" rel="external">Amount of Degrees</a></p>
-<p>数位统计</p>
-<p>题目大意：给出区间［X,Y］,要求算出区间内可以表示为k个不相同的b的幂的和的数字的个数。具体参见：刘聪《浅谈数位类问题》，讲的肯定比我自己说的要好TAT</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> x, y, k, b;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> c[<span class="number">32</span>][<span class="number">32</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> dgt[<span class="number">32</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    c[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">32</span>; i++) &#123;</span><br><span class="line">        c[i][<span class="number">0</span>] = c[i-<span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++)</span><br><span class="line">            c[i][j] += c[i-<span class="number">1</span>][j-<span class="number">1</span>] + c[i-<span class="number">1</span>][j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        dgt[++l] = x % b;</span><br><span class="line">        x /= b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mk = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">if</span> (dgt[i] &gt; <span class="number">1</span>) &#123;</span><br><span class="line">            ans += c[i][k-mk];</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (dgt[i] == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &gt; k-mk) ans += c[i-<span class="number">1</span>][k-mk];</span><br><span class="line">            <span class="keyword">if</span> (++mk &gt; k) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> ((i == <span class="number">1</span>) &amp;&amp; (mk == k)) ans++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y &gt;&gt; k &gt;&gt; b;</span><br><span class="line">    init();</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; cal(y) - cal(x-<span class="number">1</span>) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1058" target="_blank" rel="external">Chocolate</a></p>
-<p>比较那个的计算几何，我还不会写计算几何的题目，先留个坑，以后再填</p>
-<pre><code><span class="comment">//占位-_-#</span>
-</code></pre><p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1059" target="_blank" rel="external">Expression</a></p>
-<p>题目大意：输出一个一元N次多项式的最短后缀表达式。然后有</p>
-<p><img src="http://upload.wikimedia.org/math/d/2/5/d25290170053cbfe1d467c061e2a3e38.png" alt="f(x)=a_0x^n+a_{1}x^{n-1}+a_{2}x^{n-2}+......+a_{n-2}x^2+a_{n-1}x+a_n">  可以化成</p>
-<p><img src="http://upload.wikimedia.org/math/7/5/1/7514d392c909ec6ba2fec54d5e4a7b29.png" alt="f(x)=(((a_nx+a_{n-1})x+a_{n-2})x+......+a_1)x+a_0"></p>
-<p>然后规律就很明显了，直接输出就行了。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">0</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">'X'</span> &lt;&lt; endl &lt;&lt; <span class="string">'*'</span> &lt;&lt; endl &lt;&lt; i+<span class="number">1</span> &lt;&lt; endl &lt;&lt; <span class="string">'+'</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>题目链接：<a href="http://acm.timus.ru/problemset.aspx?space=1&amp;page=1">戳我</a>（1053－1059）</p>
+<p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1053">Pinocchio</a></p>
+<p>题目还比较好理解，每次选两个数，大数减去小数，相等则合并，其实就是求出所有数的最大公约数，然后就是直接做了。<br>
                         
+                            <a href="/2014/04/17/neerc-2000-central-subregional/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2014/04/17/neerc-2000-central-subregional/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -668,7 +423,7 @@
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -693,28 +448,13 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>给定一个序列，要求出一段连续的子序列，是的其和最大或最小。</p>
-<p>这是一个很经典的问题，最近做了相关的题目，在这里总结一下。</p>
-<p>最直接的一个想法自然是直接暴力枚举每个子段，O(N³)，用前缀和优化一下，这样做的复杂度是O(n²)。在n比较小的时候自然是这种简单易得的方法最好啦。但是人生就是这样子，总不能让你事事如意。然后呢，我们就需要一些更快的方法。</p>
-<p>然后我们就发现呢，可以用简单的DP求解，f[i]表示以第i个数为结尾的最大连续子序列和，则可以得到</p>
-<p>f[i] = max{f[i-1]+a[i], a[i]}</p>
-<p>求最小值自然也可以用同样的方法，这样做的复杂度是O(n)。</p>
-<p>看这道题：Sicily p1888:<a href="http://soj.me/1888" target="_blank" rel="external">Circular Sequence</a></p>
-<p>题目大意是：给定一个整数的循环序列，求其最大连续子序列和。</p>
-<p>对于循环序列，我们一般用的方法是把整个序列复制一遍加到原序列后面，这样这个问题就转化成求得到的新序列的长度不超过原长n的最大连续子序列和(好绕口。。。。)，这个问题我们在后面讨论。这里其实我们可以不利用序列是循环的这个性质，那就只是普通的最大和问题，我们就可以用上面的方法求一遍得到Ans1，然后考虑一下循环的话，那么最大子序列必定是由原序列的一个前缀和一个后缀组成。然后可以发现，剩下的中间那部分其实就是最小连续子序列，所以我们由第二个数到倒数第二个数求一遍最小和(＊)，得到Ans2。最后的答案就是max(Ans1，Sum－ Ans2)。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line">    <span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line">    <span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">100000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> a[MN];</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>, t;</span><br><span class="line"></span><br><span class="line">    <span class="function">LL <span class="title">max_sum</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        LL ret = a[<span class="number">0</span>];</span><br><span class="line">        LL tmp = a[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (tmp &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                tmp = a[i];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                tmp += a[i];</span><br><span class="line">            &#125;</span><br><span class="line">            ret = max(ret, tmp);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">LL <span class="title">min_sum</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        LL ret = a[<span class="number">1</span>];</span><br><span class="line">        LL tmp = a[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n-<span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (tmp &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                tmp = a[i];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                tmp += a[i];</span><br><span class="line">            &#125;</span><br><span class="line">            ret = min(ret, tmp);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">        <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">            LL sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">                sum += a[i];</span><br><span class="line">            &#125;</span><br><span class="line">            LL ans = max(max_sum(), sum - min_sum());</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">在西西里上一开始用I64d输出，一直WA。。。时不时总要被这样的东西坑一下TAT</span><br><span class="line"></span><br><span class="line">－－－－－－－－－－－－－－－我是华丽的分割线－－－－－－－－－－－－－－－</span><br><span class="line"></span><br><span class="line">接着填一下上面留下的坑。</span><br><span class="line"></span><br><span class="line">在求子序列和的时候，如果给定子序列长度的上下界又该怎么做。</span><br><span class="line"></span><br><span class="line">同样使用动态规划的解法，我们可以列出方程f[i] = max&#123;sum[i] - min(sum[j - <span class="number">1</span>])&#125; ，这样做是O(n²),显然不是我们想要的，然后呢我们就可以用单调队列来优化啦～</span><br><span class="line"></span><br><span class="line">对于长度的上界MX就是直接的来咯，然后下界MI就利用一个小技巧，从MI开始枚举，然后i-MI入队，这样就保证了序列的长度不小于MI了，每次更新完队首就是符合条件的min(sum[j - <span class="number">1</span>])了。如果还是不大理解具体可以看代码理解一下。</span><br><span class="line"></span><br><span class="line">这里求的是最小连续子序列和：Sicily p1800 [Sequence](http:<span class="comment">//soj.me/1800)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line">    <span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line">    <span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line">    <span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line">    <span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> MN = (<span class="number">1</span> &lt;&lt; <span class="number">15</span>) + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> sum[MN] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> f[MN] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n, l, r, mi, mx, ans, k;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">        <span class="keyword">while</span> (n) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;mi, &amp;mx);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;k);</span><br><span class="line">                sum[i] = sum[i-<span class="number">1</span>] + k;</span><br><span class="line">            &#125;</span><br><span class="line">            l = r = <span class="number">0</span>;</span><br><span class="line">            f[++r] = <span class="number">0</span>;</span><br><span class="line">            ans = <span class="number">2147483647</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = mi; i &lt;= n; i++) &#123;</span><br><span class="line">                <span class="keyword">while</span> (l &lt; r &amp;&amp; i - f[l+<span class="number">1</span>] &gt; mx) l++;</span><br><span class="line">                <span class="keyword">while</span> (l &lt; r &amp;&amp; sum[f[r]] &lt;= sum[i-mi]) r--;</span><br><span class="line">                f[++r] = i - mi;</span><br><span class="line">                ans = min(ans, sum[i] - sum[f[l+<span class="number">1</span>]]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>给定一个序列，要求出一段连续的子序列，是的其和最大或最小。<br>这是一个很经典的问题，最近做了相关的题目，在这里总结一下。<br>
                         
+                            <a href="/2014/04/15/msl/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2014/04/15/msl/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -723,7 +463,7 @@
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -748,32 +488,19 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
+                    <div class="postShorten-excerpt" itemprop="articleBody">
                         <p>简要题意：给定n，m，<em>n</em> (1 ≤ <em>n</em> &lt; 10ˆ18) and <em>m</em> (1 ≤ <em>m</em> ≤ 100).求满足以下要求的数x有多少个。</p>
 <ul>
 <li>x可通过重排n的各位数字获得</li>
-</ul>
-<ul>
 <li>x没有前导0</li>
-</ul>
-<ul>
 <li>x mod m == 0</li>
 </ul>
-<p>一开始我被10ˆ18给吓到了，但是其实这里也是一个突破口来着，仔细想想，如果是2ˆ18的话那该多好。</p>
-<p>如果你往这个方向开始去想了，就会发现很多东西了，然后就是个DP，然后再去一下重，当然，你也可以在DP的过程中去重。</p>
-<p>不过，感觉我的DP水平实在是不济，这个是赛后搞出来的。。。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = (<span class="number">1</span> &lt;&lt; <span class="number">18</span>) + <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> f[MN][<span class="number">103</span>];</span><br><span class="line"><span class="keyword">int</span> dig[<span class="number">20</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">char</span> c[<span class="number">20</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> fac[<span class="number">20</span>];</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> l;</span><br><span class="line"><span class="keyword">int</span> m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; c &gt;&gt; m;</span><br><span class="line">    l = <span class="built_in">strlen</span>(c);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; l; i++) &#123;</span><br><span class="line">        dig[c[i] - <span class="string">'0'</span>]++;</span><br><span class="line">    &#125;</span><br><span class="line">    fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">20</span>; i++) &#123;</span><br><span class="line">        fac[i] = fac[i - <span class="number">1</span>] * i;</span><br><span class="line">    &#125;</span><br><span class="line">    f[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> s = <span class="number">0</span>; s &lt; (<span class="number">1</span> &lt;&lt; l); s++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (f[s][j]) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; l; i++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (~s &amp; (<span class="number">1</span> &lt;&lt; i)) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (!s &amp;&amp; c[i] == <span class="string">'0'</span>) &#123;</span><br><span class="line">                            <span class="keyword">continue</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        f[s | (<span class="number">1</span> &lt;&lt; i)][(j * <span class="number">10</span> + c[i] - <span class="string">'0'</span>) % m] += f[s][j];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = f[(<span class="number">1</span> &lt;&lt; l) - <span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        ans /= fac[dig[i]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>一开始我被10ˆ18给吓到了，但是其实这里也是一个突破口来着，仔细想想，如果是2ˆ18的话那该多好。<br>如果你往这个方向开始去想了，就会发现很多东西了，然后就是个DP，然后再去一下重，当然，你也可以在DP的过程中去重。<br>不过，感觉我的DP水平实在是不济，这个是赛后搞出来的。。。<br>
                         
+                            <a href="/2014/04/15/codeforces-401d-roman-and-numbers/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2014/04/15/codeforces-401d-roman-and-numbers/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -782,7 +509,7 @@
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -807,107 +534,98 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
+                    <div class="postShorten-excerpt" itemprop="articleBody">
                         <p>题目大意是一个3<em>N的棋盘，用1</em>2的骨牌覆盖的方案数</p>
 <p>使用一个三位的二进制数表示状态，则可以有：</p>
 <p>n行：000  ……………………………………. 000</p>
 <p>n-1行：000  001  010   011…………………  111</p>
 <p>为避免状态重复，我们不允许在n-1行上平放骨牌（因为等会由n-1行转移的第n行时，我们可以在n行上平放），所以我们可以构造一个矩阵来表示这些转移（具体自己画一画就知道了），即可以得到以下矩阵A：</p>
-<p>0000000100000010000001000000100100010000001000000100000110010010然后求A的n次幂，A^n[7][7]就是我们要的答案啦～</p>
-<p>至于矩阵方面的一些知识，可以看一下Matrix67的这篇文章：<a href="http://www.matrix67.com/blog/archives/276" target="_blank" rel="external">十个利用矩阵乘法解决的经典题目</a></p>
-<pre><code><span class="comment">//</span>
-<span class="comment">//  main.cpp</span>
-<span class="comment">//  p2663</span>
-<span class="comment">//</span>
-<span class="comment">//  Created by Silly on 13-12-26.</span>
-<span class="comment">//  Copyright (c) 2013年 Silly. All rights reserved.</span>
-<span class="comment">//</span>
-
-<span class="preprocessor">#<span class="keyword">include</span></span>
-<span class="preprocessor">#<span class="keyword">include</span></span>
-<span class="preprocessor">#<span class="keyword">include</span></span>
-
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span>  ll;
-
-<span class="keyword">const</span> ll  mat[<span class="number">8</span>][<span class="number">8</span>] = {
-    {<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>},
-    {<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>},
-    {<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>},
-    {<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>},
-    {<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>},
-    {<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>},
-    {<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>},
-    {<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>},
-};
-
-<span class="keyword">struct</span> ma {
-    ll a[<span class="number">8</span>][<span class="number">8</span>];
-};
-
-ma res, tmp;
-
-<span class="function">ma <span class="title">mm</span><span class="params">(ma x, ma y)</span> </span>{
-    ma z;
-    <span class="built_in">memset</span>(z.a ,<span class="number">0</span> , <span class="keyword">sizeof</span>(z.a));
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) {
-        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">8</span>; j++) {
-            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">8</span>; k++) {
-                z.a[i][j] += x.a[i][k] * y.a[k][j];
-            }
-        }
-    }
-    <span class="keyword">return</span> z;
-}
-
-<span class="function">ma <span class="title">mp</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{
-    ma z;
-    <span class="keyword">if</span> (x == <span class="number">1</span>) {
-        <span class="keyword">return</span> res;
-    }
-    z = mp(x / <span class="number">2</span>);
-    z = mm(z, z);
-    <span class="keyword">if</span> (x % <span class="number">2</span> != <span class="number">0</span>) {
-        z = mm(res, z);
-    }
-    <span class="keyword">return</span> z;
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span>
-</span>{
-    <span class="keyword">int</span> n;
-    <span class="built_in">cin</span> &gt;&gt; n;
-    <span class="keyword">while</span> (n != -<span class="number">1</span>) {
-        <span class="keyword">if</span> (n == <span class="number">0</span>) {
-            <span class="built_in">cout</span> &lt;&lt; <span class="number">1</span> &lt;&lt; endl;
-            <span class="built_in">cin</span> &gt;&gt; n;
-            <span class="keyword">continue</span>;
-        }
-        <span class="built_in">memset</span>(res.a, <span class="number">0</span>, <span class="keyword">sizeof</span>(res.a));
-        <span class="built_in">memset</span>(tmp.a, <span class="number">0</span>, <span class="keyword">sizeof</span>(tmp.a));
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) {
-            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">8</span>; j++) {
-                res.a[i][j] = mat[i][j];
-            }
-        }
-        tmp = mp(n);
-        <span class="built_in">printf</span>(<span class="string">"%lldn"</span>, tmp.a[<span class="number">7</span>][<span class="number">7</span>]);
-        <span class="built_in">cin</span> &gt;&gt; n;
-    }
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>
+<p>0000000100000010000001000000100100010000001000000100000110010010然后求A的n次幂，A^n[7][7]就是我们要的答案啦～<br>
                         
+                            <a href="/2013/12/26/poj-2663-tri-tiling/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2013/12/23/poj-dp-list/">Poj 动态规划题目列表 </a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Dec 23 2013 14:03:33 GMT+0800">
+	
+		    Dec 23, 2013
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/资源/">资源</a>
 
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>这份列表当然不是我原创的，从文库里下载了一份，放到这里便于自己浏览和查找题目。（ps：这句话也不是我写的，转自lyd）<br>
                         
+                            <a href="/2013/12/23/poj-dp-list/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
+                            
                         
-                            <p>
-                                <a href="/2013/12/26/poj-2663-tri-tiling/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2013/12/23/poj-graph-theory-ist/">Poj 图论题目列表</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Dec 23 2013 13:58:45 GMT+0800">
+	
+		    Dec 23, 2013
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/资源/">资源</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>转自别的地方，先放着，激励自己去刷题<br>
+                        
+                            <a href="/2013/12/23/poj-graph-theory-ist/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
+                            
                         
                     </div>
                 
@@ -935,7 +653,7 @@ ma res, tmp;
             </a>
         </li>
         
-        <li class="pagination-number">page 3 of 5</li>
+        <li class="pagination-number">page 3 of 4</li>
     </ul>
 </div>
 

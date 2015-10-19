@@ -296,81 +296,7 @@
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2014/09/16/use-vim-on-mac/">Mac配置Vim折腾小纪录</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Sep 16 2014 17:40:16 GMT+0800">
-	
-		    Sep 16, 2014
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/技术/">技术</a>
-
-
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>环境：Mac OS X 10.10， VIM - Vi IMproved 7.3</p>
-<p>虽然说最近其实一直都是在使用Atom，可是不知道为什么每过一段时间，总会有各种原因激起我使用vim的热情。。。前几天看到了rrr好像在用着一个看起来还挺不错的vim，跟他要配置，后来他给了我一个网址：<a href="https://github.com/ma6174/vim">https://github.com/ma6174/vim</a>，在这里感谢一下作者的无私奉献。</p>
-<p>其实这个配置的作者基本上已经帮我们完成了所有的任务，我们要做的就是打一条命令，然后让它自己安装就行了，事实上我也是这么做的。但是在经过一小段漫长的等待时间之后，我看到的却是这个</p>
-<pre><code>Error detected while processing /Users/silly/.vim/plugin/client.vim:
-
-line  314:
-
-Traceback (most recent <span class="operator"><span class="keyword">call</span> <span class="keyword">last</span>):
-
-  <span class="keyword">File</span> <span class="string">"&lt;string&gt;"</span>, line <span class="number">2</span>, <span class="keyword">in</span> &lt;<span class="keyword">module</span>&gt;
-
-  <span class="keyword">File</span> <span class="string">"/Library/Python/2.7/site-packages/Twisted-14.0.0-py2.7-macosx-10.10-intel.egg/twisted/__init__.py"</span>, line <span class="number">53</span>, <span class="keyword">in</span> &lt;<span class="keyword">module</span>&gt;
-
-    _checkRequirements()
-
-  <span class="keyword">File</span> <span class="string">"/Library/Python/2.7/site-packages/Twisted-14.0.0-py2.7-macosx-10.10-intel.egg/twisted/__init__.py"</span>, line <span class="number">37</span>, <span class="keyword">in</span> _checkRequirements
-
-    <span class="keyword">raise</span> ImportError(<span class="keyword">required</span> + <span class="string">": no module named zope.interface."</span>)
-
-ImportError: Twisted requires zope.<span class="keyword">interface</span> <span class="number">3.6</span><span class="number">.0</span> <span class="keyword">or</span> later: <span class="keyword">no</span> <span class="keyword">module</span> named zope.<span class="keyword">interface</span>.
-
-Press ENTER <span class="keyword">or</span> <span class="keyword">type</span> command <span class="keyword">to</span> continue</span>
-</code></pre><p>突然觉得看不懂，好烦不想看，就直接按了回车，进入了vim，感觉虽然报错了，可是用起来并没有什么问题啊，<br>至少我写写那几行小代码是这样子的，可是仔细一想我又觉得虽然没什么影响的样子，可是每次打开vim的时候都<br>有这个报错也是挺令人觉得烦的，你们说对吧，然后我也懒得看是什么原因了，直接暴力重装了几次，可是都还是<br>不行<img src="/picture/wpml_whistle3.gif" alt="">，<br>只好滚回来自己看报错的内容咯，看了一下好像没看懂是什么原因，但是发现最后有这么一句</p>
-<pre><code>ImportError: Twisted requires zope.<span class="keyword">interface</span> <span class="number">3.6.</span><span class="number">0</span> or later: no <span class="keyword">module</span> <span class="keyword">named</span> zope.<span class="keyword">interface</span>.
-</code></pre><p>想可能是python的某个什么东西的某个东西(zope.intergface)有什么问题吧，问了一下度娘。然后要在mac下安装zope.interface，可以先到这里下载 <a href="https://pypi.python.org/pypi/zope.interface" target="_blank" rel="external">https://pypi.python.org/pypi/zope.interface</a>。下载gz压缩包那个版本，解压后运行一下里面的setup.py，在terminal打开到解压后的文件夹，运行</p>
-<pre><code>sudo python setup<span class="class">.py</span> install
-</code></pre><p>然后很快就能安装好了。然后问题就因此解决了，然后我就能快乐的跟vim玩耍一阵子了～<img src="/picture/wpml_good.gif" alt=""></p>
-<p>最后附上一张我自己安装后的截图吧：</p>
-<p><img src="/picture/Screen-Shot-2014-09-17-at-1.30.14-AM.png" alt=""></p>
-
-                        
-                            
-
-                        
-                        
-                            <p>
-                                <a href="/2014/09/16/use-vim-on-mac/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
-                        
-                    </div>
-                
-            </div>
-            
-        </article>
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -395,44 +321,15 @@ Press ENTER <span class="keyword">or</span> <span class="keyword">type</span> co
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>Linux 终端不仅是一个键入命令的地方。如若你能熟谙这些基础技巧，那么你会在绝大多数 Linux 发行版的默认使用的 Bash shell中游刃有余。</p>
-<p>这是howtogeek.com 网站特供给初级用户升级打怪时不能忘记携带的七种武器——</p>
-<h3 id="1-Tab_补全">1.Tab 补全</h3><p>这样能节省时间，并且对于输入那些你不很确定其具体名称的文件和命令来说很方便。比如，当前目录下有一个名为“really long file name”的文件，你想要删除它。你可以输入完整的文件名，但是你必须确保正确地输入了空格和每个字母。若当前目录下还有许多以字母“r”开头的文件，(如果你没有正确地输入字符) Bash 将不知道你想要删除哪一个文件。</p>
-<p>如果在当前目录下存在着另一个名为“really very long file name”的文件，你敲击了Tab键。Bash 将为所有以“r”开头的文件自动补充“really ”部分。此时继续敲击Tab键，你将得到匹配所有文件名的列表。</p>
-<h3 id="2-管道机制">2.管道机制</h3><p>这种机制允许你把一条命令的输出传送到另一条命令。按照 UNIX 哲学，每个程序都足够小，只做一件事并将之做到最好。例如，ls命令列出当前目录下的所有文件，grep命令搜索输入其中的指定检索项。</p>
-<p>你可以通过管道机制（|字符）把二者结合起来，在当前目录下搜索文件。以下给出的命令（在当前文件夹下）搜索关键字为“word”的文件：</p>
-<pre><code><span class="keyword">ls</span> | grep <span class="literal">word</span>
-</code></pre><h3 id="3-通配符">3.通配符</h3><p>“*”（星号）字符是一种匹配任意长度字符的通配符。比如，你想删除当前文件夹下名为“really long file name”和“really very long file name”的两个文件，你可以运行以下命令：</p>
-<pre><code>rm really*<span class="property">name</span>
-</code></pre><p>这条命令会删除所有以“really”开头以“name”结尾的文件。但是，如果你运行的是 rm * 这条命令，你将会删除文件夹下的所有文件。（译注：使用通配符时要小心，尤其是你的rm没有-f确认时！）</p>
-<h3 id="4-输出重定向">4.输出重定向</h3><p>“&gt;”字符可以把一条命令的输出重定向到一个文件或另一条命令。比如，下面这行命令执行完 ls 后会列出当前文件夹下的所有文件，其结果不是在终端显示，而是输出到当前文件夹下一个名为“file1”的文件中去:</p>
-<pre><code><span class="keyword">ls</span> &gt; file1
-</code></pre><h3 id="5-历史记录">5.历史记录</h3><p>Bash 能记住你以前输入过的命令，上、下方向键可以逐行调出它们。使用 history 命令打印历史记录，以管道机制 grep 选择性地输出你想要的结果。</p>
-<pre><code>~
-.
-..
-</code></pre><p>“~”，也叫做波浪符，用来表示当前用户的主目录。相比通过 cd /home/name 到达你的主目录，你可以输入 cd ~ 来达到相同效果。这点也可以在相关路径上使用：比如 cd ~/Desktop 能够到达当前用户的 Desktop 目录。</p>
-<p>同样，“.”代表当前目录，“..”代表当前目录的父目录。使用 cd .. 可以返回上一级目录。它们也可以用在相关路径上，举例说明：你当前处在 Desktop 文件夹下，通过 cd ../Documents 命令，你可以转到与 Desktop 共有同一父文件夹的 Documents 文件夹去。</p>
-<p>（译注：“-”代表前一个目录，cd - 可以返回到前一个工作目录。）</p>
-<h3 id="6-后台命令">6.后台命令</h3><p>Bash 默认情况下会在当前终端下执行你键入的每条命令。通常这样是没有问题的，但是如果你想要在启动某个应用后继续使用终端呢？通过输入 firefox 启动火狐浏览器，你的终端将被错误提示等各种信息输出占据，直到你关闭火狐浏览器为止。在 Bash 中你可以通过在命令结尾添加“&amp;”操作符来后台执行程序。</p>
-<pre><code><span class="title">firefox</span> &amp;
-</code></pre><h3 id="7-条件执行">7.条件执行</h3><p>Bash 也可以连续执行两条命令。 第二条命令仅在第一条命令成功执行后才会开始执行。如要如此，你可以通过键入“&amp;&amp;”，也就是两个“&amp;”字符进行分隔，在同一行输入两条命令。下面给出的命令会在等待 5 秒后运行 gnome-screenshot 工具:</p>
-<pre><code><span class="built_in">sleep</span> <span class="number">5</span> &amp;&amp; gnome-screenshot
-</code></pre><p>via: <a href="http://www.efytimes.com/e1/fullnews.asp?edid=123564" target="_blank" rel="external">http://www.efytimes.com/e1/fullnews.asp?edid=123564</a></p>
-<p>译者：<a href="https://github.com/SteveArcher">SteveArcher</a> 校对：<a href="https://github.com/wxy">wxy</a></p>
-<p>本文由 <a href="https://github.com/LCTT/TranslateProject">LCTT</a> 原创翻译，<a href="http://linux.cn/" target="_blank" rel="external">Linux中国</a> 荣誉推出<br>原文及评论：<a href="http://linux.cn/article-2413-1-qqmail.html" target="_blank" rel="external">http://linux.cn/article-2413-1-qqmail.html</a></p>
-
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <!-- toc -->
+<p>Linux 终端不仅是一个键入命令的地方。如若你能熟谙这些基础技巧，那么你会在绝大多数 Linux 发行版的默认使用的 Bash shell中游刃有余。</p>
+<p>这是howtogeek.com 网站特供给初级用户升级打怪时不能忘记携带的七种武器——<br>
                         
+                            <a href="/2014/04/17/linux-weapon/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2014/04/17/linux-weapon/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -493,7 +390,7 @@ Press ENTER <span class="keyword">or</span> <span class="keyword">type</span> co
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -518,30 +415,15 @@ Press ENTER <span class="keyword">or</span> <span class="keyword">type</span> co
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
+                    <div class="postShorten-excerpt" itemprop="articleBody">
                         <p>摘自Matrix67 C语言速成手册</p>
 <p>四种动态内存分配函数，使用它们前需要在程序最前面包含头文件stdlib.h（C++应该是cstdlib）。四种函数的格式分别为：</p>
-<p>void <em>malloc ( size );<br>void </em>calloc ( n, size );<br>void free ( pointer );<br>void *realloc( pointer, size );</p>
-<p>函数malloc 将在内存里寻找一个大小为size 的连续空间，把分配到的内存地址作为一个指向void 类型的指针（默认的无类型指针）返回。如果空间分配失败，函数返回NULL。</p>
-<p>函数calloc 将在内存里寻找一个大小为n * size 的连续空间，并且把这段内存的数据全部清0，返回数据和malloc 一样。如果空间分配失败，函数返回NULL。</p>
-<p>函数free 用于释放内存空间，释放后的空间被回收，可以用于以后的malloc 或calloc 操作。</p>
-<p>函数realloc 在保证已有数据不变的情况下改变已有指针的空间大小，返回重新分得的空间的内存地址（有可能和原来不同）。如果空间重新分配失败，函数返回NULL。</p>
-<p>Pascal 中的new 语句可以用前两个函数代替，free 语句则相当于Pascal 中的dispose。</p>
-<p>注意，malloc 和calloc 函数所返回的指针还没确定类型，理论上需要用类型转换。下面的程序合法地为p指针分配空间：</p>
-<p>int<em>p;<br>p = (int </em>) malloc( sizeof(int) );<br>*p = 520;</p>
-<p>事实上，由于赋值时C 语言自动转换类型，因此那个类型转换是没有必要的（去掉(int *)没有影响）。</p>
-<p>本人在用codeblocks时，发现去掉（int*）编译不过，maybe是版本问题吧……</p>
-
+<p>void <em>malloc ( size );<br>void </em>calloc ( n, size );<br>void free ( pointer );<br>void *realloc( pointer, size );<br>
                         
+                            <a href="/2013/06/29/dynamic-memory-allocation/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/06/29/dynamic-memory-allocation/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -550,7 +432,7 @@ Press ENTER <span class="keyword">or</span> <span class="keyword">type</span> co
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -575,23 +457,16 @@ Press ENTER <span class="keyword">or</span> <span class="keyword">type</span> co
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
+                    <div class="postShorten-excerpt" itemprop="articleBody">
                         <p>早上看了一下七中王迪大神写的一篇论文，学习了一下分块思想，只看了一点点，基本上是看着代码，再自己脑补的。</p>
 <p>所谓分块就是把规模为n的问题分割成k块，每块规模为s，为了使对块内和整个范围的操作的复杂度平均些，令k = s = √n。利用这个思想就能把O(n)的复杂度降到O(√n),从而达到优化算法的目的。论文中如是说。</p>
 <p>只看了一个简单的问题，如有一长度为n的正整数数列，完成m次操作（1≤n，m≤10 ˆ5<em>），M x y:把第x个数字修改为y；Q x y：询问区间 [x,y] 中的最大值Max。</em></p>
-<p>这个问题相当经典，有多种算法可解，因为在学分块，自然采用块状解决之。</p>
-<p>我补充完整的代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">maintain</span><span class="params">(<span class="keyword">int</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100100</span>]=&#123;<span class="number">0</span>&#125;,b[<span class="number">100100</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> n,m,t,s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    s = <span class="built_in">sqrt</span>(n);</span><br><span class="line">    t = (n + s - <span class="number">1</span>) / s;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> x,y,k;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; k;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">         <span class="keyword">if</span> (k == <span class="number">1</span>) &#123;</span><br><span class="line">            modify(x-<span class="number">1</span>,y);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; query(x-<span class="number">1</span>,y-<span class="number">1</span>) &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">maintain</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> lb = (x / s) * s, rb = min(n, lb + s) - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (x == rb) b[x] = a[x], x--;</span><br><span class="line">    <span class="keyword">for</span> (;x &gt;= lb; x--) b[x] = max(b[x+<span class="number">1</span>], a[x]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t; i++)</span><br><span class="line">        maintain(min(n, i * s) - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    a[x] = y;</span><br><span class="line">    maintain(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x_pos = x / s, y_pos = y / s;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (x_pos == y_pos) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = x;i &lt;= y; i++)</span><br><span class="line">            ret = max(ret, a[i]);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        ret = b[x];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = x_pos + <span class="number">1</span>; i &lt; y_pos; i++)</span><br><span class="line">            ret = max(ret,b[i * s]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = y_pos * s; i &lt;= y; i++)</span><br><span class="line">            ret = max(ret, a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+<p>这个问题相当经典，有多种算法可解，因为在学分块，自然采用块状解决之。<br>
                         
+                            <a href="/2013/06/17/think-with-piece/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/06/17/think-with-piece/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 

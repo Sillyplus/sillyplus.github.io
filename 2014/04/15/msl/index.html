@@ -12,25 +12,16 @@
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
-    <meta name="description" content="给定一个序列，要求出一段连续的子序列，是的其和最大或最小。
-这是一个很经典的问题，最近做了相关的题目，在这里总结一下。
-最直接的一个想法自然是直接暴力枚举每个子段，O(N³)，用前缀和优化一下，这样做的复杂度是O(n²)。在n比较小的时候自然是这种简单易得的方法最好啦。但是人生就是这样子，总不能让你事事如意。然后呢，我们就需要一些更快的方法。
-然后我们就发现呢，可以用简单的DP求解，f[i]表示以">
+    <meta name="description" content="给定一个序列，要求出一段连续的子序列，是的其和最大或最小。这是一个很经典的问题，最近做了相关的题目，在这里总结一下。">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="最大/小连续子序列和">
 <meta property="og:url" content="http://github.com/sillyplus/2014/04/15/msl/index.html">
 <meta property="og:site_name" content="Kepp It Simple && Stupid">
-<meta property="og:description" content="给定一个序列，要求出一段连续的子序列，是的其和最大或最小。
-这是一个很经典的问题，最近做了相关的题目，在这里总结一下。
-最直接的一个想法自然是直接暴力枚举每个子段，O(N³)，用前缀和优化一下，这样做的复杂度是O(n²)。在n比较小的时候自然是这种简单易得的方法最好啦。但是人生就是这样子，总不能让你事事如意。然后呢，我们就需要一些更快的方法。
-然后我们就发现呢，可以用简单的DP求解，f[i]表示以">
-<meta property="og:updated_time" content="2015-10-19T11:00:14.000Z">
+<meta property="og:description" content="给定一个序列，要求出一段连续的子序列，是的其和最大或最小。这是一个很经典的问题，最近做了相关的题目，在这里总结一下。">
+<meta property="og:updated_time" content="2015-10-19T11:27:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最大/小连续子序列和">
-<meta name="twitter:description" content="给定一个序列，要求出一段连续的子序列，是的其和最大或最小。
-这是一个很经典的问题，最近做了相关的题目，在这里总结一下。
-最直接的一个想法自然是直接暴力枚举每个子段，O(N³)，用前缀和优化一下，这样做的复杂度是O(n²)。在n比较小的时候自然是这种简单易得的方法最好啦。但是人生就是这样子，总不能让你事事如意。然后呢，我们就需要一些更快的方法。
-然后我们就发现呢，可以用简单的DP求解，f[i]表示以">
+<meta name="twitter:description" content="给定一个序列，要求出一段连续的子序列，是的其和最大或最小。这是一个很经典的问题，最近做了相关的题目，在这里总结一下。">
 <meta name="twitter:creator" content="@sillycross">
     
         <meta rel="publisher" content="https://plus.google.com/dlxtxlb"/>
@@ -241,9 +232,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>给定一个序列，要求出一段连续的子序列，是的其和最大或最小。</p>
-<p>这是一个很经典的问题，最近做了相关的题目，在这里总结一下。</p>
-<p>最直接的一个想法自然是直接暴力枚举每个子段，O(N³)，用前缀和优化一下，这样做的复杂度是O(n²)。在n比较小的时候自然是这种简单易得的方法最好啦。但是人生就是这样子，总不能让你事事如意。然后呢，我们就需要一些更快的方法。</p>
+            <p>给定一个序列，要求出一段连续的子序列，是的其和最大或最小。<br>这是一个很经典的问题，最近做了相关的题目，在这里总结一下。<br><a id="more"></a><br>最直接的一个想法自然是直接暴力枚举每个子段，O(N³)，用前缀和优化一下，这样做的复杂度是O(n²)。在n比较小的时候自然是这种简单易得的方法最好啦。但是人生就是这样子，总不能让你事事如意。然后呢，我们就需要一些更快的方法。</p>
 <p>然后我们就发现呢，可以用简单的DP求解，f[i]表示以第i个数为结尾的最大连续子序列和，则可以得到</p>
 <p>f[i] = max{f[i-1]+a[i], a[i]}</p>
 <p>求最小值自然也可以用同样的方法，这样做的复杂度是O(n)。</p>

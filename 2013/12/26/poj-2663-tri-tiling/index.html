@@ -26,7 +26,7 @@ n-1行：000  001  010   011…………………  111
 n行：000  ……………………………………. 000
 n-1行：000  001  010   011…………………  111
 为避免状态重复，我们不允许在n-1行上平放骨牌（因为等会由n-1行转移的第n行时，我们可以在n行上平放），所以我们可以构造一个矩阵来表示这些转移（具体自己画一画就知道了），即">
-<meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
+<meta property="og:updated_time" content="2015-10-19T11:53:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Poj 2663 Tri Tiling 构造矩阵＋矩阵乘法">
 <meta name="twitter:description" content="题目大意是一个3N的棋盘，用12的骨牌覆盖的方案数
@@ -249,8 +249,8 @@ n-1行：000  001  010   011…………………  111
 <p>n行：000  ……………………………………. 000</p>
 <p>n-1行：000  001  010   011…………………  111</p>
 <p>为避免状态重复，我们不允许在n-1行上平放骨牌（因为等会由n-1行转移的第n行时，我们可以在n行上平放），所以我们可以构造一个矩阵来表示这些转移（具体自己画一画就知道了），即可以得到以下矩阵A：</p>
-<p>0000000100000010000001000000100100010000001000000100000110010010然后求A的n次幂，A^n[7][7]就是我们要的答案啦～</p>
-<p>至于矩阵方面的一些知识，可以看一下Matrix67的这篇文章：<a href="http://www.matrix67.com/blog/archives/276" target="_blank" rel="external">十个利用矩阵乘法解决的经典题目</a></p>
+<p>0000000100000010000001000000100100010000001000000100000110010010然后求A的n次幂，A^n[7][7]就是我们要的答案啦～<br><a id="more"></a><br>至于矩阵方面的一些知识，可以看一下Matrix67的这篇文章：<a href="http://www.matrix67.com/blog/archives/276" target="_blank" rel="external">十个利用矩阵乘法解决的经典题目</a></p>
+<!-- code -->
 <pre><code><span class="comment">//</span>
 <span class="comment">//  main.cpp</span>
 <span class="comment">//  p2663</span>
@@ -333,7 +333,8 @@ ma res, tmp;
     }
     <span class="keyword">return</span> <span class="number">0</span>;
 }
-</code></pre>
+</code></pre><!-- endcode -->
+
             
                 
 

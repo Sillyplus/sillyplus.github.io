@@ -209,7 +209,7 @@
 <section class="postShorten-group main-content-wrap">
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -234,32 +234,19 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
+                    <div class="postShorten-excerpt" itemprop="articleBody">
                         <p>简要题意：给定n，m，<em>n</em> (1 ≤ <em>n</em> &lt; 10ˆ18) and <em>m</em> (1 ≤ <em>m</em> ≤ 100).求满足以下要求的数x有多少个。</p>
 <ul>
 <li>x可通过重排n的各位数字获得</li>
-</ul>
-<ul>
 <li>x没有前导0</li>
-</ul>
-<ul>
 <li>x mod m == 0</li>
 </ul>
-<p>一开始我被10ˆ18给吓到了，但是其实这里也是一个突破口来着，仔细想想，如果是2ˆ18的话那该多好。</p>
-<p>如果你往这个方向开始去想了，就会发现很多东西了，然后就是个DP，然后再去一下重，当然，你也可以在DP的过程中去重。</p>
-<p>不过，感觉我的DP水平实在是不济，这个是赛后搞出来的。。。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = (<span class="number">1</span> &lt;&lt; <span class="number">18</span>) + <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> f[MN][<span class="number">103</span>];</span><br><span class="line"><span class="keyword">int</span> dig[<span class="number">20</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">char</span> c[<span class="number">20</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> fac[<span class="number">20</span>];</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> l;</span><br><span class="line"><span class="keyword">int</span> m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; c &gt;&gt; m;</span><br><span class="line">    l = <span class="built_in">strlen</span>(c);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; l; i++) &#123;</span><br><span class="line">        dig[c[i] - <span class="string">'0'</span>]++;</span><br><span class="line">    &#125;</span><br><span class="line">    fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">20</span>; i++) &#123;</span><br><span class="line">        fac[i] = fac[i - <span class="number">1</span>] * i;</span><br><span class="line">    &#125;</span><br><span class="line">    f[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> s = <span class="number">0</span>; s &lt; (<span class="number">1</span> &lt;&lt; l); s++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (f[s][j]) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; l; i++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (~s &amp; (<span class="number">1</span> &lt;&lt; i)) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (!s &amp;&amp; c[i] == <span class="string">'0'</span>) &#123;</span><br><span class="line">                            <span class="keyword">continue</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        f[s | (<span class="number">1</span> &lt;&lt; i)][(j * <span class="number">10</span> + c[i] - <span class="string">'0'</span>) % m] += f[s][j];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = f[(<span class="number">1</span> &lt;&lt; l) - <span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        ans /= fac[dig[i]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>一开始我被10ˆ18给吓到了，但是其实这里也是一个突破口来着，仔细想想，如果是2ˆ18的话那该多好。<br>如果你往这个方向开始去想了，就会发现很多东西了，然后就是个DP，然后再去一下重，当然，你也可以在DP的过程中去重。<br>不过，感觉我的DP水平实在是不济，这个是赛后搞出来的。。。<br>
                         
+                            <a href="/2014/04/15/codeforces-401d-roman-and-numbers/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2014/04/15/codeforces-401d-roman-and-numbers/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
@@ -268,7 +255,7 @@
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -293,24 +280,13 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>题目大意：Dima送给他女友N只兔子，编号1-n（n&lt;=3000）,当给兔子喂食时，它们会产生joy值，joy的取值有三种状态：<br>1.当前兔子左右两边都没有已经喂过的兔子；<br>2.当前兔子左右两边有且仅有一边有已经喂过的兔子；<br>3.当前兔子左右两边的兔子均已喂过。（编号1，n的兔子显然无法满足）<br>现给出每只兔子三种状态下的joy值，希望你帮助Dima的女友有Inna选择某种喂食顺序，使得总的joy值最大，仅输出最大的joy值。</p>
-<p>这个问题可以采用动态规划的方法来解决，为什么呢？<br>注意到，每只兔子选取的joy值仅与它左右两边的兔子的状态有关，当前兔子的状态也仅影响到它左右两边的兔子（-.-||好吧，这是显然的)<br>我们用f[i]来表示前i只兔子喂完时的最大joy值，但是i的状态跟i+1有关，我们应该如何表示呢？这里有个我觉得很巧妙的办法，就是我们先假设出i+1的状态进行求解。因此，我们增加一维，用f[i][0]表示喂食第i只兔子时第i+1只兔子还没有喂过,f[i][1]表示喂食第i只兔子时第i+1只兔子已经喂过了，这样我们就能很容易从f[i][]跟f[i-1][]得出喂食i时 i-1, i+1,处于的状态了。自然的就得到状态转移方程。</p>
-<p>状态转移：<br>f[i][0] = max(f[i-1][0]+a[i][1], f[i-1][1]+a[i][0])<br>f[i][1] = max(f[i-1][0]+a[i][2], f[i-1][1]+a[i][1])</p>
-<p>显然最后的答案就是f[n][0]<br>复杂度应该是O(N)吧</p>
-<p>总结：感觉这道题目还是很有趣的（对我这种傻×来说）。可说到底这还是一道水题，虽然比赛的时候我看到题目就想到了DP，但显然DP能力太弱了（真的是跪到不行T^T），没有想出来给怎么表示状态，然后我选择了放弃思考。。。（提醒自己：可以放弃治疗，决不能放弃思考。说不定就想出来了）果然是智商问题，外加做过的题太少。。。最后是看了liympanda大神的代码,然后理解出来上面那堆东西，能力有限，写得不好望见谅。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">3200</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[MN][<span class="number">3</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> f[MN][<span class="number">2</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> n, ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][<span class="number">2</span>]);</span><br><span class="line">    f[<span class="number">0</span>][<span class="number">0</span>] = a[<span class="number">0</span>][<span class="number">0</span>]; f[<span class="number">0</span>][<span class="number">1</span>] = a[<span class="number">0</span>][<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span>; j++) &#123;</span><br><span class="line">            f[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">2</span>; k++) &#123;</span><br><span class="line">                 <span class="keyword">if</span> (f[i - <span class="number">1</span>][k] + a[i][<span class="number">1</span> - k + j] &gt; f[i][j])</span><br><span class="line">                    f[i][j] = f[i - <span class="number">1</span>][k] + a[i][<span class="number">1</span> - k + j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ans = f[n - <span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>题目大意：Dima送给他女友N只兔子，编号1-n（n&lt;=3000）,当给兔子喂食时，它们会产生joy值，joy的取值有三种状态：<br>1.当前兔子左右两边都没有已经喂过的兔子；<br>2.当前兔子左右两边有且仅有一边有已经喂过的兔子；<br>3.当前兔子左右两边的兔子均已喂过。（编号1，n的兔子显然无法满足）<br>现给出每只兔子三种状态下的joy值，希望你帮助Dima的女友有Inna选择某种喂食顺序，使得总的joy值最大，仅输出最大的joy值。<br>
                         
+                            <a href="/2013/10/26/codeforces-358d-dima-and-hares/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/10/26/codeforces-358d-dima-and-hares/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 

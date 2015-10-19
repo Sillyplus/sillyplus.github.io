@@ -261,7 +261,7 @@
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -286,30 +286,15 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
+                    <div class="postShorten-excerpt" itemprop="articleBody">
                         <p>摘自Matrix67 C语言速成手册</p>
 <p>四种动态内存分配函数，使用它们前需要在程序最前面包含头文件stdlib.h（C++应该是cstdlib）。四种函数的格式分别为：</p>
-<p>void <em>malloc ( size );<br>void </em>calloc ( n, size );<br>void free ( pointer );<br>void *realloc( pointer, size );</p>
-<p>函数malloc 将在内存里寻找一个大小为size 的连续空间，把分配到的内存地址作为一个指向void 类型的指针（默认的无类型指针）返回。如果空间分配失败，函数返回NULL。</p>
-<p>函数calloc 将在内存里寻找一个大小为n * size 的连续空间，并且把这段内存的数据全部清0，返回数据和malloc 一样。如果空间分配失败，函数返回NULL。</p>
-<p>函数free 用于释放内存空间，释放后的空间被回收，可以用于以后的malloc 或calloc 操作。</p>
-<p>函数realloc 在保证已有数据不变的情况下改变已有指针的空间大小，返回重新分得的空间的内存地址（有可能和原来不同）。如果空间重新分配失败，函数返回NULL。</p>
-<p>Pascal 中的new 语句可以用前两个函数代替，free 语句则相当于Pascal 中的dispose。</p>
-<p>注意，malloc 和calloc 函数所返回的指针还没确定类型，理论上需要用类型转换。下面的程序合法地为p指针分配空间：</p>
-<p>int<em>p;<br>p = (int </em>) malloc( sizeof(int) );<br>*p = 520;</p>
-<p>事实上，由于赋值时C 语言自动转换类型，因此那个类型转换是没有必要的（去掉(int *)没有影响）。</p>
-<p>本人在用codeblocks时，发现去掉（int*）编译不过，maybe是版本问题吧……</p>
-
+<p>void <em>malloc ( size );<br>void </em>calloc ( n, size );<br>void free ( pointer );<br>void *realloc( pointer, size );<br>
                         
+                            <a href="/2013/06/29/dynamic-memory-allocation/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/06/29/dynamic-memory-allocation/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 

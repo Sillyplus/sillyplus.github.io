@@ -20,7 +20,7 @@ ForeverBell不仅精通破译密码,更是我军的重要代码编写者(至于�
 <meta property="og:site_name" content="Kepp It Simple && Stupid">
 <meta property="og:description" content="描述 Description
 ForeverBell不仅精通破译密码,更是我军的重要代码编写者(至于什么代码,自己想吧).战争的日子是无聊的,有一天,ForeverBell找到了treeboy,出了一个极其简单的问题:给定一段序列,找出这段数列中第k小的数.为了照顾treeboy的超弱语文水平,ForeverBell极其耐心地解释了这个问题:给定一个整数数列num[1…n],序列中的每个数字都不相">
-<meta property="og:updated_time" content="2015-10-19T11:08:59.000Z">
+<meta property="og:updated_time" content="2015-10-19T11:47:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tyvj_P1253 - 无聊的战争">
 <meta name="twitter:description" content="描述 Description
@@ -241,8 +241,7 @@ ForeverBell不仅精通破译密码,更是我军的重要代码编写者(至于�
 <p>一共m行.第i行表示第i次询问的答案.<br>样例输入 SampleInput [复制数据]</p>
 <p>7 3<br>1 5 2 6 3 7 4<br>2 5 3<br>4 4 1<br>1 7 3<br>样例输出 SampleOutput [复制数据]</p>
 <p>5<br>6<br>3</p>
-<p>这道题算是模版题吧，看了一下说是什么划分树，不懂。。。然后就百度了一下，然后发现百度上的模版直接就能用了，然后就学习了一下，然后我打算把百度百科上的说明copy下来这里方便查阅。。。</p>
-<p>划分树是一种基于线段树的数据结构。主要用于快速求出(在log(n)的时间复杂度内）序列区间的第k大值</p>
+<p>这道题算是模版题吧，看了一下说是什么划分树，不懂。。。然后就百度了一下，然后发现百度上的模版直接就能用了，然后就学习了一下，然后我打算把百度百科上的说明copy下来这里方便查阅。。。<br><a id="more"></a><br>划分树是一种基于线段树的数据结构。主要用于快速求出(在log(n)的时间复杂度内）序列区间的第k大值</p>
 <h4 id="1简介"><strong>1简介</strong></h4><p>查找整序列的第k大值往往采用快速查找法。然而此方法会破坏原序列，并且需要O(n)的时间复杂度。抑或使用二叉平衡树进行维护，此方法每次查找时间复杂度仅为O(logn)。然而此方法丢失了原序列的顺序信息，无法查找出某区间内的第k大值。</p>
 <p>划分树的基本思想就是对于某个区间，把它划分成两个子区间，左边区间的数小于右边区间的数。查找的时候通过记录进入左子树的数的个数，确定下一个查找区间，最后范围缩小到1，就找到了。</p>
 <h4 id="2建树"><strong>2建树</strong></h4><p>建树的过程比较简单，对于区间[l,r]，首先通过对原数组的排序找到这个区间的中位数a[mid]，小于a[mid]的数划入他的左子树[l,mid-1]，大于它的划入右子树[mid,r]。同时，对于第i个数，记录在[l,i]区间内有多少数被划入左子树。最后，对它的左子树区间[l,mid-1]和右子树区间[mid,r]递归的继续建树就可以了。<br>建树的时候要注意对于被分到同一子树的元素，元素间的相对位置不能改变。</p>

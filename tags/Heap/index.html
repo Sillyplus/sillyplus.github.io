@@ -209,7 +209,7 @@
 <section class="postShorten-group main-content-wrap">
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -234,20 +234,13 @@
                 </div>
                 
                 
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>传送门：<a href="https://www.tyvj.cn/Problem_Show.aspx?id=1405" target="_blank" rel="external">题目</a><br>怎么说呢，水题一道，直接用小根堆解决<br>主要是想通过这道题学习C++STL里面heap的用法<br>最后还是没有纠结出来，然后发现手写也不会了，就在网上找了一段，挺简洁的，以后就用这个做模板</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">100100</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> w[MN * <span class="number">2</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> f[MN] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> n, m, s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p;</span><br><span class="line">    <span class="keyword">for</span> (p = ++s; p &gt; <span class="number">1</span> &amp;&amp; f[p &gt;&gt; <span class="number">1</span>] &gt; x; f[p] = f[p &gt;&gt; <span class="number">1</span>], p &gt;&gt;= <span class="number">1</span>);</span><br><span class="line">    f[p] = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p, c, tp;</span><br><span class="line">    <span class="keyword">for</span> (tp=f[p=<span class="number">1</span>],c=<span class="number">2</span>;c&lt;s&amp;&amp;(f[c+=(c+<span class="number">1</span>&lt;s&amp;&amp;f[c + <span class="number">1</span>]&lt;f[c])?<span class="number">1</span>:<span class="number">0</span>]&lt;f[s]);f[p]=f[c],p=c,c&lt;&lt;=<span class="number">1</span>);</span><br><span class="line">    f[p] = f[s--];</span><br><span class="line">    <span class="keyword">return</span> tp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;w[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) push(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) push(w[i] + pop());</span><br><span class="line">    <span class="keyword">int</span> mx = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) mx = max(mx, pop());</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; mx &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>传送门：<a href="https://www.tyvj.cn/Problem_Show.aspx?id=1405">题目</a><br>怎么说呢，水题一道，直接用小根堆解决<br>主要是想通过这道题学习C++STL里面heap的用法<br>最后还是没有纠结出来，然后发现手写也不会了，就在网上找了一段，挺简洁的，以后就用这个做模板<br>
                         
+                            <a href="/2013/10/25/tyvj-p1405/" class="postShorten-excerpt_link link">
+                                Continue reading
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2013/10/25/tyvj-p1405/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
                         
                     </div>
                 
