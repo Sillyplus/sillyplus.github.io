@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="supernova">
-    <title>归档 - supernova</title>
+    <title>标签: Tyvj - supernova</title>
     <meta name="author" content="YuanJie Chen">
     
     
     <meta name="description">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="supernova">
-<meta property="og:url" content="http://github.com/sillyplus/archives/index.html">
+<meta property="og:url" content="http://github.com/sillyplus/tags/Tyvj/index.html">
 <meta property="og:site_name" content="supernova">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -166,400 +166,6 @@
     
 
 <section class="postShorten-group main-content-wrap">
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2014/12/28/usingchineseinTeX/">MacTeX中的一个可用中文的方法</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sun Dec 28 2014 00:00:00 GMT+0800">
-	
-		    Dec 28, 2014
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/技术/">技术</a>
-
-
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <pre><code><span class="comment">%!TEX TS-program = xelatex</span>
-<span class="comment">%!TEX encoding = UTF-8 Unicode</span>
-
-<span class="command">\documentclass</span><span class="special">[</span>12pt, a4paper<span class="special">]</span><span class="special">{</span>book<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>extsizes<span class="special">}</span>                           <span class="comment">%使用自定义字号</span>
-<span class="command">\usepackage</span><span class="special">{</span>fontspec<span class="special">}</span>                           <span class="comment">%字体控制包</span>
-<span class="command">\usepackage</span><span class="special">{</span>xltxtra<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>xunicode<span class="special">}</span>                           <span class="comment">%Unicode</span>
-<span class="command">\usepackage</span><span class="special">{</span>indentfirst<span class="special">}</span>                        <span class="comment">%中文行首缩进</span>
-<span class="command">\defaultfontfeatures</span><span class="special">{</span>Mapping=tex-text<span class="special">}</span>
-<span class="command">\setromanfont</span><span class="special">{</span>Yuanti SC<span class="special">}</span>                        <span class="comment">%设置中文字体</span>
-<span class="command">\XeTeXlinebreaklocale</span> “zh”
-<span class="command">\XeTeXlinebreakskip</span> =<span class="number"> 0pt</span> plus 1pt minus 0.1pt  <span class="comment">%文章内中文自动换行</span>
-
-<span class="command">\newfontfamily</span><span class="special">{</span><span class="command">\H</span><span class="special">}</span><span class="special">{</span>STSong<span class="special">}</span>
-<span class="command">\newfontfamily</span><span class="special">{</span><span class="command">\E</span><span class="special">}</span><span class="special">{</span>Zapfino<span class="special">}</span>
-</code></pre><p>TeX可以使用的字体大小默认为10pt|11pt|13pt，可以通过使用extsizes这个package来使<br>用其它大小的字体，可选的类型有8～12, 14, 17 和 20pt。</p>
-
-                        
-                            
-
-                        
-                        
-                            <p>
-                                <a href="/2014/12/28/usingchineseinTeX/#post-footer" class="postShorten-excerpt_link link">
-                                    注释和共享
-                                </a>
-                            </p>
-                        
-                    </div>
-                
-            </div>
-            
-        </article>
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2014/11/04/floyd-and-mincircle/">Floyd算法求最小环</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Nov 04 2014 00:00:00 GMT+0800">
-	
-		    Nov 04, 2014
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/题解/">题解</a>
-
-
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <h1 id="Floyd算法求最小环">Floyd算法求最小环</h1><h2 id="算法思想">算法思想</h2><p>对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由<br> <code>dis[i][j]+m[j][xk]+m[xk][i]</code>来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。<br>因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大<br>枚举一下xk就行了。</p>
-<p>我们知道，floyd算法最外层每循环一次，就是由一个中间节点k更新点i到j的最短路径。k从小到大枚举，<br>就保证了循环到k的时候，当前i到j的最短路经过的最大节点只可能是k，这刚好满足上面提到的dis[i][j]的定义。<br>所以我们就可以愉快的使用floyd来求最小环了。</p>
-<h2 id="例题">例题</h2><h3 id="vijos_P1046_观光旅游">vijos P1046 观光旅游</h3><p>很裸的描述了，直接求最小环就好了。</p>
-<h3 id="Timus_1004-_Sightseeing_Trip">Timus 1004. Sightseeing Trip</h3><p>同上，不过要注意的就是，这个题目要求最小环的路径。</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
-
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">110</span>;
-<span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e8</span>;
-
-<span class="keyword">int</span> n, m, num, ans;
-<span class="keyword">int</span> mp[MN][MN], dis[MN][MN], pre[MN][MN];
-<span class="keyword">int</span> path[MN];
-
-<span class="function"><span class="keyword">void</span> <span class="title">get_path</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>{
-    <span class="keyword">if</span> (pre[a][b]) {
-        get_path(a, pre[a][b]);
-        get_path(pre[a][b], b);
-    } <span class="keyword">else</span> {
-        path[num++] = a;
-    }
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
-    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n) &amp;&amp; (n != -<span class="number">1</span>)) {
-        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m);
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++) {
-            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= n; j++) {
-                mp[i][j] = INF;
-                dis[i][j] = INF;
-                pre[i][j] = <span class="number">0</span>;
-            }
-        }
-        <span class="keyword">int</span> a, b, l;
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) {
-            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;a, &amp;b, &amp;l);
-            mp[a][b] = min(mp[a][b], l);
-            mp[b][a] = dis[a][b] = dis[b][a] = mp[a][b];
-        }
-        ans = INF;
-        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; k++) {
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; k; i++)
-                <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; k; j++) {
-                    <span class="keyword">int</span> tmp = dis[i][j] + mp[j][k] + mp[k][i];
-                    <span class="keyword">if</span> (tmp &lt; ans) {
-                        ans = tmp;
-                        num = <span class="number">0</span>;
-                        get_path(i, j);
-                        path[num++] = j;
-                        path[num++] = k;
-                    }
-                }
-
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)
-                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) {
-                    <span class="keyword">int</span> tmp = dis[i][k] + dis[k][j];
-                    <span class="keyword">if</span> (dis[i][j] &gt; tmp) {
-                        dis[i][j] = tmp;
-                        pre[i][j] = k;
-                    }
-                }
-        }
-        <span class="keyword">if</span> (ans == INF) {
-            <span class="built_in">cout</span> &lt;&lt; <span class="string">"No solution."</span> &lt;&lt; endl;
-        } <span class="keyword">else</span> {
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; i++)
-                <span class="built_in">printf</span>(<span class="string">"%d "</span>, path[i]);
-            <span class="built_in">cout</span> &lt;&lt; endl;
-        }
-    }
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>
-                        
-                            
-
-                        
-                        
-                            <p>
-                                <a href="/2014/11/04/floyd-and-mincircle/#post-footer" class="postShorten-excerpt_link link">
-                                    注释和共享
-                                </a>
-                            </p>
-                        
-                    </div>
-                
-            </div>
-            
-        </article>
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2014/10/13/book-list-2014/">2014阅读书单</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Oct 13 2014 00:00:00 GMT+0800">
-	
-		    Oct 13, 2014
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/读书/">读书</a>
-
-
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-content" itemprop="articleBody">
-                        
-                        
-                            
-
-                        
-                        
-                            <p>
-                                <a href="/2014/10/13/book-list-2014/#post-footer" class="postShorten-excerpt_link link">
-                                    注释和共享
-                                </a>
-                            </p>
-                        
-                    </div>
-                
-            </div>
-            
-        </article>
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2014/10/12/github-jekyll-build-a-blog/">Github Page + Jekyll 博客搭建小记</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sun Oct 12 2014 00:00:00 GMT+0800">
-	
-		    Oct 12, 2014
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/技术/">技术</a>
-
-
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <h3 id="占位扯淡"><del>占位扯淡</del></h3><p><del>折腾了几天，终于可以坐下来写点总结了。不过现在是早上三点多快四点，还在想六七点的时候要去踢球，所以只是<br>占个位置而已，熟悉一下。毕竟还有很多东西不会，不过光是搭好现在这个样子就用了挺多时间的(其实也不是很多啦。。。)</del></p>
-<h3 id="博客搭建">博客搭建</h3><h4 id="(ｰ_ｰ;)">(ｰ ｰ;)</h4><p>从搭好这个blog到现在已经好几天了，然后今天发现已经没有来写这样一篇介绍的热情了。。。原因是，介绍这个方面的内容在网上很容易就能找到许多，<br>所以似乎没有必要重复说明，但是每个人的搭建过程都多少还是会遇到各种不同的问题。这里我打算来记录一下我遇到的一些问题吧。</p>
-<p>以下这些我都是Mac下做的，因为OS X是类UNIX系统，所以很多都是基本跟Linux下一样的，如果你在搭建过程中遇到什么问题没办法解决，<br>可以尝试在搜索的时候添加跟Linux相关的关键字。</p>
-<h4 id="Github_Page的设置">Github Page的设置</h4><p>首先你要有一个Github的账号<del>，这不废话嘛</del>，然后进入这个页面：<a href="https://pages.github.com" target="_blank" rel="external">Github Page</a>,<br>Github Page有两种类型，一种是个人或者组织的站点，一种是作为项目的主页，因为我们是要搭建个人博客，<br>所以选择创建一个User site就好了，然后就是按照引导就能十分轻松的成功创建了。最后把repo存到本地来，<br>另外说一下我用的是Mac的客户端来管理repo的，不是用的命令行，所以对于git的那些命令就不是很清楚了，<br>如果你想了解更多请自行Google。Github Page使用的是Jekyll模版系统，相当于是静态页面发布。</p>
-<h4 id="Jekyll的设置">Jekyll的设置</h4><p>这个也是很简单的啊，还是直接看<a href="http://jekyllrb.com/docs/quickstart/" target="_blank" rel="external">官网</a>。我貌似是用brew安装的，<br>不过没差啦。至于怎么使用还是看官网的说明好了(感觉会被喷：什么都说去看官方文档，她喵的我还看你博客干嘛。。。)</p>
-<p>在terminal中，进入到你自己本地那个Github Page的repo，然后执行下面的命令创建</p>
-<pre><code><span class="title">jekyll</span> build
-</code></pre><p>创建成功的话，会得到类似如下的目录结构</p>
-<pre><code>.
-├── _config.yml
-├── _drafts
-<span class="string">|   ├── begin-with-the-crazy-ideas.textile</span>
-<span class="string">|   └── on-simplicity-in-technology.markdown</span>
-├── _includes
-<span class="string">|   ├── footer.html</span>
-<span class="string">|   └── header.html</span>
-├── _layouts
-<span class="string">|   ├── default.html</span>
-<span class="string">|   └── post.html</span>
-├── _posts
-<span class="string">|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile</span>
-<span class="string">|   └── 2009-04-26-barcamp-boston-4-roundup.textile</span>
-├── _data
-<span class="string">|   └── members.yml</span>
-├── _site
-└── index.html
-</code></pre><p>然后启用本地服务器只需进入到上面的目录中，执行</p>
-<pre><code><span class="title">jekyll</span> serve
-</code></pre><p>就能在浏览器打开</p>
-<pre><code><span class="string">http:</span><span class="comment">//localhost:4000</span>
-</code></pre><p>jekyll更多的使用方法可以查看官方说明或者在终端中输入</p>
-<pre><code>jekyll <span class="comment">--help</span>
-</code></pre><p>在Github上你可以找到许多Jekyll博客的模版，而且其中绝大部分都是你能直接使用的，我也是使用的别人的模版进行简单的修改，<br>如果对这个模版有兴趣，可以进入的我的<a href="https://github.com/Sillyplus">Github主页</a>查看。</p>
-<p>现在你就可以愉快的写作啦～＼(^o^)／</p>
-<h3 id="wordpress博客迁移">wordpress博客迁移</h3><p>接下来的内容多半是我的吐槽，如果你赶时间去写博客的话可以忽略，如果你实在闲得发慌，不介意的话可以看一看，<br>说不定能发现一点有用的内容。</p>
-<p>本来打算顺便说一下域名绑定的，但我在这方面花费的时间比较长主要是自己的问题，绑定之后居然要一整天才能生效，<br>不清楚这个的我也被纠结了很久啦。既然是这样的话，我们就直接进入主题啦～</p>
-<p>我之前使用的是wordpress，虽然我已经尽可能的选择一些简单的工具来使用，但是我发现，一堆要维护的东西搞得自己都没办法只是专注于内容了。<br>这也是我为什么决定转到这边来啦，现在直接使用Atom编辑markdown文档，用这种方式来写博文体验真的很好(￣▽￣)。<br>虽然原本的博客内容不多，但还是想要把它们搬到这边来，所以在wordpress里导出了所有博文。导出的是xml的文件，<br>然后使用<a href="https://github.com/thomasf/exitwp">exitwp</a>来从xml文件中提取出内容，并转换成markdown的文档。<br>使用方法看作者的说明就好了，另外，我在运行exitwp.py的时候提示出错</p>
-<pre><code>Traceback (most recent <span class="operator"><span class="keyword">call</span> <span class="keyword">last</span>):
-  <span class="keyword">File</span> <span class="string">"exitwp.py"</span>, line <span class="number">11</span>, <span class="keyword">in</span> &lt;<span class="keyword">module</span>&gt;
-    <span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup
-ImportError: <span class="keyword">No</span> <span class="keyword">module</span> named bs4</span>
-</code></pre><p>然后我在pip list中发现我装的直接是BeautifulSoup，并没有bs4，所以我exitwp.py中的</p>
-<pre><code><span class="label">from</span> <span class="keyword">bs4 </span><span class="preprocessor">import</span> <span class="keyword">BeautifulSoup</span>
-</code></pre><p>直接改为</p>
-<pre><code><span class="preprocessor"><span class="keyword">import</span> BeautifulSoup</span>
-</code></pre><p>然后就能成功运行了，这样就导出成功了。如果你对python比较熟悉，你也可以自己修改exitwp.py，使它特定导出你想要的内容。<br>如果你想要从其它博客系统迁移博客过来的话，jekyll的官网上貌似也有相关的教程说明。</p>
-
-                        
-                            
-
-                        
-                        
-                            <p>
-                                <a href="/2014/10/12/github-jekyll-build-a-blog/#post-footer" class="postShorten-excerpt_link link">
-                                    注释和共享
-                                </a>
-                            </p>
-                        
-                    </div>
-                
-            </div>
-            
-        </article>
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2014/09/16/use-vim-on-mac/">Mac配置Vim折腾小纪录</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Sep 16 2014 17:40:16 GMT+0800">
-	
-		    Sep 16, 2014
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/技术/">技术</a>
-
-
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>环境：Mac OS X 10.10， VIM - Vi IMproved 7.3</p>
-<p>虽然说最近其实一直都是在使用Atom，可是不知道为什么每过一段时间，总会有各种原因激起我使用vim的热情。。。前几天看到了rrr好像在用着一个看起来还挺不错的vim，跟他要配置，后来他给了我一个网址：<a href="https://github.com/ma6174/vim">https://github.com/ma6174/vim</a>，在这里感谢一下作者的无私奉献。</p>
-<p>其实这个配置的作者基本上已经帮我们完成了所有的任务，我们要做的就是打一条命令，然后让它自己安装就行了，事实上我也是这么做的。但是在经过一小段漫长的等待时间之后，我看到的却是这个</p>
-<pre><code>Error detected while processing /Users/silly/.vim/plugin/client.vim:
-
-line  314:
-
-Traceback (most recent <span class="operator"><span class="keyword">call</span> <span class="keyword">last</span>):
-
-  <span class="keyword">File</span> <span class="string">"&lt;string&gt;"</span>, line <span class="number">2</span>, <span class="keyword">in</span> &lt;<span class="keyword">module</span>&gt;
-
-  <span class="keyword">File</span> <span class="string">"/Library/Python/2.7/site-packages/Twisted-14.0.0-py2.7-macosx-10.10-intel.egg/twisted/__init__.py"</span>, line <span class="number">53</span>, <span class="keyword">in</span> &lt;<span class="keyword">module</span>&gt;
-
-    _checkRequirements()
-
-  <span class="keyword">File</span> <span class="string">"/Library/Python/2.7/site-packages/Twisted-14.0.0-py2.7-macosx-10.10-intel.egg/twisted/__init__.py"</span>, line <span class="number">37</span>, <span class="keyword">in</span> _checkRequirements
-
-    <span class="keyword">raise</span> ImportError(<span class="keyword">required</span> + <span class="string">": no module named zope.interface."</span>)
-
-ImportError: Twisted requires zope.<span class="keyword">interface</span> <span class="number">3.6</span><span class="number">.0</span> <span class="keyword">or</span> later: <span class="keyword">no</span> <span class="keyword">module</span> named zope.<span class="keyword">interface</span>.
-
-Press ENTER <span class="keyword">or</span> <span class="keyword">type</span> command <span class="keyword">to</span> continue</span>
-</code></pre><p>突然觉得看不懂，好烦不想看，就直接按了回车，进入了vim，感觉虽然报错了，可是用起来并没有什么问题啊，<br>至少我写写那几行小代码是这样子的，可是仔细一想我又觉得虽然没什么影响的样子，可是每次打开vim的时候都<br>有这个报错也是挺令人觉得烦的，你们说对吧，然后我也懒得看是什么原因了，直接暴力重装了几次，可是都还是<br>不行<img src="/picture/wpml_whistle3.gif" alt="">，<br>只好滚回来自己看报错的内容咯，看了一下好像没看懂是什么原因，但是发现最后有这么一句</p>
-<pre><code>ImportError: Twisted requires zope.<span class="keyword">interface</span> <span class="number">3.6.</span><span class="number">0</span> or later: no <span class="keyword">module</span> <span class="keyword">named</span> zope.<span class="keyword">interface</span>.
-</code></pre><p>想可能是python的某个什么东西的某个东西(zope.intergface)有什么问题吧，问了一下度娘。然后要在mac下安装zope.interface，可以先到这里下载 <a href="https://pypi.python.org/pypi/zope.interface" target="_blank" rel="external">https://pypi.python.org/pypi/zope.interface</a>。下载gz压缩包那个版本，解压后运行一下里面的setup.py，在terminal打开到解压后的文件夹，运行</p>
-<pre><code>sudo python setup<span class="class">.py</span> install
-</code></pre><p>然后很快就能安装好了。然后问题就因此解决了，然后我就能快乐的跟vim玩耍一阵子了～<img src="/picture/wpml_good.gif" alt=""></p>
-<p>最后附上一张我自己安装后的截图吧：</p>
-<p><img src="/picture/Screen-Shot-2014-09-17-at-1.30.14-AM.png" alt=""></p>
-
-                        
-                            
-
-                        
-                        
-                            <p>
-                                <a href="/2014/09/16/use-vim-on-mac/#post-footer" class="postShorten-excerpt_link link">
-                                    注释和共享
-                                </a>
-                            </p>
-                        
-                    </div>
-                
-            </div>
-            
-        </article>
     
         
         <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
@@ -1316,23 +922,532 @@ pt a[MN*MN];
             
         </article>
     
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2014/07/04/tyvj_p1297/">Tyvj_P1297 - 小气的小B</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Fri Jul 04 2014 06:34:13 GMT+0800">
+	
+		    Jul 04, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>经典问题，RMQ，不过为了增加一下文章长度，我打算贴一下题目</p>
+<p>描述 Description</p>
+<p>其实你们都不知道，小B是很小气的。一天小B带着他的弟弟小B’一起去摘果子，走着走着，他们忽然发现了一颗长满了果子的树。由于弟弟长得太矮了，弟弟只有让哥哥小B帮他摘一些果子下来。哥哥小B说:”弟弟啊，不是我不想给你摘多，我只是一次拿不了那么多，昨天晚上又没睡好，只能上一次树。所以哥哥只能给你摘一个哈。”没办法，弟弟只有答应了这个要求。<br>于是几下小B就上了树，树上的果子还真多，有N个呢！！但是小B很快发现这些果子大小不一。抠门的小B就想给自己拿个最大的，给弟弟拿个最小的果子。但是由于树上有些果子太高，小B不一定可以够着，所以他给你选了P个可以够着的果子区间，让你在这些区间里面找一个最大的果子和一个最小的果子。</p>
+<p>输入格式 InputFormat</p>
+<p>共p+2行，<br>第一行为n和p，<br>第二行为区间[1,n]的果子大小（用正整数表示）<br>后面p行形如a b，意为每次询问的区间的左界和右界</p>
+<p>输出格式 OutputFormat</p>
+<p>共p行，第i行为第i次询问时得到的最大值以及最小值（一个询问用空格空开max和min）</p>
+<p>【注意】在输入数据中果子的大小是无序的。</p>
+<p>样例输入 SampleInput [复制数据]</p>
+<p>5 2<br>1 3 2 4 5<br>1 4<br>2 5</p>
+<p>样例输出 SampleOutput [复制数据]</p>
+<p>4 1<br>5 2</p>
+<p>数据范围和注释 Hint</p>
+<p>【数据范围】<br>保证果子大小不超过maxlongint<br>40%的数据：  1&lt;=n,p&lt;=1,000<br>100%的数据：1&lt;=n&lt;=50,000<br>1&lt;=p&lt;=20,000</p>
+<p>有很多种解法啦，线段树也可以，之前我还写过一篇<a href="http://sillyplus.com/2013/06/98/" target="_blank" rel="external">块状数组</a>的也能解决这个问题，然后就是今天复习了一下st算法，所以就用st写了，关于st算法的话可以看看Archive里面的模版。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">50010</span>;
+
+<span class="keyword">int</span> st[MN][<span class="number">32</span>][<span class="number">2</span>];
+<span class="keyword">int</span> a[MN], pl[MN];
+<span class="keyword">int</span> n, m;
+
+<span class="function"><span class="keyword">void</span> <span class="title">stp</span><span class="params">(<span class="keyword">int</span> n)</span> </span>{
+    pl[<span class="number">1</span>] = <span class="number">0</span>;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) {
+        pl[i] = pl[i-<span class="number">1</span>];
+        <span class="keyword">if</span> ((<span class="number">1</span> &lt;&lt; (pl[i]+<span class="number">1</span>)) == i) {
+            pl[i]++;
+        }
+    }
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = n-<span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) {
+        st[i][<span class="number">0</span>][<span class="number">0</span>] = st[i][<span class="number">0</span>][<span class="number">1</span>] = a[i];
+        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; (i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span>) &lt; n; j++) {
+            st[i][j][<span class="number">0</span>] = max(st[i][j-<span class="number">1</span>][<span class="number">0</span>], st[i + (<span class="number">1</span> &lt;&lt; (j-<span class="number">1</span>))][j-<span class="number">1</span>][<span class="number">0</span>]);
+            st[i][j][<span class="number">1</span>] = min(st[i][j-<span class="number">1</span>][<span class="number">1</span>], st[i + (<span class="number">1</span> &lt;&lt; (j-<span class="number">1</span>))][j-<span class="number">1</span>][<span class="number">1</span>]);
+        }
+    }
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) {
+        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);
+    }
+    stp(n);
+    <span class="keyword">int</span> l, r, len, k, mx, mi;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) {
+        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;l, &amp;r);
+        l--;
+        r--;
+        len = r-l+<span class="number">1</span>;
+        k = pl[len];
+        mx = max(st[l][k][<span class="number">0</span>], st[r-(<span class="number">1</span>&lt;&lt;k)+<span class="number">1</span>][k][<span class="number">0</span>]);
+        mi = min(st[l][k][<span class="number">1</span>], st[r-(<span class="number">1</span>&lt;&lt;k)+<span class="number">1</span>][k][<span class="number">1</span>]);
+        <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>, mx, mi);
+    }
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2014/07/04/tyvj_p1297/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2014/07/03/tyvj_p1323/">Tyvj_P1323 - 识别水果</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Jul 03 2014 16:14:02 GMT+0800">
+	
+		    Jul 03, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>本来说好的每日一题解，因为下午睡了一觉醒来发现已经快十点了，然后才开始做题。。然后发现现在已经过了十二点了。。。</p>
+<p>题目可以在这里看：<a href="http://www.tyvj.cn/Problem_Show.aspx?id=1323" target="_blank" rel="external">传送门</a></p>
+<p>然后这可以说是一道陈年老题了，我从高中的时候就打算要写，然后一直拖到现在-_-#，根据题意很容易想到可以用并查集来解决，我们可以添加一个节点0，然后有毒的水果都合并到0，然后最后统计一下有多少水果是有毒的就行了。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">10010</span>;
+
+<span class="keyword">char</span> a[<span class="number">30</span>], b[<span class="number">30</span>];
+<span class="keyword">int</span> n, m, k, p;
+<span class="keyword">int</span> f[MN];
+
+<span class="function"><span class="built_in">string</span> <span class="title">cv</span><span class="params">(<span class="built_in">string</span> s)</span> </span>{
+    <span class="built_in">string</span> ret = <span class="string">""</span>;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) {
+        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">26</span>; j++)
+            <span class="keyword">if</span> (s[i] == a[j]) {
+                ret += b[j];
+                <span class="keyword">break</span>;
+            }
+    }
+    <span class="keyword">return</span> ret;
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> v)</span> </span>{
+    <span class="keyword">return</span> f[v] = f[v] == v ? v : find(f[v]);
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="built_in">cin</span> &gt;&gt; a;
+    <span class="built_in">cin</span> &gt;&gt; b;
+    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++)
+        f[i] = i;
+    <span class="built_in">string</span> s;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) {
+        <span class="built_in">cin</span> &gt;&gt; k &gt;&gt; s;
+        s = cv(s);
+        <span class="keyword">int</span> t = s.find(<span class="string">"poison"</span>);
+        <span class="keyword">if</span> (t &lt; s.length())
+            f[k] = <span class="number">0</span>;
+    }
+    <span class="built_in">cin</span> &gt;&gt; p;
+    <span class="keyword">int</span> x, y;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; p; i++) {
+        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;
+        <span class="keyword">int</span> fx = find(x), fy = find(y);
+        <span class="keyword">if</span> (fx == <span class="number">0</span> || fy == <span class="number">0</span>) {
+            f[fx] = <span class="number">0</span>;
+            f[fy] = <span class="number">0</span>;
+        } <span class="keyword">else</span> {
+            f[fx] = fy;
+        }
+    }
+    <span class="keyword">int</span> ans = <span class="number">0</span>;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) {
+        f[i] = find(i);
+        <span class="keyword">if</span> (f[i] == <span class="number">0</span>) ans++;
+    }
+    <span class="built_in">cout</span> &lt;&lt; n-ans &lt;&lt; endl;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><p>ps：我这哪还是在写题解。。。这样下去真的可以吗T^T</p>
+
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2014/07/03/tyvj_p1323/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2013/10/25/tyvj-p1405/">Tyvj P1405 节水问题加强版</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Fri Oct 25 2013 13:06:02 GMT+0800">
+	
+		    Oct 25, 2013
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>传送门：<a href="https://www.tyvj.cn/Problem_Show.aspx?id=1405" target="_blank" rel="external">题目</a><br>怎么说呢，水题一道，直接用小根堆解决<br>主要是想通过这道题学习C++STL里面heap的用法<br>最后还是没有纠结出来，然后发现手写也不会了，就在网上找了一段，挺简洁的，以后就用这个做模板</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">100100</span>;
+
+<span class="keyword">int</span> w[MN * <span class="number">2</span>] = {<span class="number">0</span>};
+<span class="keyword">int</span> f[MN] = {<span class="number">0</span>};
+<span class="keyword">int</span> n, m, s;
+
+<span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{
+    <span class="keyword">int</span> p;
+    <span class="keyword">for</span> (p = ++s; p &gt; <span class="number">1</span> &amp;&amp; f[p &gt;&gt; <span class="number">1</span>] &gt; x; f[p] = f[p &gt;&gt; <span class="number">1</span>], p &gt;&gt;= <span class="number">1</span>);
+    f[p] = x;
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>{
+    <span class="keyword">int</span> p, c, tp;
+    <span class="keyword">for</span> (tp=f[p=<span class="number">1</span>],c=<span class="number">2</span>;c&lt;s&amp;&amp;(f[c+=(c+<span class="number">1</span>&lt;s&amp;&amp;f[c + <span class="number">1</span>]&lt;f[c])?<span class="number">1</span>:<span class="number">0</span>]&lt;f[s]);f[p]=f[c],p=c,c&lt;&lt;=<span class="number">1</span>);
+    f[p] = f[s--];
+    <span class="keyword">return</span> tp;
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) {
+        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;w[i]);
+    }
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) push(<span class="number">0</span>);
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) push(w[i] + pop());
+    <span class="keyword">int</span> mx = <span class="number">0</span>;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) mx = max(mx, pop());
+    <span class="built_in">cout</span> &lt;&lt; mx &lt;&lt; endl;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2013/10/25/tyvj-p1405/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2013/06/12/tyvj-p1565-warcraft-III/">Tyvj P1565 Warcraft III 守望者的烦恼</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Jun 12 2013 08:31:24 GMT+0800">
+	
+		    Jun 12, 2013
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>这道题显然有，矩阵乘法可解（由数据范围可得）</p>
+<p>显然有题目要求: f[n]=∑f[i] (n-k&lt;i&lt;n-1),矩阵乘法相关知识自行google，推荐阅读<a href="http://www.matrix67.com/" target="_blank" rel="external">Matrix67</a>写的一篇文章。</p>
+<p>所以构造有数组A(k*k):</p>
+<p>000…1</p>
+<p>100…1</p>
+<p>010…1</p>
+<p>001…1</p>
+<p>因为看k&lt;10,我们可以先计算出f[1]~f[k],然后用矩阵乘法加速，计算出A^(n-k),最后再f*A^(n-k)乘一下就得出了。</p>
+<p>我用的是递归式的矩阵二分取幂，后来才知道这样写会显得你很弱智……我也不知道为什么，然后就顺便再复习了一下，快速幂的非递归写法。</p>
+<p>果断C++没学好，还是用pascal写的，这是这道题的代码：</p>
+<pre><code><span class="keyword">type</span> arr=<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">12</span>,-<span class="number">1</span>..<span class="number">12</span>] <span class="keyword">of</span> int64;
+<span class="keyword">const</span> md=<span class="number">7777777</span>;
+<span class="keyword">var</span>
+  k,i,j:longint;
+  n,ans:int64;
+  t,q:arr;
+  f:<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">12</span>] <span class="keyword">of</span> int64;
+
+<span class="function"><span class="keyword">function</span> <span class="title">mul</span><span class="params">(a,b:arr)</span>:</span>arr;
+<span class="keyword">var</span>
+  c:arr;
+  i,j,p:longint;
+<span class="keyword">begin</span>
+  fillchar(c,sizeof(c),<span class="number">0</span>);
+  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span>
+    <span class="keyword">for</span> j:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span>
+      <span class="keyword">for</span> p:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span>
+        c[i,j]:=(c[i,j]+(a[i,p]*b[p,j] <span class="keyword">mod</span> md)) <span class="keyword">mod</span> md;
+  <span class="keyword">exit</span>(c);
+<span class="keyword">end</span>;
+
+<span class="function"><span class="keyword">function</span> <span class="title">dv</span><span class="params">(x:int64)</span>:</span>arr;
+<span class="keyword">var</span> tp:arr;
+<span class="keyword">begin</span>
+  <span class="keyword">if</span> x=<span class="number">1</span> <span class="keyword">then</span> <span class="keyword">exit</span>(t);
+  tp:=dv(x <span class="keyword">div</span> <span class="number">2</span>);
+  tp:=mul(tp,tp);
+  <span class="keyword">if</span> (x <span class="keyword">mod</span> <span class="number">2</span>)&lt;&gt;<span class="number">0</span> <span class="keyword">then</span> tp:=mul(tp,t);
+  <span class="keyword">exit</span>(tp);
+<span class="keyword">end</span>;
+
+<span class="keyword">begin</span>
+  readln(k); readln(n);
+  fillchar(t,sizeof(t),<span class="number">0</span>);
+  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k-<span class="number">1</span> <span class="keyword">do</span> t[i+<span class="number">1</span>,i]:=<span class="number">1</span>;
+  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span> t[i,k]:=<span class="number">1</span>;
+  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span> f[i]:=<span class="number">0</span>; f[<span class="number">0</span>]:=<span class="number">1</span>;
+  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span>
+    <span class="keyword">for</span> j:=<span class="number">0</span> <span class="keyword">to</span> i-<span class="number">1</span> <span class="keyword">do</span>
+      f[i]:=f[i]+f[j];
+  <span class="keyword">if</span> n&lt;=k <span class="keyword">then</span> <span class="keyword">begin</span> writeln(f[n]); halt; <span class="keyword">end</span>;
+  q:=dv(n-k); ans:=<span class="number">0</span>;
+  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span>
+    ans:=(ans+(f[i]*q[i,k] <span class="keyword">mod</span> md)) <span class="keyword">mod</span> md;
+  writeln(ans);
+<span class="keyword">end</span>.
+</code></pre>
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2013/06/12/tyvj-p1565-warcraft-III/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2012/08/25/tyvj-p1474/">TYVJ_打鼹鼠_二维树状数组</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sat Aug 25 2012 08:39:48 GMT+0800">
+	
+		    Aug 25, 2012
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>☆打鼹鼠<br>SuperBrother在机房里闲着没事干(再对比一下他的NOIP,真是讽刺啊……),于是便无聊地开始玩“打鼹鼠”……<br>描述 Description<br>在这个“打鼹鼠”的游戏中，鼹鼠会不时地从洞中钻出来，不过不会从洞口钻进去（鼹鼠真胆大……）。洞口都在一个大小为n(n&lt;=1024)的正 方形中。这个正方形在一个平面直角坐标系中，左下角为(0,0)，右上角为(n-1,n-1)。洞口所在的位置都是整点，就是横纵坐标都为整数的点。而 SuperBrother也不时地会想知道某一个范围的鼹鼠总数。这就是你的任务。<br>输入格式 Input Format<br>每个输入文件有多行。<br>第一行，一个数n，表示鼹鼠的范围。<br>以后每一行开头都有一个数m，表示不同的操作：<br>m=1，那么后面跟着3个数x,y,k(0&lt;=x,y&lt;n)，表示在点(x,y)处新出现了k只鼹鼠；<br>m=2，那么后面跟着4个数x1,y1,x2,y2(0&lt;=x1&lt;=x2&lt;n,0&lt;=y1&lt;=y2&lt;n)，表示询问矩形(x1,y1)-(x2,y2)内的鼹鼠数量；<br>m=3，表示老师来了，不能玩了。保证这个数会在输入的最后一行。<br>询问数不会超过10000，鼹鼠数不会超过maxlongint。<br>对于每个m=2，输出一行数，这行数只有一个数，即所询问的区域内鼹鼠的个数。</p>
+<pre><code><span class="keyword">var</span>
+  n,m,x1,y1,x2,y2,x,y,k,s:longint;
+  t:<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">1024</span>,-<span class="number">1</span>..<span class="number">1024</span>] <span class="keyword">of</span> longint;
+<span class="function"><span class="keyword">function</span> <span class="title">lowbit</span><span class="params">(i:longint)</span>:</span>longint;
+<span class="keyword">begin</span>
+  lowbit:=i <span class="keyword">and</span> (i <span class="keyword">xor</span> (i-<span class="number">1</span>));
+<span class="keyword">end</span>;
+
+<span class="function"><span class="keyword">procedure</span> <span class="title">change</span><span class="params">(i,jj,k:longint)</span>;</span>
+<span class="keyword">var</span> j:longint;
+<span class="keyword">begin</span>
+  <span class="keyword">while</span> i&lt;=n <span class="keyword">do</span>
+   <span class="keyword">begin</span>
+     j:=jj;   <span class="comment">//就是这里啊  少了这一句</span>
+     <span class="keyword">while</span> j&lt;=n <span class="keyword">do</span>
+      <span class="keyword">begin</span>
+        t[i,j]:=t[i,j]+k;
+        j:=j+lowbit(j);
+      <span class="keyword">end</span>;
+     i:=i+lowbit(i)
+   <span class="keyword">end</span>;
+<span class="keyword">end</span>;
+
+<span class="function"><span class="keyword">function</span> <span class="title">find</span><span class="params">(i,jj:longint)</span>:</span>longint;
+<span class="keyword">var</span> sum,j:longint;
+<span class="keyword">begin</span>
+  sum:=<span class="number">0</span>;
+  <span class="keyword">while</span> i&gt;<span class="number">0</span> <span class="keyword">do</span>
+   <span class="keyword">begin</span>
+     j:=jj;
+     <span class="keyword">while</span> j&gt;<span class="number">0</span> <span class="keyword">do</span>
+      <span class="keyword">begin</span>
+        sum:=sum+t[i,j];
+        j:=j-lowbit(j);
+      <span class="keyword">end</span>;
+     i:=i-lowbit(i)
+   <span class="keyword">end</span>;
+  <span class="keyword">exit</span>(sum);
+<span class="keyword">end</span>;
+
+<span class="keyword">begin</span>
+  readln(n);
+  fillchar(t,sizeof(t),<span class="number">0</span>);
+  <span class="keyword">while</span> <span class="keyword">true</span> <span class="keyword">do</span>
+   <span class="keyword">begin</span>
+     <span class="keyword">read</span>(m);
+     <span class="keyword">if</span> m=<span class="number">1</span> <span class="keyword">then</span>
+      <span class="keyword">begin</span>
+        readln(x,y,k);
+        change(x+<span class="number">1</span>,y+<span class="number">1</span>,k);
+      <span class="keyword">end</span>
+     <span class="keyword">else</span> <span class="keyword">if</span> m=<span class="number">2</span> <span class="keyword">then</span>
+      <span class="keyword">begin</span>
+        readln(x1,y1,x2,y2);
+        s:=find(x2+<span class="number">1</span>,y2+<span class="number">1</span>)+find(x1,y1)-find(x1,y2+<span class="number">1</span>)-find(x2+<span class="number">1</span>,y1);
+        writeln(s);
+      <span class="keyword">end</span>
+     <span class="keyword">else</span> halt;
+   <span class="keyword">end</span>;
+<span class="keyword">end</span>.
+</code></pre>
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2012/08/25/tyvj-p1474/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
     <div class="pagination-bar">
     <ul class="pagination">
         
         
         <li class="pagination-next">
-            <a class="btn btn--default btn--small" href="/archives/page/2/">
+            <a class="btn btn--default btn--small" href="/tags/Tyvj/page/2/">
                     <span>下一页</span>
                 <i class="fa fa-angle-right text-base icon-ml"></i>
             </a>
         </li>
         
-        <li class="pagination-number">第 1 页 共 5 页</li>
+        <li class="pagination-number">第 1 页 共 2 页</li>
     </ul>
 </div>
 
 </section>
-
 
 
                 <footer id="footer" class="main-content-wrap">

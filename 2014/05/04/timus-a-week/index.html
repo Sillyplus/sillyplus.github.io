@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="supernova">
+    <title>Timus_一周做题记录 - supernova</title>
+    <meta name="author" content="YuanJie Chen">
+    
+    
+    <meta name="description" content="虽然很多是水题，不过还是记录一下。。。。然后还有好多得做的题目都还没补TAT
+1209. 1, 10, 100, 1000…
+一个这样的串110100100010000……问第n位是什么。
+很明显第n*(n+1)/2位才会是1，其中n为正整数，所以判断一下就行了。
+1224. Spiral
+给定一个N＊M的矩阵，开始面向左侧，由右上角开始顺时针方向走，每个格子走过一次，为走完整个矩阵需要改变方向多">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Timus_一周做题记录">
+<meta property="og:url" content="http://github.com/sillyplus/2014/05/04/timus-a-week/index.html">
+<meta property="og:site_name" content="supernova">
+<meta property="og:description" content="虽然很多是水题，不过还是记录一下。。。。然后还有好多得做的题目都还没补TAT
+1209. 1, 10, 100, 1000…
+一个这样的串110100100010000……问第n位是什么。
+很明显第n*(n+1)/2位才会是1，其中n为正整数，所以判断一下就行了。
+1224. Spiral
+给定一个N＊M的矩阵，开始面向左侧，由右上角开始顺时针方向走，每个格子走过一次，为走完整个矩阵需要改变方向多">
+<meta property="og:image" content="http://acm.timus.ru/image/get.aspx/fd5fa0a0-4cea-47b0-82a0-5ffb61f70b4e">
+<meta property="og:image" content="http://acm.timus.ru/image/get.aspx/a879b546-2258-4a58-9cf6-d6916cc441ef">
+<meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Timus_一周做题记录">
+<meta name="twitter:description" content="虽然很多是水题，不过还是记录一下。。。。然后还有好多得做的题目都还没补TAT
+1209. 1, 10, 100, 1000…
+一个这样的串110100100010000……问第n位是什么。
+很明显第n*(n+1)/2位才会是1，其中n为正整数，所以判断一下就行了。
+1224. Spiral
+给定一个N＊M的矩阵，开始面向左侧，由右上角开始顺时针方向走，每个格子走过一次，为走完整个矩阵需要改变方向多">
+    
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">supernova</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">标签</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">搜索</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">关于</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Timus_一周做题记录
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sun May 04 2014 11:53:51 GMT+0800">
+	
+		    May 04, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>虽然很多是水题，不过还是记录一下。。。。然后还有好多得做的题目都还没补TAT</p>
+<p><strong>1209. 1, 10, 100, 1000…</strong></p>
+<p>一个这样的串110100100010000……问第n位是什么。</p>
+<p>很明显第n*(n+1)/2位才会是1，其中n为正整数，所以判断一下就行了。</p>
+<p><strong>1224. Spiral</strong></p>
+<p>给定一个N＊M的矩阵，开始面向左侧，由右上角开始顺时针方向走，每个格子走过一次，为走完整个矩阵需要改变方向多少次。</p>
+<p>答案是这个：min(2<em>(n-1), 2</em>(m-1)+1)。至于为什么，仔细想想的话应该就明白了，不过这题虽然简单，我好像还是被坑了好几次。比如说什么 <em>N</em>, <em>M</em> (1 ≤ <em>N</em>, <em>M</em> ≤ 2^31 − 1)，但是乘一下就爆int，得用long long之类的。。。</p>
+<p><strong>1225. Flags</strong></p>
+<p>用红、白、蓝三种颜色去染一排连续的格子，染色规则是</p>
+<ul>
+<li>相邻两个格子颜色不能一样</li>
+</ul>
+<ul>
+<li>蓝色必须夹在红色和白色的格子中间</li>
+</ul>
+<p>求给定格子数的染色方案</p>
+<p>显然，最后一个格子不能染蓝色，就是说，最后一个格子只能是红or白。那个我们就可以得到如下关系</p>
+<p>F[N] = F[N-1] + F[N-2]</p>
+<p>第N－1个，最后是红或者白，那么第N个只能选白或者红。第N－1个是蓝色，即N－2个为红或者白，就是F[N－2]，那么第N个只能是白或者红。然后就是F[1] = F[2] = 2。</p>
+<p><strong>1226. esreveR redrO</strong></p>
+<p>给定一个文本，把每一段连续的字母翻转，其它字符保持不变。</p>
+<p>直接做咯，每次看到涉及字符串的题总是会有恐惧感。贴一下代码，安慰一下自己的心灵，有时候字符串的题没有想像中那么多坑。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">char</span> a[<span class="number">300</span>];
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="keyword">char</span> c;
+    <span class="keyword">int</span> t = -<span class="number">1</span>;
+    <span class="keyword">while</span> (<span class="number">1</span>) {
+        c = getchar();
+        <span class="keyword">if</span> (c == EOF) <span class="keyword">break</span>;
+        <span class="keyword">if</span> ((c &gt;= <span class="string">'a'</span> &amp;&amp; c &lt;= <span class="string">'z'</span>) || (c &gt;= <span class="string">'A'</span> &amp;&amp; c &lt;= <span class="string">'Z'</span>)) {
+            a[++t] = c;
+        } <span class="keyword">else</span> {
+            <span class="keyword">for</span> (<span class="keyword">int</span> i = t; i &gt;= <span class="number">0</span>; i--)
+                <span class="built_in">printf</span>(<span class="string">"%c"</span>, a[i]);
+            <span class="built_in">printf</span>(<span class="string">"%c"</span>, c);
+            t = -<span class="number">1</span>;
+        }
+    }
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = t; i &gt;= <span class="number">0</span>; i--)
+        <span class="built_in">printf</span>(<span class="string">"%c"</span>, a[i]);
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><p><strong> 1227. Rally Championship</strong></p>
+<p><a href="http://sillyplus.com/2014/05/389/" target="_blank" rel="external">详情请戳</a></p>
+<p><strong>1228. Array</strong></p>
+<p>这个读懂题就会做了。。。。</p>
+<p><strong>1229. Strong Brickwork</strong></p>
+<p><a href="http://sillyplus.com/2014/05/383/" target="_blank" rel="external">详情请戳</a></p>
+<p><strong> 1258. Pool</strong></p>
+<p>题目可以理解为，给一个矩形，上下左右四条边分别用F、B、L、R表示，给定起始点还有终点的坐标，求一束光由起点到终点的移动距离，给出反射的边的序列。</p>
+<p>我们可以把四条边都想像成镜子，然后就是我们学物理时的那点小花招，把求两点间的折线的长度转化成了求两点间的直线距离。我想了好久才理清楚怎么变换坐标。。。。，感觉这还是一道很有趣的题目，一开始以为是变态的计算机何，所以不敢做TAT</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="keyword">double</span> w, d, x1, y1, x2, y2, x, y;
+    <span class="built_in">string</span> s;
+    <span class="built_in">cin</span> &gt;&gt; w &gt;&gt; d;
+    <span class="built_in">cin</span> &gt;&gt; x1 &gt;&gt; y1;
+    <span class="built_in">cin</span> &gt;&gt; x2 &gt;&gt; y2;
+    <span class="built_in">cin</span> &gt;&gt; s;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) {
+        <span class="keyword">switch</span> (s[i]) {
+            <span class="keyword">case</span> <span class="string">'F'</span>:
+                y1 = -y1;
+                <span class="keyword">break</span>;
+            <span class="keyword">case</span> <span class="string">'B'</span>:
+                y1 = <span class="number">2</span> * d - y1;
+                <span class="keyword">break</span>;
+            <span class="keyword">case</span> <span class="string">'L'</span>:
+                x1 = -x1;
+                <span class="keyword">break</span>;
+            <span class="keyword">case</span> <span class="string">'R'</span>:
+                x1 = <span class="number">2</span> * w - x1;
+                <span class="keyword">break</span>;
+        }
+        <span class="built_in">cout</span> &lt;&lt; x1 &lt;&lt; <span class="string">' '</span> &lt;&lt; y1 &lt;&lt; endl;
+    }
+    <span class="keyword">double</span> ans;
+    ans = <span class="built_in">sqrt</span>((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+    <span class="built_in">printf</span>(<span class="string">"%.4f\n"</span>, ans);
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><p><strong> 1259. How to Become Star?</strong></p>
+<p>根据给定的定义，求N角星的个数。</p>
+<p><strong>Definition.</strong> A <em>star</em> is the closed broken line built by the final amount of steps of the following algorithm:</p>
+<ol>
+<li>Fix and arbitrary angle α (0 &lt; α &lt; π).</li>
+</ol>
+<ol>
+<li>The first link is (0, 0) — (1, 0).</li>
+</ol>
+<ol>
+<li>The second link is the resultant of the turn by the angle α counter-clockwise with respect to the point (1, 0) of the first one.</li>
+</ol>
+<ol>
+<li>The (<em>i</em> + 2)-nd link is the resultant of the turn by the angle α counter-clockwise of the (<em>i</em> + 1)-st one with respect to the free end (the opposite to the one that is connected to the <em>i</em>-th link) of the (<em>i</em> + 1)-st link.</li>
+</ol>
+<ol>
+<li>The algorithm stops immediately when the broken line is closed.</li>
+</ol>
+<p><img src="http://acm.timus.ru/image/get.aspx/fd5fa0a0-4cea-47b0-82a0-5ffb61f70b4e" alt="Problem illustration"><img src="http://acm.timus.ru/image/get.aspx/a879b546-2258-4a58-9cf6-d6916cc441ef" alt="Problem illustration"></p>
+<p>该怎么证明呢( ´ ▽ ` )ﾉ，自行参见题目的discuss吧或者自行证明，可以用复数。最后答案是Φ(n)/2</p>
+<p>好吧，来补个证明，希望没讲错，外加能讲清楚：</p>
+<ul>
+<li>设 β＝π－α ，则 0 &lt; β &lt; π ;     //N, α为题目描述中的</li>
+</ul>
+<ul>
+<li>有 Nβ mod 2π ＝ 0，则对于该β，N为对应的最小的整数。   //为什么mod 2π等于0，我们可以想像把N角星的各个顶点移动到(1, 0)这点，则每次画一条新边就是上一条边顺时针旋转β，第n条边要刚好跟第一条边重合，且是第一次跟第一条边重合。</li>
+</ul>
+<ul>
+<li>∴β = p * π / N, p为整数, 又为满足上式p要为偶数</li>
+</ul>
+<ul>
+<li>∴β = 2 <em> i </em> π / N ，0 &lt; i &lt; N/2</li>
+</ul>
+<ul>
+<li>上面说到，N为β对应的最小的整数，即不存在整数 k，k &lt; N, 且 kβ mod 2π ＝ 0, 即</li>
+</ul>
+<ul>
+<li>对任意k &lt; N，k <em> 2 </em> i * π / N  mod 2π ≠ 0.</li>
+</ul>
+<ul>
+<li>∴k * i / N 不能为整数，即 i 必须与 N 互质，可得最后的答案为Φ(n)/2</li>
+</ul>
+<p><strong>1260. Nudnik Photographer</strong></p>
+<p>1～n进行排列，第一位为1，相邻两个数字的差不能超过2。求方案数。</p>
+<p>F[N]表示N个数的方案数，那么F[N]可由如下方法得到：</p>
+<ul>
+<li>2放在第二位，则是F[N-1]</li>
+</ul>
+<ul>
+<li>3放在第二位，第三位放2（那么再小一位一定是4），就是F[N-3]</li>
+</ul>
+<ul>
+<li>3放在第二位，第三位不放2，且n &gt;=4,那么就只有一种方案，形如：1、3、5、7、8、6、4、2</li>
+</ul>
+<p>所以最后可的方程：F[N] = F[N-1] + F[N-3] + 1</p>
+<p><strong>1261. Tips</strong></p>
+<p>某岛使用的货币的面值是3的幂，3，9，27…..，你要付一笔N元的账单，并且需要给小费，小费需要由不同面值的纸币组成。输出你需要付的最少的钱数sum，以及小费数tips。</p>
+<p>显然3进制下，sum以及tips只由1和0组成。然后就是构造出这个最小的tips了，我们可以把N表示成3进制，由最低位开始，如果N在该位为2，tips和N就加上3在该位的幂。好像大概就是这么回事了。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">int</span> a[<span class="number">100</span>];
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="keyword">int</span> n, m = <span class="number">1</span>, x = <span class="number">0</span>, y = <span class="number">0</span>;
+    <span class="built_in">cin</span> &gt;&gt; n;
+    x = n;
+    <span class="keyword">do</span> {
+        <span class="keyword">if</span> (n % <span class="number">3</span> == <span class="number">2</span>) {
+            y += m;
+            n++;
+        }
+        n /= <span class="number">3</span>;
+        m *= <span class="number">3</span>;
+    } <span class="keyword">while</span> (n);
+    <span class="keyword">if</span> (!y) y = m;
+    <span class="built_in">cout</span> &lt;&lt; x + y &lt;&lt; <span class="string">' '</span> &lt;&lt; y &lt;&lt; endl;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><p><strong> 1262. Pseudo-Roman Number</strong></p>
+<p>这题的难度同样在于读题，理解题意后就会发现，对于1～9每个数字都有一个最短的表示方式，然后逐位处理就行了。</p>
+<p><strong>1263. Elections</strong></p>
+<p>直接做，统计每个数字出现的百分比，不解释</p>
+<p><strong>1264. Workdays</strong></p>
+<p>这是签到题吧=_=</p>
+<p><strong>后记：</strong>终于写完了的说，发现写题解还是很累，很多自己想得明白但还是说不清楚，再也不写这种一点都不过简要的什么一周记录了，以后就挑一些有趣的来写就好了，可是我觉得很多题都很有趣怎么办(°_°)</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">标签</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Math/">Math</a> <a class="tag tag--primary tag--small t-link" href="/tags/Timus/">Timus</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/05/08/timus_1122_game/"  data-tooltip="Timus_1122_Game">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/05/04/timus-1227-rally-championship/" data-tooltip="Timus_1227_Rally Championship">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/05/04/timus-a-week/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/05/04/timus-a-week/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/05/04/timus-a-week/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 YuanJie Chen. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/05/08/timus_1122_game/"  data-tooltip="Timus_1122_Game">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/05/04/timus-1227-rally-championship/" data-tooltip="Timus_1227_Rally Championship">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/05/04/timus-a-week/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/05/04/timus-a-week/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/05/04/timus-a-week/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/05/04/timus-a-week/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/05/04/timus-a-week/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/05/04/timus-a-week/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <h4 id="about-card-name">YuanJie Chen</h4>
+        
+            <h5 id="about-card-bio"><p>author.bio</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </h5>
+        
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>

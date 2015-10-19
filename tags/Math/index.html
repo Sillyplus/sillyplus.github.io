@@ -1,0 +1,895 @@
+
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="supernova">
+    <title>标签: Math - supernova</title>
+    <meta name="author" content="YuanJie Chen">
+    
+    
+    <meta name="description">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="supernova">
+<meta property="og:url" content="http://github.com/sillyplus/tags/Math/index.html">
+<meta property="og:site_name" content="supernova">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="supernova">
+<meta name="twitter:description">
+    
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="2">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">supernova</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="2">
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">标签</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">搜索</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">关于</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="2"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    
+
+<section class="postShorten-group main-content-wrap">
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2014/07/02/timus_1727_znaikas-magic-numbers/">Timus_1727_Znaika&#39;s Magic Numbers</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Jul 02 2014 00:00:00 GMT+0800">
+	
+		    Jul 02, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>题目大意：给你一个N (0 &lt; N &lt; 10^5)，把N分解成若干个不相同且值不超过10^5的整数的各个位数的和，例如：N＝17时有，17 ＝ 7 ＋ 1 ＋ 2 ＋ 4 ＋ 3，所以17可以分解成7， 12， 43，这三个不同的整数。</p>
+<p>题目其实是比较简单的，解法也有很多种，我就说一个我认为比较有趣的解法。我们可以每次把N加到所求的整数集合里面，然后再把N减去自身各位数字的和得到新的N’，直到N等于零。正确性也很容易验证，注意到我们每次往集合里添加的数必然都是递减的，这就保证了无重复数字的出现，然后按照生成的规则可知，减到N为0的时候自然集合里的所有数的各位数字之和就为最初的N了。</p>
+<p>其他解法：比如说先把1～99999，每个数的位数和算出来，然后排个序，然后就由大到小减等等。。。</p>
+<p>烂烂的还是贴下代码。。。。。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;
+<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator its;
+
+<span class="function"><span class="keyword">int</span> <span class="title">ds</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{
+    <span class="keyword">int</span> ret = <span class="number">0</span>;
+    <span class="keyword">while</span> (x) {
+        ret += (x % <span class="number">10</span>);
+        x /= <span class="number">10</span>;
+    }
+    <span class="keyword">return</span> ret;
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="keyword">int</span> n;
+    <span class="built_in">cin</span> &gt;&gt; n;
+    <span class="keyword">while</span> (n) {
+        v.push_back(n);
+        n -= ds(n);
+    }
+    <span class="built_in">cout</span> &lt;&lt; v.size() &lt;&lt; endl;
+    <span class="keyword">for</span> (its = v.begin(); its != v.end(); its++)
+        <span class="built_in">cout</span> &lt;&lt; *its &lt;&lt; <span class="string">' '</span>;
+    <span class="built_in">cout</span> &lt;&lt; endl;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2014/07/02/timus_1727_znaikas-magic-numbers/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2014/05/15/timus_1024_permutations/">Timus_1024_Permutations</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu May 15 2014 00:29:38 GMT+0800">
+	
+		    May 15, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>因为题目的编号是2^10，所以决定写一下题解。</p>
+<p>题目大意：给出一个n阶的置换P，问P的多少次幂等于单位元E。n &lt;= 1000，保证答案不超过1e9.</p>
+<p>如果有一点置换群的知识的话就很好解决了，其实题目也就清楚的告诉你是怎么置换了。我们知道在置换群中有这样一个定理</p>
+<ul>
+<li>任何一个置换都可以表示成若干循环的乘积</li>
+</ul>
+<p>关于循环的概念，相信应该不难理解，简单点说就是根据题目，_P_k(x) ＝ x，__则在置换过程中得到的k个数便构成一个k阶的循环。题目要求的答案便是k1, k2…..kn的最小公倍数。显然，对于1～n，每个数字仅会出现在一个循环当中，同一个循环中的数对于的k便是一样的。这样复杂度就可以做到O(nlogn)，由于n只有1000，我就懒得去标记什么的了，直接用O(n^2 logn)的做法。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">int</span> f[<span class="number">1010</span>] = {<span class="number">0</span>};
+
+<span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>{
+    <span class="keyword">return</span> (b == <span class="number">0</span>) ? a : gcd(b, a%b);
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="keyword">int</span> n;
+    <span class="built_in">cin</span> &gt;&gt; n;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)
+        <span class="built_in">cin</span> &gt;&gt; f[i];
+    <span class="keyword">int</span> ans = <span class="number">1</span>;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) {
+        <span class="keyword">int</span> x = f[i], loop = <span class="number">1</span>;
+        <span class="keyword">while</span> (x != i) {
+            x = f[x];
+            loop++;
+        }
+        ans = ans * (loop / gcd(ans, loop));
+    }
+    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><p>期间WA过一次，原因是这个</p>
+<ul>
+<li>ans = ans * (loop / gcd(ans, loop));</li>
+</ul>
+<p>写成这样子</p>
+<ul>
+<li>ans = ans * loop / gcd(ans, loop);</li>
+</ul>
+<p>但是没用long long 结果就乘爆了，使用上面的式子并用int，以及时候下面的式子并使用long long，后者在时间以及空间上十分微妙的更优一些，这是为什么呢，因为括号的缘故？求科普啊。</p>
+
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2014/05/15/timus_1024_permutations/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2014/05/04/timus-a-week/">Timus_一周做题记录</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sun May 04 2014 11:53:51 GMT+0800">
+	
+		    May 04, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>虽然很多是水题，不过还是记录一下。。。。然后还有好多得做的题目都还没补TAT</p>
+<p><strong>1209. 1, 10, 100, 1000…</strong></p>
+<p>一个这样的串110100100010000……问第n位是什么。</p>
+<p>很明显第n*(n+1)/2位才会是1，其中n为正整数，所以判断一下就行了。</p>
+<p><strong>1224. Spiral</strong></p>
+<p>给定一个N＊M的矩阵，开始面向左侧，由右上角开始顺时针方向走，每个格子走过一次，为走完整个矩阵需要改变方向多少次。</p>
+<p>答案是这个：min(2<em>(n-1), 2</em>(m-1)+1)。至于为什么，仔细想想的话应该就明白了，不过这题虽然简单，我好像还是被坑了好几次。比如说什么 <em>N</em>, <em>M</em> (1 ≤ <em>N</em>, <em>M</em> ≤ 2^31 − 1)，但是乘一下就爆int，得用long long之类的。。。</p>
+<p><strong>1225. Flags</strong></p>
+<p>用红、白、蓝三种颜色去染一排连续的格子，染色规则是</p>
+<ul>
+<li>相邻两个格子颜色不能一样</li>
+</ul>
+<ul>
+<li>蓝色必须夹在红色和白色的格子中间</li>
+</ul>
+<p>求给定格子数的染色方案</p>
+<p>显然，最后一个格子不能染蓝色，就是说，最后一个格子只能是红or白。那个我们就可以得到如下关系</p>
+<p>F[N] = F[N-1] + F[N-2]</p>
+<p>第N－1个，最后是红或者白，那么第N个只能选白或者红。第N－1个是蓝色，即N－2个为红或者白，就是F[N－2]，那么第N个只能是白或者红。然后就是F[1] = F[2] = 2。</p>
+<p><strong>1226. esreveR redrO</strong></p>
+<p>给定一个文本，把每一段连续的字母翻转，其它字符保持不变。</p>
+<p>直接做咯，每次看到涉及字符串的题总是会有恐惧感。贴一下代码，安慰一下自己的心灵，有时候字符串的题没有想像中那么多坑。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">char</span> a[<span class="number">300</span>];
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="keyword">char</span> c;
+    <span class="keyword">int</span> t = -<span class="number">1</span>;
+    <span class="keyword">while</span> (<span class="number">1</span>) {
+        c = getchar();
+        <span class="keyword">if</span> (c == EOF) <span class="keyword">break</span>;
+        <span class="keyword">if</span> ((c &gt;= <span class="string">'a'</span> &amp;&amp; c &lt;= <span class="string">'z'</span>) || (c &gt;= <span class="string">'A'</span> &amp;&amp; c &lt;= <span class="string">'Z'</span>)) {
+            a[++t] = c;
+        } <span class="keyword">else</span> {
+            <span class="keyword">for</span> (<span class="keyword">int</span> i = t; i &gt;= <span class="number">0</span>; i--)
+                <span class="built_in">printf</span>(<span class="string">"%c"</span>, a[i]);
+            <span class="built_in">printf</span>(<span class="string">"%c"</span>, c);
+            t = -<span class="number">1</span>;
+        }
+    }
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = t; i &gt;= <span class="number">0</span>; i--)
+        <span class="built_in">printf</span>(<span class="string">"%c"</span>, a[i]);
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><p><strong> 1227. Rally Championship</strong></p>
+<p><a href="http://sillyplus.com/2014/05/389/" target="_blank" rel="external">详情请戳</a></p>
+<p><strong>1228. Array</strong></p>
+<p>这个读懂题就会做了。。。。</p>
+<p><strong>1229. Strong Brickwork</strong></p>
+<p><a href="http://sillyplus.com/2014/05/383/" target="_blank" rel="external">详情请戳</a></p>
+<p><strong> 1258. Pool</strong></p>
+<p>题目可以理解为，给一个矩形，上下左右四条边分别用F、B、L、R表示，给定起始点还有终点的坐标，求一束光由起点到终点的移动距离，给出反射的边的序列。</p>
+<p>我们可以把四条边都想像成镜子，然后就是我们学物理时的那点小花招，把求两点间的折线的长度转化成了求两点间的直线距离。我想了好久才理清楚怎么变换坐标。。。。，感觉这还是一道很有趣的题目，一开始以为是变态的计算机何，所以不敢做TAT</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="keyword">double</span> w, d, x1, y1, x2, y2, x, y;
+    <span class="built_in">string</span> s;
+    <span class="built_in">cin</span> &gt;&gt; w &gt;&gt; d;
+    <span class="built_in">cin</span> &gt;&gt; x1 &gt;&gt; y1;
+    <span class="built_in">cin</span> &gt;&gt; x2 &gt;&gt; y2;
+    <span class="built_in">cin</span> &gt;&gt; s;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) {
+        <span class="keyword">switch</span> (s[i]) {
+            <span class="keyword">case</span> <span class="string">'F'</span>:
+                y1 = -y1;
+                <span class="keyword">break</span>;
+            <span class="keyword">case</span> <span class="string">'B'</span>:
+                y1 = <span class="number">2</span> * d - y1;
+                <span class="keyword">break</span>;
+            <span class="keyword">case</span> <span class="string">'L'</span>:
+                x1 = -x1;
+                <span class="keyword">break</span>;
+            <span class="keyword">case</span> <span class="string">'R'</span>:
+                x1 = <span class="number">2</span> * w - x1;
+                <span class="keyword">break</span>;
+        }
+        <span class="built_in">cout</span> &lt;&lt; x1 &lt;&lt; <span class="string">' '</span> &lt;&lt; y1 &lt;&lt; endl;
+    }
+    <span class="keyword">double</span> ans;
+    ans = <span class="built_in">sqrt</span>((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+    <span class="built_in">printf</span>(<span class="string">"%.4f\n"</span>, ans);
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><p><strong> 1259. How to Become Star?</strong></p>
+<p>根据给定的定义，求N角星的个数。</p>
+<p><strong>Definition.</strong> A <em>star</em> is the closed broken line built by the final amount of steps of the following algorithm:</p>
+<ol>
+<li>Fix and arbitrary angle α (0 &lt; α &lt; π).</li>
+</ol>
+<ol>
+<li>The first link is (0, 0) — (1, 0).</li>
+</ol>
+<ol>
+<li>The second link is the resultant of the turn by the angle α counter-clockwise with respect to the point (1, 0) of the first one.</li>
+</ol>
+<ol>
+<li>The (<em>i</em> + 2)-nd link is the resultant of the turn by the angle α counter-clockwise of the (<em>i</em> + 1)-st one with respect to the free end (the opposite to the one that is connected to the <em>i</em>-th link) of the (<em>i</em> + 1)-st link.</li>
+</ol>
+<ol>
+<li>The algorithm stops immediately when the broken line is closed.</li>
+</ol>
+<p><img src="http://acm.timus.ru/image/get.aspx/fd5fa0a0-4cea-47b0-82a0-5ffb61f70b4e" alt="Problem illustration"><img src="http://acm.timus.ru/image/get.aspx/a879b546-2258-4a58-9cf6-d6916cc441ef" alt="Problem illustration"></p>
+<p>该怎么证明呢( ´ ▽ ` )ﾉ，自行参见题目的discuss吧或者自行证明，可以用复数。最后答案是Φ(n)/2</p>
+<p>好吧，来补个证明，希望没讲错，外加能讲清楚：</p>
+<ul>
+<li>设 β＝π－α ，则 0 &lt; β &lt; π ;     //N, α为题目描述中的</li>
+</ul>
+<ul>
+<li>有 Nβ mod 2π ＝ 0，则对于该β，N为对应的最小的整数。   //为什么mod 2π等于0，我们可以想像把N角星的各个顶点移动到(1, 0)这点，则每次画一条新边就是上一条边顺时针旋转β，第n条边要刚好跟第一条边重合，且是第一次跟第一条边重合。</li>
+</ul>
+<ul>
+<li>∴β = p * π / N, p为整数, 又为满足上式p要为偶数</li>
+</ul>
+<ul>
+<li>∴β = 2 <em> i </em> π / N ，0 &lt; i &lt; N/2</li>
+</ul>
+<ul>
+<li>上面说到，N为β对应的最小的整数，即不存在整数 k，k &lt; N, 且 kβ mod 2π ＝ 0, 即</li>
+</ul>
+<ul>
+<li>对任意k &lt; N，k <em> 2 </em> i * π / N  mod 2π ≠ 0.</li>
+</ul>
+<ul>
+<li>∴k * i / N 不能为整数，即 i 必须与 N 互质，可得最后的答案为Φ(n)/2</li>
+</ul>
+<p><strong>1260. Nudnik Photographer</strong></p>
+<p>1～n进行排列，第一位为1，相邻两个数字的差不能超过2。求方案数。</p>
+<p>F[N]表示N个数的方案数，那么F[N]可由如下方法得到：</p>
+<ul>
+<li>2放在第二位，则是F[N-1]</li>
+</ul>
+<ul>
+<li>3放在第二位，第三位放2（那么再小一位一定是4），就是F[N-3]</li>
+</ul>
+<ul>
+<li>3放在第二位，第三位不放2，且n &gt;=4,那么就只有一种方案，形如：1、3、5、7、8、6、4、2</li>
+</ul>
+<p>所以最后可的方程：F[N] = F[N-1] + F[N-3] + 1</p>
+<p><strong>1261. Tips</strong></p>
+<p>某岛使用的货币的面值是3的幂，3，9，27…..，你要付一笔N元的账单，并且需要给小费，小费需要由不同面值的纸币组成。输出你需要付的最少的钱数sum，以及小费数tips。</p>
+<p>显然3进制下，sum以及tips只由1和0组成。然后就是构造出这个最小的tips了，我们可以把N表示成3进制，由最低位开始，如果N在该位为2，tips和N就加上3在该位的幂。好像大概就是这么回事了。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">int</span> a[<span class="number">100</span>];
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="keyword">int</span> n, m = <span class="number">1</span>, x = <span class="number">0</span>, y = <span class="number">0</span>;
+    <span class="built_in">cin</span> &gt;&gt; n;
+    x = n;
+    <span class="keyword">do</span> {
+        <span class="keyword">if</span> (n % <span class="number">3</span> == <span class="number">2</span>) {
+            y += m;
+            n++;
+        }
+        n /= <span class="number">3</span>;
+        m *= <span class="number">3</span>;
+    } <span class="keyword">while</span> (n);
+    <span class="keyword">if</span> (!y) y = m;
+    <span class="built_in">cout</span> &lt;&lt; x + y &lt;&lt; <span class="string">' '</span> &lt;&lt; y &lt;&lt; endl;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><p><strong> 1262. Pseudo-Roman Number</strong></p>
+<p>这题的难度同样在于读题，理解题意后就会发现，对于1～9每个数字都有一个最短的表示方式，然后逐位处理就行了。</p>
+<p><strong>1263. Elections</strong></p>
+<p>直接做，统计每个数字出现的百分比，不解释</p>
+<p><strong>1264. Workdays</strong></p>
+<p>这是签到题吧=_=</p>
+<p><strong>后记：</strong>终于写完了的说，发现写题解还是很累，很多自己想得明白但还是说不清楚，再也不写这种一点都不过简要的什么一周记录了，以后就挑一些有趣的来写就好了，可是我觉得很多题都很有趣怎么办(°_°)</p>
+
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2014/05/04/timus-a-week/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2014/04/17/neerc-2000-central-subregional/">NEERC 2000 Central Subregional 简要题解</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Apr 17 2014 01:07:13 GMT+0800">
+	
+		    Apr 17, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>题目链接：<a href="http://acm.timus.ru/problemset.aspx?space=1&amp;page=1" target="_blank" rel="external">戳我</a>（1053－1059）</p>
+<p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1053" target="_blank" rel="external">Pinocchio</a></p>
+<p>题目还比较好理解，每次选两个数，大数减去小数，相等则合并，其实就是求出所有数的最大公约数，然后就是直接做了。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>{
+    <span class="keyword">return</span> y == <span class="number">0</span> ? x : gcd(y, x % y);
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="keyword">int</span> n, ans, k;
+    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; ans;
+    n--;
+    <span class="keyword">while</span> (n--) {
+        <span class="built_in">cin</span> &gt;&gt; k;
+        ans = gcd(ans, k);
+    }
+    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1054" target="_blank" rel="external">Hanoi Tower</a></p>
+<p>汉诺塔是很经典的一个东西了，但这道题还是比较有意思的。给出当前各个圆盘所在的柱子的一个序列，问你当前状态是最优移动方案里面的第几步，有可能所给状态不是最优方案里的状态，N&lt;=31。如果对汉诺塔得递归性质理解得比较深的话应该很容易就能做出来，我是先打了一个表看看规律的。。。我们可以只考虑最大的圆盘k，如果还没有被移动过就无视，不然ans就加上2ˆ(k-1)，然后逆着递归回去，然后明显就是O(N)了。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">int</span> f[<span class="number">100</span>] = {<span class="number">0</span>}, n, ans = <span class="number">0</span>;
+
+<span class="function"><span class="keyword">void</span> <span class="title">sol</span><span class="params">(<span class="keyword">int</span> k, <span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>{
+    <span class="keyword">if</span> (k == <span class="number">0</span>) <span class="keyword">return</span>;
+    <span class="keyword">if</span> (f[k] == c) {
+        ans = -<span class="number">1</span>;
+        <span class="keyword">return</span>;
+    } <span class="keyword">else</span> <span class="keyword">if</span> (f[k] == b) {
+        ans += <span class="number">1</span> &lt;&lt; (k-<span class="number">1</span>);
+        sol(k-<span class="number">1</span>, c, b, a);
+    } <span class="keyword">else</span> sol(k-<span class="number">1</span>, a, c, b);
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="built_in">cin</span> &gt;&gt; n;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; f[i];
+    sol(n, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);
+    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1055" target="_blank" rel="external">Combinations</a></p>
+<p>很裸的数学题了，组合数的计算，对分式上下各个数进行质因数分解，最后统计一下，不过我好像写得比较矬，应该写得更简洁些才是啊。。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">50010</span>;
+
+<span class="keyword">bool</span> valid[MN];
+<span class="keyword">int</span> ans[MN] = {<span class="number">0</span>};
+<span class="keyword">int</span> f[MN] = {<span class="number">0</span>};
+
+<span class="function"><span class="keyword">void</span> <span class="title">getPrime</span><span class="params">(<span class="keyword">int</span> n)</span> </span>{
+    <span class="keyword">int</span> tot = <span class="number">0</span>;
+    <span class="built_in">memset</span>(valid, <span class="literal">true</span>, <span class="keyword">sizeof</span>(valid));
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) {
+        <span class="keyword">if</span> (valid[i]) ans[++tot] = i;
+        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; ((j &lt;= tot) &amp;&amp; (i*ans[j] &lt;= n)); j++) {
+            valid[i*ans[j]] = <span class="literal">false</span>;
+            <span class="keyword">if</span> (i % ans[j] == <span class="number">0</span>) <span class="keyword">break</span>;
+        }
+    }
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="keyword">int</span> n, m;
+    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;
+    <span class="keyword">if</span> (m &gt; (n/<span class="number">2</span>)) m = n-m;
+    getPrime(n);
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) {
+        <span class="keyword">int</span> t = n-i;
+        <span class="keyword">if</span> (valid[t]) {
+            f[t]++;
+        } <span class="keyword">else</span> {
+            <span class="keyword">int</span> j = <span class="number">0</span>;
+            <span class="keyword">while</span> (t != <span class="number">1</span>) {
+                j++;
+                <span class="keyword">while</span> (t % ans[j] == <span class="number">0</span>) {
+                    f[ans[j]]++;
+                    t /= ans[j];
+                }
+            }
+        }
+    }
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= m; i++) {
+        <span class="keyword">if</span> (valid[i]) {
+            f[i]--;
+        } <span class="keyword">else</span> {
+            <span class="keyword">int</span> j = <span class="number">0</span>, t = i;
+            <span class="keyword">while</span> (t != <span class="number">1</span>) {
+                j++;
+                <span class="keyword">while</span> (t % ans[j] == <span class="number">0</span>) {
+                    f[ans[j]]--;
+                    t /= ans[j];
+                }
+            }
+        }
+    }
+    <span class="keyword">int</span> ans = <span class="number">0</span>;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)
+        <span class="keyword">if</span> (f[i]) ans++;
+    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1056" target="_blank" rel="external">Computer Net</a></p>
+<p>N(&lt;=10000)点构成一颗树，要求出树的中心。由树的性质可以知道，中心必定是1 or 2个。求树的中心还有树的直径都是很经典的问题，这道题也有很多做法。我用的是两边DFS，任意选则一个点v做一遍DFS，则离v最远的那个点必定是树的直径的一个端点，然后再由得到的端点做一遍DFS，就找到了另一个端点了，记录路径，然后再找到直径的中点就行了。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">10010</span>;
+
+<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; a[MN];
+<span class="keyword">bool</span> vt[MN];
+<span class="keyword">int</span> f[MN];
+
+<span class="keyword">int</span> n, k, l, v;
+
+<span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> pr, <span class="keyword">int</span> de)</span> </span>{
+    vt[x] = <span class="literal">true</span>;
+    f[x] = pr;
+    <span class="keyword">if</span> (de &gt; l) {
+        l = de;
+        v = x;
+    }
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a[x].size(); i++) {
+        <span class="keyword">int</span> ch = a[x][i];
+        <span class="keyword">if</span> (vt[ch]) <span class="keyword">continue</span>;
+        dfs(ch, x, de+<span class="number">1</span>);
+    }
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="built_in">cin</span> &gt;&gt; n;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) {
+        <span class="built_in">cin</span> &gt;&gt; k;
+        a[k].push_back(i);
+        a[i].push_back(k);
+    }
+    v = l = <span class="number">0</span>;
+    <span class="built_in">memset</span>(vt, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vt));
+    dfs(<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>);
+    <span class="built_in">memset</span>(vt, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vt));
+    l = <span class="number">0</span>;
+    dfs(v, <span class="number">0</span>, <span class="number">1</span>);
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; l/<span class="number">2</span>; i++)
+        v = f[v];
+    <span class="keyword">if</span> (l % <span class="number">2</span>)
+        <span class="built_in">cout</span> &lt;&lt; f[v] &lt;&lt; endl;
+    <span class="keyword">else</span>
+        <span class="built_in">cout</span> &lt;&lt; min(v, f[v]) &lt;&lt; <span class="string">" "</span> &lt;&lt; max(v, f[v]) &lt;&lt; endl;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1057" target="_blank" rel="external">Amount of Degrees</a></p>
+<p>数位统计</p>
+<p>题目大意：给出区间［X,Y］,要求算出区间内可以表示为k个不相同的b的幂的和的数字的个数。具体参见：刘聪《浅谈数位类问题》，讲的肯定比我自己说的要好TAT</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">int</span> x, y, k, b;
+
+<span class="keyword">int</span> c[<span class="number">32</span>][<span class="number">32</span>] = {<span class="number">0</span>};
+<span class="keyword">int</span> dgt[<span class="number">32</span>] = {<span class="number">0</span>};
+
+<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>{
+    c[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">32</span>; i++) {
+        c[i][<span class="number">0</span>] = c[i-<span class="number">1</span>][<span class="number">0</span>];
+        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++)
+            c[i][j] += c[i-<span class="number">1</span>][j-<span class="number">1</span>] + c[i-<span class="number">1</span>][j];
+    }
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{
+    <span class="keyword">int</span> l = <span class="number">0</span>, ans = <span class="number">0</span>;
+    <span class="keyword">while</span> (x) {
+        dgt[++l] = x % b;
+        x /= b;
+    }
+    <span class="keyword">int</span> mk = <span class="number">0</span>;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &gt; <span class="number">0</span>; i--) {
+        <span class="keyword">if</span> (dgt[i] &gt; <span class="number">1</span>) {
+            ans += c[i][k-mk];
+            <span class="keyword">break</span>;
+        } <span class="keyword">else</span> <span class="keyword">if</span> (dgt[i] == <span class="number">1</span>) {
+            <span class="keyword">if</span> (i &gt; k-mk) ans += c[i-<span class="number">1</span>][k-mk];
+            <span class="keyword">if</span> (++mk &gt; k) <span class="keyword">break</span>;
+        }
+        <span class="keyword">if</span> ((i == <span class="number">1</span>) &amp;&amp; (mk == k)) ans++;
+    }
+    <span class="keyword">return</span> ans;
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y &gt;&gt; k &gt;&gt; b;
+    init();
+    <span class="built_in">cout</span> &lt;&lt; cal(y) - cal(x-<span class="number">1</span>) &lt;&lt; endl;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1058" target="_blank" rel="external">Chocolate</a></p>
+<p>比较那个的计算几何，我还不会写计算几何的题目，先留个坑，以后再填</p>
+<pre><code><span class="comment">//占位-_-#</span>
+</code></pre><p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1059" target="_blank" rel="external">Expression</a></p>
+<p>题目大意：输出一个一元N次多项式的最短后缀表达式。然后有</p>
+<p><img src="http://upload.wikimedia.org/math/d/2/5/d25290170053cbfe1d467c061e2a3e38.png" alt="f(x)=a_0x^n+a_{1}x^{n-1}+a_{2}x^{n-2}+......+a_{n-2}x^2+a_{n-1}x+a_n">  可以化成</p>
+<p><img src="http://upload.wikimedia.org/math/7/5/1/7514d392c909ec6ba2fec54d5e4a7b29.png" alt="f(x)=(((a_nx+a_{n-1})x+a_{n-2})x+......+a_1)x+a_0"></p>
+<p>然后规律就很明显了，直接输出就行了。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="keyword">int</span> n;
+    <span class="built_in">cin</span> &gt;&gt; n;
+    <span class="built_in">cout</span> &lt;&lt; <span class="number">0</span> &lt;&lt; endl;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) {
+        <span class="built_in">cout</span> &lt;&lt; <span class="string">'X'</span> &lt;&lt; endl &lt;&lt; <span class="string">'*'</span> &lt;&lt; endl &lt;&lt; i+<span class="number">1</span> &lt;&lt; endl &lt;&lt; <span class="string">'+'</span> &lt;&lt; endl;
+    }
+}
+</code></pre>
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2014/04/17/neerc-2000-central-subregional/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">第 1 页 共 1 页</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 YuanJie Chen. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <h4 id="about-card-name">YuanJie Chen</h4>
+        
+            <h5 id="about-card-bio"><p>author.bio</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </h5>
+        
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>

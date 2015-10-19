@@ -1,0 +1,509 @@
+
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="supernova">
+    <title>标签: 树状数组 - supernova</title>
+    <meta name="author" content="YuanJie Chen">
+    
+    
+    <meta name="description">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="supernova">
+<meta property="og:url" content="http://github.com/sillyplus/tags/树状数组/index.html">
+<meta property="og:site_name" content="supernova">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="supernova">
+<meta name="twitter:description">
+    
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="2">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">supernova</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="2">
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">标签</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">搜索</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">关于</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="2"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    
+
+<section class="postShorten-group main-content-wrap">
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2014/07/01/timus_1028_1318/">Timus 1028 1318 [树状数组]</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Jul 01 2014 03:56:24 GMT+0800">
+	
+		    Jul 01, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <h4 id="除草向"><em>除草向</em></h4><p>博客好久没有更新了，自从打完补选赛之后就一直一副颓废状态，外加要期末考，得预习课内知识(虽然我到最后还是。。。)，不管怎么样，现在以及放假了，所以我打算兑现之前对自己的承诺，暑假好好做题，所以这段时间应该会比较经常更新一些水题的题解啦( ´ ▽ ` )ﾉ。昨天选拔赛第一场就爆零滚粗，作为一名候补选手，我只剩下今天这个最后一次机会了，好伤感的说T^T，希望写一写题解涨张RP。。。</p>
+<p>吐槽完毕，接下来进入正题啦～ ，虽然以前偶尔也又写过树状数组的题目，不过基本就没去记住，然后每次都得看模版。。。这两天写了两三次，终于记住啦啦啦啦</p>
+<ol>
+<li>Star</li>
+</ol>
+<p>题目大衣：一个二维平面上又N (1 ≤ <em>N</em> ≤ 15000)个点(0 ≤ <em>X</em>,<em>Y</em> ≤ 32000)，然后定义每个点的level，对于点i，它的level为横纵坐标均不大于点i的点的个数。要求输出0～N-1的各个level的的点数。</p>
+<p>这道题的只要求出每个点的level，统计一下就行了。然后就是求level的办法了，我们首先可以把每个点先按x递增，然后y递增的顺序排序。这样x就有序了，然后我们顺序处理每个点，对一个点Pi，已知点Pj(j&lt;i)的x不大于Pi的x，然后要做的就是统计一下Pj中y小于等于Pi的y的个数。我们用c[i]表示y为i的点的个数，Pi的level值就为sum＝ c[0] + c[1] + .. + c[y-1], 然后再更新一下c数组，c[y]+1,以上都可以用树状数组来解决。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">32001</span>;
+
+<span class="keyword">struct</span> pt{
+    <span class="keyword">int</span> x, y;
+};
+
+pt a[MN/<span class="number">2</span>];
+<span class="keyword">int</span> level[MN/<span class="number">2</span>];
+<span class="keyword">int</span> t[MN+<span class="number">10</span>];
+
+<span class="function"><span class="keyword">bool</span> <span class="title">comp</span><span class="params">(<span class="keyword">const</span> pt &amp;a, <span class="keyword">const</span> pt &amp;b)</span> </span>{
+    <span class="keyword">if</span> (a.x != b.x) <span class="keyword">return</span> a.x &lt; b.x;
+    <span class="keyword">return</span> a.y &lt; b.y;
+}
+
+<span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{
+    <span class="keyword">return</span> (x &amp; -x);
+}
+
+<span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> value)</span> </span>{
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &lt;= MN; i += lowbit(i))
+        t[i] += value;
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{
+    <span class="keyword">int</span> sum = <span class="number">0</span>;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i; i -= lowbit(i))
+        sum += t[i];
+    <span class="keyword">return</span> sum;
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="keyword">int</span> n;
+    <span class="built_in">cin</span> &gt;&gt; n;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) {
+        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a[i].x, &amp;a[i].y);
+    }
+    sort(a, a+n, comp);
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) {
+        <span class="keyword">int</span> k = a[i].y+<span class="number">1</span>;
+        level[get(k)]++;
+        add(k, <span class="number">1</span>);
+    }
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)
+        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, level[i]);
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><ol>
+<li>Electronic Auction</li>
+</ol>
+<p>题目大衣：好像是拍卖铁猪来着，价格0.01～10000.00，最多两位小数。然后有几个操作：</p>
+<ul>
+<li>BID X   以X元竞标一头猪</li>
+</ul>
+<ul>
+<li>DEL X  取消一个价格为X的竞标</li>
+</ul>
+<ul>
+<li>SALE X K  以X元卖掉K头猪</li>
+</ul>
+<ul>
+<li>QUIT  结束输入</li>
+</ul>
+<p>对于每一个SALE，前K个出价不小于X的客户可以得到一头猪，如果不够K个客户满足条件，自然是能买出多少就多少了，每卖出一头获利0.01，求最大获利好像差不多就是这样了把。</p>
+<p>然后其实我们可以把每个数乘上100，就变成整数，不过直接这样好像会有精度问题，我因此WA了几次，后来看了讨论区，弄了个修正的办法。数组a[i]表示出价X的客户数，然后就直接套树状数组了吧，SALE的时候就是求a[i]~a[maxn],这个一个除法也就出来了。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">1000000</span>;
+
+<span class="keyword">char</span> str[<span class="number">5</span>];
+<span class="keyword">double</span> d;
+<span class="keyword">int</span> f[MN+<span class="number">10</span>] = {<span class="number">0</span>};
+
+<span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{
+    <span class="keyword">return</span> (x &amp; -x);
+}
+
+<span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> value)</span> </span>{
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &lt;= MN; i += lowbit(i))
+        f[i] += value;
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{
+    <span class="keyword">int</span> sum = <span class="number">0</span>;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i; i -= lowbit(i))
+        sum += f[i];
+    <span class="keyword">return</span> sum;
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="built_in">cin</span> &gt;&gt; str;
+    <span class="keyword">double</span> ans = <span class="number">0</span>;
+    <span class="keyword">int</span> k;
+    <span class="keyword">while</span> (str[<span class="number">0</span>] != <span class="string">'Q'</span>) {
+        <span class="keyword">if</span> (str[<span class="number">0</span>] == <span class="string">'B'</span>) {
+            <span class="built_in">scanf</span>(<span class="string">"%lf"</span>, &amp;d);
+            add(<span class="keyword">int</span>(d*<span class="number">100</span> + <span class="number">0.5</span>), <span class="number">1</span>);
+        } <span class="keyword">else</span> <span class="keyword">if</span> (str[<span class="number">0</span>] == <span class="string">'D'</span>) {
+            <span class="built_in">scanf</span>(<span class="string">"%lf"</span>, &amp;d);
+            add(<span class="keyword">int</span>(d*<span class="number">100</span> + <span class="number">0.5</span>), -<span class="number">1</span>);
+        } <span class="keyword">else</span> <span class="keyword">if</span> (str[<span class="number">0</span>] == <span class="string">'S'</span>) {
+            <span class="built_in">scanf</span>(<span class="string">"%lf%d"</span>, &amp;d, &amp;k);
+            <span class="keyword">int</span> t = <span class="keyword">int</span>(d*<span class="number">100</span> + <span class="number">0.5</span>);
+            <span class="keyword">int</span> ts = get(MN) - get(t-<span class="number">1</span>);
+            ans += min(k, ts);
+        }
+        <span class="built_in">scanf</span>(<span class="string">"%s"</span>, str);
+    }
+    ans /= <span class="number">100.0</span>;
+    <span class="built_in">printf</span>(<span class="string">"%.2f\n"</span>, ans);
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><p>因为赶着要去吃饭然后打选拔赛去了，所以后面没怎么想好表达就乱写了，实在想在比赛前写完。故事不会就这样终结的，</p>
+
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2014/07/01/timus_1028_1318/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2012/08/25/tyvj-p1474/">TYVJ_打鼹鼠_二维树状数组</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sat Aug 25 2012 08:39:48 GMT+0800">
+	
+		    Aug 25, 2012
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>☆打鼹鼠<br>SuperBrother在机房里闲着没事干(再对比一下他的NOIP,真是讽刺啊……),于是便无聊地开始玩“打鼹鼠”……<br>描述 Description<br>在这个“打鼹鼠”的游戏中，鼹鼠会不时地从洞中钻出来，不过不会从洞口钻进去（鼹鼠真胆大……）。洞口都在一个大小为n(n&lt;=1024)的正 方形中。这个正方形在一个平面直角坐标系中，左下角为(0,0)，右上角为(n-1,n-1)。洞口所在的位置都是整点，就是横纵坐标都为整数的点。而 SuperBrother也不时地会想知道某一个范围的鼹鼠总数。这就是你的任务。<br>输入格式 Input Format<br>每个输入文件有多行。<br>第一行，一个数n，表示鼹鼠的范围。<br>以后每一行开头都有一个数m，表示不同的操作：<br>m=1，那么后面跟着3个数x,y,k(0&lt;=x,y&lt;n)，表示在点(x,y)处新出现了k只鼹鼠；<br>m=2，那么后面跟着4个数x1,y1,x2,y2(0&lt;=x1&lt;=x2&lt;n,0&lt;=y1&lt;=y2&lt;n)，表示询问矩形(x1,y1)-(x2,y2)内的鼹鼠数量；<br>m=3，表示老师来了，不能玩了。保证这个数会在输入的最后一行。<br>询问数不会超过10000，鼹鼠数不会超过maxlongint。<br>对于每个m=2，输出一行数，这行数只有一个数，即所询问的区域内鼹鼠的个数。</p>
+<pre><code><span class="keyword">var</span>
+  n,m,x1,y1,x2,y2,x,y,k,s:longint;
+  t:<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">1024</span>,-<span class="number">1</span>..<span class="number">1024</span>] <span class="keyword">of</span> longint;
+<span class="function"><span class="keyword">function</span> <span class="title">lowbit</span><span class="params">(i:longint)</span>:</span>longint;
+<span class="keyword">begin</span>
+  lowbit:=i <span class="keyword">and</span> (i <span class="keyword">xor</span> (i-<span class="number">1</span>));
+<span class="keyword">end</span>;
+
+<span class="function"><span class="keyword">procedure</span> <span class="title">change</span><span class="params">(i,jj,k:longint)</span>;</span>
+<span class="keyword">var</span> j:longint;
+<span class="keyword">begin</span>
+  <span class="keyword">while</span> i&lt;=n <span class="keyword">do</span>
+   <span class="keyword">begin</span>
+     j:=jj;   <span class="comment">//就是这里啊  少了这一句</span>
+     <span class="keyword">while</span> j&lt;=n <span class="keyword">do</span>
+      <span class="keyword">begin</span>
+        t[i,j]:=t[i,j]+k;
+        j:=j+lowbit(j);
+      <span class="keyword">end</span>;
+     i:=i+lowbit(i)
+   <span class="keyword">end</span>;
+<span class="keyword">end</span>;
+
+<span class="function"><span class="keyword">function</span> <span class="title">find</span><span class="params">(i,jj:longint)</span>:</span>longint;
+<span class="keyword">var</span> sum,j:longint;
+<span class="keyword">begin</span>
+  sum:=<span class="number">0</span>;
+  <span class="keyword">while</span> i&gt;<span class="number">0</span> <span class="keyword">do</span>
+   <span class="keyword">begin</span>
+     j:=jj;
+     <span class="keyword">while</span> j&gt;<span class="number">0</span> <span class="keyword">do</span>
+      <span class="keyword">begin</span>
+        sum:=sum+t[i,j];
+        j:=j-lowbit(j);
+      <span class="keyword">end</span>;
+     i:=i-lowbit(i)
+   <span class="keyword">end</span>;
+  <span class="keyword">exit</span>(sum);
+<span class="keyword">end</span>;
+
+<span class="keyword">begin</span>
+  readln(n);
+  fillchar(t,sizeof(t),<span class="number">0</span>);
+  <span class="keyword">while</span> <span class="keyword">true</span> <span class="keyword">do</span>
+   <span class="keyword">begin</span>
+     <span class="keyword">read</span>(m);
+     <span class="keyword">if</span> m=<span class="number">1</span> <span class="keyword">then</span>
+      <span class="keyword">begin</span>
+        readln(x,y,k);
+        change(x+<span class="number">1</span>,y+<span class="number">1</span>,k);
+      <span class="keyword">end</span>
+     <span class="keyword">else</span> <span class="keyword">if</span> m=<span class="number">2</span> <span class="keyword">then</span>
+      <span class="keyword">begin</span>
+        readln(x1,y1,x2,y2);
+        s:=find(x2+<span class="number">1</span>,y2+<span class="number">1</span>)+find(x1,y1)-find(x1,y2+<span class="number">1</span>)-find(x2+<span class="number">1</span>,y1);
+        writeln(s);
+      <span class="keyword">end</span>
+     <span class="keyword">else</span> halt;
+   <span class="keyword">end</span>;
+<span class="keyword">end</span>.
+</code></pre>
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2012/08/25/tyvj-p1474/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">第 1 页 共 1 页</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 YuanJie Chen. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <h4 id="about-card-name">YuanJie Chen</h4>
+        
+            <h5 id="about-card-bio"><p>author.bio</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </h5>
+        
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>

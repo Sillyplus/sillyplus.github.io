@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="supernova">
+    <title>Poj 搜索题目列表 - supernova</title>
+    <meta name="author" content="YuanJie Chen">
+    
+    
+    <meta name="description" content="声明：
+1.这不是我原创的，是从网上找到的，跟大家分享一下。(然后我在从lyd那里转来的)
+POJ 1069 -The Bermuda Triangle(难)http://acm.pku.edu.cn/JudgeOnline/problem?id=1069题意：用给定三角型填充六边形解法：此题的思想上精华在于坐标化ps:传说中比较bt，确实比较bt，主要很容易写错，我ac了，但程序没完全对….
+P">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Poj 搜索题目列表">
+<meta property="og:url" content="http://github.com/sillyplus/2014/04/17/poj-search-list/index.html">
+<meta property="og:site_name" content="supernova">
+<meta property="og:description" content="声明：
+1.这不是我原创的，是从网上找到的，跟大家分享一下。(然后我在从lyd那里转来的)
+POJ 1069 -The Bermuda Triangle(难)http://acm.pku.edu.cn/JudgeOnline/problem?id=1069题意：用给定三角型填充六边形解法：此题的思想上精华在于坐标化ps:传说中比较bt，确实比较bt，主要很容易写错，我ac了，但程序没完全对….
+P">
+<meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Poj 搜索题目列表">
+<meta name="twitter:description" content="声明：
+1.这不是我原创的，是从网上找到的，跟大家分享一下。(然后我在从lyd那里转来的)
+POJ 1069 -The Bermuda Triangle(难)http://acm.pku.edu.cn/JudgeOnline/problem?id=1069题意：用给定三角型填充六边形解法：此题的思想上精华在于坐标化ps:传说中比较bt，确实比较bt，主要很容易写错，我ac了，但程序没完全对….
+P">
+    
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">supernova</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">标签</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">搜索</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">关于</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Poj 搜索题目列表
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Thu Apr 17 2014 07:24:47 GMT+0800">
+	
+		    Apr 17, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/资源/">资源</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p><strong>声明：</strong></p>
+<p>1.这不是我原创的，是从网上找到的，跟大家分享一下。(然后我在从lyd那里转来的)</p>
+<p>POJ 1069 -The Bermuda Triangle(难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1069" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1069</a><br>题意：用给定三角型填充六边形<br>解法：此题的思想上精华在于坐标化<br>ps:传说中比较bt，确实比较bt，主要很容易写错，我ac了，但程序没完全对….</p>
+<p>POJ 1077 - Eight(中等，此题不做人生不完整)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1077" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1077</a><br>题意：八数码问题，超经典题<br>解法：广搜，A*，双向广搜<br>相关：<a href="http://hi.baidu.com/lydrainbowcat/blog/item/d19758588b89fa95800a1804.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/d19758588b89fa95800a1804.html</a></p>
+<p>POJ 1084 - Square Destroyer(中等，经典题)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1084" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1084</a><br>题意：把每个正方型看做集合中的元素，每个木棒看做是一个子集，求最小的子集覆盖<br>解法：dfs，A*，广搜肯定爆空间<a href="http://hi.baidu.com/lydrainbowcat/blog/item/5759d80f6735133e6059f393.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/5759d80f6735133e6059f393.html</a></p>
+<p>POJ 1167 - The Buses(难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1167" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1167</a><br>题意：这道题综合了很多经典的深搜技巧，狂顶<br>解法：dfs<a href="http://hi.baidu.com/lydrainbowcat/blog/item/4231cba7965a0681d14358f7.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/4231cba7965a0681d14358f7.html</a></p>
+<p>POJ 1190 - 生日蛋糕(基础，好题)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1190" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1190</a><br>题意：略<br>解法：dfs，题偏简单，但做出来还是有些感觉的<a href="http://hi.baidu.com/lydrainbowcat/blog/item/41c21823e0748950ad34deb7.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/41c21823e0748950ad34deb7.html</a></p>
+<p>POJ 1324 - Holedox Moving(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1324" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1324</a><br>题意：略<br>解法：A*，dfs + 上界剪枝，广搜<br>相关：<a href="http://hi.baidu.com/zfy0701/blog/item/7fcaba2c3d5425e98a1399cf.html" target="_blank" rel="external">http://hi.baidu.com/zfy0701/blog/item/7fcaba2c3d5425e98a1399cf.html</a><br><a href="http://hi.baidu.com/zfy0701/blog/item/a3c44ecc049b1c1501e92806.html" target="_blank" rel="external">http://hi.baidu.com/zfy0701/blog/item/a3c44ecc049b1c1501e92806.html</a></p>
+<p>POJ 1376 - Robot(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1376" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1376</a><br>题意：略<br>解法：bfs，A*….</p>
+<p>POJ 1475 - Pushing Boxes(中等，很推荐)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1475" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1475</a><br>题意：推箱子游戏<br>解法：双重bfs(对箱子bfs 时 对人bfs)，A* <a href="http://hi.baidu.com/lydrainbowcat/blog/item/19f2bfd1d09f0e2c9b5027b8.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/19f2bfd1d09f0e2c9b5027b8.html</a></p>
+<p>POJ 1945 - Power Hungry Cows(??)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1945" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1945</a><br>题意：略<br>解法：在一份解题报告中被列为难题，不过好好像写了个很简单很暴力的bfs就过了…速度还是有些慢，暂时想不到好的启发函数</p>
+<p>POJ 2044 - Weather Forecast(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2044" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2044</a><br>题意：略<br>解法：广搜，dp，深搜<br>相关：<a href="http://hi.baidu.com/lydrainbowcat/blog/item/a8c86e11f1d52bd2a7ef3f00.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/a8c86e11f1d52bd2a7ef3f00.html</a><br>POJ 2286 - The Rotation Game(较难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2286" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2286</a><br>题意：略<br>解法：IDA*（迭代加深+上下界强剪<br>相关：<a href="http://hi.baidu.com/lydrainbowcat/blog/item/36e183d1e3782ac7572c84a8.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/36e183d1e3782ac7572c84a8.html</a><br>POJ 2308 - Dearboy’s Puzzle(中等，但做的人少?)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2308" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2308</a><br>题意：判断连连看是否有解<br>解法：DFS + BFS<br>相关：<a href="http://poj.org/showmessage?message_id=161113" target="_blank" rel="external">http://poj.org/showmessage?message_id=161113</a></p>
+<p>POJ 2426 Remainder(较难，=)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2426" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2426</a><br>题意：略，主要是数论部分比较容易让人抓狂<br>解法：bfs<br>相关：<a href="http://hi.baidu.com/zfy0701/blog/item/7fcaba2c3d5425e98a1399cf.html" target="_blank" rel="external">http://hi.baidu.com/zfy0701/blog/item/7fcaba2c3d5425e98a1399cf.html</a></p>
+<p>POJ 2449 Remmarguts’ Date(中等，强烈推荐)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2449" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2449</a><br>题意：经典问题：K短路<br>解法：dijkstra+A*，方法很多<br>相关：<a href="http://hi.baidu.com/lydrainbowcat/blog/item/df505f8841d1e980a5c2727c.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/df505f8841d1e980a5c2727c.html</a></p>
+<p>POJ1072 PuzzleOut（较难，强烈推荐）<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=1072" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=1072</a><br>题意：有关解密的       解法：Trie+DFS+剪枝<br>相关：本空间有题解<a href="http://hi.baidu.com/lydrainbowcat/blog/item/f12b38355913fb9fa71e1277.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/f12b38355913fb9fa71e1277.html</a></p>
+<p>POJ2222 DeeperBlue（中等）<br>题意：一个国际象棋盘上放着几个子，问最少去掉几个可以不互相攻击。主要考察细心，题目跟题号的性质相符（比较2）；<br>解法：dfs、暴力枚举<a href="http://hi.baidu.com/lydrainbowcat/blog/item/2194090a8975ec2ab1351db3.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/2194090a8975ec2ab1351db3.html</a></p>
+<p>POJ 2688 - Cleaning Robot(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2688" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2688</a><br>题意：bfs后转换为tsp问题<br>解法：状态压缩BFS。转化为TSP的话极易超时。<br>相关：本空间有题解<a href="http://hi.baidu.com/lydrainbowcat/blog/item/025fa9a48850a8e39052eefa.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/025fa9a48850a8e39052eefa.html</a></p>
+<p>POJ 2908 - Quantum(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2908" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=2908</a><br>题意：其实就是找单源最短路径<br>解法：优先队列广搜(即dijkstra)，建议用位运算优化</p>
+<p>POJ 3074 - Sudoku(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3074" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3074</a><br>题意：数独游戏，数据比2676强很多，但比3076弱<br>解法：用dfs回溯基本可过，不过每次应选择可能填的数字最少的格子搜<br>更快的方法是先转换成exact cover问题，然后用经典dancing links解决，<br>本空间有关于DancingLinks和本题的介绍和题解。<a href="http://hi.baidu.com/lydrainbowcat/blog/item/2194090a2276192ab1351dbc.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/2194090a2276192ab1351dbc.html</a><br>POJ 3322 - Bloxorz I(基础)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3322" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3322</a><br>题意：略，这个游戏本身很好玩（<a href="http://jandan.net/2008/01/24/bloxorz.html）" target="_blank" rel="external">http://jandan.net/2008/01/24/bloxorz.html）</a><br>解法：广搜，双向广搜。朴素的BFS就可以，非常简单，这是我除了A+B以外在poj第一道一次就AC的题目。<br>相关：<a href="http://hi.baidu.com/zfy0701/blog/item/d7b6490f847948e8ab6457c6.html" target="_blank" rel="external">http://hi.baidu.com/zfy0701/blog/item/d7b6490f847948e8ab6457c6.html</a></p>
+<p>POJ 3460 - Booksort(较难，很推荐)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3460" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3460</a><br>题意：略<br>解法：IDA<em>，A</em>，双向BFS<br>相关：<a href="http://hi.baidu.com/lydrainbowcat/blog/item/26767f24c8aed5278744f99d.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/26767f24c8aed5278744f99d.html</a></p>
+<p>POJ 3523 - The Morning after Halloween(较难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3523" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3523</a><br>题意：把所有机器人移到各自的位置，不能相撞或重合<br>解法：我的状态设计太暴力了：以所有机器人位置表示状态。然后用A*过，排倒数第几，郁闷。谁知道好的状态设计方法告诉我^_^</p>
+<p>POJ 3633 - Copying DNA(较难)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3633" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3633</a><br>题意：一个填充字符串的搜索题<br>解法：各种搜法皆宜<br>相关：算法的实现较挑战，我是参考了 <a href="http://www.wiskey86.cn/wordpress/?p=54" target="_blank" rel="external">http://www.wiskey86.cn/wordpress/?p=54</a> 才搞定的</p>
+<p>POJ 3635 full tank?(中等)<br><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3635" target="_blank" rel="external">http://acm.pku.edu.cn/JudgeOnline/problem?id=3635</a><br>题意：最短路变形<br>解法：广搜<br>相关：<a href="http://hi.baidu.com/lydrainbowcat/blog/item/0fb2503317caee57ad4b5fed.html" target="_blank" rel="external">http://hi.baidu.com/lydrainbowcat/blog/item/0fb2503317caee57ad4b5fed.html</a></p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">标签</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/资源/">资源</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/04/17/weekly-sumup/"  data-tooltip="一周总结">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/04/17/new-blog-new-start/" data-tooltip="New Blog || New Start">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/04/17/poj-search-list/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/04/17/poj-search-list/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/04/17/poj-search-list/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 YuanJie Chen. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/04/17/weekly-sumup/"  data-tooltip="一周总结">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/04/17/new-blog-new-start/" data-tooltip="New Blog || New Start">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/04/17/poj-search-list/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/04/17/poj-search-list/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/04/17/poj-search-list/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/04/17/poj-search-list/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/04/17/poj-search-list/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/04/17/poj-search-list/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <h4 id="about-card-name">YuanJie Chen</h4>
+        
+            <h5 id="about-card-bio"><p>author.bio</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </h5>
+        
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>

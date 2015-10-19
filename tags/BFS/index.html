@@ -1,0 +1,548 @@
+
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="supernova">
+    <title>标签: BFS - supernova</title>
+    <meta name="author" content="YuanJie Chen">
+    
+    
+    <meta name="description">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="supernova">
+<meta property="og:url" content="http://github.com/sillyplus/tags/BFS/index.html">
+<meta property="og:site_name" content="supernova">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="supernova">
+<meta name="twitter:description">
+    
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="2">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">supernova</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="2">
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">标签</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">搜索</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">关于</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="2"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    
+
+<section class="postShorten-group main-content-wrap">
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2014/07/25/tyvj-p1143/">Tyvj_P1143 - 飘飘乎居士的约会</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Fri Jul 25 2014 08:40:48 GMT+0800">
+	
+		    Jul 25, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>背景 Background</p>
+<p>一阵狂风吹过<br>只听“pong”的一声，飘飘乎居士降落了！！！<br>描述 Description</p>
+<p>又是美妙的一天，这天飘飘乎居士要和MM约会，因此他打扮的格外帅气。但是，因为打扮的时间花了太久，离约会的时间已经所剩无几。<br>幸运的是，现在飘飘乎居士得到了一张n<em>m的地图，图中左上角是飘飘乎居士的位置，右下角是约会的地点。‘.’代表马路，‘</em>’代表房屋。飘飘乎居士只能沿着‘.’行走（也就是不能踏入‘<em>’），而且行走的方向只能为上下左右的相邻格子。为了不让MM等待太久，飘飘乎居士在整个过程中可能会使用一次飘飘神功（也可能不使用，但最多使用一次），使用飘飘神功后，飘飘乎居士可以走进房屋一次（也就是在全程的行走中最多可以走一个‘</em>’,注意，只有一个）；<br>现在飘飘乎居士想要知道最少需要走多少步，飘飘乎居士才能到达约会的地点。<br>输入格式 InputFormat</p>
+<p>第一行，2个正整数 n和m，表示一个n<em>m的矩阵<br>接下来n行，每行m个字符，字符一定为 ’.’ 或者是‘</em>’ ，分别代表马路和房屋。<br>输入数据保证左上角和右下角都为‘.’<br>输出格式 OutputFormat</p>
+<p>一行，如果可以到达，则输入需要行走的最少步数（飘飘神功也记为一步）<br>如果不可以到达，则输出‘no’<br>样例输入 SampleInput [复制数据]</p>
+<p>样例输入1<br>3 3<br>.*.<br>…<br>…</p>
+<p>样例输入2<br>3 3<br>.**</p>
+<hr>
+<p>**.<br>样例输出 SampleOutput [复制数据]</p>
+<p>样例输入1<br>4</p>
+<p>样例输入2<br>no<br>数据范围和注释 Hint</p>
+<p>0&lt;N M &lt;=1000<br>来源 Source</p>
+<p>飘飘乎居士——violet hill</p>
+<p>//————————————————————–</p>
+<p>这道我的做法是分别由起点和终点开始，做两遍bfs，求出各自到其它点的最短距离，然后枚举使用飘飘神功的点，如果起点和终点都可以到达与该点相连并且相异的点就更新一下答案</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">1010</span>;
+
+<span class="keyword">struct</span> pos{
+    <span class="keyword">int</span> x, y, deep;
+};
+
+<span class="built_in">queue</span>&lt;pos&gt; q;
+
+<span class="keyword">bool</span> vis[MN][MN];
+<span class="keyword">int</span> a[MN][MN], b[MN][MN];
+<span class="keyword">char</span> c[MN][MN];
+<span class="keyword">int</span> n, m;
+<span class="keyword">int</span> dx[] = {<span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>};
+<span class="keyword">int</span> dy[] = {-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>};
+
+<span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(pos t)</span> </span>{
+    <span class="keyword">bool</span> ret = (t.x &gt;= <span class="number">0</span> &amp;&amp; t.y &gt;= <span class="number">0</span> &amp;&amp; t.x &lt; n &amp;&amp; t.y &lt; m);
+    <span class="keyword">if</span> (ret) {
+        <span class="keyword">if</span> (vis[t.x][t.y] || (c[t.x][t.y] == <span class="string">'*'</span>)) ret = <span class="literal">false</span>;
+    }
+    <span class="keyword">return</span> ret;
+}
+
+<span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(pos sr, <span class="keyword">int</span> d[][MN])</span> </span>{
+    <span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis));
+    <span class="keyword">while</span> (!q.empty()) q.pop();
+    q.push(sr);
+    vis[sr.x][sr.y] = <span class="literal">true</span>;
+    d[sr.x][sr.y] = sr.deep;
+    <span class="keyword">while</span> (!q.empty()) {
+        pos now, next;
+        now = q.front();
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) {
+            next.x = now.x + dx[i];
+            next.y = now.y + dy[i];
+            <span class="keyword">if</span> (check(next)) {
+                next.deep = now.deep+<span class="number">1</span>;
+                d[next.x][next.y] = next.deep;
+                q.push(next);
+                vis[next.x][next.y] = <span class="literal">true</span>;
+            }
+        }
+        q.pop();
+    }
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)
+        <span class="built_in">cin</span> &gt;&gt; c[i];
+    <span class="built_in">memset</span>(a, <span class="number">63</span>, <span class="keyword">sizeof</span>(a));
+    <span class="built_in">memset</span>(b, <span class="number">63</span>, <span class="keyword">sizeof</span>(b));
+    <span class="keyword">int</span> INF = a[<span class="number">0</span>][<span class="number">0</span>]; <span class="comment">//!!!!!!</span>
+    pos sro, orz, l, r;
+    sro.x = sro.y = sro.deep = <span class="number">0</span>;
+    orz.x = n-<span class="number">1</span>, orz.y = m-<span class="number">1</span>, orz.deep = <span class="number">0</span>;
+    bfs(sro, a);
+    bfs(orz, b);
+    <span class="keyword">int</span> ans = INF;
+    ans = min(ans, a[n-<span class="number">1</span>][m-<span class="number">1</span>]);
+    <span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis));
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) {
+        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j++) <span class="keyword">if</span> (c[i][j] == <span class="string">'*'</span>) {
+            <span class="keyword">for</span> (<span class="keyword">int</span> p = <span class="number">0</span>; p &lt; <span class="number">4</span>; p++) {
+                l.x = i+dx[p], l.y = j+dy[p];
+                <span class="keyword">if</span> (check(l))
+                    <span class="keyword">for</span> (<span class="keyword">int</span> q = <span class="number">0</span>; q &lt; <span class="number">4</span>; q++) <span class="keyword">if</span> (p != q) {
+                        r.x = i+dx[q], r.y = j+dy[q];
+                        <span class="keyword">if</span> (check(r)) {
+                            ans = min(ans, a[l.x][l.y]+b[r.x][r.y]+<span class="number">2</span>);
+                        }
+                    }
+            }
+        }
+    }
+    <span class="keyword">if</span> (ans != INF)
+        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;
+    <span class="keyword">else</span>
+        <span class="built_in">cout</span> &lt;&lt; <span class="string">"no"</span> &lt;&lt; endl;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2014/07/25/tyvj-p1143/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2014/07/05/timus_1008_image-encoding/">Timus_1008_Image Encoding</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sat Jul 05 2014 15:37:28 GMT+0800">
+	
+		    Jul 05, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>我应该怎么说这道题好呢，只能怪自己英语没有学好吧T^T，为什么造福小众，我决定不翻译题意了，大家自己看吧。。。。</p>
+<p>There are several ways to encode an image. In this problem we will consider two representations of an image. We assume that the image consists of black and white pixels. There is at least one black pixel and all black pixels are connected with their sides. Coordinates of black pixels are not less than 1 and not greater than 10. An example of such an image is at the figure.</p>
+<p>Both representations describe arrangement of black pixels only.</p>
+<p>At the first representation we specify in the first line number of black pixels and coordinates of each black pixel in the following lines. Pixels are listed in order of increasing X. In case of equality of X they are listed in order of increasing Y. Image at the figure is encoded as follows:</p>
+<p><strong>6<br>2 3<br>2 4<br>3 3<br>3 4<br>4 2<br>4 3
+</strong></p>
+<p>At the second representation we specify in the first line coordinates of the lowest left black pixel. Each of the following lines contains a description of neighbors for one of the pixels. At first, neighbors of the lowest left pixel are specified, then neighbors of its first neighbor (if it exists) are specified, then neighbors of its second neighbor (if it also exists) follow. When all its neighbors are described the description of the neighbors of its first neighbor follows. The description of the neighbors of its second neighbor follows then and so on.</p>
+<p>Each descriptive line contains at most one letter for each neighbor: R for the right, T for the top, L for the left, B for the bottom. If the neighbor was already specified it is not included into the descriptive line and vice-versa. Also there is only one descriptive line for each pixel. Neighbors are listed counter-clockwise starting with the right. Each descriptive line except the last ends with a comma. The last line ends with a full stop. Image at the figure is encoded as follows:</p>
+<p><strong>2 3<br>RT,<br>RT,<br>,<br>B,<br>,<br>.
+</strong></p>
+<p>There are no leading or tailing spaces in any representation. There is exactly one space between X and Y coordinates.</p>
+<h3 id="Input">Input</h3><p>One representation of the image will be given to your program in the input.</p>
+<h3 id="Output">Output</h3><p>Your program has to write other representation of the image to the output.</p>
+<h3 id="Sample">Sample</h3><table class="sample"><br><tbody><br><tr><br>input<br>output<br></tr><br><tr><br><br><td><br><br><br>    6<br>    2 3<br>    2 4<br>    3 3<br>    3 4<br>    4 2<br>    4 3<br><br><br><br><br></td><br><br><td><br><br><br>    2 3<br>    RT,<br>    RT,<br>    ,<br>    B,<br>    ,<br>    .<br><br><br><br><br></td><br></tr><br></tbody><br></table>
+
+
+<p><strong>Problem Source: </strong>Third Open USTU Collegiate Programming Contest (PhysTech Cup), March 18, 2000</p>
+<p>我只想说重点在最后几句话。。可能只有我没看清楚吧。。。。</p>
+<p>看懂题意之后就会发现整个转换的过程其实就是bfs吧，然后就硬上了。一开始我由于没看清楚题意只写了一个转换，wa了几次，后来经过谷哥翻译才发现有这么个坑。</p>
+<p>然后读入数据有点麻烦，总之就是我最不擅长的东西，还有要记得是逆时针方向，搜的时候。然后我就因为不明原因一直爆内存。。。。后来的后来，把原本读入字符数组的部分改成读字符串后不知道为什么就过了。。。。白白D了那么久的bug了。。。。</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">20</span>;
+
+<span class="keyword">struct</span> pt{
+    <span class="keyword">int</span> x, y;
+};
+
+<span class="keyword">int</span> n, ans, vx, vy;
+<span class="keyword">bool</span> vis[MN][MN];
+<span class="keyword">int</span> dx[] = {<span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>};
+<span class="keyword">int</span> dy[] = {<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>};
+pt a[MN*MN];
+<span class="keyword">char</span> c[] = {<span class="string">'R'</span>, <span class="string">'T'</span>, <span class="string">'L'</span>, <span class="string">'B'</span>}, b[MN];
+<span class="built_in">queue</span>&lt;pt&gt; q;
+
+<span class="function"><span class="keyword">bool</span> <span class="title">comp</span><span class="params">(<span class="keyword">const</span> pt &amp;pa, <span class="keyword">const</span> pt &amp;pb)</span> </span>{
+    <span class="keyword">if</span> (pa.x != pb.x) <span class="keyword">return</span> pa.x &lt; pb.x;
+    <span class="keyword">return</span> pa.y &lt; pb.y;
+}
+
+<span class="function"><span class="keyword">void</span> <span class="title">bfsa</span><span class="params">()</span> </span>{
+    pt now, next;
+    <span class="built_in">string</span> dir;
+    <span class="keyword">while</span> (!q.empty()) {
+        now = q.front();
+        a[ans] = now;
+        <span class="built_in">cin</span> &gt;&gt; dir;
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dir.length() - <span class="number">1</span>; i++) {
+            <span class="keyword">char</span> tc = dir[i];
+            <span class="keyword">int</span> j;
+            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++) {
+                <span class="keyword">if</span> (c[j] == tc) <span class="keyword">break</span>;
+            }
+            next.x = now.x + dx[j];
+            next.y = now.y + dy[j];
+            q.push(next);
+        }
+        q.pop();
+        ans++;
+    }
+}
+
+<span class="function"><span class="keyword">void</span> <span class="title">bfsb</span><span class="params">()</span> </span>{
+    pt now, next;
+    <span class="keyword">while</span> (!q.empty()) {
+        now = q.front();
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) {
+            <span class="keyword">int</span> tx = now.x + dx[i];
+            <span class="keyword">int</span> ty = now.y + dy[i];
+            <span class="keyword">if</span> (vis[tx][ty] == <span class="number">1</span>) {
+                <span class="built_in">cout</span> &lt;&lt; c[i];
+                vis[tx][ty] = <span class="number">0</span>;
+                next.x = tx;
+                next.y = ty;
+                q.push(next);
+            }
+        }
+        ans++;
+        <span class="keyword">if</span> (ans != n)
+            <span class="built_in">cout</span> &lt;&lt; <span class="string">",\n"</span>;
+        <span class="keyword">else</span>
+            <span class="built_in">cout</span> &lt;&lt; <span class="string">".\n"</span>;
+        q.pop();
+    }
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="built_in">string</span> s;
+    getline(<span class="built_in">cin</span>, s);
+    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));
+    pt k;
+    <span class="keyword">if</span> (s.find(<span class="string">' '</span>) != <span class="built_in">string</span>::npos) {
+        s.copy(b, s.find(<span class="string">' '</span>), <span class="number">0</span>);
+        vx = atoi(b);
+        s.copy(b, <span class="number">100</span>, s.find(<span class="string">' '</span>) + <span class="number">1</span>);
+        vy = atoi(b);
+        pt k;
+        k.x = vx;
+        k.y = vy;
+        q.push(k);
+        bfsa();
+        sort(a, a+ans, comp);
+        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ans; i++)
+            <span class="built_in">cout</span> &lt;&lt; a[i].x &lt;&lt; <span class="string">' '</span> &lt;&lt; a[i].y &lt;&lt; endl;
+    } <span class="keyword">else</span> {
+        n = atoi(s.c_str());
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) {
+            <span class="built_in">cin</span> &gt;&gt; k.x &gt;&gt; k.y;
+            vis[k.x][k.y] = <span class="number">1</span>;
+            <span class="keyword">if</span> (i == <span class="number">0</span>) {
+                q.push(k);
+                <span class="built_in">cout</span> &lt;&lt; k.x &lt;&lt; <span class="string">' '</span> &lt;&lt; k.y &lt;&lt; endl;
+                vis[k.x][k.y] = <span class="number">0</span>;
+            }
+        }
+        ans = <span class="number">0</span>;
+        bfsb();
+    }
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2014/07/05/timus_1008_image-encoding/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">第 1 页 共 1 页</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 YuanJie Chen. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <h4 id="about-card-name">YuanJie Chen</h4>
+        
+            <h5 id="about-card-bio"><p>author.bio</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </h5>
+        
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>

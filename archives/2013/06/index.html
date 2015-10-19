@@ -1,0 +1,601 @@
+
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="supernova">
+    <title>归档: 2013/6 - supernova</title>
+    <meta name="author" content="YuanJie Chen">
+    
+    
+    <meta name="description">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="supernova">
+<meta property="og:url" content="http://github.com/sillyplus/archives/2013/06/index.html">
+<meta property="og:site_name" content="supernova">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="supernova">
+<meta name="twitter:description">
+    
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="2">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">supernova</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="2">
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">标签</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">搜索</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">关于</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="2"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    
+
+<section class="postShorten-group main-content-wrap">
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2013/06/30/cpp-pointer/">C++指针备忘</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sun Jun 30 2013 00:53:50 GMT+0800">
+	
+		    Jun 30, 2013
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/技术/">技术</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>摘录自 C++ Primer Plus</p>
+<p><strong>指针的危险</strong></p>
+<p>一定要在对指针应用解除引用操作符（*）之前，将指针初始化为一个确定的、适当的地址。这是关于是使用指针的金科玉律。</p>
+<p>如下代码：</p>
+<p>long * fellow;                 //create a pointer-to-long</p>
+<p>*fellow = 223323;       //place a value in never-never land</p>
+<p>fellow确实是一个指针，但它指向哪里呢？上述代码没有将地址赋给fellow。那么223323将会被放在哪里呢？我们不知道。由于fellow 没有被初始化，它可能有任何值。不管是什么，程序都将把它解释为储存223323的地址。如果fellow的值碰巧为1200，计算机将把数据放在地址1200上，即使这恰巧是程序代码的地址。fellow指向的地方很可能并不是要存储223323的地方。这种错误可能会导致一些最隐匿、最难以跟踪的bug。</p>
+
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2013/06/30/cpp-pointer/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2013/06/29/dynamic-memory-allocation/">动态内存分配</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sat Jun 29 2013 13:43:18 GMT+0800">
+	
+		    Jun 29, 2013
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/技术/">技术</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>摘自Matrix67 C语言速成手册</p>
+<p>四种动态内存分配函数，使用它们前需要在程序最前面包含头文件stdlib.h（C++应该是cstdlib）。四种函数的格式分别为：</p>
+<p>void <em>malloc ( size );<br>void </em>calloc ( n, size );<br>void free ( pointer );<br>void *realloc( pointer, size );</p>
+<p>函数malloc 将在内存里寻找一个大小为size 的连续空间，把分配到的内存地址作为一个指向void 类型的指针（默认的无类型指针）返回。如果空间分配失败，函数返回NULL。</p>
+<p>函数calloc 将在内存里寻找一个大小为n * size 的连续空间，并且把这段内存的数据全部清0，返回数据和malloc 一样。如果空间分配失败，函数返回NULL。</p>
+<p>函数free 用于释放内存空间，释放后的空间被回收，可以用于以后的malloc 或calloc 操作。</p>
+<p>函数realloc 在保证已有数据不变的情况下改变已有指针的空间大小，返回重新分得的空间的内存地址（有可能和原来不同）。如果空间重新分配失败，函数返回NULL。</p>
+<p>Pascal 中的new 语句可以用前两个函数代替，free 语句则相当于Pascal 中的dispose。</p>
+<p>注意，malloc 和calloc 函数所返回的指针还没确定类型，理论上需要用类型转换。下面的程序合法地为p指针分配空间：</p>
+<p>int<em>p;<br>p = (int </em>) malloc( sizeof(int) );<br>*p = 520;</p>
+<p>事实上，由于赋值时C 语言自动转换类型，因此那个类型转换是没有必要的（去掉(int *)没有影响）。</p>
+<p>本人在用codeblocks时，发现去掉（int*）编译不过，maybe是版本问题吧……</p>
+
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2013/06/29/dynamic-memory-allocation/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2013/06/17/think-with-piece/">分块思想学习</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Jun 17 2013 04:00:07 GMT+0800">
+	
+		    Jun 17, 2013
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/技术/">技术</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>早上看了一下七中王迪大神写的一篇论文，学习了一下分块思想，只看了一点点，基本上是看着代码，再自己脑补的。</p>
+<p>所谓分块就是把规模为n的问题分割成k块，每块规模为s，为了使对块内和整个范围的操作的复杂度平均些，令k = s = √n。利用这个思想就能把O(n)的复杂度降到O(√n),从而达到优化算法的目的。论文中如是说。</p>
+<p>只看了一个简单的问题，如有一长度为n的正整数数列，完成m次操作（1≤n，m≤10 ˆ5<em>），M x y:把第x个数字修改为y；Q x y：询问区间 [x,y] 中的最大值Max。</em></p>
+<p>这个问题相当经典，有多种算法可解，因为在学分块，自然采用块状解决之。</p>
+<p>我补充完整的代码：</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="function"><span class="keyword">void</span> <span class="title">maintain</span><span class="params">(<span class="keyword">int</span> x)</span></span>;
+<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>;
+<span class="function"><span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;
+<span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;
+
+<span class="keyword">int</span> a[<span class="number">100100</span>]={<span class="number">0</span>},b[<span class="number">100100</span>]={<span class="number">0</span>};
+<span class="keyword">int</span> n,m,t,s;
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
+    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];
+    s = <span class="built_in">sqrt</span>(n);
+    t = (n + s - <span class="number">1</span>) / s;
+    init();
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= m; i++) {
+        <span class="keyword">int</span> x,y,k;
+        <span class="built_in">cin</span> &gt;&gt; k;
+        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;
+         <span class="keyword">if</span> (k == <span class="number">1</span>) {
+            modify(x-<span class="number">1</span>,y);
+        } <span class="keyword">else</span> {
+            <span class="built_in">cout</span> &lt;&lt; query(x-<span class="number">1</span>,y-<span class="number">1</span>) &lt;&lt; endl;
+        }
+    }
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+
+<span class="function"><span class="keyword">void</span> <span class="title">maintain</span><span class="params">(<span class="keyword">int</span> x)</span></span>{
+    <span class="keyword">int</span> lb = (x / s) * s, rb = min(n, lb + s) - <span class="number">1</span>;
+    <span class="keyword">if</span> (x == rb) b[x] = a[x], x--;
+    <span class="keyword">for</span> (;x &gt;= lb; x--) b[x] = max(b[x+<span class="number">1</span>], a[x]);
+}
+
+<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>{
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t; i++)
+        maintain(min(n, i * s) - <span class="number">1</span>);
+}
+
+<span class="function"><span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>{
+    a[x] = y;
+    maintain(x);
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>{
+    <span class="keyword">int</span> x_pos = x / s, y_pos = y / s;
+    <span class="keyword">int</span> ret = <span class="number">0</span>;
+    <span class="keyword">if</span> (x_pos == y_pos) {
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = x;i &lt;= y; i++)
+            ret = max(ret, a[i]);
+    } <span class="keyword">else</span> {
+        ret = b[x];
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = x_pos + <span class="number">1</span>; i &lt; y_pos; i++)
+            ret = max(ret,b[i * s]);
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = y_pos * s; i &lt;= y; i++)
+            ret = max(ret, a[i]);
+    }
+    <span class="keyword">return</span> ret;
+}
+</code></pre>
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2013/06/17/think-with-piece/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2013/06/12/tyvj-p1565-warcraft-III/">Tyvj P1565 Warcraft III 守望者的烦恼</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Jun 12 2013 08:31:24 GMT+0800">
+	
+		    Jun 12, 2013
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>这道题显然有，矩阵乘法可解（由数据范围可得）</p>
+<p>显然有题目要求: f[n]=∑f[i] (n-k&lt;i&lt;n-1),矩阵乘法相关知识自行google，推荐阅读<a href="http://www.matrix67.com/" target="_blank" rel="external">Matrix67</a>写的一篇文章。</p>
+<p>所以构造有数组A(k*k):</p>
+<p>000…1</p>
+<p>100…1</p>
+<p>010…1</p>
+<p>001…1</p>
+<p>因为看k&lt;10,我们可以先计算出f[1]~f[k],然后用矩阵乘法加速，计算出A^(n-k),最后再f*A^(n-k)乘一下就得出了。</p>
+<p>我用的是递归式的矩阵二分取幂，后来才知道这样写会显得你很弱智……我也不知道为什么，然后就顺便再复习了一下，快速幂的非递归写法。</p>
+<p>果断C++没学好，还是用pascal写的，这是这道题的代码：</p>
+<pre><code><span class="keyword">type</span> arr=<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">12</span>,-<span class="number">1</span>..<span class="number">12</span>] <span class="keyword">of</span> int64;
+<span class="keyword">const</span> md=<span class="number">7777777</span>;
+<span class="keyword">var</span>
+  k,i,j:longint;
+  n,ans:int64;
+  t,q:arr;
+  f:<span class="keyword">array</span>[-<span class="number">1</span>..<span class="number">12</span>] <span class="keyword">of</span> int64;
+
+<span class="function"><span class="keyword">function</span> <span class="title">mul</span><span class="params">(a,b:arr)</span>:</span>arr;
+<span class="keyword">var</span>
+  c:arr;
+  i,j,p:longint;
+<span class="keyword">begin</span>
+  fillchar(c,sizeof(c),<span class="number">0</span>);
+  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span>
+    <span class="keyword">for</span> j:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span>
+      <span class="keyword">for</span> p:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span>
+        c[i,j]:=(c[i,j]+(a[i,p]*b[p,j] <span class="keyword">mod</span> md)) <span class="keyword">mod</span> md;
+  <span class="keyword">exit</span>(c);
+<span class="keyword">end</span>;
+
+<span class="function"><span class="keyword">function</span> <span class="title">dv</span><span class="params">(x:int64)</span>:</span>arr;
+<span class="keyword">var</span> tp:arr;
+<span class="keyword">begin</span>
+  <span class="keyword">if</span> x=<span class="number">1</span> <span class="keyword">then</span> <span class="keyword">exit</span>(t);
+  tp:=dv(x <span class="keyword">div</span> <span class="number">2</span>);
+  tp:=mul(tp,tp);
+  <span class="keyword">if</span> (x <span class="keyword">mod</span> <span class="number">2</span>)&lt;&gt;<span class="number">0</span> <span class="keyword">then</span> tp:=mul(tp,t);
+  <span class="keyword">exit</span>(tp);
+<span class="keyword">end</span>;
+
+<span class="keyword">begin</span>
+  readln(k); readln(n);
+  fillchar(t,sizeof(t),<span class="number">0</span>);
+  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k-<span class="number">1</span> <span class="keyword">do</span> t[i+<span class="number">1</span>,i]:=<span class="number">1</span>;
+  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span> t[i,k]:=<span class="number">1</span>;
+  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span> f[i]:=<span class="number">0</span>; f[<span class="number">0</span>]:=<span class="number">1</span>;
+  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span>
+    <span class="keyword">for</span> j:=<span class="number">0</span> <span class="keyword">to</span> i-<span class="number">1</span> <span class="keyword">do</span>
+      f[i]:=f[i]+f[j];
+  <span class="keyword">if</span> n&lt;=k <span class="keyword">then</span> <span class="keyword">begin</span> writeln(f[n]); halt; <span class="keyword">end</span>;
+  q:=dv(n-k); ans:=<span class="number">0</span>;
+  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="keyword">to</span> k <span class="keyword">do</span>
+    ans:=(ans+(f[i]*q[i,k] <span class="keyword">mod</span> md)) <span class="keyword">mod</span> md;
+  writeln(ans);
+<span class="keyword">end</span>.
+</code></pre>
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2013/06/12/tyvj-p1565-warcraft-III/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2013/06/04/writed-before-cee/">写在高考前</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Jun 04 2013 02:35:56 GMT+0800">
+	
+		    Jun 04, 2013
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/杂记/">杂记</a>
+
+
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>保送生的颓废生活……就快完结，可惜这并不是我想要的生活。</p>
+<p>本来回家是为了学习，可如今C++还没学好，日子就快结束了。整天被传召回学校，一个早上就轻松地没了……</p>
+<p>因为承诺过会去高考，所以剩下这两天是否要复习呢，本来决定要的，可又彷徨了</p>
+<p>踏进六月，终于能上网了，可还是没能认真学习，感觉还是先过完高考这关再说吧，虽然现在对高考没什么感觉，我总是太在乎别人的感受了吗。</p>
+<p>混乱的语言，也正表明我现在的心境。也许是最近没有好好感受算法的魅力了吧，在题库闲逛，想code时却才发现自己的语言还没学好……，pascal又在本能上抑制去使用它。</p>
+<p>算了，明后两天复习下，再考两天试，就不用管了。</p>
+<p>还有我的足球赛啊，好想参加啊……我应该去写份计划表吗，感觉自制力不行写了也没用对吧。</p>
+
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2013/06/04/writed-before-cee/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">第 1 页 共 1 页</li>
+    </ul>
+</div>
+
+</section>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 YuanJie Chen. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <h4 id="about-card-name">YuanJie Chen</h4>
+        
+            <h5 id="about-card-bio"><p>author.bio</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </h5>
+        
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>

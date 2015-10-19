@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="supernova">
+    <title>Tyvj_P1309_刷题的玖君 - supernova</title>
+    <meta name="author" content="YuanJie Chen">
+    
+    
+    <meta name="description" content="描述 Description
+某一天在网上闲逛的玖君不小心发现了TYVJ，就立刻被TYVJ吸引住了，果断驻扎下来。玖君决定按照顺序来切题，因为离复赛越来越近了，所以他希望能够用最短时间AC掉前面N道题目，完成第i道题目玖君需要花费t[i]个单位的代价。玖君做题有个特点，他喜欢看完几道题后，一次把几道题的代码写完。如果玖君决定一次写完从编号L到编号R的题目，那么他完成这些题目的总代价等于编号L到R题">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Tyvj_P1309_刷题的玖君">
+<meta property="og:url" content="http://github.com/sillyplus/2014/07/16/tyvj_p1309/index.html">
+<meta property="og:site_name" content="supernova">
+<meta property="og:description" content="描述 Description
+某一天在网上闲逛的玖君不小心发现了TYVJ，就立刻被TYVJ吸引住了，果断驻扎下来。玖君决定按照顺序来切题，因为离复赛越来越近了，所以他希望能够用最短时间AC掉前面N道题目，完成第i道题目玖君需要花费t[i]个单位的代价。玖君做题有个特点，他喜欢看完几道题后，一次把几道题的代码写完。如果玖君决定一次写完从编号L到编号R的题目，那么他完成这些题目的总代价等于编号L到R题">
+<meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tyvj_P1309_刷题的玖君">
+<meta name="twitter:description" content="描述 Description
+某一天在网上闲逛的玖君不小心发现了TYVJ，就立刻被TYVJ吸引住了，果断驻扎下来。玖君决定按照顺序来切题，因为离复赛越来越近了，所以他希望能够用最短时间AC掉前面N道题目，完成第i道题目玖君需要花费t[i]个单位的代价。玖君做题有个特点，他喜欢看完几道题后，一次把几道题的代码写完。如果玖君决定一次写完从编号L到编号R的题目，那么他完成这些题目的总代价等于编号L到R题">
+    
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">supernova</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">标签</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">搜索</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">关于</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Tyvj_P1309_刷题的玖君
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Wed Jul 16 2014 14:40:33 GMT+0800">
+	
+		    Jul 16, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/题解/">题解</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>描述 Description</p>
+<p>某一天在网上闲逛的玖君不小心发现了TYVJ，就立刻被TYVJ吸引住了，果断驻扎下来。玖君决定按照顺序来切题，因为离复赛越来越近了，所以他希望能够用最短时间AC掉前面N道题目，完成第i道题目玖君需要花费t[i]个单位的代价。玖君做题有个特点，他喜欢看完几道题后，一次把几道题的代码写完。如果玖君决定一次写完从编号L到编号R的题目，那么他完成这些题目的总代价等于编号L到R题目的代价之和与R之积，即SUM{t[L..R]} <em>R。此外每道题在被切之前都会等待被切，等待的时间，也被算在代价里面，对于每个第k次被切的题，在它被切之前的等待代价为(k-1)</em>S。综上，切完N道题的总代价=第1次切题的代价+第2次切题的代价+…+第k次切题的代价+每道题的等待代价。现在我们想知道玖君切完这N道题目的最小代价。<br>输入格式 InputFormat</p>
+<p>第1行：2个用空格分开的整数N, S<br>第2行：N个用空格分开的整数，分别表示t[1]到t[N]<br>输出格式 OutputFormat</p>
+<p>第1行：1个整数，表示玖君完成N道题的最小代价<br>样例输入 SampleInput [复制数据]</p>
+<p>4 7<br>8 1 7 6<br>样例输出 SampleOutput [复制数据]</p>
+<p>79<br>数据范围和注释 Hint</p>
+<p>[样例解释]<br>第1次切1、2、3题：代价为48<br>第2次切4题：代价为24<br>其中每道题的等待时间代价为:0,0,0,7<br>共计48 + 24 + 7 = 79</p>
+<p>[数据范围]<br>对于70%的数据，1 &lt;= N &lt;= 3000<br>对于100%的数据，1 &lt;= N &lt;= 30000<br>对于100%的数据，1 &lt;= S,t[i] &lt;= 100</p>
+<p>Dp，然后先求前缀和数组，方便后面用到，设f[i]表示刷完前i个题所花费的最小代价，然后一个比较容易想到的方程就是</p>
+<ul>
+<li>f[i]=min{f[j]+(sum[i]-sum[j])<em>i+(n-i)</em>S|0&lt;=j&lt;i} //shiugaosuyixiawo(n-i)*sshisuanfeiyongtiqianjisuanma?</li>
+</ul>
+<p>然后这个显然当N＝30000时是不行的，会T，然后就发现，设用k更新i比用j更优，则</p>
+<ul>
+<li>f[k] + (sum[i]-sum[k]) <em> i + (n-i)</em>s &gt;=f[j] + (sum[i]-sum[j]) <em> i + (n-i)</em>s</li>
+</ul>
+<ul>
+<li>(f[k]-f[j])/(sum[k]-sum[j])&lt;=i</li>
+</ul>
+<p>当满足这个条件时，k优于j ，然后就维护一个队列就行了，这个是所谓的斜率优化？还是得好好消化啊，dp水平太次了我。。。</p>
+<pre><code><span class="comment">#include &lt;iostream&gt;</span>
+<span class="comment">#include &lt;cstdio&gt;</span>
+<span class="comment">#include &lt;cmath&gt;</span>
+
+using namespace std;
+
+typedef long long LL;
+
+const <span class="keyword">int</span> MN = <span class="number">30010</span>;
+
+LL n, <span class="keyword">s</span>;
+LL f[MN];
+LL sum[MN];
+<span class="keyword">int</span> <span class="string">q[MN]</span>;
+
+double grad(<span class="keyword">int</span> j, <span class="keyword">int</span> k) {
+    <span class="keyword">return</span> ((f[k]-f[j])*<span class="number">1.0</span> / (sum[k]-sum[j]));
+}
+
+<span class="keyword">int</span> main() {
+    cin &gt;&gt; n &gt;&gt; <span class="keyword">s</span>;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) {
+        scanf(<span class="string">"<span class="variable">%lld</span>"</span>, &amp;sum[i]);
+        sum[i] += sum[i-<span class="number">1</span>];
+    }
+    <span class="keyword">int</span> h = <span class="number">1</span>, t = <span class="number">1</span>;
+    f[<span class="number">0</span>] = <span class="number">0</span>;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) {
+        <span class="keyword">while</span> ((h &lt; t) &amp;&amp; (grad(<span class="string">q[h]</span>, <span class="string">q[h+1]</span>) &lt;= i)) ++h;
+        f[i] = f[<span class="string">q[h]</span>] + (sum[i]-sum[<span class="string">q[h]</span>])*i + (n-i)*<span class="keyword">s</span>;
+        <span class="keyword">while</span> ((h &lt; t) &amp;&amp; (grad(<span class="string">q[t-1]</span>, <span class="string">q[t]</span>) &gt;= grad(<span class="string">q[t]</span>, i))) --t;
+        <span class="string">q[++t]</span> = i;
+    }
+    cout &lt;&lt; f[n] &lt;&lt; endl;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+            
+                
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">标签</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/DP/">DP</a> <a class="tag tag--primary tag--small t-link" href="/tags/Tyvj/">Tyvj</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/07/25/tyvj-p1143/"  data-tooltip="Tyvj_P1143 - 飘飘乎居士的约会">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/07/16/tyvj_p1064_p1404/" data-tooltip="Tyvj_P1064_P1404_旧题">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/07/16/tyvj_p1309/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/07/16/tyvj_p1309/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/07/16/tyvj_p1309/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 YuanJie Chen. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/07/25/tyvj-p1143/"  data-tooltip="Tyvj_P1143 - 飘飘乎居士的约会">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/07/16/tyvj_p1064_p1404/" data-tooltip="Tyvj_P1064_P1404_旧题">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/07/16/tyvj_p1309/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/07/16/tyvj_p1309/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/07/16/tyvj_p1309/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/07/16/tyvj_p1309/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/07/16/tyvj_p1309/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/07/16/tyvj_p1309/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <h4 id="about-card-name">YuanJie Chen</h4>
+        
+            <h5 id="about-card-bio"><p>author.bio</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </h5>
+        
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>

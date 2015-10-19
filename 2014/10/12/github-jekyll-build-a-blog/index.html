@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="supernova">
+    <title>Github Page + Jekyll 博客搭建小记 - supernova</title>
+    <meta name="author" content="YuanJie Chen">
+    
+    
+    <meta name="description" content="占位扯淡折腾了几天，终于可以坐下来写点总结了。不过现在是早上三点多快四点，还在想六七点的时候要去踢球，所以只是占个位置而已，熟悉一下。毕竟还有很多东西不会，不过光是搭好现在这个样子就用了挺多时间的(其实也不是很多啦。。。)
+博客搭建(ｰ ｰ;)从搭好这个blog到现在已经好几天了，然后今天发现已经没有来写这样一篇介绍的热情了。。。原因是，介绍这个方面的内容在网上很容易就能找到许多，所以似乎没有必要">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Github Page + Jekyll 博客搭建小记">
+<meta property="og:url" content="http://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/index.html">
+<meta property="og:site_name" content="supernova">
+<meta property="og:description" content="占位扯淡折腾了几天，终于可以坐下来写点总结了。不过现在是早上三点多快四点，还在想六七点的时候要去踢球，所以只是占个位置而已，熟悉一下。毕竟还有很多东西不会，不过光是搭好现在这个样子就用了挺多时间的(其实也不是很多啦。。。)
+博客搭建(ｰ ｰ;)从搭好这个blog到现在已经好几天了，然后今天发现已经没有来写这样一篇介绍的热情了。。。原因是，介绍这个方面的内容在网上很容易就能找到许多，所以似乎没有必要">
+<meta property="og:updated_time" content="2015-05-19T03:23:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Github Page + Jekyll 博客搭建小记">
+<meta name="twitter:description" content="占位扯淡折腾了几天，终于可以坐下来写点总结了。不过现在是早上三点多快四点，还在想六七点的时候要去踢球，所以只是占个位置而已，熟悉一下。毕竟还有很多东西不会，不过光是搭好现在这个样子就用了挺多时间的(其实也不是很多啦。。。)
+博客搭建(ｰ ｰ;)从搭好这个blog到现在已经好几天了，然后今天发现已经没有来写这样一篇介绍的热情了。。。原因是，介绍这个方面的内容在网上很容易就能找到许多，所以似乎没有必要">
+    
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">supernova</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">标签</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">搜索</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">关于</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Github Page + Jekyll 博客搭建小记
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sun Oct 12 2014 00:00:00 GMT+0800">
+	
+		    Oct 12, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/技术/">技术</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h3 id="占位扯淡"><del>占位扯淡</del></h3><p><del>折腾了几天，终于可以坐下来写点总结了。不过现在是早上三点多快四点，还在想六七点的时候要去踢球，所以只是<br>占个位置而已，熟悉一下。毕竟还有很多东西不会，不过光是搭好现在这个样子就用了挺多时间的(其实也不是很多啦。。。)</del></p>
+<h3 id="博客搭建">博客搭建</h3><h4 id="(ｰ_ｰ;)">(ｰ ｰ;)</h4><p>从搭好这个blog到现在已经好几天了，然后今天发现已经没有来写这样一篇介绍的热情了。。。原因是，介绍这个方面的内容在网上很容易就能找到许多，<br>所以似乎没有必要重复说明，但是每个人的搭建过程都多少还是会遇到各种不同的问题。这里我打算来记录一下我遇到的一些问题吧。</p>
+<p>以下这些我都是Mac下做的，因为OS X是类UNIX系统，所以很多都是基本跟Linux下一样的，如果你在搭建过程中遇到什么问题没办法解决，<br>可以尝试在搜索的时候添加跟Linux相关的关键字。</p>
+<h4 id="Github_Page的设置">Github Page的设置</h4><p>首先你要有一个Github的账号<del>，这不废话嘛</del>，然后进入这个页面：<a href="https://pages.github.com" target="_blank" rel="external">Github Page</a>,<br>Github Page有两种类型，一种是个人或者组织的站点，一种是作为项目的主页，因为我们是要搭建个人博客，<br>所以选择创建一个User site就好了，然后就是按照引导就能十分轻松的成功创建了。最后把repo存到本地来，<br>另外说一下我用的是Mac的客户端来管理repo的，不是用的命令行，所以对于git的那些命令就不是很清楚了，<br>如果你想了解更多请自行Google。Github Page使用的是Jekyll模版系统，相当于是静态页面发布。</p>
+<h4 id="Jekyll的设置">Jekyll的设置</h4><p>这个也是很简单的啊，还是直接看<a href="http://jekyllrb.com/docs/quickstart/" target="_blank" rel="external">官网</a>。我貌似是用brew安装的，<br>不过没差啦。至于怎么使用还是看官网的说明好了(感觉会被喷：什么都说去看官方文档，她喵的我还看你博客干嘛。。。)</p>
+<p>在terminal中，进入到你自己本地那个Github Page的repo，然后执行下面的命令创建</p>
+<pre><code><span class="title">jekyll</span> build
+</code></pre><p>创建成功的话，会得到类似如下的目录结构</p>
+<pre><code>.
+├── _config.yml
+├── _drafts
+<span class="string">|   ├── begin-with-the-crazy-ideas.textile</span>
+<span class="string">|   └── on-simplicity-in-technology.markdown</span>
+├── _includes
+<span class="string">|   ├── footer.html</span>
+<span class="string">|   └── header.html</span>
+├── _layouts
+<span class="string">|   ├── default.html</span>
+<span class="string">|   └── post.html</span>
+├── _posts
+<span class="string">|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile</span>
+<span class="string">|   └── 2009-04-26-barcamp-boston-4-roundup.textile</span>
+├── _data
+<span class="string">|   └── members.yml</span>
+├── _site
+└── index.html
+</code></pre><p>然后启用本地服务器只需进入到上面的目录中，执行</p>
+<pre><code><span class="title">jekyll</span> serve
+</code></pre><p>就能在浏览器打开</p>
+<pre><code><span class="string">http:</span><span class="comment">//localhost:4000</span>
+</code></pre><p>jekyll更多的使用方法可以查看官方说明或者在终端中输入</p>
+<pre><code>jekyll <span class="comment">--help</span>
+</code></pre><p>在Github上你可以找到许多Jekyll博客的模版，而且其中绝大部分都是你能直接使用的，我也是使用的别人的模版进行简单的修改，<br>如果对这个模版有兴趣，可以进入的我的<a href="https://github.com/Sillyplus">Github主页</a>查看。</p>
+<p>现在你就可以愉快的写作啦～＼(^o^)／</p>
+<h3 id="wordpress博客迁移">wordpress博客迁移</h3><p>接下来的内容多半是我的吐槽，如果你赶时间去写博客的话可以忽略，如果你实在闲得发慌，不介意的话可以看一看，<br>说不定能发现一点有用的内容。</p>
+<p>本来打算顺便说一下域名绑定的，但我在这方面花费的时间比较长主要是自己的问题，绑定之后居然要一整天才能生效，<br>不清楚这个的我也被纠结了很久啦。既然是这样的话，我们就直接进入主题啦～</p>
+<p>我之前使用的是wordpress，虽然我已经尽可能的选择一些简单的工具来使用，但是我发现，一堆要维护的东西搞得自己都没办法只是专注于内容了。<br>这也是我为什么决定转到这边来啦，现在直接使用Atom编辑markdown文档，用这种方式来写博文体验真的很好(￣▽￣)。<br>虽然原本的博客内容不多，但还是想要把它们搬到这边来，所以在wordpress里导出了所有博文。导出的是xml的文件，<br>然后使用<a href="https://github.com/thomasf/exitwp">exitwp</a>来从xml文件中提取出内容，并转换成markdown的文档。<br>使用方法看作者的说明就好了，另外，我在运行exitwp.py的时候提示出错</p>
+<pre><code>Traceback (most recent <span class="operator"><span class="keyword">call</span> <span class="keyword">last</span>):
+  <span class="keyword">File</span> <span class="string">"exitwp.py"</span>, line <span class="number">11</span>, <span class="keyword">in</span> &lt;<span class="keyword">module</span>&gt;
+    <span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup
+ImportError: <span class="keyword">No</span> <span class="keyword">module</span> named bs4</span>
+</code></pre><p>然后我在pip list中发现我装的直接是BeautifulSoup，并没有bs4，所以我exitwp.py中的</p>
+<pre><code><span class="label">from</span> <span class="keyword">bs4 </span><span class="preprocessor">import</span> <span class="keyword">BeautifulSoup</span>
+</code></pre><p>直接改为</p>
+<pre><code><span class="preprocessor"><span class="keyword">import</span> BeautifulSoup</span>
+</code></pre><p>然后就能成功运行了，这样就导出成功了。如果你对python比较熟悉，你也可以自己修改exitwp.py，使它特定导出你想要的内容。<br>如果你想要从其它博客系统迁移博客过来的话，jekyll的官网上貌似也有相关的教程说明。</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">标签</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Github/">Github</a> <a class="tag tag--primary tag--small t-link" href="/tags/Jekyll/">Jekyll</a> <a class="tag tag--primary tag--small t-link" href="/tags/OSX/">OSX</a> <a class="tag tag--primary tag--small t-link" href="/tags/python/">python</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/10/13/book-list-2014/"  data-tooltip="2014阅读书单">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/09/16/use-vim-on-mac/" data-tooltip="Mac配置Vim折腾小纪录">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 YuanJie Chen. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/10/13/book-list-2014/"  data-tooltip="2014阅读书单">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/09/16/use-vim-on-mac/" data-tooltip="Mac配置Vim折腾小纪录">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <h4 id="about-card-name">YuanJie Chen</h4>
+        
+            <h5 id="about-card-bio"><p>author.bio</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </h5>
+        
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>
