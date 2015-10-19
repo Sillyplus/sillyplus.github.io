@@ -10,7 +10,7 @@
     <meta name="author" content="sillyplus">
     
     
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="/rss2.xml">
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
     
     <meta name="description" content="算法思想对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由dis[i][j]+m[j][xk]+m[xk][i]来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大枚举一下xk就行了。我们知道，floyd算法最外层每循">
 <meta property="og:type" content="blog">
@@ -186,7 +186,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/rss2.xml"
+                         href="/atom.xml"
                         
                     >
                 
