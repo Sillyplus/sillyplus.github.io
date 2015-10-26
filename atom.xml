@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://github.com/sillyplus/"/>
-  <updated>2015-10-26T07:36:25.000Z</updated>
+  <updated>2015-10-26T07:38:51.000Z</updated>
   <id>http://github.com/sillyplus/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://github.com/sillyplus/2015/10/26/make-up-your-xcode/"/>
     <id>http://github.com/sillyplus/2015/10/26/make-up-your-xcode/</id>
     <published>2015-10-26T00:41:27.000Z</published>
-    <updated>2015-10-26T07:36:25.000Z</updated>
+    <updated>2015-10-26T07:38:51.000Z</updated>
     <content type="html"><![CDATA[<!-- excerpt -->
 <h1 id="Alcatraz">Alcatraz</h1><p><a href="http://alcatraz.io/" target="_blank" rel="external">Alcatraz</a> 是一个开源的 Xcode 包管理工具，包管理工具的好处就不用安利了。使用 Alcatraz 带来的便利，自己体验下就知道了。安装以及使用我觉得自行参考官方的说明是最好的了。<br><img src="alcatraz.png" alt=""></p>
 <h1 id="Xvim">Xvim</h1><p>总的来说，我是一个 vim 爱好者，所以有时候会很想把 vim 下的一些使用体验延续到 Xcode 开发中，比如使用 hjkl 快速在代码中移动，以及其它各种操作，<a href="https://github.com/XVimProject/XVim">Xvim</a> 就很好的基本上满足了我的需求。Xvim 还有几个附加的命令可以帮助你编译，运行你的项目。</p>
