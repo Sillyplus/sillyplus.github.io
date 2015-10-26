@@ -6,22 +6,24 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Kepp It Simple &amp;&amp; Stupid">
-    <title>MacTeX中的一个可用中文的方法 - Kepp It Simple &amp;&amp; Stupid</title>
+    <title>Xcode插件 - Kepp It Simple &amp;&amp; Stupid</title>
     <meta name="author" content="sillyplus">
     
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="12345678910111213141516%!TEX TS-program = xelatex%!TEX encoding = UTF-8 Unicode\documentclass[12pt, a4paper]&amp;#123;book&amp;#125;\usepackage&amp;#123;extsizes&amp;#125;                           %使用自定义字号\usepackag">
+    <meta name="description" content="在我看来，Xcode已经是一个非常强大的IDE，而且苹果公司也一直在它添加新特性，不断的完善。即便Xcode已经足够强大了，但是总会有人觉得它不够好，或者想要给它做一些个性化的配置。如果你也有这样的想法的话，那么给Xcode安装第三方插件，或者自己给它写插件就是你的不二选择了。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="MacTeX中的一个可用中文的方法">
-<meta property="og:url" content="http://github.com/sillyplus/2014/12/28/usingchineseinTeX/index.html">
+<meta property="og:title" content="Xcode插件">
+<meta property="og:url" content="http://github.com/sillyplus/2015/10/26/make-up-your-xcode/index.html">
 <meta property="og:site_name" content="Kepp It Simple && Stupid">
-<meta property="og:description" content="12345678910111213141516%!TEX TS-program = xelatex%!TEX encoding = UTF-8 Unicode\documentclass[12pt, a4paper]&amp;#123;book&amp;#125;\usepackage&amp;#123;extsizes&amp;#125;                           %使用自定义字号\usepackag">
-<meta property="og:updated_time" content="2015-10-19T10:06:42.000Z">
+<meta property="og:description" content="在我看来，Xcode已经是一个非常强大的IDE，而且苹果公司也一直在它添加新特性，不断的完善。即便Xcode已经足够强大了，但是总会有人觉得它不够好，或者想要给它做一些个性化的配置。如果你也有这样的想法的话，那么给Xcode安装第三方插件，或者自己给它写插件就是你的不二选择了。">
+<meta property="og:image" content="http://github.com/sillyplus/alcatraz.png">
+<meta property="og:image" content="http://github.com/sillyplus/233.png">
+<meta property="og:updated_time" content="2015-10-26T03:16:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MacTeX中的一个可用中文的方法">
-<meta name="twitter:description" content="12345678910111213141516%!TEX TS-program = xelatex%!TEX encoding = UTF-8 Unicode\documentclass[12pt, a4paper]&amp;#123;book&amp;#125;\usepackage&amp;#123;extsizes&amp;#125;                           %使用自定义字号\usepackag">
+<meta name="twitter:title" content="Xcode插件">
+<meta name="twitter:description" content="在我看来，Xcode已经是一个非常强大的IDE，而且苹果公司也一直在它添加新特性，不断的完善。即便Xcode已经足够强大了，但是总会有人觉得它不够好，或者想要给它做一些个性化的配置。如果你也有这样的想法的话，那么给Xcode安装第三方插件，或者自己给它写插件就是你的不二选择了。">
 <meta name="twitter:creator" content="@sillycross">
     
         <meta rel="publisher" content="https://plus.google.com/dlxtxlb"/>
@@ -211,13 +213,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            MacTeX中的一个可用中文的方法
+            Xcode插件
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sun Dec 28 2014 00:00:00 GMT+0800">
+    <time itemprop="datePublished" content="Mon Oct 26 2015 08:41:27 GMT+0800">
 	
-		    Dec 28, 2014
+		    Oct 26, 2015
     	
     </time>
     
@@ -232,9 +234,16 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <pre><code><span class="comment"><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%!TEX TS-program = xelatex</span></span><br><span class="line"><span class="comment">%!TEX encoding = UTF-8 Unicode</span></span><br><span class="line"></span><br><span class="line"><span class="command">\documentclass</span><span class="special">[</span>12pt, a4paper<span class="special">]</span><span class="special">&#123;</span>book<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>extsizes<span class="special">&#125;</span>                           <span class="comment">%使用自定义字号</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>fontspec<span class="special">&#125;</span>                           <span class="comment">%字体控制包</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>xltxtra<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>xunicode<span class="special">&#125;</span>                           <span class="comment">%Unicode</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>indentfirst<span class="special">&#125;</span>                        <span class="comment">%中文行首缩进</span></span><br><span class="line"><span class="command">\defaultfontfeatures</span><span class="special">&#123;</span>Mapping=tex-text<span class="special">&#125;</span></span><br><span class="line"><span class="command">\setromanfont</span><span class="special">&#123;</span>Yuanti SC<span class="special">&#125;</span>                        <span class="comment">%设置中文字体</span></span><br><span class="line"><span class="command">\XeTeXlinebreaklocale</span> “zh”</span><br><span class="line"><span class="command">\XeTeXlinebreakskip</span> =<span class="number"> 0pt</span> plus 1pt minus 0.1pt  <span class="comment">%文章内中文自动换行</span></span><br><span class="line"></span><br><span class="line"><span class="command">\newfontfamily</span><span class="special">&#123;</span><span class="command">\H</span><span class="special">&#125;</span><span class="special">&#123;</span>STSong<span class="special">&#125;</span></span><br><span class="line"><span class="command">\newfontfamily</span><span class="special">&#123;</span><span class="command">\E</span><span class="special">&#125;</span><span class="special">&#123;</span>Zapfino<span class="special">&#125;</span></span><br></pre></td></tr></table></figure></span>
-</code></pre><p>TeX可以使用的字体大小默认为10pt|11pt|13pt，可以通过使用extsizes这个package来使<br>用其它大小的字体，可选的类型有8～12, 14, 17 和 20pt。</p>
-
+            <!-- excerpt -->
+<h1 id="Alcatraz">Alcatraz</h1><p><a href="http://alcatraz.io/" target="_blank" rel="external">Alcatraz</a> 是一个开源的Xcode包管理工具，包管理工具的好处就不用安利了。使用Alcatraz带来的便利，自己体验下就知道了。安装以及使用我觉得自行参考官方的说明是最好的了。<br><img src="alcatraz.png" alt=""></p>
+<h1 id="Xvim">Xvim</h1><p>总的来说，我是一个vim爱好者，所以有时候会很想把vim下的一些使用体验延续到Xcode开发中，比如使用hjkl快速在代码中移动，以及其它各种操作，<a href="https://github.com/XVimProject/XVim">Xvim</a>就很好的基本上满足了我的需求。Xvim还有几个附加的命令可以帮助你编译，运行你的项目。</p>
+<blockquote>
+<p><strong>几个特殊命令</strong><br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">:run</span>    <span class="comment">#相当于command-R</span></span><br><span class="line"><span class="symbol">:make</span>   <span class="comment">#相当于command-B</span></span><br><span class="line"><span class="symbol">:xhelp</span>  <span class="comment">#打开光标所在位置的快速帮助</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>遇到的坑</strong><br>我在Xcode7.1下，使用Alcatrz无法成功安装，找到的一个解决办法是自己下载Xvim在<br>Github上的工程，自己编译运行一下即可安装成功，重启Xcode后便能生效。</p>
+</blockquote>
+<h1 id="SCXcodeMinimap">SCXcodeMinimap</h1><p>对于使用过Sublime Text的人来说，minimap的特性一定不会陌生，<a href="https://github.com/stefanceriu/SCXcodeMiniMap">SCXcodeMiniMap</a>就是一个这样的插件，如果你喜欢minimap特性一定不要错过。</p>
+<h1 id="VVDocumenter-Xcode">VVDocumenter-Xcode</h1><p><a href="https://github.com/onevcat/VVDocumenter-Xcode">VVDocumenter-Xcode</a> 是人称<a href="http://www.onevcat.com/" target="_blank" rel="external">猫神</a>的大牛开发维护的一个快速文档注释插件，支持OC还有swift。</p>
+<h1 id="最后附效果图一张">最后附效果图一张</h1><p><img src="233.png" alt=""></p>
             
                 
 
@@ -246,7 +255,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/MacTeX/">MacTeX</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Alcatraz/">Alcatraz</a> <a class="tag tag--primary tag--small t-link" href="/tags/Plugins/">Plugins</a> <a class="tag tag--primary tag--small t-link" href="/tags/Xcode/">Xcode</a> <a class="tag tag--primary tag--small t-link" href="/tags/Xvim/">Xvim</a>
 
             </div>
         
@@ -255,7 +264,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/26/make-up-your-xcode/"  data-tooltip="Xcode插件">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -263,7 +272,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/11/04/floyd-and-mincircle/" data-tooltip="Floyd算法求最小环">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/12/28/usingchineseinTeX/" data-tooltip="MacTeX中的一个可用中文的方法">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -278,17 +287,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/12/28/usingchineseinTeX/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2015/10/26/make-up-your-xcode/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/12/28/usingchineseinTeX/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2015/10/26/make-up-your-xcode/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/12/28/usingchineseinTeX/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2015/10/26/make-up-your-xcode/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -334,7 +343,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/26/make-up-your-xcode/"  data-tooltip="Xcode插件">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -342,7 +351,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/11/04/floyd-and-mincircle/" data-tooltip="Floyd算法求最小环">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/12/28/usingchineseinTeX/" data-tooltip="MacTeX中的一个可用中文的方法">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -357,17 +366,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/12/28/usingchineseinTeX/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2015/10/26/make-up-your-xcode/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/12/28/usingchineseinTeX/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2015/10/26/make-up-your-xcode/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/12/28/usingchineseinTeX/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2015/10/26/make-up-your-xcode/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -393,17 +402,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2014/12/28/usingchineseinTeX/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://github.com/sillyplus/2015/10/26/make-up-your-xcode/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2014/12/28/usingchineseinTeX/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/sillyplus/2015/10/26/make-up-your-xcode/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2014/12/28/usingchineseinTeX/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/sillyplus/2015/10/26/make-up-your-xcode/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
