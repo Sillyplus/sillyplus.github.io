@@ -3,9 +3,9 @@
   <title><![CDATA[Kepp It Simple && Stupid]]></title>
   
   <link href="/atom.xml" rel="self"/>
-  <link href="http://github.com/sillyplus/"/>
+  <link href="https://github.com/sillyplus/"/>
   <updated>2015-10-26T08:03:41.000Z</updated>
-  <id>http://github.com/sillyplus/</id>
+  <id>https://github.com/sillyplus/</id>
   
   <author>
     <name><![CDATA[sillyplus]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[Xcode插件]]></title>
-    <link href="http://github.com/sillyplus/2015/10/26/make-up-your-xcode/"/>
-    <id>http://github.com/sillyplus/2015/10/26/make-up-your-xcode/</id>
+    <link href="https://github.com/sillyplus/2015/10/26/make-up-your-xcode/"/>
+    <id>https://github.com/sillyplus/2015/10/26/make-up-your-xcode/</id>
     <published>2015-10-26T00:41:27.000Z</published>
     <updated>2015-10-26T08:03:41.000Z</updated>
     <content type="html"><![CDATA[<!-- excerpt -->
@@ -35,22 +35,22 @@
     
     </summary>
     
-      <category term="Alcatraz" scheme="http://github.com/sillyplus/tags/Alcatraz/"/>
+      <category term="Alcatraz" scheme="https://github.com/sillyplus/tags/Alcatraz/"/>
     
-      <category term="Plugins" scheme="http://github.com/sillyplus/tags/Plugins/"/>
+      <category term="Plugins" scheme="https://github.com/sillyplus/tags/Plugins/"/>
     
-      <category term="Xcode" scheme="http://github.com/sillyplus/tags/Xcode/"/>
+      <category term="Xcode" scheme="https://github.com/sillyplus/tags/Xcode/"/>
     
-      <category term="Xvim" scheme="http://github.com/sillyplus/tags/Xvim/"/>
+      <category term="Xvim" scheme="https://github.com/sillyplus/tags/Xvim/"/>
     
-      <category term="技术" scheme="http://github.com/sillyplus/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://github.com/sillyplus/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[MacTeX中的一个可用中文的方法]]></title>
-    <link href="http://github.com/sillyplus/2014/12/28/usingchineseinTeX/"/>
-    <id>http://github.com/sillyplus/2014/12/28/usingchineseinTeX/</id>
+    <link href="https://github.com/sillyplus/2014/12/28/usingchineseinTeX/"/>
+    <id>https://github.com/sillyplus/2014/12/28/usingchineseinTeX/</id>
     <published>2014-12-27T16:00:00.000Z</published>
     <updated>2015-10-19T10:06:42.000Z</updated>
     <content type="html"><![CDATA[<pre><code><span class="comment"><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%!TEX TS-program = xelatex</span></span><br><span class="line"><span class="comment">%!TEX encoding = UTF-8 Unicode</span></span><br><span class="line"></span><br><span class="line"><span class="command">\documentclass</span><span class="special">[</span>12pt, a4paper<span class="special">]</span><span class="special">&#123;</span>book<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>extsizes<span class="special">&#125;</span>                           <span class="comment">%使用自定义字号</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>fontspec<span class="special">&#125;</span>                           <span class="comment">%字体控制包</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>xltxtra<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>xunicode<span class="special">&#125;</span>                           <span class="comment">%Unicode</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>indentfirst<span class="special">&#125;</span>                        <span class="comment">%中文行首缩进</span></span><br><span class="line"><span class="command">\defaultfontfeatures</span><span class="special">&#123;</span>Mapping=tex-text<span class="special">&#125;</span></span><br><span class="line"><span class="command">\setromanfont</span><span class="special">&#123;</span>Yuanti SC<span class="special">&#125;</span>                        <span class="comment">%设置中文字体</span></span><br><span class="line"><span class="command">\XeTeXlinebreaklocale</span> “zh”</span><br><span class="line"><span class="command">\XeTeXlinebreakskip</span> =<span class="number"> 0pt</span> plus 1pt minus 0.1pt  <span class="comment">%文章内中文自动换行</span></span><br><span class="line"></span><br><span class="line"><span class="command">\newfontfamily</span><span class="special">&#123;</span><span class="command">\H</span><span class="special">&#125;</span><span class="special">&#123;</span>STSong<span class="special">&#125;</span></span><br><span class="line"><span class="command">\newfontfamily</span><span class="special">&#123;</span><span class="command">\E</span><span class="special">&#125;</span><span class="special">&#123;</span>Zapfino<span class="special">&#125;</span></span><br></pre></td></tr></table></figure></span>
@@ -60,16 +60,16 @@
     <![CDATA[<pre><code><span class="comment"><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class]]>
     </summary>
     
-      <category term="MacTeX" scheme="http://github.com/sillyplus/tags/MacTeX/"/>
+      <category term="MacTeX" scheme="https://github.com/sillyplus/tags/MacTeX/"/>
     
-      <category term="技术" scheme="http://github.com/sillyplus/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://github.com/sillyplus/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Floyd算法求最小环]]></title>
-    <link href="http://github.com/sillyplus/2014/11/04/floyd-and-mincircle/"/>
-    <id>http://github.com/sillyplus/2014/11/04/floyd-and-mincircle/</id>
+    <link href="https://github.com/sillyplus/2014/11/04/floyd-and-mincircle/"/>
+    <id>https://github.com/sillyplus/2014/11/04/floyd-and-mincircle/</id>
     <published>2014-11-03T16:00:00.000Z</published>
     <updated>2015-10-26T01:55:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="算法思想">算法思想</h2><p>对于构成最小环的点集{x1, x2, …}，其中必定存在一个最大点xk，那么最小环的长度可以由<code>dis[i][j]+m[j][xk]+m[xk][i]</code>来表示，其中i，j均在点集中且小于xk，dis[i][j]是i到j的最短路径。因为xk是点集中最大的那个点，所以i到j的最短路径没有经过编号比xk更大的点。那么要求最小环的长度就可以由小到大枚举一下xk就行了。我们知道，floyd算法最外层每循环一次，就是由一个中间节点k更新点i到j的最短路径。k从小到大枚举，就保证了循环到k的时候，当前i到j的最短路经过的最大节点只可能是k，这刚好满足上面提到的dis[i][j]的定义。所以我们就可以愉快的使用floyd来求最小环了。</p>
@@ -83,16 +83,16 @@
     
     </summary>
     
-      <category term="Timus" scheme="http://github.com/sillyplus/tags/Timus/"/>
+      <category term="Timus" scheme="https://github.com/sillyplus/tags/Timus/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Github Page + Jekyll 博客搭建小记]]></title>
-    <link href="http://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/"/>
-    <id>http://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/</id>
+    <link href="https://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/"/>
+    <id>https://github.com/sillyplus/2014/10/12/github-jekyll-build-a-blog/</id>
     <published>2014-10-11T16:00:00.000Z</published>
     <updated>2015-10-19T10:12:12.000Z</updated>
     <content type="html"><![CDATA[<h3 id="占位扯淡"><del>占位扯淡</del></h3><p><del>折腾了几天，终于可以坐下来写点总结了。不过现在是早上三点多快四点，还在想六七点的时候要去踢球，所以只是<br>占个位置而已，熟悉一下。毕竟还有很多东西不会，不过光是搭好现在这个样子就用了挺多时间的(其实也不是很多啦。。。)</del></p>
@@ -148,22 +148,22 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="Github" scheme="http://github.com/sillyplus/tags/Github/"/>
+      <category term="Github" scheme="https://github.com/sillyplus/tags/Github/"/>
     
-      <category term="Jekyll" scheme="http://github.com/sillyplus/tags/Jekyll/"/>
+      <category term="Jekyll" scheme="https://github.com/sillyplus/tags/Jekyll/"/>
     
-      <category term="OSX" scheme="http://github.com/sillyplus/tags/OSX/"/>
+      <category term="OSX" scheme="https://github.com/sillyplus/tags/OSX/"/>
     
-      <category term="python" scheme="http://github.com/sillyplus/tags/python/"/>
+      <category term="python" scheme="https://github.com/sillyplus/tags/python/"/>
     
-      <category term="技术" scheme="http://github.com/sillyplus/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://github.com/sillyplus/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Tyvj_P1143 - 飘飘乎居士的约会]]></title>
-    <link href="http://github.com/sillyplus/2014/07/25/tyvj-p1143/"/>
-    <id>http://github.com/sillyplus/2014/07/25/tyvj-p1143/</id>
+    <link href="https://github.com/sillyplus/2014/07/25/tyvj-p1143/"/>
+    <id>https://github.com/sillyplus/2014/07/25/tyvj-p1143/</id>
     <published>2014-07-25T00:40:48.000Z</published>
     <updated>2015-10-19T11:47:38.000Z</updated>
     <content type="html"><![CDATA[<p>背景 Background</p>
@@ -191,18 +191,18 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="BFS" scheme="http://github.com/sillyplus/tags/BFS/"/>
+      <category term="BFS" scheme="https://github.com/sillyplus/tags/BFS/"/>
     
-      <category term="Tyvj" scheme="http://github.com/sillyplus/tags/Tyvj/"/>
+      <category term="Tyvj" scheme="https://github.com/sillyplus/tags/Tyvj/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Tyvj_P1309_刷题的玖君]]></title>
-    <link href="http://github.com/sillyplus/2014/07/16/tyvj_p1309/"/>
-    <id>http://github.com/sillyplus/2014/07/16/tyvj_p1309/</id>
+    <link href="https://github.com/sillyplus/2014/07/16/tyvj_p1309/"/>
+    <id>https://github.com/sillyplus/2014/07/16/tyvj_p1309/</id>
     <published>2014-07-16T06:40:33.000Z</published>
     <updated>2015-10-19T11:47:32.000Z</updated>
     <content type="html"><![CDATA[<p>描述 Description</p>
@@ -233,18 +233,18 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="DP" scheme="http://github.com/sillyplus/tags/DP/"/>
+      <category term="DP" scheme="https://github.com/sillyplus/tags/DP/"/>
     
-      <category term="Tyvj" scheme="http://github.com/sillyplus/tags/Tyvj/"/>
+      <category term="Tyvj" scheme="https://github.com/sillyplus/tags/Tyvj/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Tyvj_P1064_P1404_旧题]]></title>
-    <link href="http://github.com/sillyplus/2014/07/16/tyvj_p1064_p1404/"/>
-    <id>http://github.com/sillyplus/2014/07/16/tyvj_p1064_p1404/</id>
+    <link href="https://github.com/sillyplus/2014/07/16/tyvj_p1064_p1404/"/>
+    <id>https://github.com/sillyplus/2014/07/16/tyvj_p1064_p1404/</id>
     <published>2014-07-16T02:20:15.000Z</published>
     <updated>2015-10-19T11:47:26.000Z</updated>
     <content type="html"><![CDATA[<p>这两道题都是从我开始接触tyvj的时候就看过的，可是一直没去写，今天终于。。。</p>
@@ -265,22 +265,22 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="DFS" scheme="http://github.com/sillyplus/tags/DFS/"/>
+      <category term="DFS" scheme="https://github.com/sillyplus/tags/DFS/"/>
     
-      <category term="DP" scheme="http://github.com/sillyplus/tags/DP/"/>
+      <category term="DP" scheme="https://github.com/sillyplus/tags/DP/"/>
     
-      <category term="MST" scheme="http://github.com/sillyplus/tags/MST/"/>
+      <category term="MST" scheme="https://github.com/sillyplus/tags/MST/"/>
     
-      <category term="Tyvj" scheme="http://github.com/sillyplus/tags/Tyvj/"/>
+      <category term="Tyvj" scheme="https://github.com/sillyplus/tags/Tyvj/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Tyvj_P1253 - 无聊的战争]]></title>
-    <link href="http://github.com/sillyplus/2014/07/06/tyvj_p1253/"/>
-    <id>http://github.com/sillyplus/2014/07/06/tyvj_p1253/</id>
+    <link href="https://github.com/sillyplus/2014/07/06/tyvj_p1253/"/>
+    <id>https://github.com/sillyplus/2014/07/06/tyvj_p1253/</id>
     <published>2014-07-06T03:51:11.000Z</published>
     <updated>2015-10-19T11:47:21.000Z</updated>
     <content type="html"><![CDATA[<p>描述 Description</p>
@@ -309,18 +309,18 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="Tyvj" scheme="http://github.com/sillyplus/tags/Tyvj/"/>
+      <category term="Tyvj" scheme="https://github.com/sillyplus/tags/Tyvj/"/>
     
-      <category term="划分树" scheme="http://github.com/sillyplus/tags/%E5%88%92%E5%88%86%E6%A0%91/"/>
+      <category term="划分树" scheme="https://github.com/sillyplus/tags/%E5%88%92%E5%88%86%E6%A0%91/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Timus_1008_Image Encoding]]></title>
-    <link href="http://github.com/sillyplus/2014/07/05/timus_1008_image-encoding/"/>
-    <id>http://github.com/sillyplus/2014/07/05/timus_1008_image-encoding/</id>
+    <link href="https://github.com/sillyplus/2014/07/05/timus_1008_image-encoding/"/>
+    <id>https://github.com/sillyplus/2014/07/05/timus_1008_image-encoding/</id>
     <published>2014-07-05T07:37:28.000Z</published>
     <updated>2015-10-19T11:47:13.000Z</updated>
     <content type="html"><![CDATA[<p>我应该怎么说这道题好呢，只能怪自己英语没有学好吧T^T，为什么造福小众，我决定不翻译题意了，大家自己看吧。。。。<br><a id="more"></a><br>There are several ways to encode an image. In this problem we will consider two representations of an image. We assume that the image consists of black and white pixels. There is at least one black pixel and all black pixels are connected with their sides. Coordinates of black pixels are not less than 1 and not greater than 10. An example of such an image is at the figure.</p>
@@ -346,18 +346,18 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="BFS" scheme="http://github.com/sillyplus/tags/BFS/"/>
+      <category term="BFS" scheme="https://github.com/sillyplus/tags/BFS/"/>
     
-      <category term="Tyvj" scheme="http://github.com/sillyplus/tags/Tyvj/"/>
+      <category term="Tyvj" scheme="https://github.com/sillyplus/tags/Tyvj/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Tyvj_P1297 - 小气的小B]]></title>
-    <link href="http://github.com/sillyplus/2014/07/04/tyvj_p1297/"/>
-    <id>http://github.com/sillyplus/2014/07/04/tyvj_p1297/</id>
+    <link href="https://github.com/sillyplus/2014/07/04/tyvj_p1297/"/>
+    <id>https://github.com/sillyplus/2014/07/04/tyvj_p1297/</id>
     <published>2014-07-03T22:34:13.000Z</published>
     <updated>2015-10-19T11:45:38.000Z</updated>
     <content type="html"><![CDATA[<p>经典问题，RMQ，不过为了增加一下文章长度，我打算贴一下题目<br><a id="more"></a><br>描述 Description</p>
@@ -381,18 +381,18 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="ST" scheme="http://github.com/sillyplus/tags/ST/"/>
+      <category term="ST" scheme="https://github.com/sillyplus/tags/ST/"/>
     
-      <category term="Tyvj" scheme="http://github.com/sillyplus/tags/Tyvj/"/>
+      <category term="Tyvj" scheme="https://github.com/sillyplus/tags/Tyvj/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Tyvj_P1323 - 识别水果]]></title>
-    <link href="http://github.com/sillyplus/2014/07/03/tyvj_p1323/"/>
-    <id>http://github.com/sillyplus/2014/07/03/tyvj_p1323/</id>
+    <link href="https://github.com/sillyplus/2014/07/03/tyvj_p1323/"/>
+    <id>https://github.com/sillyplus/2014/07/03/tyvj_p1323/</id>
     <published>2014-07-03T08:14:02.000Z</published>
     <updated>2015-10-19T11:45:30.000Z</updated>
     <content type="html"><![CDATA[<p>本来说好的每日一题解，因为下午睡了一觉醒来发现已经快十点了，然后才开始做题。。然后发现现在已经过了十二点了。。。</p>
@@ -407,18 +407,18 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="Tyvj" scheme="http://github.com/sillyplus/tags/Tyvj/"/>
+      <category term="Tyvj" scheme="https://github.com/sillyplus/tags/Tyvj/"/>
     
-      <category term="并查集" scheme="http://github.com/sillyplus/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+      <category term="并查集" scheme="https://github.com/sillyplus/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Timus_1727_Znaika's Magic Numbers]]></title>
-    <link href="http://github.com/sillyplus/2014/07/02/timus_1727_znaikas-magic-numbers/"/>
-    <id>http://github.com/sillyplus/2014/07/02/timus_1727_znaikas-magic-numbers/</id>
+    <link href="https://github.com/sillyplus/2014/07/02/timus_1727_znaikas-magic-numbers/"/>
+    <id>https://github.com/sillyplus/2014/07/02/timus_1727_znaikas-magic-numbers/</id>
     <published>2014-07-01T16:00:00.000Z</published>
     <updated>2015-10-19T11:45:23.000Z</updated>
     <content type="html"><![CDATA[<p>题目大意：给你一个N (0 &lt; N &lt; 10^5)，把N分解成若干个不相同且值不超过10^5的整数的各个位数的和，例如：N＝17时有，17 ＝ 7 ＋ 1 ＋ 2 ＋ 4 ＋ 3，所以17可以分解成7， 12， 43，这三个不同的整数。</p>
@@ -432,18 +432,18 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="Math" scheme="http://github.com/sillyplus/tags/Math/"/>
+      <category term="Math" scheme="https://github.com/sillyplus/tags/Math/"/>
     
-      <category term="Timus" scheme="http://github.com/sillyplus/tags/Timus/"/>
+      <category term="Timus" scheme="https://github.com/sillyplus/tags/Timus/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Timus 1028 1318 [树状数组]]]></title>
-    <link href="http://github.com/sillyplus/2014/07/01/timus_1028_1318/"/>
-    <id>http://github.com/sillyplus/2014/07/01/timus_1028_1318/</id>
+    <link href="https://github.com/sillyplus/2014/07/01/timus_1028_1318/"/>
+    <id>https://github.com/sillyplus/2014/07/01/timus_1028_1318/</id>
     <published>2014-06-30T19:56:24.000Z</published>
     <updated>2015-10-19T11:45:16.000Z</updated>
     <content type="html"><![CDATA[<h4 id="除草向"><em>除草向</em></h4><p>博客好久没有更新了，自从打完补选赛之后就一直一副颓废状态，外加要期末考，得预习课内知识(虽然我到最后还是。。。)，不管怎么样，现在以及放假了，所以我打算兑现之前对自己的承诺，暑假好好做题，所以这段时间应该会比较经常更新一些水题的题解啦( ´ ▽ ` )ﾉ。昨天选拔赛第一场就爆零滚粗，作为一名候补选手，我只剩下今天这个最后一次机会了，好伤感的说T^T，希望写一写题解涨张RP。。。<br><a id="more"></a><br>吐槽完毕，接下来进入正题啦～ ，虽然以前偶尔也又写过树状数组的题目，不过基本就没去记住，然后每次都得看模版。。。这两天写了两三次，终于记住啦啦啦啦</p>
@@ -479,18 +479,18 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="Timus" scheme="http://github.com/sillyplus/tags/Timus/"/>
+      <category term="Timus" scheme="https://github.com/sillyplus/tags/Timus/"/>
     
-      <category term="树状数组" scheme="http://github.com/sillyplus/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+      <category term="树状数组" scheme="https://github.com/sillyplus/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Timus_1106_Two Teams]]></title>
-    <link href="http://github.com/sillyplus/2014/05/21/timus_1106_two-teams/"/>
-    <id>http://github.com/sillyplus/2014/05/21/timus_1106_two-teams/</id>
+    <link href="https://github.com/sillyplus/2014/05/21/timus_1106_two-teams/"/>
+    <id>https://github.com/sillyplus/2014/05/21/timus_1106_two-teams/</id>
     <published>2014-05-21T09:17:54.000Z</published>
     <updated>2015-10-19T11:45:05.000Z</updated>
     <content type="html"><![CDATA[<p>题目大意：给一个无向图，N个顶点(n&lt;=100,好小的样子。。)，要求把这N个顶点分成两组，使得对任一个组中的每个顶点，都至少存在一条边连接到另一组中的某个顶点，要求给出任一满足条件的分组，输出其中一个组的顶点编号。</p>
@@ -502,20 +502,20 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="DFS" scheme="http://github.com/sillyplus/tags/DFS/"/>
+      <category term="DFS" scheme="https://github.com/sillyplus/tags/DFS/"/>
     
-      <category term="Graph" scheme="http://github.com/sillyplus/tags/Graph/"/>
+      <category term="Graph" scheme="https://github.com/sillyplus/tags/Graph/"/>
     
-      <category term="Timus" scheme="http://github.com/sillyplus/tags/Timus/"/>
+      <category term="Timus" scheme="https://github.com/sillyplus/tags/Timus/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Timus_1024_Permutations]]></title>
-    <link href="http://github.com/sillyplus/2014/05/15/timus_1024_permutations/"/>
-    <id>http://github.com/sillyplus/2014/05/15/timus_1024_permutations/</id>
+    <link href="https://github.com/sillyplus/2014/05/15/timus_1024_permutations/"/>
+    <id>https://github.com/sillyplus/2014/05/15/timus_1024_permutations/</id>
     <published>2014-05-14T16:29:38.000Z</published>
     <updated>2015-10-19T11:44:59.000Z</updated>
     <content type="html"><![CDATA[<p>因为题目的编号是2^10，所以决定写一下题解。</p>
@@ -546,16 +546,16 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="Math" scheme="http://github.com/sillyplus/tags/Math/"/>
+      <category term="Math" scheme="https://github.com/sillyplus/tags/Math/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Timus_1122_Game]]></title>
-    <link href="http://github.com/sillyplus/2014/05/08/timus_1122_game/"/>
-    <id>http://github.com/sillyplus/2014/05/08/timus_1122_game/</id>
+    <link href="https://github.com/sillyplus/2014/05/08/timus_1122_game/"/>
+    <id>https://github.com/sillyplus/2014/05/08/timus_1122_game/</id>
     <published>2014-05-08T06:30:49.000Z</published>
     <updated>2015-10-19T11:44:47.000Z</updated>
     <content type="html"><![CDATA[<p>题目大意：给出一个4×4的用黑白两色棋子覆盖的棋盘状态，以及选择任意某一棋子以其为中心进行翻转的一个3×3的01翻转规则，1为翻转，0则不翻转，问能否经过若干次操作，是的整个棋盘变成同一种颜色。</p>
@@ -567,18 +567,18 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="Search" scheme="http://github.com/sillyplus/tags/Search/"/>
+      <category term="Search" scheme="https://github.com/sillyplus/tags/Search/"/>
     
-      <category term="Timus" scheme="http://github.com/sillyplus/tags/Timus/"/>
+      <category term="Timus" scheme="https://github.com/sillyplus/tags/Timus/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Timus_一周做题记录]]></title>
-    <link href="http://github.com/sillyplus/2014/05/04/timus-a-week/"/>
-    <id>http://github.com/sillyplus/2014/05/04/timus-a-week/</id>
+    <link href="https://github.com/sillyplus/2014/05/04/timus-a-week/"/>
+    <id>https://github.com/sillyplus/2014/05/04/timus-a-week/</id>
     <published>2014-05-04T03:53:51.000Z</published>
     <updated>2015-10-19T11:44:41.000Z</updated>
     <content type="html"><![CDATA[<p>虽然很多是水题，不过还是记录一下。。。。然后还有好多得做的题目都还没补TAT<br><a id="more"></a><br><strong>1209. 1, 10, 100, 1000…</strong></p>
@@ -681,18 +681,18 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="Math" scheme="http://github.com/sillyplus/tags/Math/"/>
+      <category term="Math" scheme="https://github.com/sillyplus/tags/Math/"/>
     
-      <category term="Timus" scheme="http://github.com/sillyplus/tags/Timus/"/>
+      <category term="Timus" scheme="https://github.com/sillyplus/tags/Timus/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Timus_1227_Rally Championship]]></title>
-    <link href="http://github.com/sillyplus/2014/05/04/timus-1227-rally-championship/"/>
-    <id>http://github.com/sillyplus/2014/05/04/timus-1227-rally-championship/</id>
+    <link href="https://github.com/sillyplus/2014/05/04/timus-1227-rally-championship/"/>
+    <id>https://github.com/sillyplus/2014/05/04/timus-1227-rally-championship/</id>
     <published>2014-05-04T02:41:30.000Z</published>
     <updated>2015-10-19T11:43:28.000Z</updated>
     <content type="html"><![CDATA[<p>题目大意：给一个M给节点，N条边的无向图。问是否存在长度 &gt;= S的一条路径。每条边一旦被选择，就只能从固定的一个方向通过。1 ≤ <em>M</em> ≤ 100; 1 ≤ <em>N</em> ≤ 10000; 1 ≤ <em>S</em> ≤ 10^6.</p>
@@ -704,14 +704,14 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Timus_1229_Strong Brickwork]]></title>
-    <link href="http://github.com/sillyplus/2014/05/04/timus-1229-strong-brickwork/"/>
-    <id>http://github.com/sillyplus/2014/05/04/timus-1229-strong-brickwork/</id>
+    <link href="https://github.com/sillyplus/2014/05/04/timus-1229-strong-brickwork/"/>
+    <id>https://github.com/sillyplus/2014/05/04/timus-1229-strong-brickwork/</id>
     <published>2014-05-04T01:36:11.000Z</published>
     <updated>2015-10-19T11:43:46.000Z</updated>
     <content type="html"><![CDATA[<p><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1229" target="_blank" rel="external">Strong Brickwork</a></p>
@@ -740,18 +740,18 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="Timus" scheme="http://github.com/sillyplus/tags/Timus/"/>
+      <category term="Timus" scheme="https://github.com/sillyplus/tags/Timus/"/>
     
-      <category term="二分图" scheme="http://github.com/sillyplus/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
+      <category term="二分图" scheme="https://github.com/sillyplus/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Poj 数论/组合/博弈论 题目列表]]></title>
-    <link href="http://github.com/sillyplus/2014/04/29/poj-n-c-g-list/"/>
-    <id>http://github.com/sillyplus/2014/04/29/poj-n-c-g-list/</id>
+    <link href="https://github.com/sillyplus/2014/04/29/poj-n-c-g-list/"/>
+    <id>https://github.com/sillyplus/2014/04/29/poj-n-c-g-list/</id>
     <published>2014-04-29T08:31:24.000Z</published>
     <updated>2015-10-19T11:43:24.000Z</updated>
     <content type="html"><![CDATA[<p>转自：<a href="http://hi.baidu.com/lydrainbowcat/item/f16e64103f8c5c088fbde44c" target="_blank" rel="external">传送门</a></p>
@@ -804,18 +804,18 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="Poj" scheme="http://github.com/sillyplus/tags/Poj/"/>
+      <category term="Poj" scheme="https://github.com/sillyplus/tags/Poj/"/>
     
-      <category term="资源" scheme="http://github.com/sillyplus/tags/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://github.com/sillyplus/tags/%E8%B5%84%E6%BA%90/"/>
     
-      <category term="资源" scheme="http://github.com/sillyplus/categories/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://github.com/sillyplus/categories/%E8%B5%84%E6%BA%90/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Poj 计算几何入门题目列表]]></title>
-    <link href="http://github.com/sillyplus/2014/04/19/poj-geometry-list/"/>
-    <id>http://github.com/sillyplus/2014/04/19/poj-geometry-list/</id>
+    <link href="https://github.com/sillyplus/2014/04/19/poj-geometry-list/"/>
+    <id>https://github.com/sillyplus/2014/04/19/poj-geometry-list/</id>
     <published>2014-04-19T07:30:20.000Z</published>
     <updated>2015-10-19T11:43:19.000Z</updated>
     <content type="html"><![CDATA[<p>转载自：<a href="http://hi.baidu.com/novosbirsk/item/16330d2b7be6910e42634a13" target="_blank" rel="external">PKKJ @ SCAU - A GISer</a></p>
@@ -878,20 +878,20 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="Poj" scheme="http://github.com/sillyplus/tags/Poj/"/>
+      <category term="Poj" scheme="https://github.com/sillyplus/tags/Poj/"/>
     
-      <category term="计算几何" scheme="http://github.com/sillyplus/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
+      <category term="计算几何" scheme="https://github.com/sillyplus/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
     
-      <category term="资源" scheme="http://github.com/sillyplus/tags/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://github.com/sillyplus/tags/%E8%B5%84%E6%BA%90/"/>
     
-      <category term="资源" scheme="http://github.com/sillyplus/categories/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://github.com/sillyplus/categories/%E8%B5%84%E6%BA%90/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Poj 搜索题目列表]]></title>
-    <link href="http://github.com/sillyplus/2014/04/17/poj-search-list/"/>
-    <id>http://github.com/sillyplus/2014/04/17/poj-search-list/</id>
+    <link href="https://github.com/sillyplus/2014/04/17/poj-search-list/"/>
+    <id>https://github.com/sillyplus/2014/04/17/poj-search-list/</id>
     <published>2014-04-16T23:24:47.000Z</published>
     <updated>2015-10-19T11:28:11.000Z</updated>
     <content type="html"><![CDATA[<p><strong>声明：</strong></p>
@@ -923,16 +923,16 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="资源" scheme="http://github.com/sillyplus/tags/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://github.com/sillyplus/tags/%E8%B5%84%E6%BA%90/"/>
     
-      <category term="资源" scheme="http://github.com/sillyplus/categories/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://github.com/sillyplus/categories/%E8%B5%84%E6%BA%90/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[New Blog || New Start]]></title>
-    <link href="http://github.com/sillyplus/2014/04/17/new-blog-new-start/"/>
-    <id>http://github.com/sillyplus/2014/04/17/new-blog-new-start/</id>
+    <link href="https://github.com/sillyplus/2014/04/17/new-blog-new-start/"/>
+    <id>https://github.com/sillyplus/2014/04/17/new-blog-new-start/</id>
     <published>2014-04-16T23:24:18.000Z</published>
     <updated>2015-10-19T11:02:17.000Z</updated>
     <content type="html"><![CDATA[<p>又是一个新的开始，让我们再一次大声喊一声</p>
@@ -946,14 +946,14 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
 <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="li]]>
     </summary>
     
-      <category term="杂记" scheme="http://github.com/sillyplus/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="https://github.com/sillyplus/categories/%E6%9D%82%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[［转］成为 Linux 终端高手的七种武器]]></title>
-    <link href="http://github.com/sillyplus/2014/04/17/linux-weapon/"/>
-    <id>http://github.com/sillyplus/2014/04/17/linux-weapon/</id>
+    <link href="https://github.com/sillyplus/2014/04/17/linux-weapon/"/>
+    <id>https://github.com/sillyplus/2014/04/17/linux-weapon/</id>
     <published>2014-04-16T23:23:31.000Z</published>
     <updated>2015-10-19T11:52:00.000Z</updated>
     <content type="html"><![CDATA[<!-- toc -->
@@ -991,16 +991,16 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="Linux" scheme="http://github.com/sillyplus/tags/Linux/"/>
+      <category term="Linux" scheme="https://github.com/sillyplus/tags/Linux/"/>
     
-      <category term="技术" scheme="http://github.com/sillyplus/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://github.com/sillyplus/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Poj 3420 Quad Tiling 状压DP＋矩阵]]></title>
-    <link href="http://github.com/sillyplus/2014/04/17/poj-3420-quad-tiling/"/>
-    <id>http://github.com/sillyplus/2014/04/17/poj-3420-quad-tiling/</id>
+    <link href="https://github.com/sillyplus/2014/04/17/poj-3420-quad-tiling/"/>
+    <id>https://github.com/sillyplus/2014/04/17/poj-3420-quad-tiling/</id>
     <published>2014-04-16T23:22:39.000Z</published>
     <updated>2015-10-19T11:28:04.000Z</updated>
     <content type="html"><![CDATA[<p>可以理解为2663的加强版，多了些状态，代码基本参考了别人的，各种位运算。。。。因为N比较大，所以，矩阵乘法的优势就体现出来了，不过这个代码感觉速度还不是很快啊<br><a id="more"></a><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  main.cpp</span></span><br><span class="line"><span class="comment">//  p3420</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  Created by Silly on 13-12-26.</span></span><br><span class="line"><span class="comment">//  Copyright (c) 2013年 Silly. All rights reserved.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> mt &#123;</span><br><span class="line">    ll ma[<span class="number">16</span>][<span class="number">16</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">mt res, tmp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, M;</span><br><span class="line"><span class="keyword">int</span> bit[<span class="number">4</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(res.ma, <span class="number">0</span>, <span class="keyword">sizeof</span>(res.ma));</span><br><span class="line">    <span class="built_in">memset</span>(tmp.ma, <span class="number">0</span>, <span class="keyword">sizeof</span>(tmp.ma));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">16</span>; i++) &#123;</span><br><span class="line">        res.ma[i][i] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">        bit[i] = (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">set_mat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">16</span>; i++) &#123;</span><br><span class="line">        tmp.ma[i][(~i)&amp;<span class="number">0xF</span>]++;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> ( ((~i)&amp;bit[j]&amp;<span class="number">0xF</span>) == <span class="number">0</span> &amp;&amp; ((~i)&amp;bit[j+<span class="number">1</span>]&amp;<span class="number">0xF</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">                tmp.ma[i][((~i)|bit[j]|bit[j+<span class="number">1</span>]) &amp; <span class="number">0xF</span>]++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    tmp.ma[<span class="number">15</span>][<span class="number">15</span>]++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">mt <span class="title">mm</span><span class="params">(mt a, mt b)</span> </span>&#123;</span><br><span class="line">    mt c;</span><br><span class="line">    <span class="built_in">memset</span>(c.ma, <span class="number">0</span>, <span class="keyword">sizeof</span>(c.ma));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">16</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">16</span>; k++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a.ma[i][k]) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">16</span>; j++) &#123;</span><br><span class="line">                    c.ma[i][j] += a.ma[i][k] * b.ma[k][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">16</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; <span class="number">16</span>; j++) &#123;</span><br><span class="line">            c.ma[i][j] %= M;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mat_pw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">31</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (N &amp; (<span class="number">1</span> &lt;&lt; i))</span><br><span class="line">            res = mm(res, tmp);</span><br><span class="line">        tmp = mm(tmp, tmp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;N, &amp;M) &amp;&amp; N|M) &#123;</span><br><span class="line">        init();</span><br><span class="line">        set_mat();</span><br><span class="line">        mat_pw();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lldn"</span>, res.ma[<span class="number">15</span>][<span class="number">15</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -1010,18 +1010,18 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="DP" scheme="http://github.com/sillyplus/tags/DP/"/>
+      <category term="DP" scheme="https://github.com/sillyplus/tags/DP/"/>
     
-      <category term="bitmarks" scheme="http://github.com/sillyplus/tags/bitmarks/"/>
+      <category term="bitmarks" scheme="https://github.com/sillyplus/tags/bitmarks/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[NEERC 2000 Central Subregional 简要题解]]></title>
-    <link href="http://github.com/sillyplus/2014/04/17/neerc-2000-central-subregional/"/>
-    <id>http://github.com/sillyplus/2014/04/17/neerc-2000-central-subregional/</id>
+    <link href="https://github.com/sillyplus/2014/04/17/neerc-2000-central-subregional/"/>
+    <id>https://github.com/sillyplus/2014/04/17/neerc-2000-central-subregional/</id>
     <published>2014-04-16T17:07:13.000Z</published>
     <updated>2015-10-19T11:52:43.000Z</updated>
     <content type="html"><![CDATA[<p>题目链接：<a href="http://acm.timus.ru/problemset.aspx?space=1&amp;page=1" target="_blank" rel="external">戳我</a>（1053－1059）</p>
@@ -1057,24 +1057,24 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="DFS" scheme="http://github.com/sillyplus/tags/DFS/"/>
+      <category term="DFS" scheme="https://github.com/sillyplus/tags/DFS/"/>
     
-      <category term="DP" scheme="http://github.com/sillyplus/tags/DP/"/>
+      <category term="DP" scheme="https://github.com/sillyplus/tags/DP/"/>
     
-      <category term="Graph" scheme="http://github.com/sillyplus/tags/Graph/"/>
+      <category term="Graph" scheme="https://github.com/sillyplus/tags/Graph/"/>
     
-      <category term="Math" scheme="http://github.com/sillyplus/tags/Math/"/>
+      <category term="Math" scheme="https://github.com/sillyplus/tags/Math/"/>
     
-      <category term="Timus" scheme="http://github.com/sillyplus/tags/Timus/"/>
+      <category term="Timus" scheme="https://github.com/sillyplus/tags/Timus/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[最大/小连续子序列和]]></title>
-    <link href="http://github.com/sillyplus/2014/04/15/msl/"/>
-    <id>http://github.com/sillyplus/2014/04/15/msl/</id>
+    <link href="https://github.com/sillyplus/2014/04/15/msl/"/>
+    <id>https://github.com/sillyplus/2014/04/15/msl/</id>
     <published>2014-04-15T01:48:02.000Z</published>
     <updated>2015-10-19T11:27:37.000Z</updated>
     <content type="html"><![CDATA[<p>给定一个序列，要求出一段连续的子序列，是的其和最大或最小。<br>这是一个很经典的问题，最近做了相关的题目，在这里总结一下。<br><a id="more"></a><br>最直接的一个想法自然是直接暴力枚举每个子段，O(N³)，用前缀和优化一下，这样做的复杂度是O(n²)。在n比较小的时候自然是这种简单易得的方法最好啦。但是人生就是这样子，总不能让你事事如意。然后呢，我们就需要一些更快的方法。</p>
@@ -1091,20 +1091,20 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="DP" scheme="http://github.com/sillyplus/tags/DP/"/>
+      <category term="DP" scheme="https://github.com/sillyplus/tags/DP/"/>
     
-      <category term="Sicily" scheme="http://github.com/sillyplus/tags/Sicily/"/>
+      <category term="Sicily" scheme="https://github.com/sillyplus/tags/Sicily/"/>
     
-      <category term="单调队列" scheme="http://github.com/sillyplus/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/"/>
+      <category term="单调队列" scheme="https://github.com/sillyplus/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Codeforces 401D Roman and Numbers]]></title>
-    <link href="http://github.com/sillyplus/2014/04/15/codeforces-401d-roman-and-numbers/"/>
-    <id>http://github.com/sillyplus/2014/04/15/codeforces-401d-roman-and-numbers/</id>
+    <link href="https://github.com/sillyplus/2014/04/15/codeforces-401d-roman-and-numbers/"/>
+    <id>https://github.com/sillyplus/2014/04/15/codeforces-401d-roman-and-numbers/</id>
     <published>2014-04-15T01:35:56.000Z</published>
     <updated>2015-10-19T11:27:16.000Z</updated>
     <content type="html"><![CDATA[<p>简要题意：给定n，m，<em>n</em> (1 ≤ <em>n</em> &lt; 10ˆ18) and <em>m</em> (1 ≤ <em>m</em> ≤ 100).求满足以下要求的数x有多少个。</p>
@@ -1126,18 +1126,18 @@ ImportError: <span class="keyword">No</span> <span class="keyword">module</span>
     
     </summary>
     
-      <category term="Codeforces" scheme="http://github.com/sillyplus/tags/Codeforces/"/>
+      <category term="Codeforces" scheme="https://github.com/sillyplus/tags/Codeforces/"/>
     
-      <category term="DP" scheme="http://github.com/sillyplus/tags/DP/"/>
+      <category term="DP" scheme="https://github.com/sillyplus/tags/DP/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Poj 2663 Tri Tiling 构造矩阵＋矩阵乘法]]></title>
-    <link href="http://github.com/sillyplus/2013/12/26/poj-2663-tri-tiling/"/>
-    <id>http://github.com/sillyplus/2013/12/26/poj-2663-tri-tiling/</id>
+    <link href="https://github.com/sillyplus/2013/12/26/poj-2663-tri-tiling/"/>
+    <id>https://github.com/sillyplus/2013/12/26/poj-2663-tri-tiling/</id>
     <published>2013-12-25T17:36:29.000Z</published>
     <updated>2015-10-19T11:53:22.000Z</updated>
     <content type="html"><![CDATA[<p>题目大意是一个3<em>N的棋盘，用1</em>2的骨牌覆盖的方案数</p>
@@ -1241,18 +1241,18 @@ ma res, tmp;
     
     </summary>
     
-      <category term="DP" scheme="http://github.com/sillyplus/tags/DP/"/>
+      <category term="DP" scheme="https://github.com/sillyplus/tags/DP/"/>
     
-      <category term="矩阵乘法" scheme="http://github.com/sillyplus/tags/%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/"/>
+      <category term="矩阵乘法" scheme="https://github.com/sillyplus/tags/%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Poj 动态规划题目列表 ]]></title>
-    <link href="http://github.com/sillyplus/2013/12/23/poj-dp-list/"/>
-    <id>http://github.com/sillyplus/2013/12/23/poj-dp-list/</id>
+    <link href="https://github.com/sillyplus/2013/12/23/poj-dp-list/"/>
+    <id>https://github.com/sillyplus/2013/12/23/poj-dp-list/</id>
     <published>2013-12-23T06:03:33.000Z</published>
     <updated>2015-10-19T11:26:49.000Z</updated>
     <content type="html"><![CDATA[<p>这份列表当然不是我原创的，从文库里下载了一份，放到这里便于自己浏览和查找题目。（ps：这句话也不是我写的，转自lyd）<br><a id="more"></a><br><strong>※**</strong>最近更新：<strong><strong>Poj</strong></strong>斜率优化题目**</p>
@@ -1269,18 +1269,18 @@ ma res, tmp;
     
     </summary>
     
-      <category term="Poj" scheme="http://github.com/sillyplus/tags/Poj/"/>
+      <category term="Poj" scheme="https://github.com/sillyplus/tags/Poj/"/>
     
-      <category term="资源" scheme="http://github.com/sillyplus/tags/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://github.com/sillyplus/tags/%E8%B5%84%E6%BA%90/"/>
     
-      <category term="资源" scheme="http://github.com/sillyplus/categories/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://github.com/sillyplus/categories/%E8%B5%84%E6%BA%90/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Poj 图论题目列表]]></title>
-    <link href="http://github.com/sillyplus/2013/12/23/poj-graph-theory-ist/"/>
-    <id>http://github.com/sillyplus/2013/12/23/poj-graph-theory-ist/</id>
+    <link href="https://github.com/sillyplus/2013/12/23/poj-graph-theory-ist/"/>
+    <id>https://github.com/sillyplus/2013/12/23/poj-graph-theory-ist/</id>
     <published>2013-12-23T05:58:45.000Z</published>
     <updated>2015-10-19T11:26:53.000Z</updated>
     <content type="html"><![CDATA[<p>转自别的地方，先放着，激励自己去刷题<br><a id="more"></a><br>1062<em> 昂贵的聘礼 枚举等级限制+dijkstra<br>1087</em> A Plug for UNIX 2分匹配<br>1094 Sorting It All Out floyd 或 拓扑<br>1112<em> Team Them Up! 2分图染色+DP<br>1122 FDNY to the Rescue! 最短路<br>1125 Stockbroker Grapevine FLOYD<br>1128 Frame Stacking 拓扑排序<br>1135 Domino Effect 最短路<br>1149</em> PIGS 网络流<br>1161<em> Walls Floyd<br>1192 最优连通子集<br>1201 Intervals 差分约束<br>1236</em> Network of Schools 强联通<br>1251 Jungle Roads MST<br>1258 Agri-Net MST<br>1270 Following Orders 拓扑排序<br>1273 Drainage Ditches 最大流<br>1274 The Perfect Stall 2分匹配<br>1275<em> Cashier Employment 差分约束<br>1287 Networking MST<br>1300 Door Man 欧拉路<br>1324 Holedox Moving BFS<br>1325 Machine Schedule 2分匹配(最小点覆盖)<br>1364 King 差分约束<br>1386 Play on Words 欧拉路<br>1422 Air Raid 2分匹配<br>1459 Power Network 网络流<br>1466 Girls and Boys 2分图(最大独立团)<br>1469 COURSES 2分匹配<br>1502 MPI Maelstrom floyd<br>1511</em> Invitation Cards 最短路<br>1556 The Doors 最短路<br>1562 Oil Deposits DFS<br>1603 Risk 最短路<br>1613 Cave Raider 最短路<br>1637<em> Sightseeing tour 混合图欧拉回路-网络流<br>1659 Frogs’ Neighborhood Havel-Hakimi定理<br>1679 The Unique MST MST唯一性<br>1716 Integer Intervals 差分约束<br>1724</em> ROADS 最短路-拆点<br>1751 Highways MST<br>1780<em> Code 欧拉回路<br>1789 Truck History MST<br>1797 Heavy Transportation 最小生成树<br>1847 Tram 最短路<br>1861 Network MST<br>1904</em> King’s Quest 强联通<br>1949 Chores 最短路<br>1979 Red and Black DFS<br>2031 Building a Space Station MST<br>2060 Taxi Cab Scheme 2分匹配<br>2075 Tangled in Cables 最小生成树<br>2112 Optimal Milking 网络流<br>2125 Destroying The Graph 最小割<br>2135 Farm Tour 费用流<br>2139 Six Degrees of Cowvin Bacon floyd<br>2226 Muddy Fields 2分匹配<br>2230 Watchcow 欧拉回路<br>2239 Selecting Courses 2分匹配<br>2240 Arbitrage 最短路<br>2253 Frogger 最短路<br>2263 Heavy Cargo 最短路<br>2267<em> From Dusk till Dawn or: Vladimir the Vampire 最短路<br>2289 Jamie’s Contact Groups 网络流<br>2337 Catenyms 欧拉通路<br>2349 Arctic Network 最小生成树<br>2367 Genealogical tree 拓扑排序<br>2387 Til the Cows Come Home 最短路<br>2391</em> Ombrophobic Bovines 最大流<br>2394 Checking an Alibi 最短路<br>2396<em> Budget 网络流<br>2421</em> Constructing Roads 最小生成树<br>2446 Chessboard 2分匹配<br>2455 Secret Milking Machine 网络流<br>2457 Part Acquisition 最短路<br>2472 106 miles to Chicago 最短路<br>2485 Highways 最小生成树<br>2513 Colored Sticks 欧拉路<br>2516 Minimum Cost 费用流<br>2536 Gopher II 2分匹配<br>2553<em> The Bottom of a Graph 强联通<br>2570 Fiber Network 最短路<br>2584 T-Shirt Gumbo 网络流<br>2585 Window Pains 拓扑排序<br>2594</em> Treasure Exploration 2分匹配<br>2607 FireStation 最短路<br>2723 Get Luffy Out 2-sat<br>2724 Purifying Machine 2分匹配<br>2728 Desert King 最优比例生成树<br>2749<em> Building roads 2-sat<br>2762 Going from u to v or from v to u? 强联通<br>2935 Basic Wall Maze BFS<br>2942 Knights of the Round Table 点双连通分量+二分图判定<br>2949</em> Word Rings 差分约束<br>2983 Is the Information Reliable? 差分约束<br>2987 Firing 最小割(求解正确性??)<br>3020 Antenna Placement 2分匹配<br>3026 Borg Maze MST<br>3041 Asteroids 2分匹配<br>3072<em> Robot 最短路<br>3159 Steady Cow Assignment差分约束<br>3160 Father Christmas flymouse 强联通<br>3164 Command Network 最小树形图<br>3169 Layout 差分约束<br>3177 Redundant Paths 双联通分量<br>3189 Steady Cow Assignment 网络流<br>3204 Ikki’s Story I - Road Reconstruction 最大流<br>3207 Ikki’s Story IV - Panda’s Trick 2sat<br>3216 Repairing Company 2分匹配<br>3228 Gold Transportation 网络流<br>3255 Roadblocks 最短路<br>3259 Wormholes 最短路<br>3268 Silver Cow Party 最短路<br>3275 Ranking the Cows floyd<br>3281 Dining 最大流<br>3308 Paratroopers 最小割<br>3310 Caterpillar<br>3311 Hie with the Pie floyd<br>3328 Cliff Climbing 最短路<br>3343 Against Mammoths 2分匹配<br>3352 Road Construction 桥<br>3439 Server Relocation 最短路<br>3463 Sightseeing 最短路<br>3469 Dual Core CPU 最小割<br>3487 The Stable Marriage Problem 稳定婚姻<br>3522 Slim Span 最小生成树<br>3594 Escort of Dr. Who How 最短路<br>3615 Cow Hurdles 最短路<br>3621 Sightseeing Cows 二分枚举+判负环<br>3648 Wedding 2-sat<br>3653 Here We Go(relians) Again 最短路<br>3659</em> Cell Phone Network 最小支配集<br>3660 Cow Contest 拓扑排序<br>3662<em> Telephone Lines 最短路<br>3678 Katu Puzzle 2-sat<br>3683</em> Priest John’s Busiest Day 2-sat求解<br>3687 Labeling Balls 差分约束 或 拓扑排序<br>3692 Kindergarten 2分匹配<br>3694 Network 无向图缩点</p>
@@ -1291,18 +1291,18 @@ ma res, tmp;
     
     </summary>
     
-      <category term="Poj" scheme="http://github.com/sillyplus/tags/Poj/"/>
+      <category term="Poj" scheme="https://github.com/sillyplus/tags/Poj/"/>
     
-      <category term="资源" scheme="http://github.com/sillyplus/tags/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://github.com/sillyplus/tags/%E8%B5%84%E6%BA%90/"/>
     
-      <category term="资源" scheme="http://github.com/sillyplus/categories/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://github.com/sillyplus/categories/%E8%B5%84%E6%BA%90/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Codeforces 358D Dima and Hares]]></title>
-    <link href="http://github.com/sillyplus/2013/10/26/codeforces-358d-dima-and-hares/"/>
-    <id>http://github.com/sillyplus/2013/10/26/codeforces-358d-dima-and-hares/</id>
+    <link href="https://github.com/sillyplus/2013/10/26/codeforces-358d-dima-and-hares/"/>
+    <id>https://github.com/sillyplus/2013/10/26/codeforces-358d-dima-and-hares/</id>
     <published>2013-10-25T16:00:00.000Z</published>
     <updated>2015-10-19T11:26:37.000Z</updated>
     <content type="html"><![CDATA[<p>题目大意：Dima送给他女友N只兔子，编号1-n（n&lt;=3000）,当给兔子喂食时，它们会产生joy值，joy的取值有三种状态：<br>1.当前兔子左右两边都没有已经喂过的兔子；<br>2.当前兔子左右两边有且仅有一边有已经喂过的兔子；<br>3.当前兔子左右两边的兔子均已喂过。（编号1，n的兔子显然无法满足）<br>现给出每只兔子三种状态下的joy值，希望你帮助Dima的女友有Inna选择某种喂食顺序，使得总的joy值最大，仅输出最大的joy值。<br><a id="more"></a><br>这个问题可以采用动态规划的方法来解决，为什么呢？<br>注意到，每只兔子选取的joy值仅与它左右两边的兔子的状态有关，当前兔子的状态也仅影响到它左右两边的兔子（-.-||好吧，这是显然的)<br>我们用f[i]来表示前i只兔子喂完时的最大joy值，但是i的状态跟i+1有关，我们应该如何表示呢？这里有个我觉得很巧妙的办法，就是我们先假设出i+1的状态进行求解。因此，我们增加一维，用f[i][0]表示喂食第i只兔子时第i+1只兔子还没有喂过,f[i][1]表示喂食第i只兔子时第i+1只兔子已经喂过了，这样我们就能很容易从f[i][]跟f[i-1][]得出喂食i时 i-1, i+1,处于的状态了。自然的就得到状态转移方程。</p>
@@ -1316,18 +1316,18 @@ ma res, tmp;
     
     </summary>
     
-      <category term="Codeforces" scheme="http://github.com/sillyplus/tags/Codeforces/"/>
+      <category term="Codeforces" scheme="https://github.com/sillyplus/tags/Codeforces/"/>
     
-      <category term="DP" scheme="http://github.com/sillyplus/tags/DP/"/>
+      <category term="DP" scheme="https://github.com/sillyplus/tags/DP/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Tyvj P1405 节水问题加强版]]></title>
-    <link href="http://github.com/sillyplus/2013/10/25/tyvj-p1405/"/>
-    <id>http://github.com/sillyplus/2013/10/25/tyvj-p1405/</id>
+    <link href="https://github.com/sillyplus/2013/10/25/tyvj-p1405/"/>
+    <id>https://github.com/sillyplus/2013/10/25/tyvj-p1405/</id>
     <published>2013-10-25T05:06:02.000Z</published>
     <updated>2015-10-19T11:26:30.000Z</updated>
     <content type="html"><![CDATA[<p>传送门：<a href="https://www.tyvj.cn/Problem_Show.aspx?id=1405" target="_blank" rel="external">题目</a><br>怎么说呢，水题一道，直接用小根堆解决<br>主要是想通过这道题学习C++STL里面heap的用法<br>最后还是没有纠结出来，然后发现手写也不会了，就在网上找了一段，挺简洁的，以后就用这个做模板<br><a id="more"></a><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">100100</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> w[MN * <span class="number">2</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> f[MN] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> n, m, s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p;</span><br><span class="line">    <span class="keyword">for</span> (p = ++s; p &gt; <span class="number">1</span> &amp;&amp; f[p &gt;&gt; <span class="number">1</span>] &gt; x; f[p] = f[p &gt;&gt; <span class="number">1</span>], p &gt;&gt;= <span class="number">1</span>);</span><br><span class="line">    f[p] = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p, c, tp;</span><br><span class="line">    <span class="keyword">for</span> (tp=f[p=<span class="number">1</span>],c=<span class="number">2</span>;c&lt;s&amp;&amp;(f[c+=(c+<span class="number">1</span>&lt;s&amp;&amp;f[c + <span class="number">1</span>]&lt;f[c])?<span class="number">1</span>:<span class="number">0</span>]&lt;f[s]);f[p]=f[c],p=c,c&lt;&lt;=<span class="number">1</span>);</span><br><span class="line">    f[p] = f[s--];</span><br><span class="line">    <span class="keyword">return</span> tp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;w[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) push(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) push(w[i] + pop());</span><br><span class="line">    <span class="keyword">int</span> mx = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) mx = max(mx, pop());</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; mx &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -1337,18 +1337,18 @@ ma res, tmp;
     
     </summary>
     
-      <category term="Heap" scheme="http://github.com/sillyplus/tags/Heap/"/>
+      <category term="Heap" scheme="https://github.com/sillyplus/tags/Heap/"/>
     
-      <category term="Tyvj" scheme="http://github.com/sillyplus/tags/Tyvj/"/>
+      <category term="Tyvj" scheme="https://github.com/sillyplus/tags/Tyvj/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[C++指针备忘]]></title>
-    <link href="http://github.com/sillyplus/2013/06/30/cpp-pointer/"/>
-    <id>http://github.com/sillyplus/2013/06/30/cpp-pointer/</id>
+    <link href="https://github.com/sillyplus/2013/06/30/cpp-pointer/"/>
+    <id>https://github.com/sillyplus/2013/06/30/cpp-pointer/</id>
     <published>2013-06-29T16:53:50.000Z</published>
     <updated>2015-05-19T03:23:37.000Z</updated>
     <content type="html"><![CDATA[<p>摘录自 C++ Primer Plus</p>
@@ -1367,16 +1367,16 @@ ma res, tmp;
 <p>lon]]>
     </summary>
     
-      <category term="Cpp" scheme="http://github.com/sillyplus/tags/Cpp/"/>
+      <category term="Cpp" scheme="https://github.com/sillyplus/tags/Cpp/"/>
     
-      <category term="技术" scheme="http://github.com/sillyplus/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://github.com/sillyplus/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[动态内存分配]]></title>
-    <link href="http://github.com/sillyplus/2013/06/29/dynamic-memory-allocation/"/>
-    <id>http://github.com/sillyplus/2013/06/29/dynamic-memory-allocation/</id>
+    <link href="https://github.com/sillyplus/2013/06/29/dynamic-memory-allocation/"/>
+    <id>https://github.com/sillyplus/2013/06/29/dynamic-memory-allocation/</id>
     <published>2013-06-29T05:43:18.000Z</published>
     <updated>2015-10-19T11:26:19.000Z</updated>
     <content type="html"><![CDATA[<p>摘自Matrix67 C语言速成手册</p>
@@ -1398,16 +1398,16 @@ ma res, tmp;
     
     </summary>
     
-      <category term="Cpp" scheme="http://github.com/sillyplus/tags/Cpp/"/>
+      <category term="Cpp" scheme="https://github.com/sillyplus/tags/Cpp/"/>
     
-      <category term="技术" scheme="http://github.com/sillyplus/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://github.com/sillyplus/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[分块思想学习]]></title>
-    <link href="http://github.com/sillyplus/2013/06/17/think-with-piece/"/>
-    <id>http://github.com/sillyplus/2013/06/17/think-with-piece/</id>
+    <link href="https://github.com/sillyplus/2013/06/17/think-with-piece/"/>
+    <id>https://github.com/sillyplus/2013/06/17/think-with-piece/</id>
     <published>2013-06-16T20:00:07.000Z</published>
     <updated>2015-10-19T11:26:06.000Z</updated>
     <content type="html"><![CDATA[<p>早上看了一下七中王迪大神写的一篇论文，学习了一下分块思想，只看了一点点，基本上是看着代码，再自己脑补的。</p>
@@ -1423,16 +1423,16 @@ ma res, tmp;
     
     </summary>
     
-      <category term="块状数组" scheme="http://github.com/sillyplus/tags/%E5%9D%97%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+      <category term="块状数组" scheme="https://github.com/sillyplus/tags/%E5%9D%97%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
-      <category term="技术" scheme="http://github.com/sillyplus/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://github.com/sillyplus/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Tyvj P1565 Warcraft III 守望者的烦恼]]></title>
-    <link href="http://github.com/sillyplus/2013/06/12/tyvj-p1565-warcraft-III/"/>
-    <id>http://github.com/sillyplus/2013/06/12/tyvj-p1565-warcraft-III/</id>
+    <link href="https://github.com/sillyplus/2013/06/12/tyvj-p1565-warcraft-III/"/>
+    <id>https://github.com/sillyplus/2013/06/12/tyvj-p1565-warcraft-III/</id>
     <published>2013-06-12T00:31:24.000Z</published>
     <updated>2015-10-19T11:26:00.000Z</updated>
     <content type="html"><![CDATA[<p>这道题显然有，矩阵乘法可解（由数据范围可得）</p>
@@ -1459,16 +1459,16 @@ ma res, tmp;
     
     </summary>
     
-      <category term="Tyvj" scheme="http://github.com/sillyplus/tags/Tyvj/"/>
+      <category term="Tyvj" scheme="https://github.com/sillyplus/tags/Tyvj/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[写在高考前]]></title>
-    <link href="http://github.com/sillyplus/2013/06/04/writed-before-cee/"/>
-    <id>http://github.com/sillyplus/2013/06/04/writed-before-cee/</id>
+    <link href="https://github.com/sillyplus/2013/06/04/writed-before-cee/"/>
+    <id>https://github.com/sillyplus/2013/06/04/writed-before-cee/</id>
     <published>2013-06-03T18:35:56.000Z</published>
     <updated>2015-10-19T11:25:39.000Z</updated>
     <content type="html"><![CDATA[<p>保送生的颓废生活……就快完结，可惜这并不是我想要的生活。<br>本来回家是为了学习，可如今C++还没学好，日子就快结束了。整天被传召回学校，一个早上就轻松地没了……<br>因为承诺过会去高考，所以剩下这两天是否要复习呢，本来决定要的，可又彷徨了<br>踏进六月，终于能上网了，可还是没能认真学习，感觉还是先过完高考这关再说吧，虽然现在对高考没什么感觉，我总是太在乎别人的感受了吗。<br>混乱的语言，也正表明我现在的心境。也许是最近没有好好感受算法的魅力了吧，在题库闲逛，想code时却才发现自己的语言还没学好……，pascal又在本能上抑制去使用它。<br>算了，明后两天复习下，再考两天试，就不用管了。<br>还有我的足球赛啊，好想参加啊……我应该去写份计划表吗，感觉自制力不行写了也没用对吧。</p>
@@ -1477,14 +1477,14 @@ ma res, tmp;
     <![CDATA[<p>保送生的颓废生活……就快完结，可惜这并不是我想要的生活。<br>本来回家是为了学习，可如今C++还没学好，日子就快结束了。整天被传召回学校，一个早上就轻松地没了……<br>因为承诺过会去高考，所以剩下这两天是否要复习呢，本来决定要的，可又彷徨了<br>踏进六月，终于能上网了]]>
     </summary>
     
-      <category term="杂记" scheme="http://github.com/sillyplus/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="https://github.com/sillyplus/categories/%E6%9D%82%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[我的第一个C++程序~~]]></title>
-    <link href="http://github.com/sillyplus/2013/05/08/my-first-cpp-program/"/>
-    <id>http://github.com/sillyplus/2013/05/08/my-first-cpp-program/</id>
+    <link href="https://github.com/sillyplus/2013/05/08/my-first-cpp-program/"/>
+    <id>https://github.com/sillyplus/2013/05/08/my-first-cpp-program/</id>
     <published>2013-05-07T21:28:16.000Z</published>
     <updated>2015-10-19T10:56:09.000Z</updated>
     <content type="html"><![CDATA[<p>嘛~回家了……</p>
@@ -1500,16 +1500,16 @@ ma res, tmp;
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span ]]>
     </summary>
     
-      <category term="Cpp" scheme="http://github.com/sillyplus/tags/Cpp/"/>
+      <category term="Cpp" scheme="https://github.com/sillyplus/tags/Cpp/"/>
     
-      <category term="杂记" scheme="http://github.com/sillyplus/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="https://github.com/sillyplus/categories/%E6%9D%82%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[TYVJ 打鼹鼠 二维树状数组]]></title>
-    <link href="http://github.com/sillyplus/2012/08/25/tyvj-p1474/"/>
-    <id>http://github.com/sillyplus/2012/08/25/tyvj-p1474/</id>
+    <link href="https://github.com/sillyplus/2012/08/25/tyvj-p1474/"/>
+    <id>https://github.com/sillyplus/2012/08/25/tyvj-p1474/</id>
     <published>2012-08-25T00:39:48.000Z</published>
     <updated>2015-10-28T01:21:27.000Z</updated>
     <content type="html"><![CDATA[<p>☆打鼹鼠<br>SuperBrother在机房里闲着没事干(再对比一下他的NOIP,真是讽刺啊……),于是便无聊地开始玩“打鼹鼠”……<br>描述 Description<br>在这个“打鼹鼠”的游戏中，鼹鼠会不时地从洞中钻出来，不过不会从洞口钻进去（鼹鼠真胆大……）。洞口都在一个大小为n(n&lt;=1024)的正 方形中。这个正方形在一个平面直角坐标系中，左下角为(0,0)，右上角为(n-1,n-1)。洞口所在的位置都是整点，就是横纵坐标都为整数的点。而 SuperBrother也不时地会想知道某一个范围的鼹鼠总数。这就是你的任务。<br><a id="more"></a><br>输入格式 Input Format<br>每个输入文件有多行。<br>第一行，一个数n，表示鼹鼠的范围。<br>以后每一行开头都有一个数m，表示不同的操作：<br>m=1，那么后面跟着3个数x,y,k(0&lt;=x,y&lt;n)，表示在点(x,y)处新出现了k只鼹鼠；<br>m=2，那么后面跟着4个数x1,y1,x2,y2(0&lt;=x1&lt;=x2&lt;n,0&lt;=y1&lt;=y2&lt;n)，表示询问矩形(x1,y1)-(x2,y2)内的鼹鼠数量；<br>m=3，表示老师来了，不能玩了。保证这个数会在输入的最后一行。<br>询问数不会超过10000，鼹鼠数不会超过maxlongint。<br>对于每个m=2，输出一行数，这行数只有一个数，即所询问的区域内鼹鼠的个数。</p>
@@ -1520,18 +1520,18 @@ ma res, tmp;
     
     </summary>
     
-      <category term="Tyvj" scheme="http://github.com/sillyplus/tags/Tyvj/"/>
+      <category term="Tyvj" scheme="https://github.com/sillyplus/tags/Tyvj/"/>
     
-      <category term="树状数组" scheme="http://github.com/sillyplus/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+      <category term="树状数组" scheme="https://github.com/sillyplus/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[TYVJ 忠诚2 线段树]]></title>
-    <link href="http://github.com/sillyplus/2012/08/25/tyvj-p1039/"/>
-    <id>http://github.com/sillyplus/2012/08/25/tyvj-p1039/</id>
+    <link href="https://github.com/sillyplus/2012/08/25/tyvj-p1039/"/>
+    <id>https://github.com/sillyplus/2012/08/25/tyvj-p1039/</id>
     <published>2012-08-24T23:03:59.000Z</published>
     <updated>2015-10-26T06:51:23.000Z</updated>
     <content type="html"><![CDATA[<p>忠诚2<br>描述 Description<br>老管家是一个聪明能干的人。他为财主工作了整整10年，财主为了让自已账目更加清楚。要求管家每天记k次账，由于管家聪明能干，因而管家总是让财主十分满意。但是由于一些人的挑拨，财主还是对管家产生了怀疑。于是他决定用一种特别的方法来判断管家的忠诚，他把每次的账目按1，2，3…编号，然后不定时的问管家问题，问题是这样的：在a到b号账中最少的一笔是多少？为了让管家没时间作假他总是一次问多个问题。<br>在询问过程中账本的内容可能会被修改<br>输入格式 Input Format<br>输入中第一行有两个数m,n表示有m(m&lt;=100000)笔账,n表示有n个问题，n&lt;=100000。<br>接下来每行为3个数字，第一个p为数字1或数字2，第二个数为x，第三个数为y<br>当p=1 则查询x,y区间<br>当p=2 则改变第x个数为y</p>
@@ -1545,18 +1545,18 @@ ma res, tmp;
     
     </summary>
     
-      <category term="Tyvj" scheme="http://github.com/sillyplus/tags/Tyvj/"/>
+      <category term="Tyvj" scheme="https://github.com/sillyplus/tags/Tyvj/"/>
     
-      <category term="线段树" scheme="http://github.com/sillyplus/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+      <category term="线段树" scheme="https://github.com/sillyplus/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
     
-      <category term="题解" scheme="http://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://github.com/sillyplus/categories/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[模版]]></title>
-    <link href="http://github.com/sillyplus/1970/01/01/1970-1-1-templates/"/>
-    <id>http://github.com/sillyplus/1970/01/01/1970-1-1-templates/</id>
+    <link href="https://github.com/sillyplus/1970/01/01/1970-1-1-templates/"/>
+    <id>https://github.com/sillyplus/1970/01/01/1970-1-1-templates/</id>
     <published>1969-12-31T16:00:00.000Z</published>
     <updated>2015-10-28T01:31:35.000Z</updated>
     <content type="html"><![CDATA[<p>这里的模版基本来自《ACM国际大学生程序设计竞赛：算法与实现》这本书，有部分修改。</p>
@@ -1600,9 +1600,9 @@ ma res, tmp;
 <h3 id="树链剖分">树链剖分</h3><figure class="highlight inform7"><table><tr><td class=]]>
     </summary>
     
-      <category term="template" scheme="http://github.com/sillyplus/tags/template/"/>
+      <category term="template" scheme="https://github.com/sillyplus/tags/template/"/>
     
-      <category term="资源" scheme="http://github.com/sillyplus/categories/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://github.com/sillyplus/categories/%E8%B5%84%E6%BA%90/"/>
     
   </entry>
   
